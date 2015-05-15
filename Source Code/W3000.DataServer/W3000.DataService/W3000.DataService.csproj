@@ -64,8 +64,10 @@
     <Compile Include="ByType\GetByMapped.cs" />
     <Compile Include="ByType\GetByPage.cs" />
     <Compile Include="ByType\GetByUK.cs" />
+    <Compile Include="DataProcessing\BDBuildingDataService.cs" />
     <Compile Include="DataProcessing\LogDBDeleteActivityDataService.cs" />
     <Compile Include="DataProcessing\LogDBEditActivityDataService.cs" />
+    <Compile Include="DataProcessing\UtilHolidayDataService.cs" />
     <Compile Include="GenCode\DataService.cs" />
     <Compile Include="LogDBDeleteActivityDataService.cs" />
     <Compile Include="LogDBEditActivityDataService.cs" />
