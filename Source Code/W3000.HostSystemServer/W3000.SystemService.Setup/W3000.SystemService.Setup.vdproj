@@ -748,6 +748,54 @@
         "Entry"
         {
         "MsmKey" = "8:_AC85531F731E6A7F0A77158D7B4549D7"
+        "OwnerKey" = "8:_8F7C34948F58AFE983FFDE3BC5733F34"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AC85531F731E6A7F0A77158D7B4549D7"
+        "OwnerKey" = "8:_F314B2FAC28C4B14B40A5A85F4F5AB11"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AC85531F731E6A7F0A77158D7B4549D7"
+        "OwnerKey" = "8:_A7DF2089AD074A13BC55EE5E625C7798"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AC85531F731E6A7F0A77158D7B4549D7"
+        "OwnerKey" = "8:_60CA2644342442E6A0A67F64942BB274"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AC85531F731E6A7F0A77158D7B4549D7"
+        "OwnerKey" = "8:_4DFF6F79CA6540AA9E76C5C1E198CA1B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AC85531F731E6A7F0A77158D7B4549D7"
+        "OwnerKey" = "8:_2EE8CB7C24B74D0E95EFBA27F39E9C2A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AC85531F731E6A7F0A77158D7B4549D7"
+        "OwnerKey" = "8:_1CFB39B11FDA4D1D91972759F95EC217"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AC85531F731E6A7F0A77158D7B4549D7"
+        "OwnerKey" = "8:_12E3D1160B01422E8694B0F5B98AA6BE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AC85531F731E6A7F0A77158D7B4549D7"
         "OwnerKey" = "8:_7284B837914042D08B0CA92D2EA91397"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -4700,7 +4748,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:W3000.SystemService"
         "ProductCode" = "8:{84D3F817-7671-483F-9882-82548513A652}"
-        "PackageCode" = "8:{F7BF6997-B769-4EC5-8ED4-1F86829A6D69}"
+        "PackageCode" = "8:{B95C8E43-6CBE-436E-AD0B-91A5D6AAFA44}"
         "UpgradeCode" = "8:{6A00012D-ED04-4C87-B1EC-67294567EBF0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -4708,12 +4756,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:ChekeIT"
+        "Manufacturer" = "8:JetCode"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:W3000.SystemService"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:ChekeIT"
+        "ARPCONTACT" = "8:JetCode"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
