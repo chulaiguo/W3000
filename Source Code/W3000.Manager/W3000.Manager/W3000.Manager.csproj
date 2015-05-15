@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19346779-261F-436E-8CE6-BDC1A8824E89}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>W3000.Manager</RootNamespace>
+    <AssemblyName>W3000.Manager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cheke">
+      <HintPath>..\..\..\Bin\Cheke.dll</HintPath>
+    </Reference>
+    <Reference Include="Cheke.BusinessEntity">
+      <HintPath>..\..\..\Bin\Cheke.BusinessEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="Cheke.ClientSide">
+      <HintPath>..\..\..\Bin\Cheke.ClientSide.dll</HintPath>
+    </Reference>
+    <Reference Include="Cheke.EmailData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Cheke.EmailData.dll</HintPath>
+    </Reference>
+    <Reference Include="Cheke.WinCtrl">
+      <HintPath>..\..\..\Bin\Cheke.WinCtrl.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="W3000.Data">
+      <HintPath>..\..\..\Bin\W3000.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="W3000.Utils">
+      <HintPath>..\..\..\Bin\W3000.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="W3000.ViewObj">
+      <HintPath>..\..\..\Bin\W3000.ViewObj.dll</HintPath>
+    </Reference>
+    <Reference Include="W3000.ViewObjSchema">
+      <HintPath>..\..\..\Bin\W3000.ViewObjSchema.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAboutBox.designer.cs">
+      <DependentUpon>FormAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACAccessLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACAccessLevel.Designer.cs">
+      <DependentUpon>FormDetailACAccessLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACAMFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACAMFormat.Designer.cs">
+      <DependentUpon>FormDetailACAMFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACCardHolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACCardHolder.Designer.cs">
+      <DependentUpon>FormDetailACCardHolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACFunctionCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACFunctionCard.Designer.cs">
+      <DependentUpon>FormDetailACFunctionCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACInput.Designer.cs">
+      <DependentUpon>FormDetailACInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACInputGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACInputGroup.Designer.cs">
+      <DependentUpon>FormDetailACInputGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACInterval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACInterval.Designer.cs">
+      <DependentUpon>FormDetailACInterval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACMainZone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACMainZone.Designer.cs">
+      <DependentUpon>FormDetailACMainZone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACMasterCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACMasterCard.Designer.cs">
+      <DependentUpon>FormDetailACMasterCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACOutputGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACOutputGroup.Designer.cs">
+      <DependentUpon>FormDetailACOutputGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACPanel.Designer.cs">
+      <DependentUpon>FormDetailACPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACSupervisory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACSupervisory.Designer.cs">
+      <DependentUpon>FormDetailACSupervisory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACTimecode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailACTimecode.Designer.cs">
+      <DependentUpon>FormDetailACTimecode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailBDBuilding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailBDBuilding.Designer.cs">
+      <DependentUpon>FormDetailBDBuilding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailBDTenant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailBDTenant.Designer.cs">
+      <DependentUpon>FormDetailBDTenant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailBDVisitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailBDVisitor.Designer.cs">
+      <DependentUpon>FormDetailBDVisitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrAccount.Designer.cs">
+      <DependentUpon>FormDetailUsrAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrAccountBRRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrAccountBRRule.Designer.cs">
+      <DependentUpon>FormDetailUsrAccountBRRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrAccountDBRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrAccountDBRule.Designer.cs">
+      <DependentUpon>FormDetailUsrAccountDBRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrGroup.Designer.cs">
+      <DependentUpon>FormDetailUsrGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrGroupBRRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrGroupBRRule.Designer.cs">
+      <DependentUpon>FormDetailUsrGroupBRRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrGroupDBRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUsrGroupDBRule.Designer.cs">
+      <DependentUpon>FormDetailUsrGroupDBRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUtilHoliday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailEditor\FormDetailUtilHoliday.Designer.cs">
+      <DependentUpon>FormDetailUtilHoliday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACAccessLevelDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACAccessLevelDetail.Designer.cs">
+      <DependentUpon>FormDetailACAccessLevelDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACCardHolderBuildingMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACCardHolderBuildingMap.Designer.cs">
+      <DependentUpon>FormDetailACCardHolderBuildingMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACInputGroupInputMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACInputGroupInputMap.Designer.cs">
+      <DependentUpon>FormDetailACInputGroupInputMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACIntvalHolidayMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACIntvalHolidayMap.Designer.cs">
+      <DependentUpon>FormDetailACIntvalHolidayMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACOutputGroupMainZoneMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACOutputGroupMainZoneMap.Designer.cs">
+      <DependentUpon>FormDetailACOutputGroupMainZoneMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACPanelFunctionCardMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACPanelFunctionCardMap.Designer.cs">
+      <DependentUpon>FormDetailACPanelFunctionCardMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACPanelHolidayMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACPanelHolidayMap.Designer.cs">
+      <DependentUpon>FormDetailACPanelHolidayMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACTimecodeIntervalMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailACTimecodeIntervalMap.Designer.cs">
+      <DependentUpon>FormDetailACTimecodeIntervalMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailBDBuildingHolidayMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailBDBuildingHolidayMap.Designer.cs">
+      <DependentUpon>FormDetailBDBuildingHolidayMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailBDTenantHolidayMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailBDTenantHolidayMap.Designer.cs">
+      <DependentUpon>FormDetailBDTenantHolidayMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailUsrAccountBuildingMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailUsrAccountBuildingMap.Designer.cs">
+      <DependentUpon>FormDetailUsrAccountBuildingMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailUsrAccountTenantMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailMap\FormDetailUsrAccountTenantMap.Designer.cs">
+      <DependentUpon>FormDetailUsrAccountTenantMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLog\FormDeleteHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLog\FormDeleteHistory.designer.cs">
+      <DependentUpon>FormDeleteHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLog\FormEditHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLog\FormEditHistory.designer.cs">
+      <DependentUpon>FormEditHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLog\FormHistoryOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLog\FormHistoryOptions.designer.cs">
+      <DependentUpon>FormHistoryOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLog\LogHelper.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMisc\FormFatalError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMisc\FormFatalError.designer.cs">
+      <DependentUpon>FormFatalError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMisc\FormSendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMisc\FormSendEmail.designer.cs">
+      <DependentUpon>FormSendEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPickup\FormPickupBRRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPickup\FormPickupBRRule.Designer.cs">
+      <DependentUpon>FormPickupBRRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPickup\FormPickupDBRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPickup\FormPickupDBRule.Designer.cs">
+      <DependentUpon>FormPickupDBRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACAccessLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACAccessLevel.Designer.cs">
+      <DependentUpon>FormSelectACAccessLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACAMFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACAMFormat.Designer.cs">
+      <DependentUpon>FormSelectACAMFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACFunctionCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACFunctionCard.Designer.cs">
+      <DependentUpon>FormSelectACFunctionCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACInput.Designer.cs">
+      <DependentUpon>FormSelectACInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACInputGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACInputGroup.Designer.cs">
+      <DependentUpon>FormSelectACInputGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACInterval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACInterval.Designer.cs">
+      <DependentUpon>FormSelectACInterval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACMainZone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACMainZone.Designer.cs">
+      <DependentUpon>FormSelectACMainZone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACOutputGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACOutputGroup.Designer.cs">
+      <DependentUpon>FormSelectACOutputGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACPanel.Designer.cs">
+      <DependentUpon>FormSelectACPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACSupervisory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACSupervisory.Designer.cs">
+      <DependentUpon>FormSelectACSupervisory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACTimecode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACTimecode.Designer.cs">
+      <DependentUpon>FormSelectACTimecode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectBDBuilding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectBDBuilding.Designer.cs">
+      <DependentUpon>FormSelectBDBuilding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectBDTenant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectBDTenant.Designer.cs">
+      <DependentUpon>FormSelectBDTenant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectUsrAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectUsrAccount.Designer.cs">
+      <DependentUpon>FormSelectUsrAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectUsrGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectUsrGroup.Designer.cs">
+      <DependentUpon>FormSelectUsrGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectUtilHoliday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectUtilHoliday.Designer.cs">
+      <DependentUpon>FormSelectUtilHoliday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkEditor\FormWorkBDBuilding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkEditor\FormWorkBDBuilding.Designer.cs">
+      <DependentUpon>FormWorkBDBuilding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACAccessLevelList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACAccessLevelList.Designer.cs">
+      <DependentUpon>FormWorkACAccessLevelList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACAMFormatList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACAMFormatList.Designer.cs">
+      <DependentUpon>FormWorkACAMFormatList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACCardHolderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACCardHolderList.Designer.cs">
+      <DependentUpon>FormWorkACCardHolderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACFunctionCardList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACFunctionCardList.Designer.cs">
+      <DependentUpon>FormWorkACFunctionCardList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACInputGroupList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACInputGroupList.Designer.cs">
+      <DependentUpon>FormWorkACInputGroupList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACInputList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACInputList.Designer.cs">
+      <DependentUpon>FormWorkACInputList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACIntervalList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACIntervalList.Designer.cs">
+      <DependentUpon>FormWorkACIntervalList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACMainZoneList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACMainZoneList.Designer.cs">
+      <DependentUpon>FormWorkACMainZoneList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACMasterCardList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACMasterCardList.Designer.cs">
+      <DependentUpon>FormWorkACMasterCardList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACOutputGroupList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACOutputGroupList.Designer.cs">
+      <DependentUpon>FormWorkACOutputGroupList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACPanelList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACPanelList.Designer.cs">
+      <DependentUpon>FormWorkACPanelList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACSupervisoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACSupervisoryList.Designer.cs">
+      <DependentUpon>FormWorkACSupervisoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACTimecodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkACTimecodeList.Designer.cs">
+      <DependentUpon>FormWorkACTimecodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkBDBuildingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkBDBuildingList.Designer.cs">
+      <DependentUpon>FormWorkBDBuildingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkBDTenantList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkBDTenantList.Designer.cs">
+      <DependentUpon>FormWorkBDTenantList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkBDVisitorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkBDVisitorList.Designer.cs">
+      <DependentUpon>FormWorkBDVisitorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkUsrAccountList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkUsrAccountList.Designer.cs">
+      <DependentUpon>FormWorkUsrAccountList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkUsrGroupList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkUsrGroupList.Designer.cs">
+      <DependentUpon>FormWorkUsrGroupList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkUtilHolidayList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkList\FormWorkUtilHolidayList.Designer.cs">
+      <DependentUpon>FormWorkUtilHolidayList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkSearch\FormWorkACCardHolderSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkSearch\FormWorkACCardHolderSearch.Designer.cs">
+      <DependentUpon>FormWorkACCardHolderSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridDecorator\GridACAccessLevelDecorator.cs" />
+    <Compile Include="GridDecorator\GridACAccessLevelDetailDecorator.cs" />
+    <Compile Include="GridDecorator\GridACAMFormatDecorator.cs" />
+    <Compile Include="GridDecorator\GridACCardHolderBuildingMapDecorator.cs" />
+    <Compile Include="GridDecorator\GridACCardHolderDecorator.cs" />
+    <Compile Include="GridDecorator\GridACFunctionCardDecorator.cs" />
+    <Compile Include="GridDecorator\GridACInputDecorator.cs" />
+    <Compile Include="GridDecorator\GridACInputGroupDecorator.cs" />
+    <Compile Include="GridDecorator\GridACInputGroupInputMapDecorator.cs" />
+    <Compile Include="GridDecorator\GridACIntervalDecorator.cs" />
+    <Compile Include="GridDecorator\GridACIntvalHolidayMapDecorator.cs" />
+    <Compile Include="GridDecorator\GridACMainZoneDecorator.cs" />
+    <Compile Include="GridDecorator\GridACMasterCardDecorator.cs" />
+    <Compile Include="GridDecorator\GridACOutputGroupDecorator.cs" />
+    <Compile Include="GridDecorator\GridACOutputGroupMainZoneMapDecorator.cs" />
+    <Compile Include="GridDecorator\GridACPanelDecorator.cs" />
+    <Compile Include="GridDecorator\GridACPanelFunctionCardMapDecorator.cs" />
+    <Compile Include="GridDecorator\GridACPanelHolidayMapDecorator.cs" />
+    <Compile Include="GridDecorator\GridACSupervisoryDecorator.cs" />
+    <Compile Include="GridDecorator\GridACTimecodeDecorator.cs" />
+    <Compile Include="GridDecorator\GridACTimecodeIntervalMapDecorator.cs" />
+    <Compile Include="GridDecorator\GridBDBuildingDecorator.cs" />
+    <Compile Include="GridDecorator\GridBDBuildingHolidayMapDecorator.cs" />
+    <Compile Include="GridDecorator\GridBDTenantDecorator.cs" />
+    <Compile Include="GridDecorator\GridBDTenantHolidayMapDecorator.cs" />
+    <Compile Include="GridDecorator\GridBDVisitorDecorator.cs" />
+    <Compile Include="GridDecorator\GridUsrAccountBRRuleDecorator.cs" />
+    <Compile Include="GridDecorator\GridUsrAccountBuildingMapDecorator.cs" />
+    <Compile Include="GridDecorator\GridUsrAccountDBRuleDecorator.cs" />
+    <Compile Include="GridDecorator\GridUsrAccountDecorator.cs" />
+    <Compile Include="GridDecorator\GridUsrAccountTenantMapDecorator.cs" />
+    <Compile Include="GridDecorator\GridUsrGroupBRRuleDecorator.cs" />
+    <Compile Include="GridDecorator\GridUsrGroupDBRuleDecorator.cs" />
+    <Compile Include="GridDecorator\GridUsrGroupDecorator.cs" />
+    <Compile Include="GridDecorator\GridUtilHolidayDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACAccessLevelDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACAMFormatDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACFunctionCardDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACInputDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACInputGroupDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACIntervalDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACMainZoneDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACOutputGroupDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACPanelDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACSupervisoryDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACTimecodeDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectBDBuildingDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectBDTenantDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectUsrAccountDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectUsrGroupDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectUtilHolidayDecorator.cs" />
+    <Compile Include="LoginService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\UserPermission.cs" />
+    <EmbeddedResource Include="FormAboutBox.resx">
+      <DependentUpon>FormAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLog\FormDeleteHistory.resx">
+      <DependentUpon>FormDeleteHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLog\FormEditHistory.resx">
+      <DependentUpon>FormEditHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLog\FormHistoryOptions.resx">
+      <DependentUpon>FormHistoryOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
