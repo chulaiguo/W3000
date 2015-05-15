@@ -22,7 +22,7 @@ namespace W3000.HostDataService
             this.serviceInstaller = new ServiceInstaller();
 
             // Set the attributes for the installer.
-            this.serviceInstaller.StartType = ServiceStartMode.Disabled;
+            this.serviceInstaller.StartType = ServiceStartMode.Automatic;
 
             // Set name used by the system to identify this service. This
             // name should be same as the one used in the class derived
