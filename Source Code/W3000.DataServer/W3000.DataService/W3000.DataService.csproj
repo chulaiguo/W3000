@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90FEE1E6-FEFD-47A2-9AFB-DCC5928E9DA4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>W3000.DataService</RootNamespace>
+    <AssemblyName>W3000.DataService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cheke">
+      <HintPath>..\..\..\Bin\Cheke.dll</HintPath>
+    </Reference>
+    <Reference Include="Cheke.BusinessEntity">
+      <HintPath>..\..\..\Bin\Cheke.BusinessEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="Cheke.BusinessService">
+      <HintPath>..\..\..\Bin\Cheke.BusinessService.dll</HintPath>
+    </Reference>
+    <Reference Include="Cheke.DataAccess">
+      <HintPath>..\..\..\Bin\Cheke.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="W3000.Data">
+      <HintPath>..\..\..\Bin\W3000.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="W3000.DataSchema">
+      <HintPath>..\..\..\Bin\W3000.DataSchema.dll</HintPath>
+    </Reference>
+    <Reference Include="W3000.Utils">
+      <HintPath>..\..\..\Bin\W3000.Utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ByCriteria\ACCardHolderDataService.cs" />
+    <Compile Include="ByCriteria\BDBuildingDataService.cs" />
+    <Compile Include="ByType\GetByIndex.cs" />
+    <Compile Include="ByType\GetByMapped.cs" />
+    <Compile Include="ByType\GetByPage.cs" />
+    <Compile Include="ByType\GetByUK.cs" />
+    <Compile Include="DataProcessing\LogDBDeleteActivityDataService.cs" />
+    <Compile Include="DataProcessing\LogDBEditActivityDataService.cs" />
+    <Compile Include="GenCode\DataService.cs" />
+    <Compile Include="LogDBDeleteActivityDataService.cs" />
+    <Compile Include="LogDBEditActivityDataService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplitTable\LogDBDeleteActivityQuery.cs" />
+    <Compile Include="SplitTable\LogDBEditActivityQuery.cs" />
+    <Compile Include="SplitTable\LogHelper.cs" />
+    <Compile Include="LogRowsCountDataService.cs" />
+    <Compile Include="UsrAccountBRRuleDataService.cs" />
+    <Compile Include="UsrAccountDataService.cs" />
+    <Compile Include="UsrAccountDBRuleDataService.cs" />
+    <Compile Include="UsrGroupBRRuleDataService.cs" />
+    <Compile Include="Utils\Authentication.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\W3000.CRUD\W3000.CRUD.csproj">
+      <Project>{20ad3e85-c2fa-4163-b358-c7754c849203}</Project>
+      <Name>W3000.CRUD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\W3000.DataServiceBase\W3000.DataServiceBase.csproj">
+      <Project>{2bd4756a-6a49-4934-9475-2dd9754bdfba}</Project>
+      <Name>W3000.DataServiceBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\W3000.IDataService\W3000.IDataService.csproj">
+      <Project>{b10c21c6-9626-4a75-b4e8-f76d62740de5}</Project>
+      <Name>W3000.IDataService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

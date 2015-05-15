@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2893618F-1A64-4BBE-8B31-BDB1D47EDDEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>W3000.Data</RootNamespace>
+    <AssemblyName>W3000.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cheke.BusinessEntity">
+      <HintPath>..\..\..\Bin\Cheke.BusinessEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CriteriaACCardHolderView.cs" />
+    <Compile Include="CriteriaBDBuildingView.cs" />
+    <Compile Include="GenCode\CheckRules.cs" />
+    <Compile Include="GenCode\DataObj.cs" />
+    <Compile Include="GenViewCode\ACAccessLevelDetailView.cs" />
+    <Compile Include="GenViewCode\ACAccessLevelView.cs" />
+    <Compile Include="GenViewCode\ACAMFormatView.cs" />
+    <Compile Include="GenViewCode\ACCardHolderBuildingMapView.cs" />
+    <Compile Include="GenViewCode\ACCardHolderView.cs" />
+    <Compile Include="GenViewCode\ACFunctionCardView.cs" />
+    <Compile Include="GenViewCode\ACInputGroupInputMapView.cs" />
+    <Compile Include="GenViewCode\ACInputGroupView.cs" />
+    <Compile Include="GenViewCode\ACInputView.cs" />
+    <Compile Include="GenViewCode\ACIntervalView.cs" />
+    <Compile Include="GenViewCode\ACIntvalHolidayMapView.cs" />
+    <Compile Include="GenViewCode\ACMainZoneView.cs" />
+    <Compile Include="GenViewCode\ACMasterCardView.cs" />
+    <Compile Include="GenViewCode\ACOutputGroupMainZoneMapView.cs" />
+    <Compile Include="GenViewCode\ACOutputGroupView.cs" />
+    <Compile Include="GenViewCode\ACPanelFunctionCardMapView.cs" />
+    <Compile Include="GenViewCode\ACPanelHolidayMapView.cs" />
+    <Compile Include="GenViewCode\ACPanelView.cs" />
+    <Compile Include="GenViewCode\ACSupervisoryView.cs" />
+    <Compile Include="GenViewCode\ACTimecodeIntervalMapView.cs" />
+    <Compile Include="GenViewCode\ACTimecodeView.cs" />
+    <Compile Include="GenViewCode\BDBuildingHolidayMapView.cs" />
+    <Compile Include="GenViewCode\BDBuildingView.cs" />
+    <Compile Include="GenViewCode\BDTenantHolidayMapView.cs" />
+    <Compile Include="GenViewCode\BDTenantView.cs" />
+    <Compile Include="GenViewCode\BDVisitorView.cs" />
+    <Compile Include="GenViewCode\LogDBDeleteActivityView.cs" />
+    <Compile Include="GenViewCode\LogDBEditActivityView.cs" />
+    <Compile Include="GenViewCode\LogRowsCountView.cs" />
+    <Compile Include="GenViewCode\UsrAccountBRRuleView.cs" />
+    <Compile Include="GenViewCode\UsrAccountBuildingMapView.cs" />
+    <Compile Include="GenViewCode\UsrAccountDBRuleView.cs" />
+    <Compile Include="GenViewCode\UsrAccountTenantMapView.cs" />
+    <Compile Include="GenViewCode\UsrAccountView.cs" />
+    <Compile Include="GenViewCode\UsrGroupBRRuleView.cs" />
+    <Compile Include="GenViewCode\UsrGroupDBRuleView.cs" />
+    <Compile Include="GenViewCode\UsrGroupView.cs" />
+    <Compile Include="GenViewCode\UtilHolidayView.cs" />
+    <Compile Include="GenViewCode\UtilSettingCategoryView.cs" />
+    <Compile Include="GenViewCode\UtilSettingDetailView.cs" />
+    <Compile Include="GenViewCode\ViewCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\W3000.Rules\W3000.Rules.csproj">
+      <Project>{302bf3c6-a364-48a1-a9c0-10f339b44627}</Project>
+      <Name>W3000.Rules</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

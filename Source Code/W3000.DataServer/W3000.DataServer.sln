@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W3000.DataService", "W3000.DataService\W3000.DataService.csproj", "{90FEE1E6-FEFD-47A2-9AFB-DCC5928E9DA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W3000.IDataService", "W3000.IDataService\W3000.IDataService.csproj", "{B10C21C6-9626-4A75-B4E8-F76D62740DE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W3000.DBLog", "W3000.DBLog\W3000.DBLog.csproj", "{FFD2EC0F-FF82-4BC6-A3FB-43166696EF65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W3000.Permission", "W3000.Permission\W3000.Permission.csproj", "{5547BB4F-E94C-46BE-8BDA-9E3F11113868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W3000.CRUD", "W3000.CRUD\W3000.CRUD.csproj", "{20AD3E85-C2FA-4163-B358-C7754C849203}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W3000.DataServiceBase", "W3000.DataServiceBase\W3000.DataServiceBase.csproj", "{2BD4756A-6A49-4934-9475-2DD9754BDFBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90FEE1E6-FEFD-47A2-9AFB-DCC5928E9DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90FEE1E6-FEFD-47A2-9AFB-DCC5928E9DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90FEE1E6-FEFD-47A2-9AFB-DCC5928E9DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90FEE1E6-FEFD-47A2-9AFB-DCC5928E9DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B10C21C6-9626-4A75-B4E8-F76D62740DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B10C21C6-9626-4A75-B4E8-F76D62740DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B10C21C6-9626-4A75-B4E8-F76D62740DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B10C21C6-9626-4A75-B4E8-F76D62740DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFD2EC0F-FF82-4BC6-A3FB-43166696EF65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD2EC0F-FF82-4BC6-A3FB-43166696EF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD2EC0F-FF82-4BC6-A3FB-43166696EF65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD2EC0F-FF82-4BC6-A3FB-43166696EF65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5547BB4F-E94C-46BE-8BDA-9E3F11113868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5547BB4F-E94C-46BE-8BDA-9E3F11113868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5547BB4F-E94C-46BE-8BDA-9E3F11113868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5547BB4F-E94C-46BE-8BDA-9E3F11113868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20AD3E85-C2FA-4163-B358-C7754C849203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20AD3E85-C2FA-4163-B358-C7754C849203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20AD3E85-C2FA-4163-B358-C7754C849203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20AD3E85-C2FA-4163-B358-C7754C849203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BD4756A-6A49-4934-9475-2DD9754BDFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD4756A-6A49-4934-9475-2DD9754BDFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD4756A-6A49-4934-9475-2DD9754BDFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BD4756A-6A49-4934-9475-2DD9754BDFBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
