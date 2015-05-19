@@ -285,16 +285,32 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACIntvalHolidayMap";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual ACIntervalData ACInterval
 		{
 			get
 			{
 				ACIntervalData parent = new ACIntervalData();
 				parent.ACIntervalPK = this.ACIntervalPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
-				parent.Begin = this.Begin;
 				parent.End = this.End;
+				parent.Begin = this.Begin;
 				parent.IVID = this.IVID;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -303,10 +319,31 @@ namespace W3000.Data
 					return;
 
 				this.ACIntervalPK = value.ACIntervalPK;
-				this.BDBuildingPK = value.BDBuildingPK;
-				this.Begin = value.Begin;
 				this.End = value.End;
+				this.Begin = value.Begin;
 				this.IVID = value.IVID;
+				this.BDBuildingPK = value.BDBuildingPK;
+			}
+		}
+
+		public virtual BDBuildingData BDBuilding
+		{
+			get
+			{
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -328,14 +365,6 @@ namespace W3000.Data
 				this.UtilHolidayPK = value.UtilHolidayPK;
 				this.Date = value.Date;
 				this.Holiday = value.Holiday;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "ACIntvalHolidayMap";
 			}
 		}
 
@@ -871,15 +900,54 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACAccessLevelDetail";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
+		public virtual ACAccessLevelData ACAccessLevel
+		{
+			get
+			{
+				ACAccessLevelData parent = new ACAccessLevelData();
+				parent.ACAccessLevelPK = this.ACAccessLevelPK;
+				parent.Summary = this.ALSummary;
+				parent.AccessLevelID = this.AccessLevelID;
+				parent.BDBuildingPK = this.BDBuildingPK;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACAccessLevelPK = value.ACAccessLevelPK;
+				this.ALSummary = value.Summary;
+				this.AccessLevelID = value.AccessLevelID;
+				this.BDBuildingPK = value.BDBuildingPK;
+			}
+		}
+
 		public virtual ACMainZoneData ACMainZone
 		{
 			get
 			{
 				ACMainZoneData parent = new ACMainZoneData();
 				parent.ACMainZonePK = this.ACMainZonePK;
-				parent.ACPanelPK = this.ACPanelPK;
 				parent.Description = this.MainZoneDescription;
 				parent.MainZoneID = this.MainZoneID;
+				parent.ACPanelPK = this.ACPanelPK;
 				return parent;
 			}
 			set
@@ -888,9 +956,28 @@ namespace W3000.Data
 					return;
 
 				this.ACMainZonePK = value.ACMainZonePK;
-				this.ACPanelPK = value.ACPanelPK;
 				this.MainZoneDescription = value.Description;
 				this.MainZoneID = value.MainZoneID;
+				this.ACPanelPK = value.ACPanelPK;
+			}
+		}
+
+		public virtual ACPanelData ACPanel
+		{
+			get
+			{
+				ACPanelData parent = new ACPanelData();
+				parent.ACPanelPK = this.ACPanelPK;
+				parent.UnitID = this.UnitID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACPanelPK = value.ACPanelPK;
+				this.UnitID = value.UnitID;
 			}
 		}
 
@@ -915,15 +1002,14 @@ namespace W3000.Data
 			}
 		}
 
-		public virtual ACAccessLevelData ACAccessLevel
+		public virtual BDBuildingData BDBuilding
 		{
 			get
 			{
-				ACAccessLevelData parent = new ACAccessLevelData();
-				parent.ACAccessLevelPK = this.ACAccessLevelPK;
-				parent.AccessLevelID = this.AccessLevelID;
+				BDBuildingData parent = new BDBuildingData();
 				parent.BDBuildingPK = this.BDBuildingPK;
-				parent.Summary = this.ALSummary;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
 				return parent;
 			}
 			set
@@ -931,18 +1017,9 @@ namespace W3000.Data
 				if(value == null)
 					return;
 
-				this.ACAccessLevelPK = value.ACAccessLevelPK;
-				this.AccessLevelID = value.AccessLevelID;
 				this.BDBuildingPK = value.BDBuildingPK;
-				this.ALSummary = value.Summary;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "ACAccessLevelDetail";
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -1441,6 +1518,22 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "UsrAccountBuildingMap";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual BDBuildingData BDBuilding
 		{
 			get
@@ -1478,14 +1571,6 @@ namespace W3000.Data
 
 				this.UsrAccountPK = value.UsrAccountPK;
 				this.UserID = value.UserID;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "UsrAccountBuildingMap";
 			}
 		}
 
@@ -2513,6 +2598,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "BDBuilding";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual UsrAccountBuildingMapDataCollection UsrAccountBuildingMapList
 		{
 			get
@@ -2621,14 +2719,9 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
-		{
-			get
-			{
-				return "BDBuilding";
-			}
-		}
+		#endregion
 
+		#region Parents
 		#endregion
 
 		public override void CopyFrom(BusinessBase entity, bool all)
@@ -4074,6 +4167,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "BDTenant";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual UsrAccountTenantMapDataCollection UsrAccountTenantMapList
 		{
 			get
@@ -4146,6 +4252,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
 		public virtual BDBuildingData BDBuilding
 		{
 			get
@@ -4164,14 +4273,6 @@ namespace W3000.Data
 				this.BDBuildingPK = value.BDBuildingPK;
 				this.Address1 = value.Address1;
 				this.BuildingID = value.BuildingID;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "BDTenant";
 			}
 		}
 
@@ -4961,6 +5062,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "UtilSettingCategory";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual UtilSettingDetailDataCollection UtilSettingDetailList
 		{
 			get
@@ -4973,14 +5087,9 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
-		{
-			get
-			{
-				return "UtilSettingCategory";
-			}
-		}
+		#endregion
 
+		#region Parents
 		#endregion
 
 		public override void CopyFrom(BusinessBase entity, bool all)
@@ -5458,6 +5567,22 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "UtilSettingDetail";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual UtilSettingCategoryData UtilSettingCategory
 		{
 			get
@@ -5476,14 +5601,6 @@ namespace W3000.Data
 				this.UtilSettingCategoryPK = value.UtilSettingCategoryPK;
 				this.SettingCategory = value.SettingCategory;
 				this.SettingCategoryID = value.SettingCategoryID;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "UtilSettingDetail";
 			}
 		}
 
@@ -5930,14 +6047,30 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACOutputGroupMainZoneMap";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual ACMainZoneData ACMainZone
 		{
 			get
 			{
 				ACMainZoneData parent = new ACMainZoneData();
 				parent.ACMainZonePK = this.ACMainZonePK;
-				parent.ACPanelPK = this.ACPanelPK;
 				parent.MainZoneID = this.MainZoneID;
+				parent.ACPanelPK = this.ACPanelPK;
 				return parent;
 			}
 			set
@@ -5946,8 +6079,8 @@ namespace W3000.Data
 					return;
 
 				this.ACMainZonePK = value.ACMainZonePK;
-				this.ACPanelPK = value.ACPanelPK;
 				this.MainZoneID = value.MainZoneID;
+				this.ACPanelPK = value.ACPanelPK;
 			}
 		}
 
@@ -5970,11 +6103,43 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
+		public virtual ACPanelData ACPanel
 		{
 			get
 			{
-				return "ACOutputGroupMainZoneMap";
+				ACPanelData parent = new ACPanelData();
+				parent.ACPanelPK = this.ACPanelPK;
+				parent.UnitID = this.UnitID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACPanelPK = value.ACPanelPK;
+				this.UnitID = value.UnitID;
+			}
+		}
+
+		public virtual BDBuildingData BDBuilding
+		{
+			get
+			{
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -6899,6 +7064,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACCardHolder";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual ACCardHolderBuildingMapDataCollection ACCardHolderBuildingMapList
 		{
 			get
@@ -6911,15 +7089,39 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
+		public virtual BDBuildingData BDBuilding
+		{
+			get
+			{
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
 		public virtual BDTenantData BDTenant
 		{
 			get
 			{
 				BDTenantData parent = new BDTenantData();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -6928,17 +7130,9 @@ namespace W3000.Data
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "ACCardHolder";
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
@@ -8463,6 +8657,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACMainZone";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual ACOutputGroupMainZoneMapDataCollection ACOutputGroupMainZoneMapList
 		{
 			get
@@ -8487,6 +8694,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
 		public virtual ACPanelData ACPanel
 		{
 			get
@@ -8508,11 +8718,24 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
+		public virtual BDBuildingData BDBuilding
 		{
 			get
 			{
-				return "ACMainZone";
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -9570,6 +9793,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACInterval";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual ACIntvalHolidayMapDataCollection ACIntvalHolidayMapList
 		{
 			get
@@ -9594,6 +9830,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
 		public virtual BDBuildingData BDBuilding
 		{
 			get
@@ -9612,14 +9851,6 @@ namespace W3000.Data
 				this.BDBuildingPK = value.BDBuildingPK;
 				this.Address1 = value.Address1;
 				this.BuildingID = value.BuildingID;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "ACInterval";
 			}
 		}
 
@@ -10213,27 +10444,22 @@ namespace W3000.Data
 			}
 		}
 
-		public virtual UtilHolidayData UtilHoliday
+		#endregion
+
+		#region TableName
+		public override string TableName
 		{
 			get
 			{
-				UtilHolidayData parent = new UtilHolidayData();
-				parent.UtilHolidayPK = this.UtilHolidayPK;
-				parent.Date = this.Date;
-				parent.Holiday = this.Holiday;
-				return parent;
-			}
-			set
-			{
-				if(value == null)
-					return;
-
-				this.UtilHolidayPK = value.UtilHolidayPK;
-				this.Date = value.Date;
-				this.Holiday = value.Holiday;
+				return "ACPanelHolidayMap";
 			}
 		}
+		#endregion
 
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual ACPanelData ACPanel
 		{
 			get
@@ -10255,11 +10481,45 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
+		public virtual BDBuildingData BDBuilding
 		{
 			get
 			{
-				return "ACPanelHolidayMap";
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		public virtual UtilHolidayData UtilHoliday
+		{
+			get
+			{
+				UtilHolidayData parent = new UtilHolidayData();
+				parent.UtilHolidayPK = this.UtilHolidayPK;
+				parent.Date = this.Date;
+				parent.Holiday = this.Holiday;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.UtilHolidayPK = value.UtilHolidayPK;
+				this.Date = value.Date;
+				this.Holiday = value.Holiday;
 			}
 		}
 
@@ -10672,6 +10932,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACTimecode";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual ACAccessLevelDetailDataCollection ACAccessLevelDetailList
 		{
 			get
@@ -10696,6 +10969,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
 		public virtual BDBuildingData BDBuilding
 		{
 			get
@@ -10714,14 +10990,6 @@ namespace W3000.Data
 				this.BDBuildingPK = value.BDBuildingPK;
 				this.Address1 = value.Address1;
 				this.BuildingID = value.BuildingID;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "ACTimecode";
 			}
 		}
 
@@ -11239,14 +11507,30 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACTimecodeIntervalMap";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual ACIntervalData ACInterval
 		{
 			get
 			{
 				ACIntervalData parent = new ACIntervalData();
 				parent.ACIntervalPK = this.ACIntervalPK;
-				parent.Begin = this.Begin;
 				parent.End = this.End;
+				parent.Begin = this.Begin;
 				parent.IVID = this.IVID;
 				return parent;
 			}
@@ -11256,8 +11540,8 @@ namespace W3000.Data
 					return;
 
 				this.ACIntervalPK = value.ACIntervalPK;
-				this.Begin = value.Begin;
 				this.End = value.End;
+				this.Begin = value.Begin;
 				this.IVID = value.IVID;
 			}
 		}
@@ -11268,8 +11552,8 @@ namespace W3000.Data
 			{
 				ACTimecodeData parent = new ACTimecodeData();
 				parent.ACTimecodePK = this.ACTimecodePK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.TCID = this.TCID;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -11278,16 +11562,29 @@ namespace W3000.Data
 					return;
 
 				this.ACTimecodePK = value.ACTimecodePK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.TCID = value.TCID;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
-		public override string TableName
+		public virtual BDBuildingData BDBuilding
 		{
 			get
 			{
-				return "ACTimecodeIntervalMap";
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -11771,6 +12068,22 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACAMFormat";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual BDBuildingData BDBuilding
 		{
 			get
@@ -11789,14 +12102,6 @@ namespace W3000.Data
 				this.BDBuildingPK = value.BDBuildingPK;
 				this.Address1 = value.Address1;
 				this.BuildingID = value.BuildingID;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "ACAMFormat";
 			}
 		}
 
@@ -12287,6 +12592,22 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "BDBuildingHolidayMap";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual BDBuildingData BDBuilding
 		{
 			get
@@ -12326,14 +12647,6 @@ namespace W3000.Data
 				this.UtilHolidayPK = value.UtilHolidayPK;
 				this.Date = value.Date;
 				this.Holiday = value.Holiday;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "BDBuildingHolidayMap";
 			}
 		}
 
@@ -12767,6 +13080,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACOutputGroup";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual ACOutputGroupMainZoneMapDataCollection ACOutputGroupMainZoneMapList
 		{
 			get
@@ -12779,6 +13105,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
 		public virtual ACPanelData ACPanel
 		{
 			get
@@ -12800,11 +13129,24 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
+		public virtual BDBuildingData BDBuilding
 		{
 			get
 			{
-				return "ACOutputGroup";
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -13335,14 +13677,51 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "BDTenantHolidayMap";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
+		public virtual BDBuildingData BDBuilding
+		{
+			get
+			{
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
 		public virtual BDTenantData BDTenant
 		{
 			get
 			{
 				BDTenantData parent = new BDTenantData();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -13351,8 +13730,8 @@ namespace W3000.Data
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Tenant = value.Tenant;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
@@ -13374,14 +13753,6 @@ namespace W3000.Data
 				this.UtilHolidayPK = value.UtilHolidayPK;
 				this.Date = value.Date;
 				this.Holiday = value.Holiday;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "BDTenantHolidayMap";
 			}
 		}
 
@@ -13812,6 +14183,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
 		public override string TableName
 		{
 			get
@@ -13819,7 +14193,12 @@ namespace W3000.Data
 				return "LogRowsCount";
 			}
 		}
+		#endregion
 
+		#region Children
+		#endregion
+
+		#region Parents
 		#endregion
 
 		public override void CopyFrom(BusinessBase entity, bool all)
@@ -14257,6 +14636,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACInputGroup";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual ACInputGroupInputMapDataCollection ACInputGroupInputMapList
 		{
 			get
@@ -14269,6 +14661,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
 		public virtual ACPanelData ACPanel
 		{
 			get
@@ -14290,11 +14685,24 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
+		public virtual BDBuildingData BDBuilding
 		{
 			get
 			{
-				return "ACInputGroup";
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -14988,6 +15396,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACInput";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual ACInputGroupInputMapDataCollection ACInputGroupInputMapList
 		{
 			get
@@ -15000,6 +15421,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
 		public virtual ACPanelData ACPanel
 		{
 			get
@@ -15021,11 +15445,24 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
+		public virtual BDBuildingData BDBuilding
 		{
 			get
 			{
-				return "ACInput";
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -15837,6 +16274,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACFunctionCard";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual ACPanelFunctionCardMapDataCollection ACPanelFunctionCardMapList
 		{
 			get
@@ -15849,15 +16299,39 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
+		public virtual BDBuildingData BDBuilding
+		{
+			get
+			{
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
 		public virtual BDTenantData BDTenant
 		{
 			get
 			{
 				BDTenantData parent = new BDTenantData();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -15866,17 +16340,9 @@ namespace W3000.Data
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "ACFunctionCard";
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
@@ -16499,6 +16965,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "UtilHoliday";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual BDTenantHolidayMapDataCollection BDTenantHolidayMapList
 		{
 			get
@@ -16547,14 +17026,9 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
-		{
-			get
-			{
-				return "UtilHoliday";
-			}
-		}
+		#endregion
 
+		#region Parents
 		#endregion
 
 		public override void CopyFrom(BusinessBase entity, bool all)
@@ -17138,6 +17612,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACAccessLevel";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual ACAccessLevelDetailDataCollection ACAccessLevelDetailList
 		{
 			get
@@ -17150,6 +17637,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
 		public virtual BDBuildingData BDBuilding
 		{
 			get
@@ -17168,14 +17658,6 @@ namespace W3000.Data
 				this.BDBuildingPK = value.BDBuildingPK;
 				this.Address1 = value.Address1;
 				this.BuildingID = value.BuildingID;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "ACAccessLevel";
 			}
 		}
 
@@ -17699,6 +18181,22 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACPanelFunctionCardMap";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual ACFunctionCardData ACFunctionCard
 		{
 			get
@@ -17706,8 +18204,8 @@ namespace W3000.Data
 				ACFunctionCardData parent = new ACFunctionCardData();
 				parent.ACFunctionCardPK = this.ACFunctionCardPK;
 				parent.CardTypeID = this.CardTypeID;
-				parent.Embossed = this.Embossed;
 				parent.Encoded = this.Encoded;
+				parent.Embossed = this.Embossed;
 				parent.Sitecode = this.Sitecode;
 				return parent;
 			}
@@ -17718,8 +18216,8 @@ namespace W3000.Data
 
 				this.ACFunctionCardPK = value.ACFunctionCardPK;
 				this.CardTypeID = value.CardTypeID;
-				this.Embossed = value.Embossed;
 				this.Encoded = value.Encoded;
+				this.Embossed = value.Embossed;
 				this.Sitecode = value.Sitecode;
 			}
 		}
@@ -17745,11 +18243,24 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
+		public virtual BDBuildingData BDBuilding
 		{
 			get
 			{
-				return "ACPanelFunctionCardMap";
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -18138,6 +18649,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
 		public override string TableName
 		{
 			get
@@ -18145,7 +18659,12 @@ namespace W3000.Data
 				return "LogDBDeleteActivity";
 			}
 		}
+		#endregion
 
+		#region Children
+		#endregion
+
+		#region Parents
 		#endregion
 
 		public override void CopyFrom(BusinessBase entity, bool all)
@@ -18953,6 +19472,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "UsrAccount";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual UsrAccountBuildingMapDataCollection UsrAccountBuildingMapList
 		{
 			get
@@ -19001,15 +19533,39 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
+		public virtual BDBuildingData BDBuilding
+		{
+			get
+			{
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
 		public virtual BDTenantData BDTenant
 		{
 			get
 			{
 				BDTenantData parent = new BDTenantData();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -19018,9 +19574,9 @@ namespace W3000.Data
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
@@ -19040,14 +19596,6 @@ namespace W3000.Data
 
 				this.UsrGroupPK = value.UsrGroupPK;
 				this.UsrGroupName = value.UsrGroupName;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "UsrAccount";
 			}
 		}
 
@@ -19724,6 +20272,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
 		public override string TableName
 		{
 			get
@@ -19731,7 +20282,12 @@ namespace W3000.Data
 				return "LogDBEditActivity";
 			}
 		}
+		#endregion
 
+		#region Children
+		#endregion
+
+		#region Parents
 		#endregion
 
 		public override void CopyFrom(BusinessBase entity, bool all)
@@ -20258,6 +20814,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
 		public override string TableName
 		{
 			get
@@ -20265,7 +20824,12 @@ namespace W3000.Data
 				return "ACMasterCard";
 			}
 		}
+		#endregion
 
+		#region Children
+		#endregion
+
+		#region Parents
 		#endregion
 
 		public override void CopyFrom(BusinessBase entity, bool all)
@@ -20891,6 +21455,22 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACSupervisory";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual ACPanelData ACPanel
 		{
 			get
@@ -20912,11 +21492,24 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
+		public virtual BDBuildingData BDBuilding
 		{
 			get
 			{
-				return "ACSupervisory";
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -21329,6 +21922,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "UsrGroup";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual UsrGroupDBRuleDataCollection UsrGroupDBRuleList
 		{
 			get
@@ -21365,14 +21971,9 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
-		{
-			get
-			{
-				return "UsrGroup";
-			}
-		}
+		#endregion
 
+		#region Parents
 		#endregion
 
 		public override void CopyFrom(BusinessBase entity, bool all)
@@ -21939,6 +22540,51 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACCardHolderBuildingMap";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
+		public virtual ACCardHolderData ACCardHolder
+		{
+			get
+			{
+				ACCardHolderData parent = new ACCardHolderData();
+				parent.ACCardHolderPK = this.ACCardHolderPK;
+				parent.LastName = this.LastName;
+				parent.FirstName = this.FirstName;
+				parent.CardTypeID = this.CardTypeID;
+				parent.Encoded = this.Encoded;
+				parent.Embossed = this.Embossed;
+				parent.Sitecode = this.Sitecode;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACCardHolderPK = value.ACCardHolderPK;
+				this.LastName = value.LastName;
+				this.FirstName = value.FirstName;
+				this.CardTypeID = value.CardTypeID;
+				this.Encoded = value.Encoded;
+				this.Embossed = value.Embossed;
+				this.Sitecode = value.Sitecode;
+			}
+		}
+
 		public virtual BDBuildingData BDBuilding
 		{
 			get
@@ -21957,43 +22603,6 @@ namespace W3000.Data
 				this.BDBuildingPK = value.BDBuildingPK;
 				this.Address1 = value.Address1;
 				this.BuildingID = value.BuildingID;
-			}
-		}
-
-		public virtual ACCardHolderData ACCardHolder
-		{
-			get
-			{
-				ACCardHolderData parent = new ACCardHolderData();
-				parent.ACCardHolderPK = this.ACCardHolderPK;
-				parent.CardTypeID = this.CardTypeID;
-				parent.Embossed = this.Embossed;
-				parent.Encoded = this.Encoded;
-				parent.FirstName = this.FirstName;
-				parent.LastName = this.LastName;
-				parent.Sitecode = this.Sitecode;
-				return parent;
-			}
-			set
-			{
-				if(value == null)
-					return;
-
-				this.ACCardHolderPK = value.ACCardHolderPK;
-				this.CardTypeID = value.CardTypeID;
-				this.Embossed = value.Embossed;
-				this.Encoded = value.Encoded;
-				this.FirstName = value.FirstName;
-				this.LastName = value.LastName;
-				this.Sitecode = value.Sitecode;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "ACCardHolderBuildingMap";
 			}
 		}
 
@@ -22867,15 +23476,52 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "BDVisitor";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
+		public virtual BDBuildingData BDBuilding
+		{
+			get
+			{
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
 		public virtual BDTenantData BDTenant
 		{
 			get
 			{
 				BDTenantData parent = new BDTenantData();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -22884,17 +23530,9 @@ namespace W3000.Data
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "BDVisitor";
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
@@ -23535,6 +24173,22 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "UsrGroupDBRule";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual UsrGroupData UsrGroup
 		{
 			get
@@ -23551,14 +24205,6 @@ namespace W3000.Data
 
 				this.UsrGroupPK = value.UsrGroupPK;
 				this.UsrGroupName = value.UsrGroupName;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "UsrGroupDBRule";
 			}
 		}
 
@@ -24916,6 +25562,19 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "ACPanel";
+			}
+		}
+		#endregion
+
+		#region Children
 		public virtual ACInputDataCollection ACInputList
 		{
 			get
@@ -25000,6 +25659,9 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region Parents
 		public virtual BDBuildingData BDBuilding
 		{
 			get
@@ -25018,14 +25680,6 @@ namespace W3000.Data
 				this.BDBuildingPK = value.BDBuildingPK;
 				this.Address1 = value.Address1;
 				this.BuildingID = value.BuildingID;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "ACPanel";
 			}
 		}
 
@@ -26044,6 +26698,22 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "UsrAccountDBRule";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual UsrAccountData UsrAccount
 		{
 			get
@@ -26060,14 +26730,6 @@ namespace W3000.Data
 
 				this.UsrAccountPK = value.UsrAccountPK;
 				this.UserID = value.UserID;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "UsrAccountDBRule";
 			}
 		}
 
@@ -26478,6 +27140,22 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "UsrGroupBRRule";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual UsrGroupData UsrGroup
 		{
 			get
@@ -26494,14 +27172,6 @@ namespace W3000.Data
 
 				this.UsrGroupPK = value.UsrGroupPK;
 				this.UsrGroupName = value.UsrGroupName;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "UsrGroupBRRule";
 			}
 		}
 
@@ -26936,27 +27606,22 @@ namespace W3000.Data
 			}
 		}
 
-		public virtual ACInputGroupData ACInputGroup
+		#endregion
+
+		#region TableName
+		public override string TableName
 		{
 			get
 			{
-				ACInputGroupData parent = new ACInputGroupData();
-				parent.ACInputGroupPK = this.ACInputGroupPK;
-				parent.ACPanelPK = this.ACPanelPK;
-				parent.GroupID = this.GroupID;
-				return parent;
-			}
-			set
-			{
-				if(value == null)
-					return;
-
-				this.ACInputGroupPK = value.ACInputGroupPK;
-				this.ACPanelPK = value.ACPanelPK;
-				this.GroupID = value.GroupID;
+				return "ACInputGroupInputMap";
 			}
 		}
+		#endregion
 
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual ACInputData ACInput
 		{
 			get
@@ -26976,11 +27641,64 @@ namespace W3000.Data
 			}
 		}
 
-		public override string TableName
+		public virtual ACInputGroupData ACInputGroup
 		{
 			get
 			{
-				return "ACInputGroupInputMap";
+				ACInputGroupData parent = new ACInputGroupData();
+				parent.ACInputGroupPK = this.ACInputGroupPK;
+				parent.GroupID = this.GroupID;
+				parent.ACPanelPK = this.ACPanelPK;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACInputGroupPK = value.ACInputGroupPK;
+				this.GroupID = value.GroupID;
+				this.ACPanelPK = value.ACPanelPK;
+			}
+		}
+
+		public virtual ACPanelData ACPanel
+		{
+			get
+			{
+				ACPanelData parent = new ACPanelData();
+				parent.ACPanelPK = this.ACPanelPK;
+				parent.UnitID = this.UnitID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACPanelPK = value.ACPanelPK;
+				this.UnitID = value.UnitID;
+			}
+		}
+
+		public virtual BDBuildingData BDBuilding
+		{
+			get
+			{
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -27353,6 +28071,22 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "UsrAccountBRRule";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
 		public virtual UsrAccountData UsrAccount
 		{
 			get
@@ -27369,14 +28103,6 @@ namespace W3000.Data
 
 				this.UsrAccountPK = value.UsrAccountPK;
 				this.UserID = value.UserID;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "UsrAccountBRRule";
 			}
 		}
 
@@ -27786,14 +28512,51 @@ namespace W3000.Data
 			}
 		}
 
+		#endregion
+
+		#region TableName
+		public override string TableName
+		{
+			get
+			{
+				return "UsrAccountTenantMap";
+			}
+		}
+		#endregion
+
+		#region Children
+		#endregion
+
+		#region Parents
+		public virtual BDBuildingData BDBuilding
+		{
+			get
+			{
+				BDBuildingData parent = new BDBuildingData();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
 		public virtual BDTenantData BDTenant
 		{
 			get
 			{
 				BDTenantData parent = new BDTenantData();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -27802,8 +28565,8 @@ namespace W3000.Data
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Tenant = value.Tenant;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
@@ -27823,14 +28586,6 @@ namespace W3000.Data
 
 				this.UsrAccountPK = value.UsrAccountPK;
 				this.UserID = value.UserID;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "UsrAccountTenantMap";
 			}
 		}
 

@@ -22,16 +22,17 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual ACInterval ACInterval
+		#region Parents
+		public virtual ACInterval ACInterval
 		{
 			get
 			{
 				ACInterval parent = new ACInterval();
 				parent.ACIntervalPK = this.ACIntervalPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
-				parent.Begin = this.Begin;
 				parent.End = this.End;
+				parent.Begin = this.Begin;
 				parent.IVID = this.IVID;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -40,14 +41,35 @@ namespace W3000.ViewObj
 					return;
 
 				this.ACIntervalPK = value.ACIntervalPK;
-				this.BDBuildingPK = value.BDBuildingPK;
-				this.Begin = value.Begin;
 				this.End = value.End;
+				this.Begin = value.Begin;
 				this.IVID = value.IVID;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
-		public new virtual UtilHoliday UtilHoliday
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		public virtual UtilHoliday UtilHoliday
 		{
 			get
 			{
@@ -68,6 +90,10 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -101,15 +127,39 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual ACMainZone ACMainZone
+		#region Parents
+		public virtual ACAccessLevel ACAccessLevel
+		{
+			get
+			{
+				ACAccessLevel parent = new ACAccessLevel();
+				parent.ACAccessLevelPK = this.ACAccessLevelPK;
+				parent.Summary = this.ALSummary;
+				parent.AccessLevelID = this.AccessLevelID;
+				parent.BDBuildingPK = this.BDBuildingPK;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACAccessLevelPK = value.ACAccessLevelPK;
+				this.ALSummary = value.Summary;
+				this.AccessLevelID = value.AccessLevelID;
+				this.BDBuildingPK = value.BDBuildingPK;
+			}
+		}
+
+		public virtual ACMainZone ACMainZone
 		{
 			get
 			{
 				ACMainZone parent = new ACMainZone();
 				parent.ACMainZonePK = this.ACMainZonePK;
-				parent.ACPanelPK = this.ACPanelPK;
 				parent.Description = this.MainZoneDescription;
 				parent.MainZoneID = this.MainZoneID;
+				parent.ACPanelPK = this.ACPanelPK;
 				return parent;
 			}
 			set
@@ -118,13 +168,32 @@ namespace W3000.ViewObj
 					return;
 
 				this.ACMainZonePK = value.ACMainZonePK;
-				this.ACPanelPK = value.ACPanelPK;
 				this.MainZoneDescription = value.Description;
 				this.MainZoneID = value.MainZoneID;
+				this.ACPanelPK = value.ACPanelPK;
 			}
 		}
 
-		public new virtual ACTimecode ACTimecode
+		public virtual ACPanel ACPanel
+		{
+			get
+			{
+				ACPanel parent = new ACPanel();
+				parent.ACPanelPK = this.ACPanelPK;
+				parent.UnitID = this.UnitID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACPanelPK = value.ACPanelPK;
+				this.UnitID = value.UnitID;
+			}
+		}
+
+		public virtual ACTimecode ACTimecode
 		{
 			get
 			{
@@ -145,15 +214,14 @@ namespace W3000.ViewObj
 			}
 		}
 
-		public new virtual ACAccessLevel ACAccessLevel
+		public virtual BDBuilding BDBuilding
 		{
 			get
 			{
-				ACAccessLevel parent = new ACAccessLevel();
-				parent.ACAccessLevelPK = this.ACAccessLevelPK;
-				parent.AccessLevelID = this.AccessLevelID;
+				BDBuilding parent = new BDBuilding();
 				parent.BDBuildingPK = this.BDBuildingPK;
-				parent.Summary = this.ALSummary;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
 				return parent;
 			}
 			set
@@ -161,13 +229,16 @@ namespace W3000.ViewObj
 				if(value == null)
 					return;
 
-				this.ACAccessLevelPK = value.ACAccessLevelPK;
-				this.AccessLevelID = value.AccessLevelID;
 				this.BDBuildingPK = value.BDBuildingPK;
-				this.ALSummary = value.Summary;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -201,7 +272,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDBuilding BDBuilding
+		#region Parents
+		public virtual BDBuilding BDBuilding
 		{
 			get
 			{
@@ -222,7 +294,7 @@ namespace W3000.ViewObj
 			}
 		}
 
-		public new virtual UsrAccount UsrAccount
+		public virtual UsrAccount UsrAccount
 		{
 			get
 			{
@@ -241,6 +313,10 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -274,6 +350,10 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
+		#region Parents
+		#endregion
+
+		#region Children
 		public new virtual UsrAccountBuildingMapCollection UsrAccountBuildingMapList
 		{
 			get
@@ -382,6 +462,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -459,7 +540,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDBuilding BDBuilding
+		#region Parents
+		public virtual BDBuilding BDBuilding
 		{
 			get
 			{
@@ -480,6 +562,9 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
 		public new virtual UsrAccountTenantMapCollection UsrAccountTenantMapList
 		{
 			get
@@ -552,6 +637,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -617,6 +703,10 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
+		#region Parents
+		#endregion
+
+		#region Children
 		public new virtual UtilSettingDetailCollection UtilSettingDetailList
 		{
 			get
@@ -629,6 +719,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -674,7 +765,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual UtilSettingCategory UtilSettingCategory
+		#region Parents
+		public virtual UtilSettingCategory UtilSettingCategory
 		{
 			get
 			{
@@ -695,6 +787,10 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -728,14 +824,15 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual ACMainZone ACMainZone
+		#region Parents
+		public virtual ACMainZone ACMainZone
 		{
 			get
 			{
 				ACMainZone parent = new ACMainZone();
 				parent.ACMainZonePK = this.ACMainZonePK;
-				parent.ACPanelPK = this.ACPanelPK;
 				parent.MainZoneID = this.MainZoneID;
+				parent.ACPanelPK = this.ACPanelPK;
 				return parent;
 			}
 			set
@@ -744,12 +841,12 @@ namespace W3000.ViewObj
 					return;
 
 				this.ACMainZonePK = value.ACMainZonePK;
-				this.ACPanelPK = value.ACPanelPK;
 				this.MainZoneID = value.MainZoneID;
+				this.ACPanelPK = value.ACPanelPK;
 			}
 		}
 
-		public new virtual ACOutputGroup ACOutputGroup
+		public virtual ACOutputGroup ACOutputGroup
 		{
 			get
 			{
@@ -768,6 +865,50 @@ namespace W3000.ViewObj
 			}
 		}
 
+		public virtual ACPanel ACPanel
+		{
+			get
+			{
+				ACPanel parent = new ACPanel();
+				parent.ACPanelPK = this.ACPanelPK;
+				parent.UnitID = this.UnitID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACPanelPK = value.ACPanelPK;
+				this.UnitID = value.UnitID;
+			}
+		}
+
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -801,15 +942,37 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDTenant BDTenant
+		#region Parents
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		public virtual BDTenant BDTenant
 		{
 			get
 			{
 				BDTenant parent = new BDTenant();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -818,12 +981,15 @@ namespace W3000.ViewObj
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
+		#endregion
+
+		#region Children
 		public new virtual ACCardHolderBuildingMapCollection ACCardHolderBuildingMapList
 		{
 			get
@@ -836,6 +1002,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -881,7 +1048,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual ACPanel ACPanel
+		#region Parents
+		public virtual ACPanel ACPanel
 		{
 			get
 			{
@@ -902,6 +1070,30 @@ namespace W3000.ViewObj
 			}
 		}
 
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		#endregion
+
+		#region Children
 		public new virtual ACOutputGroupMainZoneMapCollection ACOutputGroupMainZoneMapList
 		{
 			get
@@ -926,6 +1118,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -975,7 +1168,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDBuilding BDBuilding
+		#region Parents
+		public virtual BDBuilding BDBuilding
 		{
 			get
 			{
@@ -996,6 +1190,9 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
 		public new virtual ACIntvalHolidayMapCollection ACIntvalHolidayMapList
 		{
 			get
@@ -1020,6 +1217,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -1069,28 +1267,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual UtilHoliday UtilHoliday
-		{
-			get
-			{
-				UtilHoliday parent = new UtilHoliday();
-				parent.UtilHolidayPK = this.UtilHolidayPK;
-				parent.Date = this.Date;
-				parent.Holiday = this.Holiday;
-				return parent;
-			}
-			set
-			{
-				if(value == null)
-					return;
-
-				this.UtilHolidayPK = value.UtilHolidayPK;
-				this.Date = value.Date;
-				this.Holiday = value.Holiday;
-			}
-		}
-
-		public new virtual ACPanel ACPanel
+		#region Parents
+		public virtual ACPanel ACPanel
 		{
 			get
 			{
@@ -1111,6 +1289,52 @@ namespace W3000.ViewObj
 			}
 		}
 
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		public virtual UtilHoliday UtilHoliday
+		{
+			get
+			{
+				UtilHoliday parent = new UtilHoliday();
+				parent.UtilHolidayPK = this.UtilHolidayPK;
+				parent.Date = this.Date;
+				parent.Holiday = this.Holiday;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.UtilHolidayPK = value.UtilHolidayPK;
+				this.Date = value.Date;
+				this.Holiday = value.Holiday;
+			}
+		}
+
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -1144,7 +1368,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDBuilding BDBuilding
+		#region Parents
+		public virtual BDBuilding BDBuilding
 		{
 			get
 			{
@@ -1165,6 +1390,9 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
 		public new virtual ACAccessLevelDetailCollection ACAccessLevelDetailList
 		{
 			get
@@ -1189,6 +1417,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -1238,14 +1467,15 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual ACInterval ACInterval
+		#region Parents
+		public virtual ACInterval ACInterval
 		{
 			get
 			{
 				ACInterval parent = new ACInterval();
 				parent.ACIntervalPK = this.ACIntervalPK;
-				parent.Begin = this.Begin;
 				parent.End = this.End;
+				parent.Begin = this.Begin;
 				parent.IVID = this.IVID;
 				return parent;
 			}
@@ -1255,20 +1485,20 @@ namespace W3000.ViewObj
 					return;
 
 				this.ACIntervalPK = value.ACIntervalPK;
-				this.Begin = value.Begin;
 				this.End = value.End;
+				this.Begin = value.Begin;
 				this.IVID = value.IVID;
 			}
 		}
 
-		public new virtual ACTimecode ACTimecode
+		public virtual ACTimecode ACTimecode
 		{
 			get
 			{
 				ACTimecode parent = new ACTimecode();
 				parent.ACTimecodePK = this.ACTimecodePK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.TCID = this.TCID;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -1277,11 +1507,36 @@ namespace W3000.ViewObj
 					return;
 
 				this.ACTimecodePK = value.ACTimecodePK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.TCID = value.TCID;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -1315,7 +1570,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDBuilding BDBuilding
+		#region Parents
+		public virtual BDBuilding BDBuilding
 		{
 			get
 			{
@@ -1336,6 +1592,10 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -1369,7 +1629,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDBuilding BDBuilding
+		#region Parents
+		public virtual BDBuilding BDBuilding
 		{
 			get
 			{
@@ -1390,7 +1651,7 @@ namespace W3000.ViewObj
 			}
 		}
 
-		public new virtual UtilHoliday UtilHoliday
+		public virtual UtilHoliday UtilHoliday
 		{
 			get
 			{
@@ -1411,6 +1672,10 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -1444,7 +1709,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual ACPanel ACPanel
+		#region Parents
+		public virtual ACPanel ACPanel
 		{
 			get
 			{
@@ -1465,6 +1731,30 @@ namespace W3000.ViewObj
 			}
 		}
 
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		#endregion
+
+		#region Children
 		public new virtual ACOutputGroupMainZoneMapCollection ACOutputGroupMainZoneMapList
 		{
 			get
@@ -1477,6 +1767,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -1522,14 +1813,36 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDTenant BDTenant
+		#region Parents
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		public virtual BDTenant BDTenant
 		{
 			get
 			{
 				BDTenant parent = new BDTenant();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -1538,12 +1851,12 @@ namespace W3000.ViewObj
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Tenant = value.Tenant;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
-		public new virtual UtilHoliday UtilHoliday
+		public virtual UtilHoliday UtilHoliday
 		{
 			get
 			{
@@ -1564,6 +1877,10 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -1597,6 +1914,11 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
+		#region Parents
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -1630,7 +1952,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual ACPanel ACPanel
+		#region Parents
+		public virtual ACPanel ACPanel
 		{
 			get
 			{
@@ -1651,6 +1974,30 @@ namespace W3000.ViewObj
 			}
 		}
 
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		#endregion
+
+		#region Children
 		public new virtual ACInputGroupInputMapCollection ACInputGroupInputMapList
 		{
 			get
@@ -1663,6 +2010,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -1708,7 +2056,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual ACPanel ACPanel
+		#region Parents
+		public virtual ACPanel ACPanel
 		{
 			get
 			{
@@ -1729,6 +2078,30 @@ namespace W3000.ViewObj
 			}
 		}
 
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		#endregion
+
+		#region Children
 		public new virtual ACInputGroupInputMapCollection ACInputGroupInputMapList
 		{
 			get
@@ -1741,6 +2114,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -1786,15 +2160,37 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDTenant BDTenant
+		#region Parents
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		public virtual BDTenant BDTenant
 		{
 			get
 			{
 				BDTenant parent = new BDTenant();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -1803,12 +2199,15 @@ namespace W3000.ViewObj
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
+		#endregion
+
+		#region Children
 		public new virtual ACPanelFunctionCardMapCollection ACPanelFunctionCardMapList
 		{
 			get
@@ -1821,6 +2220,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -1866,6 +2266,10 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
+		#region Parents
+		#endregion
+
+		#region Children
 		public new virtual BDTenantHolidayMapCollection BDTenantHolidayMapList
 		{
 			get
@@ -1914,6 +2318,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -1971,7 +2376,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDBuilding BDBuilding
+		#region Parents
+		public virtual BDBuilding BDBuilding
 		{
 			get
 			{
@@ -1992,6 +2398,9 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
 		public new virtual ACAccessLevelDetailCollection ACAccessLevelDetailList
 		{
 			get
@@ -2004,6 +2413,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -2049,15 +2459,16 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual ACFunctionCard ACFunctionCard
+		#region Parents
+		public virtual ACFunctionCard ACFunctionCard
 		{
 			get
 			{
 				ACFunctionCard parent = new ACFunctionCard();
 				parent.ACFunctionCardPK = this.ACFunctionCardPK;
 				parent.CardTypeID = this.CardTypeID;
-				parent.Embossed = this.Embossed;
 				parent.Encoded = this.Encoded;
+				parent.Embossed = this.Embossed;
 				parent.Sitecode = this.Sitecode;
 				return parent;
 			}
@@ -2068,13 +2479,13 @@ namespace W3000.ViewObj
 
 				this.ACFunctionCardPK = value.ACFunctionCardPK;
 				this.CardTypeID = value.CardTypeID;
-				this.Embossed = value.Embossed;
 				this.Encoded = value.Encoded;
+				this.Embossed = value.Embossed;
 				this.Sitecode = value.Sitecode;
 			}
 		}
 
-		public new virtual ACPanel ACPanel
+		public virtual ACPanel ACPanel
 		{
 			get
 			{
@@ -2095,6 +2506,31 @@ namespace W3000.ViewObj
 			}
 		}
 
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -2128,6 +2564,11 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
+		#region Parents
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -2161,15 +2602,37 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDTenant BDTenant
+		#region Parents
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		public virtual BDTenant BDTenant
 		{
 			get
 			{
 				BDTenant parent = new BDTenant();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -2178,13 +2641,13 @@ namespace W3000.ViewObj
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
-		public new virtual UsrGroup UsrGroup
+		public virtual UsrGroup UsrGroup
 		{
 			get
 			{
@@ -2203,6 +2666,9 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
 		public new virtual UsrAccountBuildingMapCollection UsrAccountBuildingMapList
 		{
 			get
@@ -2251,6 +2717,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -2308,6 +2775,11 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
+		#region Parents
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -2341,6 +2813,11 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
+		#region Parents
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -2374,7 +2851,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual ACPanel ACPanel
+		#region Parents
+		public virtual ACPanel ACPanel
 		{
 			get
 			{
@@ -2395,6 +2873,31 @@ namespace W3000.ViewObj
 			}
 		}
 
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -2428,6 +2931,10 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
+		#region Parents
+		#endregion
+
+		#region Children
 		public new virtual UsrGroupDBRuleCollection UsrGroupDBRuleList
 		{
 			get
@@ -2464,6 +2971,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -2517,7 +3025,37 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDBuilding BDBuilding
+		#region Parents
+		public virtual ACCardHolder ACCardHolder
+		{
+			get
+			{
+				ACCardHolder parent = new ACCardHolder();
+				parent.ACCardHolderPK = this.ACCardHolderPK;
+				parent.LastName = this.LastName;
+				parent.FirstName = this.FirstName;
+				parent.CardTypeID = this.CardTypeID;
+				parent.Encoded = this.Encoded;
+				parent.Embossed = this.Embossed;
+				parent.Sitecode = this.Sitecode;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACCardHolderPK = value.ACCardHolderPK;
+				this.LastName = value.LastName;
+				this.FirstName = value.FirstName;
+				this.CardTypeID = value.CardTypeID;
+				this.Encoded = value.Encoded;
+				this.Embossed = value.Embossed;
+				this.Sitecode = value.Sitecode;
+			}
+		}
+
+		public virtual BDBuilding BDBuilding
 		{
 			get
 			{
@@ -2538,35 +3076,10 @@ namespace W3000.ViewObj
 			}
 		}
 
-		public new virtual ACCardHolder ACCardHolder
-		{
-			get
-			{
-				ACCardHolder parent = new ACCardHolder();
-				parent.ACCardHolderPK = this.ACCardHolderPK;
-				parent.CardTypeID = this.CardTypeID;
-				parent.Embossed = this.Embossed;
-				parent.Encoded = this.Encoded;
-				parent.FirstName = this.FirstName;
-				parent.LastName = this.LastName;
-				parent.Sitecode = this.Sitecode;
-				return parent;
-			}
-			set
-			{
-				if(value == null)
-					return;
+		#endregion
 
-				this.ACCardHolderPK = value.ACCardHolderPK;
-				this.CardTypeID = value.CardTypeID;
-				this.Embossed = value.Embossed;
-				this.Encoded = value.Encoded;
-				this.FirstName = value.FirstName;
-				this.LastName = value.LastName;
-				this.Sitecode = value.Sitecode;
-			}
-		}
-
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -2600,15 +3113,37 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDTenant BDTenant
+		#region Parents
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		public virtual BDTenant BDTenant
 		{
 			get
 			{
 				BDTenant parent = new BDTenant();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -2617,12 +3152,16 @@ namespace W3000.ViewObj
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -2656,7 +3195,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual UsrGroup UsrGroup
+		#region Parents
+		public virtual UsrGroup UsrGroup
 		{
 			get
 			{
@@ -2675,6 +3215,10 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -2708,7 +3252,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDBuilding BDBuilding
+		#region Parents
+		public virtual BDBuilding BDBuilding
 		{
 			get
 			{
@@ -2729,6 +3274,9 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
 		public new virtual ACInputCollection ACInputList
 		{
 			get
@@ -2813,6 +3361,7 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
 
 		protected override void CloneChildren(BusinessBase entity)
 		{
@@ -2882,7 +3431,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual UsrAccount UsrAccount
+		#region Parents
+		public virtual UsrAccount UsrAccount
 		{
 			get
 			{
@@ -2901,6 +3451,10 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -2934,7 +3488,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual UsrGroup UsrGroup
+		#region Parents
+		public virtual UsrGroup UsrGroup
 		{
 			get
 			{
@@ -2953,6 +3508,10 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -2986,28 +3545,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual ACInputGroup ACInputGroup
-		{
-			get
-			{
-				ACInputGroup parent = new ACInputGroup();
-				parent.ACInputGroupPK = this.ACInputGroupPK;
-				parent.ACPanelPK = this.ACPanelPK;
-				parent.GroupID = this.GroupID;
-				return parent;
-			}
-			set
-			{
-				if(value == null)
-					return;
-
-				this.ACInputGroupPK = value.ACInputGroupPK;
-				this.ACPanelPK = value.ACPanelPK;
-				this.GroupID = value.GroupID;
-			}
-		}
-
-		public new virtual ACInput ACInput
+		#region Parents
+		public virtual ACInput ACInput
 		{
 			get
 			{
@@ -3026,6 +3565,71 @@ namespace W3000.ViewObj
 			}
 		}
 
+		public virtual ACInputGroup ACInputGroup
+		{
+			get
+			{
+				ACInputGroup parent = new ACInputGroup();
+				parent.ACInputGroupPK = this.ACInputGroupPK;
+				parent.GroupID = this.GroupID;
+				parent.ACPanelPK = this.ACPanelPK;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACInputGroupPK = value.ACInputGroupPK;
+				this.GroupID = value.GroupID;
+				this.ACPanelPK = value.ACPanelPK;
+			}
+		}
+
+		public virtual ACPanel ACPanel
+		{
+			get
+			{
+				ACPanel parent = new ACPanel();
+				parent.ACPanelPK = this.ACPanelPK;
+				parent.UnitID = this.UnitID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.ACPanelPK = value.ACPanelPK;
+				this.UnitID = value.UnitID;
+			}
+		}
+
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -3059,7 +3663,8 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual UsrAccount UsrAccount
+		#region Parents
+		public virtual UsrAccount UsrAccount
 		{
 			get
 			{
@@ -3078,6 +3683,10 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
@@ -3111,14 +3720,36 @@ namespace W3000.ViewObj
 		}
 		#endregion
 
-		public new virtual BDTenant BDTenant
+		#region Parents
+		public virtual BDBuilding BDBuilding
+		{
+			get
+			{
+				BDBuilding parent = new BDBuilding();
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
+				return parent;
+			}
+			set
+			{
+				if(value == null)
+					return;
+
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
+			}
+		}
+
+		public virtual BDTenant BDTenant
 		{
 			get
 			{
 				BDTenant parent = new BDTenant();
 				parent.BDTenantPK = this.BDTenantPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Tenant = this.Tenant;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				return parent;
 			}
 			set
@@ -3127,12 +3758,12 @@ namespace W3000.ViewObj
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Tenant = value.Tenant;
+				this.BDBuildingPK = value.BDBuildingPK;
 			}
 		}
 
-		public new virtual UsrAccount UsrAccount
+		public virtual UsrAccount UsrAccount
 		{
 			get
 			{
@@ -3151,6 +3782,10 @@ namespace W3000.ViewObj
 			}
 		}
 
+		#endregion
+
+		#region Children
+		#endregion
 
 		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
 		{
