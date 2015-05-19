@@ -1794,6 +1794,8 @@ namespace W3000.Rules
 		private System.String _holiday;
 		private System.Guid _bDBuildingPK;
 		private System.Int32 _unitID;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid ACPanelHolidayMapPK
 		{
@@ -1859,6 +1861,18 @@ namespace W3000.Rules
 		{
 			get { return this._unitID; }
 			set { this._unitID = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
 		}
 
 	}
@@ -3114,6 +3128,8 @@ namespace W3000.Rules
 		private System.Int32 _sitecode;
 		private System.Guid _bDBuildingPK;
 		private System.Int32 _unitID;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid ACPanelFunctionCardMapPK
 		{
@@ -3191,6 +3207,18 @@ namespace W3000.Rules
 		{
 			get { return this._unitID; }
 			set { this._unitID = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
 		}
 
 	}
@@ -9013,6 +9041,14 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -9091,6 +9127,25 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -9127,6 +9182,16 @@ namespace W3000.Rules
 		protected virtual string UnitID
 		{
 			get { return "UnitID"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -11596,6 +11661,14 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -11675,6 +11748,25 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -11721,6 +11813,16 @@ namespace W3000.Rules
 		protected virtual string UnitID
 		{
 			get { return "UnitID"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
 		}
 
 		#endregion

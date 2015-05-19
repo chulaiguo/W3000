@@ -9977,6 +9977,8 @@ namespace W3000.Data
 		private String _holiday;
 		private Guid _bDBuildingPK;
 		private Int32 _unitID;
+		private String _address1;
+		private Int32 _buildingID;
 
 		#endregion
 
@@ -9993,6 +9995,7 @@ namespace W3000.Data
 			this._date = DateTime.Now;
 			this._holiday = string.Empty;
 			this._bDBuildingPK = Guid.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -10186,6 +10189,30 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual UtilHolidayData UtilHoliday
 		{
 			get
@@ -10255,6 +10282,8 @@ namespace W3000.Data
 			this.Holiday = data.Holiday;
 			this.BDBuildingPK = data.BDBuildingPK;
 			this.UnitID = data.UnitID;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.ACPanelHolidayMapPK = data.ACPanelHolidayMapPK;
@@ -17413,6 +17442,8 @@ namespace W3000.Data
 		private Int32 _sitecode;
 		private Guid _bDBuildingPK;
 		private Int32 _unitID;
+		private String _address1;
+		private Int32 _buildingID;
 
 		#endregion
 
@@ -17427,6 +17458,7 @@ namespace W3000.Data
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
 			this._bDBuildingPK = Guid.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -17643,6 +17675,30 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual ACFunctionCardData ACFunctionCard
 		{
 			get
@@ -17718,6 +17774,8 @@ namespace W3000.Data
 			this.Sitecode = data.Sitecode;
 			this.BDBuildingPK = data.BDBuildingPK;
 			this.UnitID = data.UnitID;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.ACPanelFunctionCardMapPK = data.ACPanelFunctionCardMapPK;

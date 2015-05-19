@@ -440,7 +440,7 @@
     </Columns>
     <Joins>
       <Join KeyTable="ACMainZone" KeyAlias="ACMainZone" RefTable="ACPanel" RefAlias="ACPanel" KeyField="ACPanelPK" RefField="ACPanelPK" />
-      <Join KeyTable="ACPanel" KeyAlias="ACPanel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="ACPanelPK" RefField="BDBuildingPK" />
+      <Join KeyTable="ACPanel" KeyAlias="ACPanel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="ACPanel" Alias="ACPanel" LocalColumn="ACPanelPK" RemoteColumn="ACPanelPK" />
@@ -512,10 +512,13 @@
       <Column Name="Holiday" Alias="Holiday" Type="varchar" Size="30" IsPK="False" IsNullable="False" IsJoined="True" TableName="UtilHoliday" TableAlias="UtilHoliday" />
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
       <Column Name="UnitID" Alias="UnitID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="ACPanelHolidayMap" KeyAlias="ACPanelHolidayMap" RefTable="UtilHoliday" RefAlias="UtilHoliday" KeyField="UtilHolidayPK" RefField="UtilHolidayPK" />
       <Join KeyTable="ACPanelHolidayMap" KeyAlias="ACPanelHolidayMap" RefTable="ACPanel" RefAlias="ACPanel" KeyField="ACPanelPK" RefField="ACPanelPK" />
+      <Join KeyTable="ACPanel" KeyAlias="ACPanel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="UtilHoliday" Alias="UtilHoliday" LocalColumn="UtilHolidayPK" RemoteColumn="UtilHolidayPK" />
@@ -681,7 +684,7 @@
     </Columns>
     <Joins>
       <Join KeyTable="ACOutputGroup" KeyAlias="ACOutputGroup" RefTable="ACPanel" RefAlias="ACPanel" KeyField="ACPanelPK" RefField="ACPanelPK" />
-      <Join KeyTable="ACPanel" KeyAlias="ACPanel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="ACPanelPK" RefField="BDBuildingPK" />
+      <Join KeyTable="ACPanel" KeyAlias="ACPanel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="ACPanel" Alias="ACPanel" LocalColumn="ACPanelPK" RemoteColumn="ACPanelPK" />
@@ -818,7 +821,7 @@
     </Columns>
     <Joins>
       <Join KeyTable="ACInput" KeyAlias="ACInput" RefTable="ACPanel" RefAlias="ACPanel" KeyField="ACPanelPK" RefField="ACPanelPK" />
-      <Join KeyTable="ACPanel" KeyAlias="ACPanel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="ACPanelPK" RefField="BDBuildingPK" />
+      <Join KeyTable="ACPanel" KeyAlias="ACPanel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="ACPanel" Alias="ACPanel" LocalColumn="ACPanelPK" RemoteColumn="ACPanelPK" />
@@ -960,10 +963,13 @@
       <Column Name="Sitecode" Alias="Sitecode" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACFunctionCard" TableAlias="ACFunctionCard" />
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
       <Column Name="UnitID" Alias="UnitID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="ACPanelFunctionCardMap" KeyAlias="ACPanelFunctionCardMap" RefTable="ACFunctionCard" RefAlias="ACFunctionCard" KeyField="ACFunctionCardPK" RefField="ACFunctionCardPK" />
       <Join KeyTable="ACPanelFunctionCardMap" KeyAlias="ACPanelFunctionCardMap" RefTable="ACPanel" RefAlias="ACPanel" KeyField="ACPanelPK" RefField="ACPanelPK" />
+      <Join KeyTable="ACPanel" KeyAlias="ACPanel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="ACFunctionCard" Alias="ACFunctionCard" LocalColumn="ACFunctionCardPK" RemoteColumn="ACFunctionCardPK" />

@@ -297,7 +297,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACIntvalHolidayMap] INNER JOIN [ACInterval] ON [ACIntvalHolidayMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] WHERE [ACInterval].[ACIntervalPK] = @ACIntervalPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACIntvalHolidayMap].[ACIntvalHolidayMapPK] AS [ACIntvalHolidayMapPK], [ACIntvalHolidayMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACIntervalPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCIntervalPK;
@@ -309,7 +309,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACIntvalHolidayMap] INNER JOIN [ACInterval] ON [ACIntvalHolidayMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] INNER JOIN [BDBuilding] ON [ACInterval].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACIntvalHolidayMap].[ACIntvalHolidayMapPK] AS [ACIntvalHolidayMapPK], [ACIntvalHolidayMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -321,7 +321,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACIntvalHolidayMap] INNER JOIN [UtilHoliday] ON [ACIntvalHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] WHERE [UtilHoliday].[UtilHolidayPK] = @UtilHolidayPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACIntvalHolidayMap].[ACIntvalHolidayMapPK] AS [ACIntvalHolidayMapPK], [ACIntvalHolidayMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = utilHolidayPK;
@@ -713,7 +713,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACAccessLevelDetail] INNER JOIN [ACMainZone] ON [ACAccessLevelDetail].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] WHERE [ACMainZone].[ACMainZonePK] = @ACMainZonePK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACAccessLevelDetail].[ACAccessLevelDetailPK] AS [ACAccessLevelDetailPK], [ACAccessLevelDetail].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACMainZonePK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCMainZonePK;
@@ -725,7 +725,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACAccessLevelDetail] INNER JOIN [ACMainZone] ON [ACAccessLevelDetail].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] INNER JOIN [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACAccessLevelDetail].[ACAccessLevelDetailPK] AS [ACAccessLevelDetailPK], [ACAccessLevelDetail].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACPanelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCPanelPK;
@@ -737,7 +737,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACAccessLevelDetail] INNER JOIN [ACMainZone] ON [ACAccessLevelDetail].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] INNER JOIN [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;DELETE [{0}] FROM [{0}] [ACAccessLevelDetail] INNER JOIN [ACTimecode] ON [ACAccessLevelDetail].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] INNER JOIN [BDBuilding] ON [ACTimecode].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;DELETE [{0}] FROM [{0}] [ACAccessLevelDetail] INNER JOIN [ACAccessLevel] ON [ACAccessLevelDetail].[ACAccessLevelPK] = [ACAccessLevel].[ACAccessLevelPK] INNER JOIN [BDBuilding] ON [ACAccessLevel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACAccessLevelDetail].[ACAccessLevelDetailPK] AS [ACAccessLevelDetailPK], [ACAccessLevelDetail].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -749,7 +749,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACAccessLevelDetail] INNER JOIN [ACTimecode] ON [ACAccessLevelDetail].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] WHERE [ACTimecode].[ACTimecodePK] = @ACTimecodePK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACAccessLevelDetail].[ACAccessLevelDetailPK] AS [ACAccessLevelDetailPK], [ACAccessLevelDetail].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACTimecodePK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCTimecodePK;
@@ -761,7 +761,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACAccessLevelDetail] INNER JOIN [ACAccessLevel] ON [ACAccessLevelDetail].[ACAccessLevelPK] = [ACAccessLevel].[ACAccessLevelPK] WHERE [ACAccessLevel].[ACAccessLevelPK] = @ACAccessLevelPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACAccessLevelDetail].[ACAccessLevelDetailPK] AS [ACAccessLevelDetailPK], [ACAccessLevelDetail].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACAccessLevelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCAccessLevelPK;
@@ -1136,7 +1136,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountBuildingMap] INNER JOIN [BDBuilding] ON [UsrAccountBuildingMap].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;DELETE [{0}] FROM [{0}] [UsrAccountBuildingMap] INNER JOIN [UsrAccount] ON [UsrAccountBuildingMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountBuildingMap].[UsrAccountBuildingMapPK] AS [UsrAccountBuildingMapPK], [UsrAccountBuildingMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -1148,7 +1148,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountBuildingMap] INNER JOIN [UsrAccount] ON [UsrAccountBuildingMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] WHERE [UsrAccount].[UsrAccountPK] = @UsrAccountPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountBuildingMap].[UsrAccountBuildingMapPK] AS [UsrAccountBuildingMapPK], [UsrAccountBuildingMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UsrAccountPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = usrAccountPK;
@@ -1160,7 +1160,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountBuildingMap] INNER JOIN [UsrAccount] ON [UsrAccountBuildingMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountBuildingMap].[UsrAccountBuildingMapPK] AS [UsrAccountBuildingMapPK], [UsrAccountBuildingMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDTenantPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDTenantPK;
@@ -1172,7 +1172,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountBuildingMap] INNER JOIN [UsrAccount] ON [UsrAccountBuildingMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [UsrGroup] ON [UsrAccount].[UsrGroupPK] = [UsrGroup].[UsrGroupPK] WHERE [UsrGroup].[UsrGroupPK] = @UsrGroupPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountBuildingMap].[UsrAccountBuildingMapPK] AS [UsrAccountBuildingMapPK], [UsrAccountBuildingMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UsrGroupPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = usrGroupPK;
@@ -1998,7 +1998,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [BDTenant] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [BDTenant].[BDTenantPK] AS [BDTenantPK], [BDTenant].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -2576,7 +2576,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UtilSettingDetail] INNER JOIN [UtilSettingCategory] ON [UtilSettingDetail].[UtilSettingCategoryPK] = [UtilSettingCategory].[UtilSettingCategoryPK] WHERE [UtilSettingCategory].[UtilSettingCategoryPK] = @UtilSettingCategoryPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UtilSettingDetail].[UtilSettingDetailPK] AS [UtilSettingDetailPK], [UtilSettingDetail].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UtilSettingCategoryPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = utilSettingCategoryPK;
@@ -2899,7 +2899,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACOutputGroupMainZoneMap] INNER JOIN [ACMainZone] ON [ACOutputGroupMainZoneMap].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] WHERE [ACMainZone].[ACMainZonePK] = @ACMainZonePK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACOutputGroupMainZoneMap].[ACOutputGroupMainZoneMapPK] AS [ACOutputGroupMainZoneMapPK], [ACOutputGroupMainZoneMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACMainZonePK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCMainZonePK;
@@ -2911,7 +2911,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACOutputGroupMainZoneMap] INNER JOIN [ACMainZone] ON [ACOutputGroupMainZoneMap].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] INNER JOIN [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;DELETE [{0}] FROM [{0}] [ACOutputGroupMainZoneMap] INNER JOIN [ACOutputGroup] ON [ACOutputGroupMainZoneMap].[ACOutputGroupPK] = [ACOutputGroup].[ACOutputGroupPK] INNER JOIN [ACPanel] ON [ACOutputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACOutputGroupMainZoneMap].[ACOutputGroupMainZoneMapPK] AS [ACOutputGroupMainZoneMapPK], [ACOutputGroupMainZoneMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACPanelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCPanelPK;
@@ -2923,7 +2923,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACOutputGroupMainZoneMap] INNER JOIN [ACMainZone] ON [ACOutputGroupMainZoneMap].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] INNER JOIN [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;DELETE [{0}] FROM [{0}] [ACOutputGroupMainZoneMap] INNER JOIN [ACOutputGroup] ON [ACOutputGroupMainZoneMap].[ACOutputGroupPK] = [ACOutputGroup].[ACOutputGroupPK] INNER JOIN [ACPanel] ON [ACOutputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACOutputGroupMainZoneMap].[ACOutputGroupMainZoneMapPK] AS [ACOutputGroupMainZoneMapPK], [ACOutputGroupMainZoneMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -2935,7 +2935,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACOutputGroupMainZoneMap] INNER JOIN [ACOutputGroup] ON [ACOutputGroupMainZoneMap].[ACOutputGroupPK] = [ACOutputGroup].[ACOutputGroupPK] WHERE [ACOutputGroup].[ACOutputGroupPK] = @ACOutputGroupPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACOutputGroupMainZoneMap].[ACOutputGroupMainZoneMapPK] AS [ACOutputGroupMainZoneMapPK], [ACOutputGroupMainZoneMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACOutputGroupPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCOutputGroupPK;
@@ -3365,7 +3365,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACCardHolder] INNER JOIN [BDTenant] ON [ACCardHolder].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACCardHolder].[ACCardHolderPK] AS [ACCardHolderPK], [ACCardHolder].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDTenantPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDTenantPK;
@@ -3377,7 +3377,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACCardHolder] INNER JOIN [BDTenant] ON [ACCardHolder].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACCardHolder].[ACCardHolderPK] AS [ACCardHolderPK], [ACCardHolder].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -3447,7 +3447,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[ACPanelPK] = [BDBuilding].[BDBuildingPK]";
+				return "LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -3455,7 +3455,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACMainZone].[ACMainZonePK] AS [ACMainZonePK],[ACMainZone].[ACPanelPK] AS [ACPanelPK],[ACMainZone].[MainZoneID] AS [MainZoneID],[ACMainZone].[MainZoneTypeID] AS [MainZoneTypeID],[ACMainZone].[Description] AS [Description],[ACMainZone].[ReaderName] AS [ReaderName],[ACMainZone].[ReaderTypeID] AS [ReaderTypeID],[ACMainZone].[ReverseColor] AS [ReverseColor],[ACMainZone].[OutputGroup] AS [OutputGroup],[ACMainZone].[NeedPin] AS [NeedPin],[ACMainZone].[AntiPassback] AS [AntiPassback],[ACMainZone].[SoftAntiPassback] AS [SoftAntiPassback],[ACMainZone].[UnlockTimecode] AS [UnlockTimecode],[ACMainZone].[UnlockOn1stRead] AS [UnlockOn1stRead],[ACMainZone].[RexShuntOnly] AS [RexShuntOnly],[ACMainZone].[PulseTime] AS [PulseTime],[ACMainZone].[RelockByTimeout] AS [RelockByTimeout],[ACMainZone].[ForceAMFormat] AS [ForceAMFormat],[ACMainZone].[PropAMFFormat] AS [PropAMFFormat],[ACMainZone].[Debounce] AS [Debounce],[ACMainZone].[AllowOpenTime] AS [AllowOpenTime],[ACMainZone].[NoPreAlarm] AS [NoPreAlarm],[ACMainZone].[PostPreAlarm] AS [PostPreAlarm],[ACMainZone].[PostDuration] AS [PostDuration],[ACMainZone].[Notes] AS [Notes],[ACMainZone].[EventNotifyEmail] AS [EventNotifyEmail],[ACMainZone].[IsPulsed] AS [IsPulsed],[ACMainZone].[AlwaysToMAS] AS [AlwaysToMAS],[ACMainZone].[CommentBeforePulse] AS [CommentBeforePulse],[ACMainZone].[RowVersion] AS [RowVersion],[ACMainZone].[CreatedOn] AS [CreatedOn],[ACMainZone].[CreatedBy] AS [CreatedBy],[ACMainZone].[ModifiedOn] AS [ModifiedOn],[ACMainZone].[ModifiedBy] AS [ModifiedBy],[ACMainZone].[Degrade] AS [Degrade],[ACMainZone].[ReaderPassMode] AS [ReaderPassMode],[ACMainZone].[PanelZoneID] AS [PanelZoneID],[ACMainZone].[LockTypeID] AS [LockTypeID],[ACMainZone].[Locked] AS [Locked],[ACMainZone].[InputGroup] AS [InputGroup],[ACMainZone].[UnlockTempTC] AS [UnlockTempTC],[ACMainZone].[UnlockTempBegin] AS [UnlockTempBegin],[ACMainZone].[UnlockTempEnd] AS [UnlockTempEnd],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACMainZone] LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[ACPanelPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
+				return string.Format("SELECT [ACMainZone].[ACMainZonePK] AS [ACMainZonePK],[ACMainZone].[ACPanelPK] AS [ACPanelPK],[ACMainZone].[MainZoneID] AS [MainZoneID],[ACMainZone].[MainZoneTypeID] AS [MainZoneTypeID],[ACMainZone].[Description] AS [Description],[ACMainZone].[ReaderName] AS [ReaderName],[ACMainZone].[ReaderTypeID] AS [ReaderTypeID],[ACMainZone].[ReverseColor] AS [ReverseColor],[ACMainZone].[OutputGroup] AS [OutputGroup],[ACMainZone].[NeedPin] AS [NeedPin],[ACMainZone].[AntiPassback] AS [AntiPassback],[ACMainZone].[SoftAntiPassback] AS [SoftAntiPassback],[ACMainZone].[UnlockTimecode] AS [UnlockTimecode],[ACMainZone].[UnlockOn1stRead] AS [UnlockOn1stRead],[ACMainZone].[RexShuntOnly] AS [RexShuntOnly],[ACMainZone].[PulseTime] AS [PulseTime],[ACMainZone].[RelockByTimeout] AS [RelockByTimeout],[ACMainZone].[ForceAMFormat] AS [ForceAMFormat],[ACMainZone].[PropAMFFormat] AS [PropAMFFormat],[ACMainZone].[Debounce] AS [Debounce],[ACMainZone].[AllowOpenTime] AS [AllowOpenTime],[ACMainZone].[NoPreAlarm] AS [NoPreAlarm],[ACMainZone].[PostPreAlarm] AS [PostPreAlarm],[ACMainZone].[PostDuration] AS [PostDuration],[ACMainZone].[Notes] AS [Notes],[ACMainZone].[EventNotifyEmail] AS [EventNotifyEmail],[ACMainZone].[IsPulsed] AS [IsPulsed],[ACMainZone].[AlwaysToMAS] AS [AlwaysToMAS],[ACMainZone].[CommentBeforePulse] AS [CommentBeforePulse],[ACMainZone].[RowVersion] AS [RowVersion],[ACMainZone].[CreatedOn] AS [CreatedOn],[ACMainZone].[CreatedBy] AS [CreatedBy],[ACMainZone].[ModifiedOn] AS [ModifiedOn],[ACMainZone].[ModifiedBy] AS [ModifiedBy],[ACMainZone].[Degrade] AS [Degrade],[ACMainZone].[ReaderPassMode] AS [ReaderPassMode],[ACMainZone].[PanelZoneID] AS [PanelZoneID],[ACMainZone].[LockTypeID] AS [LockTypeID],[ACMainZone].[Locked] AS [Locked],[ACMainZone].[InputGroup] AS [InputGroup],[ACMainZone].[UnlockTempTC] AS [UnlockTempTC],[ACMainZone].[UnlockTempBegin] AS [UnlockTempBegin],[ACMainZone].[UnlockTempEnd] AS [UnlockTempEnd],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACMainZone] LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -3463,7 +3463,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACMainZone] LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[ACPanelPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACMainZone] LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -3858,7 +3858,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACMainZone] INNER JOIN [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACMainZone].[ACMainZonePK] AS [ACMainZonePK], [ACMainZone].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACPanelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCPanelPK;
@@ -3870,7 +3870,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACMainZone] INNER JOIN [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACMainZone].[ACMainZonePK] AS [ACMainZonePK], [ACMainZone].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -4224,7 +4224,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACInterval] INNER JOIN [BDBuilding] ON [ACInterval].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACInterval].[ACIntervalPK] AS [ACIntervalPK], [ACInterval].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -4277,7 +4277,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACPanelHolidayMap].[ACPanelHolidayMapPK] AS [ACPanelHolidayMapPK],[ACPanelHolidayMap].[ACPanelPK] AS [ACPanelPK],[ACPanelHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[ACPanelHolidayMap].[RowVersion] AS [RowVersion],[ACPanelHolidayMap].[CreatedOn] AS [CreatedOn],[ACPanelHolidayMap].[CreatedBy] AS [CreatedBy],[ACPanelHolidayMap].[ModifiedOn] AS [ModifiedOn],[ACPanelHolidayMap].[ModifiedBy] AS [ModifiedBy],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID]";
+				return "[ACPanelHolidayMap].[ACPanelHolidayMapPK] AS [ACPanelHolidayMapPK],[ACPanelHolidayMap].[ACPanelPK] AS [ACPanelPK],[ACPanelHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[ACPanelHolidayMap].[RowVersion] AS [RowVersion],[ACPanelHolidayMap].[CreatedOn] AS [CreatedOn],[ACPanelHolidayMap].[CreatedBy] AS [CreatedBy],[ACPanelHolidayMap].[ModifiedOn] AS [ModifiedOn],[ACPanelHolidayMap].[ModifiedBy] AS [ModifiedBy],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -4285,7 +4285,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACPanelHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelHolidayMap].[ACPanelPK] = [ACPanel].[ACPanelPK]";
+				return "LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACPanelHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelHolidayMap].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -4293,7 +4293,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACPanelHolidayMap].[ACPanelHolidayMapPK] AS [ACPanelHolidayMapPK],[ACPanelHolidayMap].[ACPanelPK] AS [ACPanelPK],[ACPanelHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[ACPanelHolidayMap].[RowVersion] AS [RowVersion],[ACPanelHolidayMap].[CreatedOn] AS [CreatedOn],[ACPanelHolidayMap].[CreatedBy] AS [CreatedBy],[ACPanelHolidayMap].[ModifiedOn] AS [ModifiedOn],[ACPanelHolidayMap].[ModifiedBy] AS [ModifiedBy],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID] FROM [{0}] [ACPanelHolidayMap] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACPanelHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelHolidayMap].[ACPanelPK] = [ACPanel].[ACPanelPK]", this.TableName);
+				return string.Format("SELECT [ACPanelHolidayMap].[ACPanelHolidayMapPK] AS [ACPanelHolidayMapPK],[ACPanelHolidayMap].[ACPanelPK] AS [ACPanelPK],[ACPanelHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[ACPanelHolidayMap].[RowVersion] AS [RowVersion],[ACPanelHolidayMap].[CreatedOn] AS [CreatedOn],[ACPanelHolidayMap].[CreatedBy] AS [CreatedBy],[ACPanelHolidayMap].[ModifiedOn] AS [ModifiedOn],[ACPanelHolidayMap].[ModifiedBy] AS [ModifiedBy],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACPanelHolidayMap] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACPanelHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelHolidayMap].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -4301,7 +4301,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACPanelHolidayMap] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACPanelHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelHolidayMap].[ACPanelPK] = [ACPanel].[ACPanelPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACPanelHolidayMap] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACPanelHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelHolidayMap].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -4405,7 +4405,9 @@ namespace W3000.CRUD
 				Date = (DateTime) reader["Date"],
 				Holiday = (String) reader["Holiday"],
 				BDBuildingPK = (Guid) reader["BDBuildingPK"],
-				UnitID = (Int32) reader["UnitID"]
+				UnitID = (Int32) reader["UnitID"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -4544,7 +4546,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACPanelHolidayMap] INNER JOIN [UtilHoliday] ON [ACPanelHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] WHERE [UtilHoliday].[UtilHolidayPK] = @UtilHolidayPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACPanelHolidayMap].[ACPanelHolidayMapPK] AS [ACPanelHolidayMapPK], [ACPanelHolidayMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = utilHolidayPK;
@@ -4556,7 +4558,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACPanelHolidayMap] INNER JOIN [ACPanel] ON [ACPanelHolidayMap].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACPanelHolidayMap].[ACPanelHolidayMapPK] AS [ACPanelHolidayMapPK], [ACPanelHolidayMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACPanelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCPanelPK;
@@ -4568,7 +4570,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACPanelHolidayMap] INNER JOIN [ACPanel] ON [ACPanelHolidayMap].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACPanelHolidayMap].[ACPanelHolidayMapPK] AS [ACPanelHolidayMapPK], [ACPanelHolidayMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -4891,7 +4893,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACTimecode] INNER JOIN [BDBuilding] ON [ACTimecode].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACTimecode].[ACTimecodePK] AS [ACTimecodePK], [ACTimecode].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -5214,7 +5216,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACTimecodeIntervalMap] INNER JOIN [ACInterval] ON [ACTimecodeIntervalMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] WHERE [ACInterval].[ACIntervalPK] = @ACIntervalPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACTimecodeIntervalMap].[ACTimecodeIntervalMapPK] AS [ACTimecodeIntervalMapPK], [ACTimecodeIntervalMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACIntervalPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCIntervalPK;
@@ -5226,7 +5228,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACTimecodeIntervalMap] INNER JOIN [ACInterval] ON [ACTimecodeIntervalMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] INNER JOIN [BDBuilding] ON [ACInterval].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;DELETE [{0}] FROM [{0}] [ACTimecodeIntervalMap] INNER JOIN [ACTimecode] ON [ACTimecodeIntervalMap].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] INNER JOIN [BDBuilding] ON [ACTimecode].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACTimecodeIntervalMap].[ACTimecodeIntervalMapPK] AS [ACTimecodeIntervalMapPK], [ACTimecodeIntervalMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -5238,7 +5240,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACTimecodeIntervalMap] INNER JOIN [ACTimecode] ON [ACTimecodeIntervalMap].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] WHERE [ACTimecode].[ACTimecodePK] = @ACTimecodePK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACTimecodeIntervalMap].[ACTimecodeIntervalMapPK] AS [ACTimecodeIntervalMapPK], [ACTimecodeIntervalMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACTimecodePK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCTimecodePK;
@@ -5576,7 +5578,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACAMFormat] INNER JOIN [BDBuilding] ON [ACAMFormat].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACAMFormat].[ACAMFormatPK] AS [ACAMFormatPK], [ACAMFormat].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -5906,7 +5908,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [BDBuildingHolidayMap] INNER JOIN [BDBuilding] ON [BDBuildingHolidayMap].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [BDBuildingHolidayMap].[BDBuildingHolidayMapPK] AS [BDBuildingHolidayMapPK], [BDBuildingHolidayMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -5918,7 +5920,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [BDBuildingHolidayMap] INNER JOIN [UtilHoliday] ON [BDBuildingHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] WHERE [UtilHoliday].[UtilHolidayPK] = @UtilHolidayPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [BDBuildingHolidayMap].[BDBuildingHolidayMapPK] AS [BDBuildingHolidayMapPK], [BDBuildingHolidayMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = utilHolidayPK;
@@ -5988,7 +5990,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [ACPanel] [ACPanel] ON [ACOutputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[ACPanelPK] = [BDBuilding].[BDBuildingPK]";
+				return "LEFT JOIN [ACPanel] [ACPanel] ON [ACOutputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -5996,7 +5998,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACOutputGroup].[ACOutputGroupPK] AS [ACOutputGroupPK],[ACOutputGroup].[ACPanelPK] AS [ACPanelPK],[ACOutputGroup].[GroupID] AS [GroupID],[ACOutputGroup].[Summary] AS [Summary],[ACOutputGroup].[RowVersion] AS [RowVersion],[ACOutputGroup].[CreatedOn] AS [CreatedOn],[ACOutputGroup].[CreatedBy] AS [CreatedBy],[ACOutputGroup].[ModifiedOn] AS [ModifiedOn],[ACOutputGroup].[ModifiedBy] AS [ModifiedBy],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACOutputGroup] LEFT JOIN [ACPanel] [ACPanel] ON [ACOutputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[ACPanelPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
+				return string.Format("SELECT [ACOutputGroup].[ACOutputGroupPK] AS [ACOutputGroupPK],[ACOutputGroup].[ACPanelPK] AS [ACPanelPK],[ACOutputGroup].[GroupID] AS [GroupID],[ACOutputGroup].[Summary] AS [Summary],[ACOutputGroup].[RowVersion] AS [RowVersion],[ACOutputGroup].[CreatedOn] AS [CreatedOn],[ACOutputGroup].[CreatedBy] AS [CreatedBy],[ACOutputGroup].[ModifiedOn] AS [ModifiedOn],[ACOutputGroup].[ModifiedBy] AS [ModifiedBy],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACOutputGroup] LEFT JOIN [ACPanel] [ACPanel] ON [ACOutputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -6004,7 +6006,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACOutputGroup] LEFT JOIN [ACPanel] [ACPanel] ON [ACOutputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[ACPanelPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACOutputGroup] LEFT JOIN [ACPanel] [ACPanel] ON [ACOutputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -6229,7 +6231,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACOutputGroup] INNER JOIN [ACPanel] ON [ACOutputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACOutputGroup].[ACOutputGroupPK] AS [ACOutputGroupPK], [ACOutputGroup].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACPanelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCPanelPK;
@@ -6241,7 +6243,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACOutputGroup] INNER JOIN [ACPanel] ON [ACOutputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACOutputGroup].[ACOutputGroupPK] AS [ACOutputGroupPK], [ACOutputGroup].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -6582,7 +6584,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [BDTenantHolidayMap] INNER JOIN [BDTenant] ON [BDTenantHolidayMap].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [BDTenantHolidayMap].[BDTenantHolidayMapPK] AS [BDTenantHolidayMapPK], [BDTenantHolidayMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDTenantPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDTenantPK;
@@ -6594,7 +6596,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [BDTenantHolidayMap] INNER JOIN [BDTenant] ON [BDTenantHolidayMap].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [BDTenantHolidayMap].[BDTenantHolidayMapPK] AS [BDTenantHolidayMapPK], [BDTenantHolidayMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -6606,7 +6608,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [BDTenantHolidayMap] INNER JOIN [UtilHoliday] ON [BDTenantHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] WHERE [UtilHoliday].[UtilHolidayPK] = @UtilHolidayPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [BDTenantHolidayMap].[BDTenantHolidayMapPK] AS [BDTenantHolidayMapPK], [BDTenantHolidayMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = utilHolidayPK;
@@ -7204,7 +7206,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACInputGroup] INNER JOIN [ACPanel] ON [ACInputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACInputGroup].[ACInputGroupPK] AS [ACInputGroupPK], [ACInputGroup].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACPanelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCPanelPK;
@@ -7216,7 +7218,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACInputGroup] INNER JOIN [ACPanel] ON [ACInputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACInputGroup].[ACInputGroupPK] AS [ACInputGroupPK], [ACInputGroup].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -7286,7 +7288,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [ACPanel] [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[ACPanelPK] = [BDBuilding].[BDBuildingPK]";
+				return "LEFT JOIN [ACPanel] [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -7294,7 +7296,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACInput].[ACInputPK] AS [ACInputPK],[ACInput].[ACPanelPK] AS [ACPanelPK],[ACInput].[InputID] AS [InputID],[ACInput].[Description] AS [Description],[ACInput].[Debounce] AS [Debounce],[ACInput].[Reverse] AS [Reverse],[ACInput].[ForceAMFormat] AS [ForceAMFormat],[ACInput].[OffOnRestore] AS [OffOnRestore],[ACInput].[External] AS [External],[ACInput].[Notes] AS [Notes],[ACInput].[RowVersion] AS [RowVersion],[ACInput].[CreatedOn] AS [CreatedOn],[ACInput].[CreatedBy] AS [CreatedBy],[ACInput].[ModifiedOn] AS [ModifiedOn],[ACInput].[ModifiedBy] AS [ModifiedBy],[ACInput].[AlwaysToMAS] AS [AlwaysToMAS],[ACInput].[PanelZoneID] AS [PanelZoneID],[ACInput].[Locked] AS [Locked],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACInput] LEFT JOIN [ACPanel] [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[ACPanelPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
+				return string.Format("SELECT [ACInput].[ACInputPK] AS [ACInputPK],[ACInput].[ACPanelPK] AS [ACPanelPK],[ACInput].[InputID] AS [InputID],[ACInput].[Description] AS [Description],[ACInput].[Debounce] AS [Debounce],[ACInput].[Reverse] AS [Reverse],[ACInput].[ForceAMFormat] AS [ForceAMFormat],[ACInput].[OffOnRestore] AS [OffOnRestore],[ACInput].[External] AS [External],[ACInput].[Notes] AS [Notes],[ACInput].[RowVersion] AS [RowVersion],[ACInput].[CreatedOn] AS [CreatedOn],[ACInput].[CreatedBy] AS [CreatedBy],[ACInput].[ModifiedOn] AS [ModifiedOn],[ACInput].[ModifiedBy] AS [ModifiedBy],[ACInput].[AlwaysToMAS] AS [AlwaysToMAS],[ACInput].[PanelZoneID] AS [PanelZoneID],[ACInput].[Locked] AS [Locked],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACInput] LEFT JOIN [ACPanel] [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -7302,7 +7304,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACInput] LEFT JOIN [ACPanel] [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[ACPanelPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACInput] LEFT JOIN [ACPanel] [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -7572,7 +7574,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACInput] INNER JOIN [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACInput].[ACInputPK] AS [ACInputPK], [ACInput].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACPanelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCPanelPK;
@@ -7584,7 +7586,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACInput] INNER JOIN [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACInput].[ACInputPK] AS [ACInputPK], [ACInput].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -7941,7 +7943,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACFunctionCard] INNER JOIN [BDTenant] ON [ACFunctionCard].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACFunctionCard].[ACFunctionCardPK] AS [ACFunctionCardPK], [ACFunctionCard].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDTenantPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDTenantPK;
@@ -7953,7 +7955,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACFunctionCard] INNER JOIN [BDTenant] ON [ACFunctionCard].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACFunctionCard].[ACFunctionCardPK] AS [ACFunctionCardPK], [ACFunctionCard].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -8546,7 +8548,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACAccessLevel] INNER JOIN [BDBuilding] ON [ACAccessLevel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACAccessLevel].[ACAccessLevelPK] AS [ACAccessLevelPK], [ACAccessLevel].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -8599,7 +8601,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK],[ACPanelFunctionCardMap].[ACPanelPK] AS [ACPanelPK],[ACPanelFunctionCardMap].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACPanelFunctionCardMap].[RowVersion] AS [RowVersion],[ACPanelFunctionCardMap].[CreatedOn] AS [CreatedOn],[ACPanelFunctionCardMap].[CreatedBy] AS [CreatedBy],[ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn],[ACPanelFunctionCardMap].[ModifiedBy] AS [ModifiedBy],[ACFunctionCard].[CardTypeID] AS [CardTypeID],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID]";
+				return "[ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK],[ACPanelFunctionCardMap].[ACPanelPK] AS [ACPanelPK],[ACPanelFunctionCardMap].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACPanelFunctionCardMap].[RowVersion] AS [RowVersion],[ACPanelFunctionCardMap].[CreatedOn] AS [CreatedOn],[ACPanelFunctionCardMap].[CreatedBy] AS [CreatedBy],[ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn],[ACPanelFunctionCardMap].[ModifiedBy] AS [ModifiedBy],[ACFunctionCard].[CardTypeID] AS [CardTypeID],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -8607,7 +8609,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [ACFunctionCard] [ACFunctionCard] ON [ACPanelFunctionCardMap].[ACFunctionCardPK] = [ACFunctionCard].[ACFunctionCardPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelFunctionCardMap].[ACPanelPK] = [ACPanel].[ACPanelPK]";
+				return "LEFT JOIN [ACFunctionCard] [ACFunctionCard] ON [ACPanelFunctionCardMap].[ACFunctionCardPK] = [ACFunctionCard].[ACFunctionCardPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelFunctionCardMap].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -8615,7 +8617,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK],[ACPanelFunctionCardMap].[ACPanelPK] AS [ACPanelPK],[ACPanelFunctionCardMap].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACPanelFunctionCardMap].[RowVersion] AS [RowVersion],[ACPanelFunctionCardMap].[CreatedOn] AS [CreatedOn],[ACPanelFunctionCardMap].[CreatedBy] AS [CreatedBy],[ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn],[ACPanelFunctionCardMap].[ModifiedBy] AS [ModifiedBy],[ACFunctionCard].[CardTypeID] AS [CardTypeID],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID] FROM [{0}] [ACPanelFunctionCardMap] LEFT JOIN [ACFunctionCard] [ACFunctionCard] ON [ACPanelFunctionCardMap].[ACFunctionCardPK] = [ACFunctionCard].[ACFunctionCardPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelFunctionCardMap].[ACPanelPK] = [ACPanel].[ACPanelPK]", this.TableName);
+				return string.Format("SELECT [ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK],[ACPanelFunctionCardMap].[ACPanelPK] AS [ACPanelPK],[ACPanelFunctionCardMap].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACPanelFunctionCardMap].[RowVersion] AS [RowVersion],[ACPanelFunctionCardMap].[CreatedOn] AS [CreatedOn],[ACPanelFunctionCardMap].[CreatedBy] AS [CreatedBy],[ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn],[ACPanelFunctionCardMap].[ModifiedBy] AS [ModifiedBy],[ACFunctionCard].[CardTypeID] AS [CardTypeID],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACPanelFunctionCardMap] LEFT JOIN [ACFunctionCard] [ACFunctionCard] ON [ACPanelFunctionCardMap].[ACFunctionCardPK] = [ACFunctionCard].[ACFunctionCardPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelFunctionCardMap].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -8623,7 +8625,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACPanelFunctionCardMap] LEFT JOIN [ACFunctionCard] [ACFunctionCard] ON [ACPanelFunctionCardMap].[ACFunctionCardPK] = [ACFunctionCard].[ACFunctionCardPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelFunctionCardMap].[ACPanelPK] = [ACPanel].[ACPanelPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACPanelFunctionCardMap] LEFT JOIN [ACFunctionCard] [ACFunctionCard] ON [ACPanelFunctionCardMap].[ACFunctionCardPK] = [ACFunctionCard].[ACFunctionCardPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelFunctionCardMap].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -8729,7 +8731,9 @@ namespace W3000.CRUD
 				Embossed = (Int32) reader["Embossed"],
 				Sitecode = (Int32) reader["Sitecode"],
 				BDBuildingPK = (Guid) reader["BDBuildingPK"],
-				UnitID = (Int32) reader["UnitID"]
+				UnitID = (Int32) reader["UnitID"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -8868,7 +8872,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACPanelFunctionCardMap] INNER JOIN [ACFunctionCard] ON [ACPanelFunctionCardMap].[ACFunctionCardPK] = [ACFunctionCard].[ACFunctionCardPK] WHERE [ACFunctionCard].[ACFunctionCardPK] = @ACFunctionCardPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK], [ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACFunctionCardPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCFunctionCardPK;
@@ -8880,7 +8884,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACPanelFunctionCardMap] INNER JOIN [ACFunctionCard] ON [ACPanelFunctionCardMap].[ACFunctionCardPK] = [ACFunctionCard].[ACFunctionCardPK] INNER JOIN [BDTenant] ON [ACFunctionCard].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK], [ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDTenantPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDTenantPK;
@@ -8892,7 +8896,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACPanelFunctionCardMap] INNER JOIN [ACFunctionCard] ON [ACPanelFunctionCardMap].[ACFunctionCardPK] = [ACFunctionCard].[ACFunctionCardPK] INNER JOIN [BDTenant] ON [ACFunctionCard].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;DELETE [{0}] FROM [{0}] [ACPanelFunctionCardMap] INNER JOIN [ACPanel] ON [ACPanelFunctionCardMap].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK], [ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -8904,7 +8908,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACPanelFunctionCardMap] INNER JOIN [ACPanel] ON [ACPanelFunctionCardMap].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK], [ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACPanelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCPanelPK;
@@ -9601,7 +9605,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccount] INNER JOIN [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccount].[UsrAccountPK] AS [UsrAccountPK], [UsrAccount].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDTenantPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDTenantPK;
@@ -9613,7 +9617,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccount] INNER JOIN [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccount].[UsrAccountPK] AS [UsrAccountPK], [UsrAccount].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -9625,7 +9629,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccount] INNER JOIN [UsrGroup] ON [UsrAccount].[UsrGroupPK] = [UsrGroup].[UsrGroupPK] WHERE [UsrGroup].[UsrGroupPK] = @UsrGroupPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccount].[UsrAccountPK] AS [UsrAccountPK], [UsrAccount].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UsrGroupPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = usrGroupPK;
@@ -10537,7 +10541,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACSupervisory] INNER JOIN [ACPanel] ON [ACSupervisory].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACSupervisory].[ACSupervisoryPK] AS [ACSupervisoryPK], [ACSupervisory].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACPanelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCPanelPK;
@@ -10549,7 +10553,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACSupervisory] INNER JOIN [ACPanel] ON [ACSupervisory].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACSupervisory].[ACSupervisoryPK] AS [ACSupervisoryPK], [ACSupervisory].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -11141,7 +11145,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACCardHolderBuildingMap] INNER JOIN [BDBuilding] ON [ACCardHolderBuildingMap].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;DELETE [{0}] FROM [{0}] [ACCardHolderBuildingMap] INNER JOIN [ACCardHolder] ON [ACCardHolderBuildingMap].[ACCardHolderPK] = [ACCardHolder].[ACCardHolderPK] INNER JOIN [BDTenant] ON [ACCardHolder].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACCardHolderBuildingMap].[ACCardHolderBuildingMapPK] AS [ACCardHolderBuildingMapPK], [ACCardHolderBuildingMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -11153,7 +11157,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACCardHolderBuildingMap] INNER JOIN [ACCardHolder] ON [ACCardHolderBuildingMap].[ACCardHolderPK] = [ACCardHolder].[ACCardHolderPK] WHERE [ACCardHolder].[ACCardHolderPK] = @ACCardHolderPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACCardHolderBuildingMap].[ACCardHolderBuildingMapPK] AS [ACCardHolderBuildingMapPK], [ACCardHolderBuildingMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACCardHolderPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCCardHolderPK;
@@ -11165,7 +11169,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACCardHolderBuildingMap] INNER JOIN [ACCardHolder] ON [ACCardHolderBuildingMap].[ACCardHolderPK] = [ACCardHolder].[ACCardHolderPK] INNER JOIN [BDTenant] ON [ACCardHolder].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACCardHolderBuildingMap].[ACCardHolderBuildingMapPK] AS [ACCardHolderBuildingMapPK], [ACCardHolderBuildingMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDTenantPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDTenantPK;
@@ -11571,7 +11575,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [BDVisitor] INNER JOIN [BDTenant] ON [BDVisitor].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [BDVisitor].[BDVisitorPK] AS [BDVisitorPK], [BDVisitor].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDTenantPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDTenantPK;
@@ -11583,7 +11587,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [BDVisitor] INNER JOIN [BDTenant] ON [BDVisitor].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [BDVisitor].[BDVisitorPK] AS [BDVisitorPK], [BDVisitor].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -11906,7 +11910,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrGroupDBRule] INNER JOIN [UsrGroup] ON [UsrGroupDBRule].[UsrGroupPK] = [UsrGroup].[UsrGroupPK] WHERE [UsrGroup].[UsrGroupPK] = @UsrGroupPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrGroupDBRule].[UsrGroupDBRulePK] AS [UsrGroupDBRulePK], [UsrGroupDBRule].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UsrGroupPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = usrGroupPK;
@@ -12410,7 +12414,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACPanel] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACPanel].[ACPanelPK] AS [ACPanelPK], [ACPanel].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -12724,7 +12728,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountDBRule] INNER JOIN [UsrAccount] ON [UsrAccountDBRule].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] WHERE [UsrAccount].[UsrAccountPK] = @UsrAccountPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountDBRule].[UsrAccountDBRulePK] AS [UsrAccountDBRulePK], [UsrAccountDBRule].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UsrAccountPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = usrAccountPK;
@@ -12736,7 +12740,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountDBRule] INNER JOIN [UsrAccount] ON [UsrAccountDBRule].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountDBRule].[UsrAccountDBRulePK] AS [UsrAccountDBRulePK], [UsrAccountDBRule].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDTenantPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDTenantPK;
@@ -12748,7 +12752,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountDBRule] INNER JOIN [UsrAccount] ON [UsrAccountDBRule].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountDBRule].[UsrAccountDBRulePK] AS [UsrAccountDBRulePK], [UsrAccountDBRule].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -12760,7 +12764,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountDBRule] INNER JOIN [UsrAccount] ON [UsrAccountDBRule].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [UsrGroup] ON [UsrAccount].[UsrGroupPK] = [UsrGroup].[UsrGroupPK] WHERE [UsrGroup].[UsrGroupPK] = @UsrGroupPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountDBRule].[UsrAccountDBRulePK] AS [UsrAccountDBRulePK], [UsrAccountDBRule].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UsrGroupPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = usrGroupPK;
@@ -13086,7 +13090,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrGroupBRRule] INNER JOIN [UsrGroup] ON [UsrGroupBRRule].[UsrGroupPK] = [UsrGroup].[UsrGroupPK] WHERE [UsrGroup].[UsrGroupPK] = @UsrGroupPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrGroupBRRule].[UsrGroupBRRule] AS [UsrGroupBRRule], [UsrGroupBRRule].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UsrGroupPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = usrGroupPK;
@@ -13409,7 +13413,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACInputGroupInputMap] INNER JOIN [ACInputGroup] ON [ACInputGroupInputMap].[ACInputGroupPK] = [ACInputGroup].[ACInputGroupPK] WHERE [ACInputGroup].[ACInputGroupPK] = @ACInputGroupPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACInputGroupInputMap].[ACInputGroupInputMapPK] AS [ACInputGroupInputMapPK], [ACInputGroupInputMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACInputGroupPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCInputGroupPK;
@@ -13421,7 +13425,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACInputGroupInputMap] INNER JOIN [ACInputGroup] ON [ACInputGroupInputMap].[ACInputGroupPK] = [ACInputGroup].[ACInputGroupPK] INNER JOIN [ACPanel] ON [ACInputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;DELETE [{0}] FROM [{0}] [ACInputGroupInputMap] INNER JOIN [ACInput] ON [ACInputGroupInputMap].[ACInputPK] = [ACInput].[ACInputPK] INNER JOIN [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] WHERE [ACPanel].[ACPanelPK] = @ACPanelPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACInputGroupInputMap].[ACInputGroupInputMapPK] AS [ACInputGroupInputMapPK], [ACInputGroupInputMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACPanelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCPanelPK;
@@ -13433,7 +13437,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACInputGroupInputMap] INNER JOIN [ACInputGroup] ON [ACInputGroupInputMap].[ACInputGroupPK] = [ACInputGroup].[ACInputGroupPK] INNER JOIN [ACPanel] ON [ACInputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;DELETE [{0}] FROM [{0}] [ACInputGroupInputMap] INNER JOIN [ACInput] ON [ACInputGroupInputMap].[ACInputPK] = [ACInput].[ACInputPK] INNER JOIN [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] INNER JOIN [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACInputGroupInputMap].[ACInputGroupInputMapPK] AS [ACInputGroupInputMapPK], [ACInputGroupInputMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -13445,7 +13449,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [ACInputGroupInputMap] INNER JOIN [ACInput] ON [ACInputGroupInputMap].[ACInputPK] = [ACInput].[ACInputPK] WHERE [ACInput].[ACInputPK] = @ACInputPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [ACInputGroupInputMap].[ACInputGroupInputMapPK] AS [ACInputGroupInputMapPK], [ACInputGroupInputMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@ACInputPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCInputPK;
@@ -13771,7 +13775,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountBRRule] INNER JOIN [UsrAccount] ON [UsrAccountBRRule].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] WHERE [UsrAccount].[UsrAccountPK] = @UsrAccountPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountBRRule].[UsrAccountBRRulePK] AS [UsrAccountBRRulePK], [UsrAccountBRRule].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UsrAccountPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = usrAccountPK;
@@ -13783,7 +13787,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountBRRule] INNER JOIN [UsrAccount] ON [UsrAccountBRRule].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountBRRule].[UsrAccountBRRulePK] AS [UsrAccountBRRulePK], [UsrAccountBRRule].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDTenantPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDTenantPK;
@@ -13795,7 +13799,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountBRRule] INNER JOIN [UsrAccount] ON [UsrAccountBRRule].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountBRRule].[UsrAccountBRRulePK] AS [UsrAccountBRRulePK], [UsrAccountBRRule].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -13807,7 +13811,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountBRRule] INNER JOIN [UsrAccount] ON [UsrAccountBRRule].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [UsrGroup] ON [UsrAccount].[UsrGroupPK] = [UsrGroup].[UsrGroupPK] WHERE [UsrGroup].[UsrGroupPK] = @UsrGroupPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountBRRule].[UsrAccountBRRulePK] AS [UsrAccountBRRulePK], [UsrAccountBRRule].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UsrGroupPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = usrGroupPK;
@@ -14155,7 +14159,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountTenantMap] INNER JOIN [BDTenant] ON [UsrAccountTenantMap].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;DELETE [{0}] FROM [{0}] [UsrAccountTenantMap] INNER JOIN [UsrAccount] ON [UsrAccountTenantMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] WHERE [BDTenant].[BDTenantPK] = @BDTenantPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountTenantMap].[UsrAccountTenantMapPK] AS [UsrAccountTenantMapPK], [UsrAccountTenantMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDTenantPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDTenantPK;
@@ -14167,7 +14171,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountTenantMap] INNER JOIN [BDTenant] ON [UsrAccountTenantMap].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;DELETE [{0}] FROM [{0}] [UsrAccountTenantMap] INNER JOIN [UsrAccount] ON [UsrAccountTenantMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] INNER JOIN [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] WHERE [BDBuilding].[BDBuildingPK] = @BDBuildingPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountTenantMap].[UsrAccountTenantMapPK] AS [UsrAccountTenantMapPK], [UsrAccountTenantMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
@@ -14179,7 +14183,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountTenantMap] INNER JOIN [UsrAccount] ON [UsrAccountTenantMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] WHERE [UsrAccount].[UsrAccountPK] = @UsrAccountPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountTenantMap].[UsrAccountTenantMapPK] AS [UsrAccountTenantMapPK], [UsrAccountTenantMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UsrAccountPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = usrAccountPK;
@@ -14191,7 +14195,7 @@ namespace W3000.CRUD
 			string sql = string.Format("DELETE [{0}] FROM [{0}] [UsrAccountTenantMap] INNER JOIN [UsrAccount] ON [UsrAccountTenantMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] INNER JOIN [UsrGroup] ON [UsrAccount].[UsrGroupPK] = [UsrGroup].[UsrGroupPK] WHERE [UsrGroup].[UsrGroupPK] = @UsrGroupPK;", this.TableName);
 			string oldValue = string.Format("DELETE [{0}]", this.TableName);
 			string newValue = "SELECT  [UsrAccountTenantMap].[UsrAccountTenantMapPK] AS [UsrAccountTenantMapPK], [UsrAccountTenantMap].[ModifiedOn] AS [ModifiedOn]";
-			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(",", "UNION");
+			sql = sql.Replace(oldValue, newValue).TrimEnd().TrimEnd(';').Replace(";", " UNION ");
 			SqlParameter[] paras = new SqlParameter[1];
 			paras[0] = new SqlParameter("@UsrGroupPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = usrGroupPK;

@@ -431,6 +431,8 @@ namespace W3000.Data
 			data.Holiday = this._holiday;
 			data.BDBuildingPK = this._bDBuildingPK;
 			data.UnitID = this._unitID;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			ACPanelHolidayMapRule rule = new ACPanelHolidayMapRule();
 			string error = rule.CheckRules(data);
@@ -807,6 +809,8 @@ namespace W3000.Data
 			data.Sitecode = this._sitecode;
 			data.BDBuildingPK = this._bDBuildingPK;
 			data.UnitID = this._unitID;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			ACPanelFunctionCardMapRule rule = new ACPanelFunctionCardMapRule();
 			string error = rule.CheckRules(data);

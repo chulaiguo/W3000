@@ -381,6 +381,8 @@ namespace W3000.Schema
 		public const string Holiday = "Holiday";
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string UnitID = "UnitID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string UtilHoliday = "UtilHoliday";
 		public const string ACPanel = "ACPanel";
 		public const string TableName = "ACPanelHolidayMap";
@@ -667,6 +669,8 @@ namespace W3000.Schema
 		public const string Sitecode = "Sitecode";
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string UnitID = "UnitID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string ACFunctionCard = "ACFunctionCard";
 		public const string ACPanel = "ACPanel";
 		public const string TableName = "ACPanelFunctionCardMap";
