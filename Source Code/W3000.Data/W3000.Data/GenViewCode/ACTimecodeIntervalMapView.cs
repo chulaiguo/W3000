@@ -15,8 +15,10 @@ namespace W3000.Data
 		//private System.String _end = string.Empty;
 		//private System.String _begin = string.Empty;
 		private System.Int16 _iVID = 0;
-		private System.Guid _bDBuildingPK = Guid.Empty;
 		private System.Int16 _tCID = 0;
+		private System.Guid _bDBuildingPK = Guid.Empty;
+		private System.String _address1 = string.Empty;
+		private System.Int32 _buildingID = 0;
 
 		public System.Guid ACTimecodeIntervalMapPK
 		{
@@ -78,16 +80,28 @@ namespace W3000.Data
 			set{ this._iVID = value; }
 		}
 
+		public System.Int16 TCID
+		{
+			get{ return this._tCID; }
+			set{ this._tCID = value; }
+		}
+
 		public System.Guid BDBuildingPK
 		{
 			get{ return this._bDBuildingPK; }
 			set{ this._bDBuildingPK = value; }
 		}
 
-		public System.Int16 TCID
+		public System.String Address1
 		{
-			get{ return this._tCID; }
-			set{ this._tCID = value; }
+			get{ return this._address1; }
+			set{ this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get{ return this._buildingID; }
+			set{ this._buildingID = value; }
 		}
 
 		public ACTimecodeIntervalMapView()
@@ -106,8 +120,10 @@ namespace W3000.Data
 			//this.End = data.End;
 			//this.Begin = data.Begin;
 			this.IVID = data.IVID;
-			this.BDBuildingPK = data.BDBuildingPK;
 			this.TCID = data.TCID;
+			this.BDBuildingPK = data.BDBuildingPK;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 		}
 
 
@@ -124,8 +140,10 @@ namespace W3000.Data
 			//entity.End = this.End;
 			//entity.Begin = this.Begin;
 			entity.IVID = this.IVID;
-			entity.BDBuildingPK = this.BDBuildingPK;
 			entity.TCID = this.TCID;
+			entity.BDBuildingPK = this.BDBuildingPK;
+			entity.Address1 = this.Address1;
+			entity.BuildingID = this.BuildingID;
 
 			return entity;
 		}

@@ -15,6 +15,8 @@ namespace W3000.Data
 		//private System.String _modifiedBy = string.Empty;
 		private System.Guid _bDBuildingPK = Guid.Empty;
 		private System.Int32 _unitID = 0;
+		private System.String _address1 = string.Empty;
+		private System.Int32 _buildingID = 0;
 
 		public System.Guid ACInputGroupPK
 		{
@@ -76,6 +78,18 @@ namespace W3000.Data
 			set{ this._unitID = value; }
 		}
 
+		public System.String Address1
+		{
+			get{ return this._address1; }
+			set{ this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get{ return this._buildingID; }
+			set{ this._buildingID = value; }
+		}
+
 		public ACInputGroupView()
 		{
 		}
@@ -92,6 +106,8 @@ namespace W3000.Data
 			//this.ModifiedBy = data.ModifiedBy;
 			this.BDBuildingPK = data.BDBuildingPK;
 			this.UnitID = data.UnitID;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 		}
 
 
@@ -108,6 +124,8 @@ namespace W3000.Data
 			//entity.ModifiedBy = this.ModifiedBy;
 			entity.BDBuildingPK = this.BDBuildingPK;
 			entity.UnitID = this.UnitID;
+			entity.Address1 = this.Address1;
+			entity.BuildingID = this.BuildingID;
 
 			return entity;
 		}

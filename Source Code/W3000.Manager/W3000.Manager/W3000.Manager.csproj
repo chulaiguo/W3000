@@ -361,6 +361,12 @@
     <Compile Include="FormSelect\FormSelectACAMFormat.Designer.cs">
       <DependentUpon>FormSelectACAMFormat.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSelect\FormSelectACCardHolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelect\FormSelectACCardHolder.Designer.cs">
+      <DependentUpon>FormSelectACCardHolder.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSelect\FormSelectACFunctionCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -608,6 +614,7 @@
     <Compile Include="GridDecorator\GridUtilHolidayDecorator.cs" />
     <Compile Include="GridSelect\GridSelectACAccessLevelDecorator.cs" />
     <Compile Include="GridSelect\GridSelectACAMFormatDecorator.cs" />
+    <Compile Include="GridSelect\GridSelectACCardHolderDecorator.cs" />
     <Compile Include="GridSelect\GridSelectACFunctionCardDecorator.cs" />
     <Compile Include="GridSelect\GridSelectACInputDecorator.cs" />
     <Compile Include="GridSelect\GridSelectACInputGroupDecorator.cs" />
@@ -627,6 +634,27 @@
     <Compile Include="Utils\UserPermission.cs" />
     <EmbeddedResource Include="FormAboutBox.resx">
       <DependentUpon>FormAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailMap\FormDetailACAccessLevelDetail.resx">
+      <DependentUpon>FormDetailACAccessLevelDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailMap\FormDetailACInputGroupInputMap.resx">
+      <DependentUpon>FormDetailACInputGroupInputMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailMap\FormDetailACIntvalHolidayMap.resx">
+      <DependentUpon>FormDetailACIntvalHolidayMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailMap\FormDetailACOutputGroupMainZoneMap.resx">
+      <DependentUpon>FormDetailACOutputGroupMainZoneMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailMap\FormDetailACPanelHolidayMap.resx">
+      <DependentUpon>FormDetailACPanelHolidayMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailMap\FormDetailBDBuildingHolidayMap.resx">
+      <DependentUpon>FormDetailBDBuildingHolidayMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailMap\FormDetailBDTenantHolidayMap.resx">
+      <DependentUpon>FormDetailBDTenantHolidayMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

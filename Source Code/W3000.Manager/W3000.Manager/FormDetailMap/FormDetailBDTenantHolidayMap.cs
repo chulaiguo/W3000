@@ -29,7 +29,6 @@ namespace W3000.Manager.FormDetailMap
 			this.txtAddress1.BindingData(this.BDTenantHolidayMap, BDTenantHolidayMapSchema.Address1);
 			this.txtBuildingID.BindingData(this.BDTenantHolidayMap, BDTenantHolidayMapSchema.BuildingID);
 			this.txtTenant.BindingData(this.BDTenantHolidayMap, BDTenantHolidayMapSchema.Tenant);
-			this.txtCountryID.BindingData(this.BDTenantHolidayMap, BDTenantHolidayMapSchema.CountryID);
 			this.txtHoliday.BindingData(this.BDTenantHolidayMap, BDTenantHolidayMapSchema.Holiday);
 			this.dateDate.BindingData(this.BDTenantHolidayMap, BDTenantHolidayMapSchema.Date);
 		}

@@ -29,6 +29,7 @@ namespace W3000.Data
 		//private System.String _createdBy = string.Empty;
 		//private System.DateTime _modifiedOn = new DateTime(1900, 1, 1);
 		//private System.String _modifiedBy = string.Empty;
+		private System.String _suite = string.Empty;
 		private System.String _tenant = string.Empty;
 		private System.Guid _bDBuildingPK = Guid.Empty;
 		private System.String _address1 = string.Empty;
@@ -178,6 +179,12 @@ namespace W3000.Data
 //			set{ this._modifiedBy = value; }
 //		}
 
+		public System.String Suite
+		{
+			get{ return this._suite; }
+			set{ this._suite = value; }
+		}
+
 		public System.String Tenant
 		{
 			get{ return this._tenant; }
@@ -232,6 +239,7 @@ namespace W3000.Data
 			//this.CreatedBy = data.CreatedBy;
 			//this.ModifiedOn = data.ModifiedOn;
 			//this.ModifiedBy = data.ModifiedBy;
+			this.Suite = data.Suite;
 			this.Tenant = data.Tenant;
 			this.BDBuildingPK = data.BDBuildingPK;
 			this.Address1 = data.Address1;
@@ -266,6 +274,7 @@ namespace W3000.Data
 			//entity.CreatedBy = this.CreatedBy;
 			//entity.ModifiedOn = this.ModifiedOn;
 			//entity.ModifiedBy = this.ModifiedBy;
+			entity.Suite = this.Suite;
 			entity.Tenant = this.Tenant;
 			entity.BDBuildingPK = this.BDBuildingPK;
 			entity.Address1 = this.Address1;

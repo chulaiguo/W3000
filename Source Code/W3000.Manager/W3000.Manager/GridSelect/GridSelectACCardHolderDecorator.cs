@@ -9,9 +9,9 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace W3000.Manager.GridSelect
 {
-	public class GridSelectACFunctionCardDecorator : GridControlDecorator
+	public class GridSelectACCardHolderDecorator : GridControlDecorator
 	{
-		public GridSelectACFunctionCardDecorator(string userId, GridControl gridControl)
+		public GridSelectACCardHolderDecorator(string userId, GridControl gridControl)
 			: base(userId, gridControl)
 		{
 		}
@@ -29,7 +29,7 @@ namespace W3000.Manager.GridSelect
 		{
 			GridColumn colSitecode = new GridColumn();
 			colSitecode.Caption = "Sitecode";
-			colSitecode.FieldName = ACFunctionCardViewSchema.Sitecode;
+			colSitecode.FieldName = ACCardHolderViewSchema.Sitecode;
 			colSitecode.VisibleIndex = view.Columns.Count;
 			colSitecode.OptionsColumn.AllowEdit = false;
 			colSitecode.OptionsColumn.AllowFocus = false;
@@ -37,7 +37,7 @@ namespace W3000.Manager.GridSelect
 
 			GridColumn colEmbossed = new GridColumn();
 			colEmbossed.Caption = "Embossed";
-			colEmbossed.FieldName = ACFunctionCardViewSchema.Embossed;
+			colEmbossed.FieldName = ACCardHolderViewSchema.Embossed;
 			colEmbossed.VisibleIndex = view.Columns.Count;
 			colEmbossed.OptionsColumn.AllowEdit = false;
 			colEmbossed.OptionsColumn.AllowFocus = false;
@@ -45,7 +45,7 @@ namespace W3000.Manager.GridSelect
 
 			GridColumn colEncoded = new GridColumn();
 			colEncoded.Caption = "Encoded";
-			colEncoded.FieldName = ACFunctionCardViewSchema.Encoded;
+			colEncoded.FieldName = ACCardHolderViewSchema.Encoded;
 			colEncoded.VisibleIndex = view.Columns.Count;
 			colEncoded.OptionsColumn.AllowEdit = false;
 			colEncoded.OptionsColumn.AllowFocus = false;
@@ -53,7 +53,7 @@ namespace W3000.Manager.GridSelect
 
 			GridColumn colCardTypeID = new GridColumn();
 			colCardTypeID.Caption = "CardTypeID";
-			colCardTypeID.FieldName = ACFunctionCardViewSchema.CardTypeID;
+			colCardTypeID.FieldName = ACCardHolderViewSchema.CardTypeID;
 			colCardTypeID.VisibleIndex = view.Columns.Count;
 			colCardTypeID.OptionsColumn.AllowEdit = false;
 			colCardTypeID.OptionsColumn.AllowFocus = false;
@@ -61,7 +61,7 @@ namespace W3000.Manager.GridSelect
 
 			GridColumn colTenant = new GridColumn();
 			colTenant.Caption = "Tenant";
-			colTenant.FieldName = ACFunctionCardViewSchema.Tenant;
+			colTenant.FieldName = ACCardHolderViewSchema.Tenant;
 			colTenant.VisibleIndex = view.Columns.Count;
 			colTenant.OptionsColumn.AllowEdit = false;
 			colTenant.OptionsColumn.AllowFocus = false;
@@ -69,7 +69,7 @@ namespace W3000.Manager.GridSelect
 
 			GridColumn colAddress1 = new GridColumn();
 			colAddress1.Caption = "Address1";
-			colAddress1.FieldName = ACFunctionCardViewSchema.Address1;
+			colAddress1.FieldName = ACCardHolderViewSchema.Address1;
 			colAddress1.VisibleIndex = view.Columns.Count;
 			colAddress1.OptionsColumn.AllowEdit = false;
 			colAddress1.OptionsColumn.AllowFocus = false;
@@ -77,7 +77,7 @@ namespace W3000.Manager.GridSelect
 
 			GridColumn colBuildingID = new GridColumn();
 			colBuildingID.Caption = "BuildingID";
-			colBuildingID.FieldName = ACFunctionCardViewSchema.BuildingID;
+			colBuildingID.FieldName = ACCardHolderViewSchema.BuildingID;
 			colBuildingID.VisibleIndex = view.Columns.Count;
 			colBuildingID.OptionsColumn.AllowEdit = false;
 			colBuildingID.OptionsColumn.AllowFocus = false;

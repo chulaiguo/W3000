@@ -108,6 +108,24 @@ namespace W3000.Manager.GridDecorator
 			colTCID.DisplayFormat.FormatString = "f0";
 			view.Columns.Add(colTCID);
 
+			GridColumn colAddress1 = new GridColumn();
+			colAddress1.Caption = "Address1";
+			colAddress1.FieldName = ACTimecodeIntervalMapSchema.Address1;
+			colAddress1.OptionsColumn.AllowEdit = false;
+			colAddress1.OptionsColumn.AllowFocus = false;
+			colAddress1.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colAddress1);
+
+			GridColumn colBuildingID = new GridColumn();
+			colBuildingID.Caption = "BuildingID";
+			colBuildingID.FieldName = ACTimecodeIntervalMapSchema.BuildingID;
+			colBuildingID.OptionsColumn.AllowEdit = false;
+			colBuildingID.OptionsColumn.AllowFocus = false;
+			colBuildingID.VisibleIndex = view.Columns.Count;
+			colBuildingID.DisplayFormat.FormatType = FormatType.Numeric;
+			colBuildingID.DisplayFormat.FormatString = "f0";
+			view.Columns.Add(colBuildingID);
+
 		}
 
 		protected override void NavigatorEditClick(GridView view, NavigatorButtonClickEventArgs e)

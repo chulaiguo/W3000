@@ -18,6 +18,7 @@ namespace W3000.Data
 		private System.Int32 _buildingID = 0;
 		//private System.String _lastName = string.Empty;
 		//private System.String _firstName = string.Empty;
+		private System.Int32 _cardTypeID = 0;
 		private System.Int32 _encoded = 0;
 		private System.Int32 _embossed = 0;
 		private System.Int32 _sitecode = 0;
@@ -100,6 +101,12 @@ namespace W3000.Data
 //			set{ this._firstName = value; }
 //		}
 
+		public System.Int32 CardTypeID
+		{
+			get{ return this._cardTypeID; }
+			set{ this._cardTypeID = value; }
+		}
+
 		public System.Int32 Encoded
 		{
 			get{ return this._encoded; }
@@ -137,6 +144,7 @@ namespace W3000.Data
 			this.BuildingID = data.BuildingID;
 			//this.LastName = data.LastName;
 			//this.FirstName = data.FirstName;
+			this.CardTypeID = data.CardTypeID;
 			this.Encoded = data.Encoded;
 			this.Embossed = data.Embossed;
 			this.Sitecode = data.Sitecode;
@@ -159,6 +167,7 @@ namespace W3000.Data
 			entity.BuildingID = this.BuildingID;
 			//entity.LastName = this.LastName;
 			//entity.FirstName = this.FirstName;
+			entity.CardTypeID = this.CardTypeID;
 			entity.Encoded = this.Encoded;
 			entity.Embossed = this.Embossed;
 			entity.Sitecode = this.Sitecode;

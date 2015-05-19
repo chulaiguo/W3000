@@ -17,9 +17,14 @@ namespace W3000.Data
 		private String _createdBy;
 		private DateTime _modifiedOn;
 		private String _modifiedBy;
+		private String _end;
+		private String _begin;
+		private Int16 _iVID;
 		private Guid _bDBuildingPK;
 		private DateTime _date;
 		private String _holiday;
+		private String _address1;
+		private Int32 _buildingID;
 
 		#endregion
 
@@ -33,9 +38,12 @@ namespace W3000.Data
 			this._createdBy = string.Empty;
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
+			this._end = string.Empty;
+			this._begin = string.Empty;
 			this._bDBuildingPK = Guid.Empty;
 			this._date = DateTime.Now;
 			this._holiday = string.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -180,6 +188,42 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String End
+		{
+			get
+			{
+				return this._end == null ? null : this._end.Trim();
+			}
+			set
+			{
+				 this._end = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual String Begin
+		{
+			get
+			{
+				return this._begin == null ? null : this._begin.Trim();
+			}
+			set
+			{
+				 this._begin = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int16 IVID
+		{
+			get
+			{
+				return this._iVID;
+			}
+			set
+			{
+				this._iVID = value;
+			}
+		}
+
 		public virtual Guid BDBuildingPK
 		{
 			get
@@ -217,6 +261,30 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual ACIntervalData ACInterval
 		{
 			get
@@ -224,6 +292,9 @@ namespace W3000.Data
 				ACIntervalData parent = new ACIntervalData();
 				parent.ACIntervalPK = this.ACIntervalPK;
 				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Begin = this.Begin;
+				parent.End = this.End;
+				parent.IVID = this.IVID;
 				return parent;
 			}
 			set
@@ -233,6 +304,9 @@ namespace W3000.Data
 
 				this.ACIntervalPK = value.ACIntervalPK;
 				this.BDBuildingPK = value.BDBuildingPK;
+				this.Begin = value.Begin;
+				this.End = value.End;
+				this.IVID = value.IVID;
 			}
 		}
 
@@ -280,9 +354,14 @@ namespace W3000.Data
 			this.CreatedBy = data.CreatedBy;
 			this.ModifiedOn = data.ModifiedOn;
 			this.ModifiedBy = data.ModifiedBy;
+			this.End = data.End;
+			this.Begin = data.Begin;
+			this.IVID = data.IVID;
 			this.BDBuildingPK = data.BDBuildingPK;
 			this.Date = data.Date;
 			this.Holiday = data.Holiday;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.ACIntvalHolidayMapPK = data.ACIntvalHolidayMapPK;
@@ -446,6 +525,9 @@ namespace W3000.Data
 		private String _aLSummary;
 		private Int16 _accessLevelID;
 		private Guid _bDBuildingPK;
+		private Int32 _unitID;
+		private String _address1;
+		private Int32 _buildingID;
 
 		#endregion
 
@@ -466,6 +548,7 @@ namespace W3000.Data
 			this._timecodeSummary = string.Empty;
 			this._aLSummary = string.Empty;
 			this._bDBuildingPK = Guid.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -752,6 +835,42 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual Int32 UnitID
+		{
+			get
+			{
+				return this._unitID;
+			}
+			set
+			{
+				this._unitID = value;
+			}
+		}
+
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual ACMainZoneData ACMainZone
 		{
 			get
@@ -852,6 +971,9 @@ namespace W3000.Data
 			this.ALSummary = data.ALSummary;
 			this.AccessLevelID = data.AccessLevelID;
 			this.BDBuildingPK = data.BDBuildingPK;
+			this.UnitID = data.UnitID;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.ACAccessLevelDetailPK = data.ACAccessLevelDetailPK;
@@ -1031,6 +1153,7 @@ namespace W3000.Data
 		private Boolean _primary;
 		private String _address1;
 		private Int32 _buildingID;
+		private String _userID;
 
 		#endregion
 
@@ -1045,6 +1168,7 @@ namespace W3000.Data
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
 			this._address1 = string.Empty;
+			this._userID = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -1305,6 +1429,18 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String UserID
+		{
+			get
+			{
+				return this._userID == null ? null : this._userID.Trim();
+			}
+			set
+			{
+				 this._userID = value == null ? null : value.Trim();
+			}
+		}
+
 		public virtual BDBuildingData BDBuilding
 		{
 			get
@@ -1332,6 +1468,7 @@ namespace W3000.Data
 			{
 				UsrAccountData parent = new UsrAccountData();
 				parent.UsrAccountPK = this.UsrAccountPK;
+				parent.UserID = this.UserID;
 				return parent;
 			}
 			set
@@ -1340,6 +1477,7 @@ namespace W3000.Data
 					return;
 
 				this.UsrAccountPK = value.UsrAccountPK;
+				this.UserID = value.UserID;
 			}
 		}
 
@@ -1372,6 +1510,7 @@ namespace W3000.Data
 			this.Primary = data.Primary;
 			this.Address1 = data.Address1;
 			this.BuildingID = data.BuildingID;
+			this.UserID = data.UserID;
 			if (all)
 			{
 				this.UsrAccountBuildingMapPK = data.UsrAccountBuildingMapPK;
@@ -5088,6 +5227,8 @@ namespace W3000.Data
 		private String _createdBy;
 		private DateTime _modifiedOn;
 		private String _modifiedBy;
+		private String _settingCategory;
+		private Int32 _settingCategoryID;
 
 		#endregion
 
@@ -5102,6 +5243,7 @@ namespace W3000.Data
 			this._createdBy = string.Empty;
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
+			this._settingCategory = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -5292,12 +5434,38 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String SettingCategory
+		{
+			get
+			{
+				return this._settingCategory == null ? null : this._settingCategory.Trim();
+			}
+			set
+			{
+				 this._settingCategory = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 SettingCategoryID
+		{
+			get
+			{
+				return this._settingCategoryID;
+			}
+			set
+			{
+				this._settingCategoryID = value;
+			}
+		}
+
 		public virtual UtilSettingCategoryData UtilSettingCategory
 		{
 			get
 			{
 				UtilSettingCategoryData parent = new UtilSettingCategoryData();
 				parent.UtilSettingCategoryPK = this.UtilSettingCategoryPK;
+				parent.SettingCategory = this.SettingCategory;
+				parent.SettingCategoryID = this.SettingCategoryID;
 				return parent;
 			}
 			set
@@ -5306,6 +5474,8 @@ namespace W3000.Data
 					return;
 
 				this.UtilSettingCategoryPK = value.UtilSettingCategoryPK;
+				this.SettingCategory = value.SettingCategory;
+				this.SettingCategoryID = value.SettingCategoryID;
 			}
 		}
 
@@ -5334,6 +5504,8 @@ namespace W3000.Data
 			this.CreatedBy = data.CreatedBy;
 			this.ModifiedOn = data.ModifiedOn;
 			this.ModifiedBy = data.ModifiedBy;
+			this.SettingCategory = data.SettingCategory;
+			this.SettingCategoryID = data.SettingCategoryID;
 			if (all)
 			{
 				this.UtilSettingDetailPK = data.UtilSettingDetailPK;
@@ -5510,6 +5682,10 @@ namespace W3000.Data
 		private Byte _mainZoneID;
 		private Guid _aCPanelPK;
 		private Byte _groupID;
+		private Int32 _unitID;
+		private String _address1;
+		private Int32 _buildingID;
+		private Guid _bDBuildingPK;
 
 		#endregion
 
@@ -5524,6 +5700,8 @@ namespace W3000.Data
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
 			this._aCPanelPK = Guid.Empty;
+			this._address1 = string.Empty;
+			this._bDBuildingPK = Guid.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -5704,6 +5882,54 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual Int32 UnitID
+		{
+			get
+			{
+				return this._unitID;
+			}
+			set
+			{
+				this._unitID = value;
+			}
+		}
+
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
+		public virtual Guid BDBuildingPK
+		{
+			get
+			{
+				return this._bDBuildingPK;
+			}
+			set
+			{
+				this._bDBuildingPK = value;
+			}
+		}
+
 		public virtual ACMainZoneData ACMainZone
 		{
 			get
@@ -5770,6 +5996,10 @@ namespace W3000.Data
 			this.MainZoneID = data.MainZoneID;
 			this.ACPanelPK = data.ACPanelPK;
 			this.GroupID = data.GroupID;
+			this.UnitID = data.UnitID;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
+			this.BDBuildingPK = data.BDBuildingPK;
 			if (all)
 			{
 				this.ACOutputGroupMainZoneMapPK = data.ACOutputGroupMainZoneMapPK;
@@ -5944,8 +6174,11 @@ namespace W3000.Data
 		private String _createdBy;
 		private DateTime _modifiedOn;
 		private String _modifiedBy;
+		private String _suite;
 		private String _tenant;
 		private Guid _bDBuildingPK;
+		private String _address1;
+		private Int32 _buildingID;
 
 		private ACCardHolderBuildingMapDataCollection _aCCardHolderBuildingMapList;
 		#endregion
@@ -5973,8 +6206,10 @@ namespace W3000.Data
 			this._createdBy = string.Empty;
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
+			this._suite = string.Empty;
 			this._tenant = string.Empty;
 			this._bDBuildingPK = Guid.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -6604,6 +6839,18 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Suite
+		{
+			get
+			{
+				return this._suite == null ? null : this._suite.Trim();
+			}
+			set
+			{
+				 this._suite = value == null ? null : value.Trim();
+			}
+		}
+
 		public virtual String Tenant
 		{
 			get
@@ -6628,6 +6875,30 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual ACCardHolderBuildingMapDataCollection ACCardHolderBuildingMapList
 		{
 			get
@@ -6647,6 +6918,7 @@ namespace W3000.Data
 				BDTenantData parent = new BDTenantData();
 				parent.BDTenantPK = this.BDTenantPK;
 				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
 				return parent;
 			}
@@ -6657,6 +6929,7 @@ namespace W3000.Data
 
 				this.BDTenantPK = value.BDTenantPK;
 				this.BDBuildingPK = value.BDBuildingPK;
+				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
 			}
 		}
@@ -6705,8 +6978,11 @@ namespace W3000.Data
 			this.CreatedBy = data.CreatedBy;
 			this.ModifiedOn = data.ModifiedOn;
 			this.ModifiedBy = data.ModifiedBy;
+			this.Suite = data.Suite;
 			this.Tenant = data.Tenant;
 			this.BDBuildingPK = data.BDBuildingPK;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.ACCardHolderPK = data.ACCardHolderPK;
@@ -10685,8 +10961,10 @@ namespace W3000.Data
 		private String _end;
 		private String _begin;
 		private Int16 _iVID;
-		private Guid _bDBuildingPK;
 		private Int16 _tCID;
+		private Guid _bDBuildingPK;
+		private String _address1;
+		private Int32 _buildingID;
 
 		#endregion
 
@@ -10703,6 +10981,7 @@ namespace W3000.Data
 			this._end = string.Empty;
 			this._begin = string.Empty;
 			this._bDBuildingPK = Guid.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -10883,18 +11162,6 @@ namespace W3000.Data
 			}
 		}
 
-		public virtual Guid BDBuildingPK
-		{
-			get
-			{
-				return this._bDBuildingPK;
-			}
-			set
-			{
-				this._bDBuildingPK = value;
-			}
-		}
-
 		public virtual Int16 TCID
 		{
 			get
@@ -10907,13 +11174,48 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual Guid BDBuildingPK
+		{
+			get
+			{
+				return this._bDBuildingPK;
+			}
+			set
+			{
+				this._bDBuildingPK = value;
+			}
+		}
+
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual ACIntervalData ACInterval
 		{
 			get
 			{
 				ACIntervalData parent = new ACIntervalData();
 				parent.ACIntervalPK = this.ACIntervalPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Begin = this.Begin;
 				parent.End = this.End;
 				parent.IVID = this.IVID;
@@ -10925,7 +11227,6 @@ namespace W3000.Data
 					return;
 
 				this.ACIntervalPK = value.ACIntervalPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Begin = value.Begin;
 				this.End = value.End;
 				this.IVID = value.IVID;
@@ -10938,6 +11239,7 @@ namespace W3000.Data
 			{
 				ACTimecodeData parent = new ACTimecodeData();
 				parent.ACTimecodePK = this.ACTimecodePK;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.TCID = this.TCID;
 				return parent;
 			}
@@ -10947,6 +11249,7 @@ namespace W3000.Data
 					return;
 
 				this.ACTimecodePK = value.ACTimecodePK;
+				this.BDBuildingPK = value.BDBuildingPK;
 				this.TCID = value.TCID;
 			}
 		}
@@ -10977,8 +11280,10 @@ namespace W3000.Data
 			this.End = data.End;
 			this.Begin = data.Begin;
 			this.IVID = data.IVID;
-			this.BDBuildingPK = data.BDBuildingPK;
 			this.TCID = data.TCID;
+			this.BDBuildingPK = data.BDBuildingPK;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.ACTimecodeIntervalMapPK = data.ACTimecodeIntervalMapPK;
@@ -11137,6 +11442,8 @@ namespace W3000.Data
 		private String _createdBy;
 		private DateTime _modifiedOn;
 		private String _modifiedBy;
+		private String _address1;
+		private Int32 _buildingID;
 
 		#endregion
 
@@ -11151,6 +11458,7 @@ namespace W3000.Data
 			this._createdBy = string.Empty;
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -11410,12 +11718,38 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual BDBuildingData BDBuilding
 		{
 			get
 			{
 				BDBuildingData parent = new BDBuildingData();
 				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
 				return parent;
 			}
 			set
@@ -11424,6 +11758,8 @@ namespace W3000.Data
 					return;
 
 				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -11455,6 +11791,8 @@ namespace W3000.Data
 			this.CreatedBy = data.CreatedBy;
 			this.ModifiedOn = data.ModifiedOn;
 			this.ModifiedBy = data.ModifiedBy;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.ACAMFormatPK = data.ACAMFormatPK;
@@ -12684,6 +13022,8 @@ namespace W3000.Data
 		private Guid _bDBuildingPK;
 		private DateTime _date;
 		private String _holiday;
+		private String _address1;
+		private Int32 _buildingID;
 
 		#endregion
 
@@ -12702,6 +13042,7 @@ namespace W3000.Data
 			this._bDBuildingPK = Guid.Empty;
 			this._date = DateTime.Now;
 			this._holiday = string.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -12941,6 +13282,30 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual BDTenantData BDTenant
 		{
 			get
@@ -13012,6 +13377,8 @@ namespace W3000.Data
 			this.BDBuildingPK = data.BDBuildingPK;
 			this.Date = data.Date;
 			this.Holiday = data.Holiday;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.BDTenantHolidayMapPK = data.BDTenantHolidayMapPK;
@@ -13628,6 +13995,8 @@ namespace W3000.Data
 		private String _modifiedBy;
 		private Guid _bDBuildingPK;
 		private Int32 _unitID;
+		private String _address1;
+		private Int32 _buildingID;
 
 		private ACInputGroupInputMapDataCollection _aCInputGroupInputMapList;
 		#endregion
@@ -13643,6 +14012,7 @@ namespace W3000.Data
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
 			this._bDBuildingPK = Guid.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -13834,6 +14204,30 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual ACInputGroupInputMapDataCollection ACInputGroupInputMapList
 		{
 			get
@@ -13893,6 +14287,8 @@ namespace W3000.Data
 			this.ModifiedBy = data.ModifiedBy;
 			this.BDBuildingPK = data.BDBuildingPK;
 			this.UnitID = data.UnitID;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.ACInputGroupPK = data.ACInputGroupPK;
@@ -14950,8 +15346,11 @@ namespace W3000.Data
 		private String _createdBy;
 		private DateTime _modifiedOn;
 		private String _modifiedBy;
+		private String _suite;
 		private String _tenant;
 		private Guid _bDBuildingPK;
+		private String _address1;
+		private Int32 _buildingID;
 
 		private ACPanelFunctionCardMapDataCollection _aCPanelFunctionCardMapList;
 		#endregion
@@ -14969,8 +15368,10 @@ namespace W3000.Data
 			this._createdBy = string.Empty;
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
+			this._suite = string.Empty;
 			this._tenant = string.Empty;
 			this._bDBuildingPK = Guid.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -15347,6 +15748,18 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Suite
+		{
+			get
+			{
+				return this._suite == null ? null : this._suite.Trim();
+			}
+			set
+			{
+				 this._suite = value == null ? null : value.Trim();
+			}
+		}
+
 		public virtual String Tenant
 		{
 			get
@@ -15371,6 +15784,30 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual ACPanelFunctionCardMapDataCollection ACPanelFunctionCardMapList
 		{
 			get
@@ -15390,6 +15827,7 @@ namespace W3000.Data
 				BDTenantData parent = new BDTenantData();
 				parent.BDTenantPK = this.BDTenantPK;
 				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
 				return parent;
 			}
@@ -15400,6 +15838,7 @@ namespace W3000.Data
 
 				this.BDTenantPK = value.BDTenantPK;
 				this.BDBuildingPK = value.BDBuildingPK;
+				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
 			}
 		}
@@ -15437,8 +15876,11 @@ namespace W3000.Data
 			this.CreatedBy = data.CreatedBy;
 			this.ModifiedOn = data.ModifiedOn;
 			this.ModifiedBy = data.ModifiedBy;
+			this.Suite = data.Suite;
 			this.Tenant = data.Tenant;
 			this.BDBuildingPK = data.BDBuildingPK;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.ACFunctionCardPK = data.ACFunctionCardPK;
@@ -15728,6 +16170,669 @@ namespace W3000.Data
 			if ((this.ModifiedByChanged != null))
 			{
 				this.ModifiedByChanged(this, e);
+			}
+		}
+
+		#endregion
+
+	}
+	[Serializable]
+	public partial class UtilHolidayData : BusinessBase
+	{
+		#region Fields
+		private Guid _utilHolidayPK;
+		private Int32 _countryID;
+		private String _holiday;
+		private DateTime _date;
+		private Boolean _major;
+		private Boolean _federal;
+		private Byte[] _rowVersion;
+		private DateTime _createdOn;
+		private String _createdBy;
+		private DateTime _modifiedOn;
+		private String _modifiedBy;
+		private Boolean _default;
+		private Int32 _actionID;
+
+		private BDTenantHolidayMapDataCollection _bDTenantHolidayMapList;
+		private BDBuildingHolidayMapDataCollection _bDBuildingHolidayMapList;
+		private ACPanelHolidayMapDataCollection _aCPanelHolidayMapList;
+		private ACIntvalHolidayMapDataCollection _aCIntvalHolidayMapList;
+		#endregion
+
+		#region Constructors
+		public UtilHolidayData()
+		{
+			this._utilHolidayPK = Guid.NewGuid();
+			this._holiday = string.Empty;
+			this._date = DateTime.Now;
+			this._createdOn = DateTime.Now;
+			this._createdBy = string.Empty;
+			this._modifiedOn = DateTime.Now;
+			this._modifiedBy = string.Empty;
+
+			base.MarkNew();
+			this.InitMemberVariables();
+		}
+
+		public UtilHolidayData(UtilHolidayData data)
+		{
+			this.CopyFrom(data, true);
+			this.CloneChildren(data);
+		}
+		#endregion
+
+		#region Properties
+		public virtual Guid UtilHolidayPK
+		{
+			get
+			{
+				return this._utilHolidayPK;
+			}
+			set
+			{
+				EntityEventArgs e = new EntityEventArgs("UtilHolidayPK", value);
+				if (this._utilHolidayPK != value)
+				{
+					this.OnBeforeChanged(e);
+					if (!e.Cancel)
+					{
+						this._utilHolidayPK = value;
+						base.MarkDirty();
+						this.OnAfterChanged(e);
+						this.OnUtilHolidayPKChanged(EventArgs.Empty);
+					}
+				}
+			}
+		}
+
+		public virtual Int32 CountryID
+		{
+			get
+			{
+				return this._countryID;
+			}
+			set
+			{
+				EntityEventArgs e = new EntityEventArgs("CountryID", value);
+				if (this._countryID != value)
+				{
+					this.OnBeforeChanged(e);
+					if (!e.Cancel)
+					{
+						this._countryID = value;
+						base.MarkDirty();
+						this.OnAfterChanged(e);
+						this.OnCountryIDChanged(EventArgs.Empty);
+					}
+				}
+			}
+		}
+
+		public virtual String Holiday
+		{
+			get
+			{
+				return this._holiday == null ? null : this._holiday.Trim();
+			}
+			set
+			{
+				EntityEventArgs e = new EntityEventArgs("Holiday", value);
+				if (this._holiday != value)
+				{
+					this.OnBeforeChanged(e);
+					if (!e.Cancel)
+					{
+						this._holiday = value == null ? null : value.Trim();
+						base.MarkDirty();
+						this.OnAfterChanged(e);
+						this.OnHolidayChanged(EventArgs.Empty);
+					}
+				}
+			}
+		}
+
+		public virtual DateTime Date
+		{
+			get
+			{
+				System.DateTime utcTime = new System.DateTime(this._date.Ticks, DateTimeKind.Utc);
+				return utcTime.ToLocalTime();
+			}
+			set
+			{
+				EntityEventArgs e = new EntityEventArgs("Date", value);
+				if (this._date != value)
+				{
+					this.OnBeforeChanged(e);
+					if (!e.Cancel)
+					{
+						this._date = value.ToUniversalTime();
+						base.MarkDirty();
+						this.OnAfterChanged(e);
+						this.OnDateChanged(EventArgs.Empty);
+					}
+				}
+			}
+		}
+
+		public virtual Boolean Major
+		{
+			get
+			{
+				return this._major;
+			}
+			set
+			{
+				EntityEventArgs e = new EntityEventArgs("Major", value);
+				if (this._major != value)
+				{
+					this.OnBeforeChanged(e);
+					if (!e.Cancel)
+					{
+						this._major = value;
+						base.MarkDirty();
+						this.OnAfterChanged(e);
+						this.OnMajorChanged(EventArgs.Empty);
+					}
+				}
+			}
+		}
+
+		public virtual Boolean Federal
+		{
+			get
+			{
+				return this._federal;
+			}
+			set
+			{
+				EntityEventArgs e = new EntityEventArgs("Federal", value);
+				if (this._federal != value)
+				{
+					this.OnBeforeChanged(e);
+					if (!e.Cancel)
+					{
+						this._federal = value;
+						base.MarkDirty();
+						this.OnAfterChanged(e);
+						this.OnFederalChanged(EventArgs.Empty);
+					}
+				}
+			}
+		}
+
+		public override Byte[] RowVersion
+		{
+			get
+			{
+				return this._rowVersion;
+			}
+			set
+			{
+				this._rowVersion = value;
+			}
+		}
+
+		public override DateTime CreatedOn
+		{
+			get
+			{
+				System.DateTime utcTime = new System.DateTime(this._createdOn.Ticks, DateTimeKind.Utc);
+				return utcTime.ToLocalTime();
+			}
+			set
+			{
+				 this._createdOn = value.ToUniversalTime();
+			}
+		}
+
+		public override String CreatedBy
+		{
+			get
+			{
+				return this._createdBy == null ? null : this._createdBy.Trim();
+			}
+			set
+			{
+				 this._createdBy = value == null ? null : value.Trim();
+			}
+		}
+
+		public override DateTime ModifiedOn
+		{
+			get
+			{
+				System.DateTime utcTime = new System.DateTime(this._modifiedOn.Ticks, DateTimeKind.Utc);
+				return utcTime.ToLocalTime();
+			}
+			set
+			{
+				 this._modifiedOn = value.ToUniversalTime();
+			}
+		}
+
+		public override String ModifiedBy
+		{
+			get
+			{
+				return this._modifiedBy == null ? null : this._modifiedBy.Trim();
+			}
+			set
+			{
+				 this._modifiedBy = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Boolean Default
+		{
+			get
+			{
+				return this._default;
+			}
+			set
+			{
+				EntityEventArgs e = new EntityEventArgs("Default", value);
+				if (this._default != value)
+				{
+					this.OnBeforeChanged(e);
+					if (!e.Cancel)
+					{
+						this._default = value;
+						base.MarkDirty();
+						this.OnAfterChanged(e);
+						this.OnDefaultChanged(EventArgs.Empty);
+					}
+				}
+			}
+		}
+
+		public virtual Int32 ActionID
+		{
+			get
+			{
+				return this._actionID;
+			}
+			set
+			{
+				EntityEventArgs e = new EntityEventArgs("ActionID", value);
+				if (this._actionID != value)
+				{
+					this.OnBeforeChanged(e);
+					if (!e.Cancel)
+					{
+						this._actionID = value;
+						base.MarkDirty();
+						this.OnAfterChanged(e);
+						this.OnActionIDChanged(EventArgs.Empty);
+					}
+				}
+			}
+		}
+
+		public virtual BDTenantHolidayMapDataCollection BDTenantHolidayMapList
+		{
+			get
+			{
+				return this._bDTenantHolidayMapList;
+			}
+			set
+			{
+				this._bDTenantHolidayMapList = value;
+			}
+		}
+
+		public virtual BDBuildingHolidayMapDataCollection BDBuildingHolidayMapList
+		{
+			get
+			{
+				return this._bDBuildingHolidayMapList;
+			}
+			set
+			{
+				this._bDBuildingHolidayMapList = value;
+			}
+		}
+
+		public virtual ACPanelHolidayMapDataCollection ACPanelHolidayMapList
+		{
+			get
+			{
+				return this._aCPanelHolidayMapList;
+			}
+			set
+			{
+				this._aCPanelHolidayMapList = value;
+			}
+		}
+
+		public virtual ACIntvalHolidayMapDataCollection ACIntvalHolidayMapList
+		{
+			get
+			{
+				return this._aCIntvalHolidayMapList;
+			}
+			set
+			{
+				this._aCIntvalHolidayMapList = value;
+			}
+		}
+
+		public override string TableName
+		{
+			get
+			{
+				return "UtilHoliday";
+			}
+		}
+
+		#endregion
+
+		public override void CopyFrom(BusinessBase entity, bool all)
+		{
+			UtilHolidayData data = entity as UtilHolidayData;
+			if (data == null)
+				return;
+
+			this.CountryID = data.CountryID;
+			this.Holiday = data.Holiday;
+			this.Date = data.Date;
+			this.Major = data.Major;
+			this.Federal = data.Federal;
+			this.RowVersion = data.RowVersion;
+			this.CreatedOn = data.CreatedOn;
+			this.CreatedBy = data.CreatedBy;
+			this.ModifiedOn = data.ModifiedOn;
+			this.ModifiedBy = data.ModifiedBy;
+			this.Default = data.Default;
+			this.ActionID = data.ActionID;
+			if (all)
+			{
+				this.UtilHolidayPK = data.UtilHolidayPK;
+				base._objectID = data.ObjectID;
+				base.MarkOld();
+				if (data.IsNew)
+				{
+					base.MarkNew();
+				}
+				if (data.IsDeleted)
+				{
+					base.MarkDeleted();
+				}
+				if (data.IsSelfDirty)
+				{
+					base.MarkDirty();
+				}
+			}
+		}
+
+		protected override void CloneChildren(BusinessBase entity)
+		{
+			UtilHolidayData data = entity as UtilHolidayData;
+			if (data == null)
+				return;
+
+			if (data.BDTenantHolidayMapList != null)
+			{
+				this.BDTenantHolidayMapList = new BDTenantHolidayMapDataCollection(data.BDTenantHolidayMapList);
+			}
+			if (data.BDBuildingHolidayMapList != null)
+			{
+				this.BDBuildingHolidayMapList = new BDBuildingHolidayMapDataCollection(data.BDBuildingHolidayMapList);
+			}
+			if (data.ACPanelHolidayMapList != null)
+			{
+				this.ACPanelHolidayMapList = new ACPanelHolidayMapDataCollection(data.ACPanelHolidayMapList);
+			}
+			if (data.ACIntvalHolidayMapList != null)
+			{
+				this.ACIntvalHolidayMapList = new ACIntvalHolidayMapDataCollection(data.ACIntvalHolidayMapList);
+			}
+		}
+
+		public override void AcceptChanges()
+		{
+			base.AcceptChanges();
+
+			if (this.BDTenantHolidayMapList != null)
+			{
+				this.BDTenantHolidayMapList.AcceptChanges();
+			}
+			if (this.BDBuildingHolidayMapList != null)
+			{
+				this.BDBuildingHolidayMapList.AcceptChanges();
+			}
+			if (this.ACPanelHolidayMapList != null)
+			{
+				this.ACPanelHolidayMapList.AcceptChanges();
+			}
+			if (this.ACIntvalHolidayMapList != null)
+			{
+				this.ACIntvalHolidayMapList.AcceptChanges();
+			}
+		}
+
+		public override bool Equals(object obj)
+		{
+			return ((obj.GetType() == this.GetType()) && this.InternalEquals(obj as UtilHolidayData));
+		}
+
+		private bool InternalEquals(UtilHolidayData obj)
+		{
+			if (this.UtilHolidayPK.CompareTo(obj.UtilHolidayPK) != 0)
+			{
+				return false;
+			}
+			return true;
+		}
+
+		public override int GetHashCode()
+		{
+			return this.ToString().GetHashCode();
+		}
+
+		public override string PKString
+		{
+			get
+			{
+				StringBuilder builder = new StringBuilder();
+				builder.AppendFormat("{0}|", this.UtilHolidayPK);
+				return builder.ToString().TrimEnd('|');
+			}
+		}
+
+		public override string ToString()
+		{
+			StringBuilder builder = new StringBuilder();
+			builder.Append("UtilHoliday:");
+			builder.AppendFormat("{0}|", this.UtilHolidayPK);
+			return builder.ToString().TrimEnd('|');
+		}
+
+		public override bool IsDirty
+		{
+			get
+			{
+				if(base.IsDirty)
+					return true;
+
+				if (this.BDTenantHolidayMapList != null && this.BDTenantHolidayMapList.IsDirty)
+				{
+					return true;
+				}
+				if (this.BDBuildingHolidayMapList != null && this.BDBuildingHolidayMapList.IsDirty)
+				{
+					return true;
+				}
+				if (this.ACPanelHolidayMapList != null && this.ACPanelHolidayMapList.IsDirty)
+				{
+					return true;
+				}
+				if (this.ACIntvalHolidayMapList != null && this.ACIntvalHolidayMapList.IsDirty)
+				{
+					return true;
+				}
+
+				return false;
+			}
+		}
+
+		public override bool IsValid
+		{
+			get
+			{
+				if(!base.IsValid)
+					return false;
+
+				if (this.BDTenantHolidayMapList != null && !this.BDTenantHolidayMapList.IsValid)
+				{
+					return false;
+				}
+				if (this.BDBuildingHolidayMapList != null && !this.BDBuildingHolidayMapList.IsValid)
+				{
+					return false;
+				}
+				if (this.ACPanelHolidayMapList != null && !this.ACPanelHolidayMapList.IsValid)
+				{
+					return false;
+				}
+				if (this.ACIntvalHolidayMapList != null && !this.ACIntvalHolidayMapList.IsValid)
+				{
+					return false;
+				}
+
+				return true;
+			}
+		}
+
+		#region Binding Events
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler UtilHolidayPKChanged;
+		private void OnUtilHolidayPKChanged(EventArgs e)
+		{
+			if ((this.UtilHolidayPKChanged != null))
+			{
+				this.UtilHolidayPKChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler CountryIDChanged;
+		private void OnCountryIDChanged(EventArgs e)
+		{
+			if ((this.CountryIDChanged != null))
+			{
+				this.CountryIDChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler HolidayChanged;
+		private void OnHolidayChanged(EventArgs e)
+		{
+			if ((this.HolidayChanged != null))
+			{
+				this.HolidayChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler DateChanged;
+		private void OnDateChanged(EventArgs e)
+		{
+			if ((this.DateChanged != null))
+			{
+				this.DateChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler MajorChanged;
+		private void OnMajorChanged(EventArgs e)
+		{
+			if ((this.MajorChanged != null))
+			{
+				this.MajorChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler FederalChanged;
+		private void OnFederalChanged(EventArgs e)
+		{
+			if ((this.FederalChanged != null))
+			{
+				this.FederalChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler RowVersionChanged;
+		private void OnRowVersionChanged(EventArgs e)
+		{
+			if ((this.RowVersionChanged != null))
+			{
+				this.RowVersionChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler CreatedOnChanged;
+		private void OnCreatedOnChanged(EventArgs e)
+		{
+			if ((this.CreatedOnChanged != null))
+			{
+				this.CreatedOnChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler CreatedByChanged;
+		private void OnCreatedByChanged(EventArgs e)
+		{
+			if ((this.CreatedByChanged != null))
+			{
+				this.CreatedByChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler ModifiedOnChanged;
+		private void OnModifiedOnChanged(EventArgs e)
+		{
+			if ((this.ModifiedOnChanged != null))
+			{
+				this.ModifiedOnChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler ModifiedByChanged;
+		private void OnModifiedByChanged(EventArgs e)
+		{
+			if ((this.ModifiedByChanged != null))
+			{
+				this.ModifiedByChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler DefaultChanged;
+		private void OnDefaultChanged(EventArgs e)
+		{
+			if ((this.DefaultChanged != null))
+			{
+				this.DefaultChanged(this, e);
+			}
+		}
+
+		[field: NonSerialized, NotUndoable]
+		public event EventHandler ActionIDChanged;
+		private void OnActionIDChanged(EventArgs e)
+		{
+			if ((this.ActionIDChanged != null))
+			{
+				this.ActionIDChanged(this, e);
 			}
 		}
 
@@ -16302,6 +17407,7 @@ namespace W3000.Data
 		private String _createdBy;
 		private DateTime _modifiedOn;
 		private String _modifiedBy;
+		private Int32 _cardTypeID;
 		private Int32 _encoded;
 		private Int32 _embossed;
 		private Int32 _sitecode;
@@ -16465,6 +17571,18 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual Int32 CardTypeID
+		{
+			get
+			{
+				return this._cardTypeID;
+			}
+			set
+			{
+				this._cardTypeID = value;
+			}
+		}
+
 		public virtual Int32 Encoded
 		{
 			get
@@ -16531,6 +17649,7 @@ namespace W3000.Data
 			{
 				ACFunctionCardData parent = new ACFunctionCardData();
 				parent.ACFunctionCardPK = this.ACFunctionCardPK;
+				parent.CardTypeID = this.CardTypeID;
 				parent.Embossed = this.Embossed;
 				parent.Encoded = this.Encoded;
 				parent.Sitecode = this.Sitecode;
@@ -16542,6 +17661,7 @@ namespace W3000.Data
 					return;
 
 				this.ACFunctionCardPK = value.ACFunctionCardPK;
+				this.CardTypeID = value.CardTypeID;
 				this.Embossed = value.Embossed;
 				this.Encoded = value.Encoded;
 				this.Sitecode = value.Sitecode;
@@ -16592,6 +17712,7 @@ namespace W3000.Data
 			this.CreatedBy = data.CreatedBy;
 			this.ModifiedOn = data.ModifiedOn;
 			this.ModifiedBy = data.ModifiedBy;
+			this.CardTypeID = data.CardTypeID;
 			this.Encoded = data.Encoded;
 			this.Embossed = data.Embossed;
 			this.Sitecode = data.Sitecode;
@@ -16732,669 +17853,6 @@ namespace W3000.Data
 			if ((this.ModifiedByChanged != null))
 			{
 				this.ModifiedByChanged(this, e);
-			}
-		}
-
-		#endregion
-
-	}
-	[Serializable]
-	public partial class UtilHolidayData : BusinessBase
-	{
-		#region Fields
-		private Guid _utilHolidayPK;
-		private Int32 _countryID;
-		private String _holiday;
-		private DateTime _date;
-		private Boolean _major;
-		private Boolean _federal;
-		private Byte[] _rowVersion;
-		private DateTime _createdOn;
-		private String _createdBy;
-		private DateTime _modifiedOn;
-		private String _modifiedBy;
-		private Boolean _default;
-		private Int32 _actionID;
-
-		private ACIntvalHolidayMapDataCollection _aCIntvalHolidayMapList;
-		private ACPanelHolidayMapDataCollection _aCPanelHolidayMapList;
-		private BDBuildingHolidayMapDataCollection _bDBuildingHolidayMapList;
-		private BDTenantHolidayMapDataCollection _bDTenantHolidayMapList;
-		#endregion
-
-		#region Constructors
-		public UtilHolidayData()
-		{
-			this._utilHolidayPK = Guid.NewGuid();
-			this._holiday = string.Empty;
-			this._date = DateTime.Now;
-			this._createdOn = DateTime.Now;
-			this._createdBy = string.Empty;
-			this._modifiedOn = DateTime.Now;
-			this._modifiedBy = string.Empty;
-
-			base.MarkNew();
-			this.InitMemberVariables();
-		}
-
-		public UtilHolidayData(UtilHolidayData data)
-		{
-			this.CopyFrom(data, true);
-			this.CloneChildren(data);
-		}
-		#endregion
-
-		#region Properties
-		public virtual Guid UtilHolidayPK
-		{
-			get
-			{
-				return this._utilHolidayPK;
-			}
-			set
-			{
-				EntityEventArgs e = new EntityEventArgs("UtilHolidayPK", value);
-				if (this._utilHolidayPK != value)
-				{
-					this.OnBeforeChanged(e);
-					if (!e.Cancel)
-					{
-						this._utilHolidayPK = value;
-						base.MarkDirty();
-						this.OnAfterChanged(e);
-						this.OnUtilHolidayPKChanged(EventArgs.Empty);
-					}
-				}
-			}
-		}
-
-		public virtual Int32 CountryID
-		{
-			get
-			{
-				return this._countryID;
-			}
-			set
-			{
-				EntityEventArgs e = new EntityEventArgs("CountryID", value);
-				if (this._countryID != value)
-				{
-					this.OnBeforeChanged(e);
-					if (!e.Cancel)
-					{
-						this._countryID = value;
-						base.MarkDirty();
-						this.OnAfterChanged(e);
-						this.OnCountryIDChanged(EventArgs.Empty);
-					}
-				}
-			}
-		}
-
-		public virtual String Holiday
-		{
-			get
-			{
-				return this._holiday == null ? null : this._holiday.Trim();
-			}
-			set
-			{
-				EntityEventArgs e = new EntityEventArgs("Holiday", value);
-				if (this._holiday != value)
-				{
-					this.OnBeforeChanged(e);
-					if (!e.Cancel)
-					{
-						this._holiday = value == null ? null : value.Trim();
-						base.MarkDirty();
-						this.OnAfterChanged(e);
-						this.OnHolidayChanged(EventArgs.Empty);
-					}
-				}
-			}
-		}
-
-		public virtual DateTime Date
-		{
-			get
-			{
-				System.DateTime utcTime = new System.DateTime(this._date.Ticks, DateTimeKind.Utc);
-				return utcTime.ToLocalTime();
-			}
-			set
-			{
-				EntityEventArgs e = new EntityEventArgs("Date", value);
-				if (this._date != value)
-				{
-					this.OnBeforeChanged(e);
-					if (!e.Cancel)
-					{
-						this._date = value.ToUniversalTime();
-						base.MarkDirty();
-						this.OnAfterChanged(e);
-						this.OnDateChanged(EventArgs.Empty);
-					}
-				}
-			}
-		}
-
-		public virtual Boolean Major
-		{
-			get
-			{
-				return this._major;
-			}
-			set
-			{
-				EntityEventArgs e = new EntityEventArgs("Major", value);
-				if (this._major != value)
-				{
-					this.OnBeforeChanged(e);
-					if (!e.Cancel)
-					{
-						this._major = value;
-						base.MarkDirty();
-						this.OnAfterChanged(e);
-						this.OnMajorChanged(EventArgs.Empty);
-					}
-				}
-			}
-		}
-
-		public virtual Boolean Federal
-		{
-			get
-			{
-				return this._federal;
-			}
-			set
-			{
-				EntityEventArgs e = new EntityEventArgs("Federal", value);
-				if (this._federal != value)
-				{
-					this.OnBeforeChanged(e);
-					if (!e.Cancel)
-					{
-						this._federal = value;
-						base.MarkDirty();
-						this.OnAfterChanged(e);
-						this.OnFederalChanged(EventArgs.Empty);
-					}
-				}
-			}
-		}
-
-		public override Byte[] RowVersion
-		{
-			get
-			{
-				return this._rowVersion;
-			}
-			set
-			{
-				this._rowVersion = value;
-			}
-		}
-
-		public override DateTime CreatedOn
-		{
-			get
-			{
-				System.DateTime utcTime = new System.DateTime(this._createdOn.Ticks, DateTimeKind.Utc);
-				return utcTime.ToLocalTime();
-			}
-			set
-			{
-				 this._createdOn = value.ToUniversalTime();
-			}
-		}
-
-		public override String CreatedBy
-		{
-			get
-			{
-				return this._createdBy == null ? null : this._createdBy.Trim();
-			}
-			set
-			{
-				 this._createdBy = value == null ? null : value.Trim();
-			}
-		}
-
-		public override DateTime ModifiedOn
-		{
-			get
-			{
-				System.DateTime utcTime = new System.DateTime(this._modifiedOn.Ticks, DateTimeKind.Utc);
-				return utcTime.ToLocalTime();
-			}
-			set
-			{
-				 this._modifiedOn = value.ToUniversalTime();
-			}
-		}
-
-		public override String ModifiedBy
-		{
-			get
-			{
-				return this._modifiedBy == null ? null : this._modifiedBy.Trim();
-			}
-			set
-			{
-				 this._modifiedBy = value == null ? null : value.Trim();
-			}
-		}
-
-		public virtual Boolean Default
-		{
-			get
-			{
-				return this._default;
-			}
-			set
-			{
-				EntityEventArgs e = new EntityEventArgs("Default", value);
-				if (this._default != value)
-				{
-					this.OnBeforeChanged(e);
-					if (!e.Cancel)
-					{
-						this._default = value;
-						base.MarkDirty();
-						this.OnAfterChanged(e);
-						this.OnDefaultChanged(EventArgs.Empty);
-					}
-				}
-			}
-		}
-
-		public virtual Int32 ActionID
-		{
-			get
-			{
-				return this._actionID;
-			}
-			set
-			{
-				EntityEventArgs e = new EntityEventArgs("ActionID", value);
-				if (this._actionID != value)
-				{
-					this.OnBeforeChanged(e);
-					if (!e.Cancel)
-					{
-						this._actionID = value;
-						base.MarkDirty();
-						this.OnAfterChanged(e);
-						this.OnActionIDChanged(EventArgs.Empty);
-					}
-				}
-			}
-		}
-
-		public virtual ACIntvalHolidayMapDataCollection ACIntvalHolidayMapList
-		{
-			get
-			{
-				return this._aCIntvalHolidayMapList;
-			}
-			set
-			{
-				this._aCIntvalHolidayMapList = value;
-			}
-		}
-
-		public virtual ACPanelHolidayMapDataCollection ACPanelHolidayMapList
-		{
-			get
-			{
-				return this._aCPanelHolidayMapList;
-			}
-			set
-			{
-				this._aCPanelHolidayMapList = value;
-			}
-		}
-
-		public virtual BDBuildingHolidayMapDataCollection BDBuildingHolidayMapList
-		{
-			get
-			{
-				return this._bDBuildingHolidayMapList;
-			}
-			set
-			{
-				this._bDBuildingHolidayMapList = value;
-			}
-		}
-
-		public virtual BDTenantHolidayMapDataCollection BDTenantHolidayMapList
-		{
-			get
-			{
-				return this._bDTenantHolidayMapList;
-			}
-			set
-			{
-				this._bDTenantHolidayMapList = value;
-			}
-		}
-
-		public override string TableName
-		{
-			get
-			{
-				return "UtilHoliday";
-			}
-		}
-
-		#endregion
-
-		public override void CopyFrom(BusinessBase entity, bool all)
-		{
-			UtilHolidayData data = entity as UtilHolidayData;
-			if (data == null)
-				return;
-
-			this.CountryID = data.CountryID;
-			this.Holiday = data.Holiday;
-			this.Date = data.Date;
-			this.Major = data.Major;
-			this.Federal = data.Federal;
-			this.RowVersion = data.RowVersion;
-			this.CreatedOn = data.CreatedOn;
-			this.CreatedBy = data.CreatedBy;
-			this.ModifiedOn = data.ModifiedOn;
-			this.ModifiedBy = data.ModifiedBy;
-			this.Default = data.Default;
-			this.ActionID = data.ActionID;
-			if (all)
-			{
-				this.UtilHolidayPK = data.UtilHolidayPK;
-				base._objectID = data.ObjectID;
-				base.MarkOld();
-				if (data.IsNew)
-				{
-					base.MarkNew();
-				}
-				if (data.IsDeleted)
-				{
-					base.MarkDeleted();
-				}
-				if (data.IsSelfDirty)
-				{
-					base.MarkDirty();
-				}
-			}
-		}
-
-		protected override void CloneChildren(BusinessBase entity)
-		{
-			UtilHolidayData data = entity as UtilHolidayData;
-			if (data == null)
-				return;
-
-			if (data.ACIntvalHolidayMapList != null)
-			{
-				this.ACIntvalHolidayMapList = new ACIntvalHolidayMapDataCollection(data.ACIntvalHolidayMapList);
-			}
-			if (data.ACPanelHolidayMapList != null)
-			{
-				this.ACPanelHolidayMapList = new ACPanelHolidayMapDataCollection(data.ACPanelHolidayMapList);
-			}
-			if (data.BDBuildingHolidayMapList != null)
-			{
-				this.BDBuildingHolidayMapList = new BDBuildingHolidayMapDataCollection(data.BDBuildingHolidayMapList);
-			}
-			if (data.BDTenantHolidayMapList != null)
-			{
-				this.BDTenantHolidayMapList = new BDTenantHolidayMapDataCollection(data.BDTenantHolidayMapList);
-			}
-		}
-
-		public override void AcceptChanges()
-		{
-			base.AcceptChanges();
-
-			if (this.ACIntvalHolidayMapList != null)
-			{
-				this.ACIntvalHolidayMapList.AcceptChanges();
-			}
-			if (this.ACPanelHolidayMapList != null)
-			{
-				this.ACPanelHolidayMapList.AcceptChanges();
-			}
-			if (this.BDBuildingHolidayMapList != null)
-			{
-				this.BDBuildingHolidayMapList.AcceptChanges();
-			}
-			if (this.BDTenantHolidayMapList != null)
-			{
-				this.BDTenantHolidayMapList.AcceptChanges();
-			}
-		}
-
-		public override bool Equals(object obj)
-		{
-			return ((obj.GetType() == this.GetType()) && this.InternalEquals(obj as UtilHolidayData));
-		}
-
-		private bool InternalEquals(UtilHolidayData obj)
-		{
-			if (this.UtilHolidayPK.CompareTo(obj.UtilHolidayPK) != 0)
-			{
-				return false;
-			}
-			return true;
-		}
-
-		public override int GetHashCode()
-		{
-			return this.ToString().GetHashCode();
-		}
-
-		public override string PKString
-		{
-			get
-			{
-				StringBuilder builder = new StringBuilder();
-				builder.AppendFormat("{0}|", this.UtilHolidayPK);
-				return builder.ToString().TrimEnd('|');
-			}
-		}
-
-		public override string ToString()
-		{
-			StringBuilder builder = new StringBuilder();
-			builder.Append("UtilHoliday:");
-			builder.AppendFormat("{0}|", this.UtilHolidayPK);
-			return builder.ToString().TrimEnd('|');
-		}
-
-		public override bool IsDirty
-		{
-			get
-			{
-				if(base.IsDirty)
-					return true;
-
-				if (this.ACIntvalHolidayMapList != null && this.ACIntvalHolidayMapList.IsDirty)
-				{
-					return true;
-				}
-				if (this.ACPanelHolidayMapList != null && this.ACPanelHolidayMapList.IsDirty)
-				{
-					return true;
-				}
-				if (this.BDBuildingHolidayMapList != null && this.BDBuildingHolidayMapList.IsDirty)
-				{
-					return true;
-				}
-				if (this.BDTenantHolidayMapList != null && this.BDTenantHolidayMapList.IsDirty)
-				{
-					return true;
-				}
-
-				return false;
-			}
-		}
-
-		public override bool IsValid
-		{
-			get
-			{
-				if(!base.IsValid)
-					return false;
-
-				if (this.ACIntvalHolidayMapList != null && !this.ACIntvalHolidayMapList.IsValid)
-				{
-					return false;
-				}
-				if (this.ACPanelHolidayMapList != null && !this.ACPanelHolidayMapList.IsValid)
-				{
-					return false;
-				}
-				if (this.BDBuildingHolidayMapList != null && !this.BDBuildingHolidayMapList.IsValid)
-				{
-					return false;
-				}
-				if (this.BDTenantHolidayMapList != null && !this.BDTenantHolidayMapList.IsValid)
-				{
-					return false;
-				}
-
-				return true;
-			}
-		}
-
-		#region Binding Events
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler UtilHolidayPKChanged;
-		private void OnUtilHolidayPKChanged(EventArgs e)
-		{
-			if ((this.UtilHolidayPKChanged != null))
-			{
-				this.UtilHolidayPKChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler CountryIDChanged;
-		private void OnCountryIDChanged(EventArgs e)
-		{
-			if ((this.CountryIDChanged != null))
-			{
-				this.CountryIDChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler HolidayChanged;
-		private void OnHolidayChanged(EventArgs e)
-		{
-			if ((this.HolidayChanged != null))
-			{
-				this.HolidayChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler DateChanged;
-		private void OnDateChanged(EventArgs e)
-		{
-			if ((this.DateChanged != null))
-			{
-				this.DateChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler MajorChanged;
-		private void OnMajorChanged(EventArgs e)
-		{
-			if ((this.MajorChanged != null))
-			{
-				this.MajorChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler FederalChanged;
-		private void OnFederalChanged(EventArgs e)
-		{
-			if ((this.FederalChanged != null))
-			{
-				this.FederalChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler RowVersionChanged;
-		private void OnRowVersionChanged(EventArgs e)
-		{
-			if ((this.RowVersionChanged != null))
-			{
-				this.RowVersionChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler CreatedOnChanged;
-		private void OnCreatedOnChanged(EventArgs e)
-		{
-			if ((this.CreatedOnChanged != null))
-			{
-				this.CreatedOnChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler CreatedByChanged;
-		private void OnCreatedByChanged(EventArgs e)
-		{
-			if ((this.CreatedByChanged != null))
-			{
-				this.CreatedByChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler ModifiedOnChanged;
-		private void OnModifiedOnChanged(EventArgs e)
-		{
-			if ((this.ModifiedOnChanged != null))
-			{
-				this.ModifiedOnChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler ModifiedByChanged;
-		private void OnModifiedByChanged(EventArgs e)
-		{
-			if ((this.ModifiedByChanged != null))
-			{
-				this.ModifiedByChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler DefaultChanged;
-		private void OnDefaultChanged(EventArgs e)
-		{
-			if ((this.DefaultChanged != null))
-			{
-				this.DefaultChanged(this, e);
-			}
-		}
-
-		[field: NonSerialized, NotUndoable]
-		public event EventHandler ActionIDChanged;
-		private void OnActionIDChanged(EventArgs e)
-		{
-			if ((this.ActionIDChanged != null))
-			{
-				this.ActionIDChanged(this, e);
 			}
 		}
 
@@ -17835,6 +18293,12 @@ namespace W3000.Data
 		private String _createdBy;
 		private DateTime _modifiedOn;
 		private String _modifiedBy;
+		private String _suite;
+		private String _tenant;
+		private Guid _bDBuildingPK;
+		private String _usrGroupName;
+		private String _address1;
+		private Int32 _buildingID;
 
 		private UsrAccountBuildingMapDataCollection _usrAccountBuildingMapList;
 		private UsrAccountBRRuleDataCollection _usrAccountBRRuleList;
@@ -17863,6 +18327,11 @@ namespace W3000.Data
 			this._createdBy = string.Empty;
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
+			this._suite = string.Empty;
+			this._tenant = string.Empty;
+			this._bDBuildingPK = Guid.Empty;
+			this._usrGroupName = string.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -18354,6 +18823,78 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Suite
+		{
+			get
+			{
+				return this._suite == null ? null : this._suite.Trim();
+			}
+			set
+			{
+				 this._suite = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual String Tenant
+		{
+			get
+			{
+				return this._tenant == null ? null : this._tenant.Trim();
+			}
+			set
+			{
+				 this._tenant = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Guid BDBuildingPK
+		{
+			get
+			{
+				return this._bDBuildingPK;
+			}
+			set
+			{
+				this._bDBuildingPK = value;
+			}
+		}
+
+		public virtual String UsrGroupName
+		{
+			get
+			{
+				return this._usrGroupName == null ? null : this._usrGroupName.Trim();
+			}
+			set
+			{
+				 this._usrGroupName = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual UsrAccountBuildingMapDataCollection UsrAccountBuildingMapList
 		{
 			get
@@ -18408,6 +18949,9 @@ namespace W3000.Data
 			{
 				BDTenantData parent = new BDTenantData();
 				parent.BDTenantPK = this.BDTenantPK;
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Suite = this.Suite;
+				parent.Tenant = this.Tenant;
 				return parent;
 			}
 			set
@@ -18416,6 +18960,9 @@ namespace W3000.Data
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Suite = value.Suite;
+				this.Tenant = value.Tenant;
 			}
 		}
 
@@ -18425,6 +18972,7 @@ namespace W3000.Data
 			{
 				UsrGroupData parent = new UsrGroupData();
 				parent.UsrGroupPK = this.UsrGroupPK;
+				parent.UsrGroupName = this.UsrGroupName;
 				return parent;
 			}
 			set
@@ -18433,6 +18981,7 @@ namespace W3000.Data
 					return;
 
 				this.UsrGroupPK = value.UsrGroupPK;
+				this.UsrGroupName = value.UsrGroupName;
 			}
 		}
 
@@ -18474,6 +19023,12 @@ namespace W3000.Data
 			this.CreatedBy = data.CreatedBy;
 			this.ModifiedOn = data.ModifiedOn;
 			this.ModifiedBy = data.ModifiedBy;
+			this.Suite = data.Suite;
+			this.Tenant = data.Tenant;
+			this.BDBuildingPK = data.BDBuildingPK;
+			this.UsrGroupName = data.UsrGroupName;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.UsrAccountPK = data.UsrAccountPK;
@@ -21020,6 +21575,7 @@ namespace W3000.Data
 		private Int32 _buildingID;
 		private String _lastName;
 		private String _firstName;
+		private Int32 _cardTypeID;
 		private Int32 _encoded;
 		private Int32 _embossed;
 		private Int32 _sitecode;
@@ -21277,6 +21833,18 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual Int32 CardTypeID
+		{
+			get
+			{
+				return this._cardTypeID;
+			}
+			set
+			{
+				this._cardTypeID = value;
+			}
+		}
+
 		public virtual Int32 Encoded
 		{
 			get
@@ -21340,6 +21908,7 @@ namespace W3000.Data
 			{
 				ACCardHolderData parent = new ACCardHolderData();
 				parent.ACCardHolderPK = this.ACCardHolderPK;
+				parent.CardTypeID = this.CardTypeID;
 				parent.Embossed = this.Embossed;
 				parent.Encoded = this.Encoded;
 				parent.FirstName = this.FirstName;
@@ -21353,6 +21922,7 @@ namespace W3000.Data
 					return;
 
 				this.ACCardHolderPK = value.ACCardHolderPK;
+				this.CardTypeID = value.CardTypeID;
 				this.Embossed = value.Embossed;
 				this.Encoded = value.Encoded;
 				this.FirstName = value.FirstName;
@@ -21390,6 +21960,7 @@ namespace W3000.Data
 			this.BuildingID = data.BuildingID;
 			this.LastName = data.LastName;
 			this.FirstName = data.FirstName;
+			this.CardTypeID = data.CardTypeID;
 			this.Encoded = data.Encoded;
 			this.Embossed = data.Embossed;
 			this.Sitecode = data.Sitecode;
@@ -21584,6 +22155,7 @@ namespace W3000.Data
 		private String _createdBy;
 		private DateTime _modifiedOn;
 		private String _modifiedBy;
+		private String _suite;
 		private String _tenant;
 		private Guid _bDBuildingPK;
 		private String _address1;
@@ -21612,6 +22184,7 @@ namespace W3000.Data
 			this._createdBy = string.Empty;
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
+			this._suite = string.Empty;
 			this._tenant = string.Empty;
 			this._bDBuildingPK = Guid.Empty;
 			this._address1 = string.Empty;
@@ -22176,6 +22749,18 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String Suite
+		{
+			get
+			{
+				return this._suite == null ? null : this._suite.Trim();
+			}
+			set
+			{
+				 this._suite = value == null ? null : value.Trim();
+			}
+		}
+
 		public virtual String Tenant
 		{
 			get
@@ -22231,6 +22816,7 @@ namespace W3000.Data
 				BDTenantData parent = new BDTenantData();
 				parent.BDTenantPK = this.BDTenantPK;
 				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
 				return parent;
 			}
@@ -22241,6 +22827,7 @@ namespace W3000.Data
 
 				this.BDTenantPK = value.BDTenantPK;
 				this.BDBuildingPK = value.BDBuildingPK;
+				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
 			}
 		}
@@ -22286,6 +22873,7 @@ namespace W3000.Data
 			this.CreatedBy = data.CreatedBy;
 			this.ModifiedOn = data.ModifiedOn;
 			this.ModifiedBy = data.ModifiedBy;
+			this.Suite = data.Suite;
 			this.Tenant = data.Tenant;
 			this.BDBuildingPK = data.BDBuildingPK;
 			this.Address1 = data.Address1;
@@ -26042,6 +26630,10 @@ namespace W3000.Data
 		private Byte _groupID;
 		private Guid _aCPanelPK;
 		private Byte _inputID;
+		private Int32 _unitID;
+		private String _address1;
+		private Int32 _buildingID;
+		private Guid _bDBuildingPK;
 
 		#endregion
 
@@ -26056,6 +26648,8 @@ namespace W3000.Data
 			this._modifiedOn = DateTime.Now;
 			this._modifiedBy = string.Empty;
 			this._aCPanelPK = Guid.Empty;
+			this._address1 = string.Empty;
+			this._bDBuildingPK = Guid.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -26236,6 +26830,54 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual Int32 UnitID
+		{
+			get
+			{
+				return this._unitID;
+			}
+			set
+			{
+				this._unitID = value;
+			}
+		}
+
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
+		public virtual Guid BDBuildingPK
+		{
+			get
+			{
+				return this._bDBuildingPK;
+			}
+			set
+			{
+				this._bDBuildingPK = value;
+			}
+		}
+
 		public virtual ACInputGroupData ACInputGroup
 		{
 			get
@@ -26302,6 +26944,10 @@ namespace W3000.Data
 			this.GroupID = data.GroupID;
 			this.ACPanelPK = data.ACPanelPK;
 			this.InputID = data.InputID;
+			this.UnitID = data.UnitID;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
+			this.BDBuildingPK = data.BDBuildingPK;
 			if (all)
 			{
 				this.ACInputGroupInputMapPK = data.ACInputGroupInputMapPK;
@@ -26858,6 +27504,9 @@ namespace W3000.Data
 		private String _modifiedBy;
 		private String _tenant;
 		private Guid _bDBuildingPK;
+		private String _userID;
+		private String _address1;
+		private Int32 _buildingID;
 
 		#endregion
 
@@ -26873,6 +27522,8 @@ namespace W3000.Data
 			this._modifiedBy = string.Empty;
 			this._tenant = string.Empty;
 			this._bDBuildingPK = Guid.Empty;
+			this._userID = string.Empty;
+			this._address1 = string.Empty;
 
 			base.MarkNew();
 			this.InitMemberVariables();
@@ -27041,6 +27692,42 @@ namespace W3000.Data
 			}
 		}
 
+		public virtual String UserID
+		{
+			get
+			{
+				return this._userID == null ? null : this._userID.Trim();
+			}
+			set
+			{
+				 this._userID = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual String Address1
+		{
+			get
+			{
+				return this._address1 == null ? null : this._address1.Trim();
+			}
+			set
+			{
+				 this._address1 = value == null ? null : value.Trim();
+			}
+		}
+
+		public virtual Int32 BuildingID
+		{
+			get
+			{
+				return this._buildingID;
+			}
+			set
+			{
+				this._buildingID = value;
+			}
+		}
+
 		public virtual BDTenantData BDTenant
 		{
 			get
@@ -27068,6 +27755,7 @@ namespace W3000.Data
 			{
 				UsrAccountData parent = new UsrAccountData();
 				parent.UsrAccountPK = this.UsrAccountPK;
+				parent.UserID = this.UserID;
 				return parent;
 			}
 			set
@@ -27076,6 +27764,7 @@ namespace W3000.Data
 					return;
 
 				this.UsrAccountPK = value.UsrAccountPK;
+				this.UserID = value.UserID;
 			}
 		}
 
@@ -27104,6 +27793,9 @@ namespace W3000.Data
 			this.ModifiedBy = data.ModifiedBy;
 			this.Tenant = data.Tenant;
 			this.BDBuildingPK = data.BDBuildingPK;
+			this.UserID = data.UserID;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 			if (all)
 			{
 				this.UsrAccountTenantMapPK = data.UsrAccountTenantMapPK;
@@ -29490,6 +30182,108 @@ namespace W3000.Data
 
 	}
 	[Serializable]
+	public class UtilHolidayDataCollection : BusinessCollectionBase
+	{
+		#region Constructors
+		public UtilHolidayDataCollection()
+		{
+			base._itemType = typeof(UtilHolidayData);
+		}
+
+		public UtilHolidayDataCollection(UtilHolidayDataCollection list)
+		{
+			base._itemType = typeof(UtilHolidayData);
+			foreach(UtilHolidayData item in list)
+			{
+				this.Add(new UtilHolidayData(item));
+			}
+
+			System.Collections.ArrayList deletedList = list.GetDeletedList();
+			foreach(UtilHolidayData item in deletedList)
+			{
+				UtilHolidayData entity = new UtilHolidayData(item);
+				this.Add(entity);
+				this.Remove(entity);
+			}
+		}
+
+		public override string TableName
+		{
+			get { return "UtilHoliday"; }
+		}
+
+		#endregion
+
+		public void Add(UtilHolidayData obj)
+		{
+			base.List.Add(obj);
+		}
+
+		public void AddRange(UtilHolidayDataCollection list)
+		{
+			foreach(UtilHolidayData item in list)
+			{
+				this.Add(item);
+			}
+		}
+
+		public void Remove(UtilHolidayData obj)
+		{
+			base.List.Remove(obj);
+		}
+
+		public void Insert(int index, UtilHolidayData obj)
+		{
+			 base.List.Insert(index, obj);
+		}
+
+		public bool Contains(UtilHolidayData item)
+		{
+			foreach (UtilHolidayData data in base.List)
+			{
+				if (data.Equals(item))
+				{
+					 return true;
+				}
+			}
+			return false;
+		}
+
+		public bool ContainsDeleted(UtilHolidayData item)
+		{
+			foreach (UtilHolidayData data in  this._deletedList)
+			{
+				if (data.Equals(item))
+				{
+					 return true;
+				}
+			}
+			return false;
+		}
+
+		public new UtilHolidayData this[int index]
+		{
+			get
+			{
+				return (UtilHolidayData) base.List[index];
+			}
+			set
+			{
+				base.List[index] = value;
+			}
+		}
+
+		protected override void OnValidate(object item)
+		{
+			System.Type t = item.GetType();
+			if (t != base._itemType && !t.IsSubclassOf(base._itemType))
+			{
+				throw new ArgumentException("The item must be a type of UtilHolidayData");
+			}
+		}
+
+	}
+	[Serializable]
 	public class ACAccessLevelDataCollection : BusinessCollectionBase
 	{
 		#region Constructors
@@ -29689,108 +30483,6 @@ namespace W3000.Data
 			if (t != base._itemType && !t.IsSubclassOf(base._itemType))
 			{
 				throw new ArgumentException("The item must be a type of ACPanelFunctionCardMapData");
-			}
-		}
-
-	}
-	[Serializable]
-	public class UtilHolidayDataCollection : BusinessCollectionBase
-	{
-		#region Constructors
-		public UtilHolidayDataCollection()
-		{
-			base._itemType = typeof(UtilHolidayData);
-		}
-
-		public UtilHolidayDataCollection(UtilHolidayDataCollection list)
-		{
-			base._itemType = typeof(UtilHolidayData);
-			foreach(UtilHolidayData item in list)
-			{
-				this.Add(new UtilHolidayData(item));
-			}
-
-			System.Collections.ArrayList deletedList = list.GetDeletedList();
-			foreach(UtilHolidayData item in deletedList)
-			{
-				UtilHolidayData entity = new UtilHolidayData(item);
-				this.Add(entity);
-				this.Remove(entity);
-			}
-		}
-
-		public override string TableName
-		{
-			get { return "UtilHoliday"; }
-		}
-
-		#endregion
-
-		public void Add(UtilHolidayData obj)
-		{
-			base.List.Add(obj);
-		}
-
-		public void AddRange(UtilHolidayDataCollection list)
-		{
-			foreach(UtilHolidayData item in list)
-			{
-				this.Add(item);
-			}
-		}
-
-		public void Remove(UtilHolidayData obj)
-		{
-			base.List.Remove(obj);
-		}
-
-		public void Insert(int index, UtilHolidayData obj)
-		{
-			 base.List.Insert(index, obj);
-		}
-
-		public bool Contains(UtilHolidayData item)
-		{
-			foreach (UtilHolidayData data in base.List)
-			{
-				if (data.Equals(item))
-				{
-					 return true;
-				}
-			}
-			return false;
-		}
-
-		public bool ContainsDeleted(UtilHolidayData item)
-		{
-			foreach (UtilHolidayData data in  this._deletedList)
-			{
-				if (data.Equals(item))
-				{
-					 return true;
-				}
-			}
-			return false;
-		}
-
-		public new UtilHolidayData this[int index]
-		{
-			get
-			{
-				return (UtilHolidayData) base.List[index];
-			}
-			set
-			{
-				base.List[index] = value;
-			}
-		}
-
-		protected override void OnValidate(object item)
-		{
-			System.Type t = item.GetType();
-			if (t != base._itemType && !t.IsSubclassOf(base._itemType))
-			{
-				throw new ArgumentException("The item must be a type of UtilHolidayData");
 			}
 		}
 

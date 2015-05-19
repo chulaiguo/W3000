@@ -18,6 +18,8 @@ namespace W3000.Data
 		private System.Guid _bDBuildingPK = Guid.Empty;
 		private System.DateTime _date = new DateTime(1900, 1, 1);
 		private System.String _holiday = string.Empty;
+		private System.String _address1 = string.Empty;
+		private System.Int32 _buildingID = 0;
 
 		public System.Guid BDTenantHolidayMapPK
 		{
@@ -97,6 +99,18 @@ namespace W3000.Data
 			set{ this._holiday = value; }
 		}
 
+		public System.String Address1
+		{
+			get{ return this._address1; }
+			set{ this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get{ return this._buildingID; }
+			set{ this._buildingID = value; }
+		}
+
 		public BDTenantHolidayMapView()
 		{
 		}
@@ -116,6 +130,8 @@ namespace W3000.Data
 			this.BDBuildingPK = data.BDBuildingPK;
 			this.Date = data.Date;
 			this.Holiday = data.Holiday;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
 		}
 
 
@@ -135,6 +151,8 @@ namespace W3000.Data
 			entity.BDBuildingPK = this.BDBuildingPK;
 			entity.Date = this.Date;
 			entity.Holiday = this.Holiday;
+			entity.Address1 = this.Address1;
+			entity.BuildingID = this.BuildingID;
 
 			return entity;
 		}

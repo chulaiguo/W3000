@@ -116,6 +116,14 @@ namespace W3000.Manager.GridDecorator
 			colModifiedBy.OptionsColumn.ShowInCustomizationForm = false;
 			view.Columns.Add(colModifiedBy);
 
+			GridColumn colFullName = new GridColumn();
+			colFullName.Caption = "FullName";
+			colFullName.FieldName = ACMasterCardSchema.FullName;
+			colFullName.OptionsColumn.AllowEdit = false;
+			colFullName.OptionsColumn.AllowFocus = false;
+			colFullName.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colFullName);
+
 		}
 
 		protected override void NavigatorEditClick(GridView view, NavigatorButtonClickEventArgs e)

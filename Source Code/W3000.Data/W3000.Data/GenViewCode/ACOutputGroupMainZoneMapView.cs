@@ -15,6 +15,10 @@ namespace W3000.Data
 		private System.Byte _mainZoneID = 0;
 		private System.Guid _aCPanelPK = Guid.Empty;
 		private System.Byte _groupID = 0;
+		private System.Int32 _unitID = 0;
+		private System.String _address1 = string.Empty;
+		private System.Int32 _buildingID = 0;
+		private System.Guid _bDBuildingPK = Guid.Empty;
 
 		public System.Guid ACOutputGroupMainZoneMapPK
 		{
@@ -76,6 +80,30 @@ namespace W3000.Data
 			set{ this._groupID = value; }
 		}
 
+		public System.Int32 UnitID
+		{
+			get{ return this._unitID; }
+			set{ this._unitID = value; }
+		}
+
+		public System.String Address1
+		{
+			get{ return this._address1; }
+			set{ this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get{ return this._buildingID; }
+			set{ this._buildingID = value; }
+		}
+
+		public System.Guid BDBuildingPK
+		{
+			get{ return this._bDBuildingPK; }
+			set{ this._bDBuildingPK = value; }
+		}
+
 		public ACOutputGroupMainZoneMapView()
 		{
 		}
@@ -92,6 +120,10 @@ namespace W3000.Data
 			this.MainZoneID = data.MainZoneID;
 			this.ACPanelPK = data.ACPanelPK;
 			this.GroupID = data.GroupID;
+			this.UnitID = data.UnitID;
+			this.Address1 = data.Address1;
+			this.BuildingID = data.BuildingID;
+			this.BDBuildingPK = data.BDBuildingPK;
 		}
 
 
@@ -108,6 +140,10 @@ namespace W3000.Data
 			entity.MainZoneID = this.MainZoneID;
 			entity.ACPanelPK = this.ACPanelPK;
 			entity.GroupID = this.GroupID;
+			entity.UnitID = this.UnitID;
+			entity.Address1 = this.Address1;
+			entity.BuildingID = this.BuildingID;
+			entity.BDBuildingPK = this.BDBuildingPK;
 
 			return entity;
 		}

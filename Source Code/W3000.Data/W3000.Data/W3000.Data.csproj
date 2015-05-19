@@ -43,6 +43,7 @@
     <Compile Include="CriteriaBDBuildingView.cs" />
     <Compile Include="GenCode\CheckRules.cs" />
     <Compile Include="GenCode\DataObj.cs" />
+    <Compile Include="GenCode\FullName.cs" />
     <Compile Include="GenViewCode\ACAccessLevelDetailView.cs" />
     <Compile Include="GenViewCode\ACAccessLevelView.cs" />
     <Compile Include="GenViewCode\ACAMFormatView.cs" />

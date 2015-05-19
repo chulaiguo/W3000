@@ -72,6 +72,16 @@ namespace W3000.Manager.GridDecorator
 			colModifiedBy.OptionsColumn.ShowInCustomizationForm = false;
 			view.Columns.Add(colModifiedBy);
 
+			GridColumn colCardTypeID = new GridColumn();
+			colCardTypeID.Caption = "CardTypeID";
+			colCardTypeID.FieldName = ACPanelFunctionCardMapSchema.CardTypeID;
+			colCardTypeID.OptionsColumn.AllowEdit = false;
+			colCardTypeID.OptionsColumn.AllowFocus = false;
+			colCardTypeID.VisibleIndex = view.Columns.Count;
+			colCardTypeID.DisplayFormat.FormatType = FormatType.Numeric;
+			colCardTypeID.DisplayFormat.FormatString = "f0";
+			view.Columns.Add(colCardTypeID);
+
 			GridColumn colEncoded = new GridColumn();
 			colEncoded.Caption = "Encoded";
 			colEncoded.FieldName = ACPanelFunctionCardMapSchema.Encoded;

@@ -24,7 +24,6 @@ namespace W3000.Manager.FormDetailMap
 
 		protected override void DataBinding()
 		{
-			this.txtCountryID.BindingData(this.ACPanelHolidayMap, ACPanelHolidayMapSchema.CountryID);
 			this.txtHoliday.BindingData(this.ACPanelHolidayMap, ACPanelHolidayMapSchema.Holiday);
 			this.dateDate.BindingData(this.ACPanelHolidayMap, ACPanelHolidayMapSchema.Date);
 			this.txtUnitID.BindingData(this.ACPanelHolidayMap, ACPanelHolidayMapSchema.UnitID);

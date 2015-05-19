@@ -155,6 +155,32 @@ namespace W3000.Manager.GridDecorator
 			colTenant.VisibleIndex = view.Columns.Count;
 			view.Columns.Add(colTenant);
 
+			GridColumn colAddress1 = new GridColumn();
+			colAddress1.Caption = "Address1";
+			colAddress1.FieldName = ACFunctionCardSchema.Address1;
+			colAddress1.OptionsColumn.AllowEdit = false;
+			colAddress1.OptionsColumn.AllowFocus = false;
+			colAddress1.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colAddress1);
+
+			GridColumn colBuildingID = new GridColumn();
+			colBuildingID.Caption = "BuildingID";
+			colBuildingID.FieldName = ACFunctionCardSchema.BuildingID;
+			colBuildingID.OptionsColumn.AllowEdit = false;
+			colBuildingID.OptionsColumn.AllowFocus = false;
+			colBuildingID.VisibleIndex = view.Columns.Count;
+			colBuildingID.DisplayFormat.FormatType = FormatType.Numeric;
+			colBuildingID.DisplayFormat.FormatString = "f0";
+			view.Columns.Add(colBuildingID);
+
+			GridColumn colFullName = new GridColumn();
+			colFullName.Caption = "FullName";
+			colFullName.FieldName = ACFunctionCardSchema.FullName;
+			colFullName.OptionsColumn.AllowEdit = false;
+			colFullName.OptionsColumn.AllowFocus = false;
+			colFullName.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colFullName);
+
 		}
 
 		protected override void NavigatorEditClick(GridView view, NavigatorButtonClickEventArgs e)

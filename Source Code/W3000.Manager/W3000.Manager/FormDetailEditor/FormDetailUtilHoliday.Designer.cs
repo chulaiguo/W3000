@@ -37,18 +37,18 @@ namespace W3000.Manager.FormDetailEditor
 			this.txtActionID = new Cheke.WinCtrl.Common.TextEditEx();
 			this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
 			this.tabDetail = new DevExpress.XtraTab.XtraTabPage();
-			this.tabACIntvalHolidayMap = new DevExpress.XtraTab.XtraTabPage();
-			this.grdACIntvalHolidayMap = new DevExpress.XtraGrid.GridControl();
-			this.grdACIntvalHolidayMapView = new DevExpress.XtraGrid.Views.Grid.GridView();
-			this.tabACPanelHolidayMap = new DevExpress.XtraTab.XtraTabPage();
-			this.grdACPanelHolidayMap = new DevExpress.XtraGrid.GridControl();
-			this.grdACPanelHolidayMapView = new DevExpress.XtraGrid.Views.Grid.GridView();
-			this.tabBDBuildingHolidayMap = new DevExpress.XtraTab.XtraTabPage();
-			this.grdBDBuildingHolidayMap = new DevExpress.XtraGrid.GridControl();
-			this.grdBDBuildingHolidayMapView = new DevExpress.XtraGrid.Views.Grid.GridView();
 			this.tabBDTenantHolidayMap = new DevExpress.XtraTab.XtraTabPage();
 			this.grdBDTenantHolidayMap = new DevExpress.XtraGrid.GridControl();
 			this.grdBDTenantHolidayMapView = new DevExpress.XtraGrid.Views.Grid.GridView();
+			this.tabBDBuildingHolidayMap = new DevExpress.XtraTab.XtraTabPage();
+			this.grdBDBuildingHolidayMap = new DevExpress.XtraGrid.GridControl();
+			this.grdBDBuildingHolidayMapView = new DevExpress.XtraGrid.Views.Grid.GridView();
+			this.tabACPanelHolidayMap = new DevExpress.XtraTab.XtraTabPage();
+			this.grdACPanelHolidayMap = new DevExpress.XtraGrid.GridControl();
+			this.grdACPanelHolidayMapView = new DevExpress.XtraGrid.Views.Grid.GridView();
+			this.tabACIntvalHolidayMap = new DevExpress.XtraTab.XtraTabPage();
+			this.grdACIntvalHolidayMap = new DevExpress.XtraGrid.GridControl();
+			this.grdACIntvalHolidayMapView = new DevExpress.XtraGrid.Views.Grid.GridView();
 			((System.ComponentModel.ISupportInitialize)(this.pnlButtons)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pnlContent)).BeginInit();
 			this.pnlContent.SuspendLayout();
@@ -61,14 +61,14 @@ namespace W3000.Manager.FormDetailEditor
 			((System.ComponentModel.ISupportInitialize)(this.chkDefault.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtActionID.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdACIntvalHolidayMap)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdACIntvalHolidayMapView)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdACPanelHolidayMap)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdACPanelHolidayMapView)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdBDBuildingHolidayMap)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdBDBuildingHolidayMapView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.grdBDTenantHolidayMap)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.grdBDTenantHolidayMapView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdBDBuildingHolidayMap)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdBDBuildingHolidayMapView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdACPanelHolidayMap)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdACPanelHolidayMapView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdACIntvalHolidayMap)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdACIntvalHolidayMapView)).BeginInit();
 			this.SuspendLayout();
 			//
 			// pnlContent
@@ -81,7 +81,7 @@ namespace W3000.Manager.FormDetailEditor
 			this.xtraTabControl1.Name = "xtraTabControl1";
 			this.xtraTabControl1.SelectedTabPage = this.tabDetail;
 			this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-			this.tabDetail,this.tabACIntvalHolidayMap,this.tabACPanelHolidayMap,this.tabBDBuildingHolidayMap,this.tabBDTenantHolidayMap});
+			this.tabDetail,this.tabBDTenantHolidayMap,this.tabBDBuildingHolidayMap,this.tabACPanelHolidayMap,this.tabACIntvalHolidayMap});
 			this.xtraTabControl1.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControl1_SelectedPageChanged);
 			//
 			// tabDetail
@@ -96,19 +96,12 @@ namespace W3000.Manager.FormDetailEditor
 			this.tabDetail.Name = "tabDetail";
 			this.tabDetail.Text = "Detail";
 			//
-			// tabACIntvalHolidayMap
+			// tabBDTenantHolidayMap
 			//
-			this.tabACIntvalHolidayMap.Controls.Add(this.grdACIntvalHolidayMap);
-			this.tabACIntvalHolidayMap.Name = "tabACIntvalHolidayMap";
-			this.tabACIntvalHolidayMap.Text = "ACIntvalHolidayMap";
-			this.tabACIntvalHolidayMap.Enter += new System.EventHandler(this.tabACIntvalHolidayMap_Enter);
-			//
-			// tabACPanelHolidayMap
-			//
-			this.tabACPanelHolidayMap.Controls.Add(this.grdACPanelHolidayMap);
-			this.tabACPanelHolidayMap.Name = "tabACPanelHolidayMap";
-			this.tabACPanelHolidayMap.Text = "ACPanelHolidayMap";
-			this.tabACPanelHolidayMap.Enter += new System.EventHandler(this.tabACPanelHolidayMap_Enter);
+			this.tabBDTenantHolidayMap.Controls.Add(this.grdBDTenantHolidayMap);
+			this.tabBDTenantHolidayMap.Name = "tabBDTenantHolidayMap";
+			this.tabBDTenantHolidayMap.Text = "BDTenantHolidayMap";
+			this.tabBDTenantHolidayMap.Enter += new System.EventHandler(this.tabBDTenantHolidayMap_Enter);
 			//
 			// tabBDBuildingHolidayMap
 			//
@@ -117,36 +110,31 @@ namespace W3000.Manager.FormDetailEditor
 			this.tabBDBuildingHolidayMap.Text = "BDBuildingHolidayMap";
 			this.tabBDBuildingHolidayMap.Enter += new System.EventHandler(this.tabBDBuildingHolidayMap_Enter);
 			//
-			// tabBDTenantHolidayMap
+			// tabACPanelHolidayMap
 			//
-			this.tabBDTenantHolidayMap.Controls.Add(this.grdBDTenantHolidayMap);
-			this.tabBDTenantHolidayMap.Name = "tabBDTenantHolidayMap";
-			this.tabBDTenantHolidayMap.Text = "BDTenantHolidayMap";
-			this.tabBDTenantHolidayMap.Enter += new System.EventHandler(this.tabBDTenantHolidayMap_Enter);
+			this.tabACPanelHolidayMap.Controls.Add(this.grdACPanelHolidayMap);
+			this.tabACPanelHolidayMap.Name = "tabACPanelHolidayMap";
+			this.tabACPanelHolidayMap.Text = "ACPanelHolidayMap";
+			this.tabACPanelHolidayMap.Enter += new System.EventHandler(this.tabACPanelHolidayMap_Enter);
 			//
-			// grdACIntvalHolidayMap
+			// tabACIntvalHolidayMap
 			//
-			this.grdACIntvalHolidayMap.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.grdACIntvalHolidayMap.MainView = this.grdACIntvalHolidayMapView;
-			this.grdACIntvalHolidayMap.Name = "grdACIntvalHolidayMap";
-			this.grdACIntvalHolidayMap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {this.grdACIntvalHolidayMapView});
+			this.tabACIntvalHolidayMap.Controls.Add(this.grdACIntvalHolidayMap);
+			this.tabACIntvalHolidayMap.Name = "tabACIntvalHolidayMap";
+			this.tabACIntvalHolidayMap.Text = "ACIntvalHolidayMap";
+			this.tabACIntvalHolidayMap.Enter += new System.EventHandler(this.tabACIntvalHolidayMap_Enter);
 			//
-			// grdACIntvalHolidayMapView
+			// grdBDTenantHolidayMap
 			//
-			this.grdACIntvalHolidayMapView.GridControl = this.grdACIntvalHolidayMap;
-			this.grdACIntvalHolidayMapView.Name = "grdACIntvalHolidayMapView";
+			this.grdBDTenantHolidayMap.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.grdBDTenantHolidayMap.MainView = this.grdBDTenantHolidayMapView;
+			this.grdBDTenantHolidayMap.Name = "grdBDTenantHolidayMap";
+			this.grdBDTenantHolidayMap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {this.grdBDTenantHolidayMapView});
 			//
-			// grdACPanelHolidayMap
+			// grdBDTenantHolidayMapView
 			//
-			this.grdACPanelHolidayMap.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.grdACPanelHolidayMap.MainView = this.grdACPanelHolidayMapView;
-			this.grdACPanelHolidayMap.Name = "grdACPanelHolidayMap";
-			this.grdACPanelHolidayMap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {this.grdACPanelHolidayMapView});
-			//
-			// grdACPanelHolidayMapView
-			//
-			this.grdACPanelHolidayMapView.GridControl = this.grdACPanelHolidayMap;
-			this.grdACPanelHolidayMapView.Name = "grdACPanelHolidayMapView";
+			this.grdBDTenantHolidayMapView.GridControl = this.grdBDTenantHolidayMap;
+			this.grdBDTenantHolidayMapView.Name = "grdBDTenantHolidayMapView";
 			//
 			// grdBDBuildingHolidayMap
 			//
@@ -160,17 +148,29 @@ namespace W3000.Manager.FormDetailEditor
 			this.grdBDBuildingHolidayMapView.GridControl = this.grdBDBuildingHolidayMap;
 			this.grdBDBuildingHolidayMapView.Name = "grdBDBuildingHolidayMapView";
 			//
-			// grdBDTenantHolidayMap
+			// grdACPanelHolidayMap
 			//
-			this.grdBDTenantHolidayMap.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.grdBDTenantHolidayMap.MainView = this.grdBDTenantHolidayMapView;
-			this.grdBDTenantHolidayMap.Name = "grdBDTenantHolidayMap";
-			this.grdBDTenantHolidayMap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {this.grdBDTenantHolidayMapView});
+			this.grdACPanelHolidayMap.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.grdACPanelHolidayMap.MainView = this.grdACPanelHolidayMapView;
+			this.grdACPanelHolidayMap.Name = "grdACPanelHolidayMap";
+			this.grdACPanelHolidayMap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {this.grdACPanelHolidayMapView});
 			//
-			// grdBDTenantHolidayMapView
+			// grdACPanelHolidayMapView
 			//
-			this.grdBDTenantHolidayMapView.GridControl = this.grdBDTenantHolidayMap;
-			this.grdBDTenantHolidayMapView.Name = "grdBDTenantHolidayMapView";
+			this.grdACPanelHolidayMapView.GridControl = this.grdACPanelHolidayMap;
+			this.grdACPanelHolidayMapView.Name = "grdACPanelHolidayMapView";
+			//
+			// grdACIntvalHolidayMap
+			//
+			this.grdACIntvalHolidayMap.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.grdACIntvalHolidayMap.MainView = this.grdACIntvalHolidayMapView;
+			this.grdACIntvalHolidayMap.Name = "grdACIntvalHolidayMap";
+			this.grdACIntvalHolidayMap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {this.grdACIntvalHolidayMapView});
+			//
+			// grdACIntvalHolidayMapView
+			//
+			this.grdACIntvalHolidayMapView.GridControl = this.grdACIntvalHolidayMap;
+			this.grdACIntvalHolidayMapView.Name = "grdACIntvalHolidayMapView";
 			//
 			// txtCountryID
 			//
@@ -256,14 +256,14 @@ namespace W3000.Manager.FormDetailEditor
 			((System.ComponentModel.ISupportInitialize)(this.chkDefault.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtActionID.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdACIntvalHolidayMap)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdACIntvalHolidayMapView)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdACPanelHolidayMap)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdACPanelHolidayMapView)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdBDBuildingHolidayMap)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.grdBDBuildingHolidayMapView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.grdBDTenantHolidayMap)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.grdBDTenantHolidayMapView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdBDBuildingHolidayMap)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdBDBuildingHolidayMapView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdACPanelHolidayMap)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdACPanelHolidayMapView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdACIntvalHolidayMap)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdACIntvalHolidayMapView)).EndInit();
 			this.ResumeLayout(false);
 		}
 
@@ -278,17 +278,17 @@ namespace W3000.Manager.FormDetailEditor
 		private Cheke.WinCtrl.Common.TextEditEx txtActionID;
 		private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
 		private DevExpress.XtraTab.XtraTabPage tabDetail;
-		private DevExpress.XtraTab.XtraTabPage tabACIntvalHolidayMap;
-		private DevExpress.XtraGrid.GridControl grdACIntvalHolidayMap;
-		private DevExpress.XtraGrid.Views.Grid.GridView grdACIntvalHolidayMapView;
-		private DevExpress.XtraTab.XtraTabPage tabACPanelHolidayMap;
-		private DevExpress.XtraGrid.GridControl grdACPanelHolidayMap;
-		private DevExpress.XtraGrid.Views.Grid.GridView grdACPanelHolidayMapView;
-		private DevExpress.XtraTab.XtraTabPage tabBDBuildingHolidayMap;
-		private DevExpress.XtraGrid.GridControl grdBDBuildingHolidayMap;
-		private DevExpress.XtraGrid.Views.Grid.GridView grdBDBuildingHolidayMapView;
 		private DevExpress.XtraTab.XtraTabPage tabBDTenantHolidayMap;
 		private DevExpress.XtraGrid.GridControl grdBDTenantHolidayMap;
 		private DevExpress.XtraGrid.Views.Grid.GridView grdBDTenantHolidayMapView;
+		private DevExpress.XtraTab.XtraTabPage tabBDBuildingHolidayMap;
+		private DevExpress.XtraGrid.GridControl grdBDBuildingHolidayMap;
+		private DevExpress.XtraGrid.Views.Grid.GridView grdBDBuildingHolidayMapView;
+		private DevExpress.XtraTab.XtraTabPage tabACPanelHolidayMap;
+		private DevExpress.XtraGrid.GridControl grdACPanelHolidayMap;
+		private DevExpress.XtraGrid.Views.Grid.GridView grdACPanelHolidayMapView;
+		private DevExpress.XtraTab.XtraTabPage tabACIntvalHolidayMap;
+		private DevExpress.XtraGrid.GridControl grdACIntvalHolidayMap;
+		private DevExpress.XtraGrid.Views.Grid.GridView grdACIntvalHolidayMapView;
 	}
 }

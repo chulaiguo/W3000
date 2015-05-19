@@ -80,6 +80,32 @@ namespace W3000.Manager.GridDecorator
 			colTenant.VisibleIndex = view.Columns.Count;
 			view.Columns.Add(colTenant);
 
+			GridColumn colUserID = new GridColumn();
+			colUserID.Caption = "UserID";
+			colUserID.FieldName = UsrAccountTenantMapSchema.UserID;
+			colUserID.OptionsColumn.AllowEdit = false;
+			colUserID.OptionsColumn.AllowFocus = false;
+			colUserID.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colUserID);
+
+			GridColumn colAddress1 = new GridColumn();
+			colAddress1.Caption = "Address1";
+			colAddress1.FieldName = UsrAccountTenantMapSchema.Address1;
+			colAddress1.OptionsColumn.AllowEdit = false;
+			colAddress1.OptionsColumn.AllowFocus = false;
+			colAddress1.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colAddress1);
+
+			GridColumn colBuildingID = new GridColumn();
+			colBuildingID.Caption = "BuildingID";
+			colBuildingID.FieldName = UsrAccountTenantMapSchema.BuildingID;
+			colBuildingID.OptionsColumn.AllowEdit = false;
+			colBuildingID.OptionsColumn.AllowFocus = false;
+			colBuildingID.VisibleIndex = view.Columns.Count;
+			colBuildingID.DisplayFormat.FormatType = FormatType.Numeric;
+			colBuildingID.DisplayFormat.FormatString = "f0";
+			view.Columns.Add(colBuildingID);
+
 		}
 
 		protected override void NavigatorEditClick(GridView view, NavigatorButtonClickEventArgs e)

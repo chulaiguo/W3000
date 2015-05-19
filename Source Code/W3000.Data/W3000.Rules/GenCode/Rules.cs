@@ -13,9 +13,14 @@ namespace W3000.Rules
 		private System.String _createdBy;
 		private System.DateTime _modifiedOn;
 		private System.String _modifiedBy;
+		private System.String _end;
+		private System.String _begin;
+		private System.Int16 _iVID;
 		private System.Guid _bDBuildingPK;
 		private System.DateTime _date;
 		private System.String _holiday;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid ACIntvalHolidayMapPK
 		{
@@ -59,6 +64,24 @@ namespace W3000.Rules
 			set { this._modifiedBy = value; }
 		}
 
+		public System.String End
+		{
+			get { return this._end; }
+			set { this._end = value; }
+		}
+
+		public System.String Begin
+		{
+			get { return this._begin; }
+			set { this._begin = value; }
+		}
+
+		public System.Int16 IVID
+		{
+			get { return this._iVID; }
+			set { this._iVID = value; }
+		}
+
 		public System.Guid BDBuildingPK
 		{
 			get { return this._bDBuildingPK; }
@@ -75,6 +98,18 @@ namespace W3000.Rules
 		{
 			get { return this._holiday; }
 			set { this._holiday = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
 		}
 
 	}
@@ -98,6 +133,9 @@ namespace W3000.Rules
 		private System.String _aLSummary;
 		private System.Int16 _accessLevelID;
 		private System.Guid _bDBuildingPK;
+		private System.Int32 _unitID;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid ACAccessLevelDetailPK
 		{
@@ -201,6 +239,24 @@ namespace W3000.Rules
 			set { this._bDBuildingPK = value; }
 		}
 
+		public System.Int32 UnitID
+		{
+			get { return this._unitID; }
+			set { this._unitID = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
+		}
+
 	}
 	[Serializable]
 	public class UsrAccountBuildingMapRuleData
@@ -218,6 +274,7 @@ namespace W3000.Rules
 		private System.Boolean _primary;
 		private System.String _address1;
 		private System.Int32 _buildingID;
+		private System.String _userID;
 
 		public System.Guid UsrAccountBuildingMapPK
 		{
@@ -295,6 +352,12 @@ namespace W3000.Rules
 		{
 			get { return this._buildingID; }
 			set { this._buildingID = value; }
+		}
+
+		public System.String UserID
+		{
+			get { return this._userID; }
+			set { this._userID = value; }
 		}
 
 	}
@@ -856,6 +919,8 @@ namespace W3000.Rules
 		private System.String _createdBy;
 		private System.DateTime _modifiedOn;
 		private System.String _modifiedBy;
+		private System.String _settingCategory;
+		private System.Int32 _settingCategoryID;
 
 		public System.Guid UtilSettingDetailPK
 		{
@@ -905,6 +970,18 @@ namespace W3000.Rules
 			set { this._modifiedBy = value; }
 		}
 
+		public System.String SettingCategory
+		{
+			get { return this._settingCategory; }
+			set { this._settingCategory = value; }
+		}
+
+		public System.Int32 SettingCategoryID
+		{
+			get { return this._settingCategoryID; }
+			set { this._settingCategoryID = value; }
+		}
+
 	}
 	[Serializable]
 	public class ACOutputGroupMainZoneMapRuleData
@@ -919,6 +996,10 @@ namespace W3000.Rules
 		private System.Byte _mainZoneID;
 		private System.Guid _aCPanelPK;
 		private System.Byte _groupID;
+		private System.Int32 _unitID;
+		private System.String _address1;
+		private System.Int32 _buildingID;
+		private System.Guid _bDBuildingPK;
 
 		public System.Guid ACOutputGroupMainZoneMapPK
 		{
@@ -980,6 +1061,30 @@ namespace W3000.Rules
 			set { this._groupID = value; }
 		}
 
+		public System.Int32 UnitID
+		{
+			get { return this._unitID; }
+			set { this._unitID = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
+		}
+
+		public System.Guid BDBuildingPK
+		{
+			get { return this._bDBuildingPK; }
+			set { this._bDBuildingPK = value; }
+		}
+
 	}
 	[Serializable]
 	public class ACCardHolderRuleData
@@ -1011,8 +1116,11 @@ namespace W3000.Rules
 		private System.String _createdBy;
 		private System.DateTime _modifiedOn;
 		private System.String _modifiedBy;
+		private System.String _suite;
 		private System.String _tenant;
 		private System.Guid _bDBuildingPK;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid ACCardHolderPK
 		{
@@ -1176,6 +1284,12 @@ namespace W3000.Rules
 			set { this._modifiedBy = value; }
 		}
 
+		public System.String Suite
+		{
+			get { return this._suite; }
+			set { this._suite = value; }
+		}
+
 		public System.String Tenant
 		{
 			get { return this._tenant; }
@@ -1186,6 +1300,18 @@ namespace W3000.Rules
 		{
 			get { return this._bDBuildingPK; }
 			set { this._bDBuildingPK = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
 		}
 
 	}
@@ -1831,8 +1957,10 @@ namespace W3000.Rules
 		private System.String _end;
 		private System.String _begin;
 		private System.Int16 _iVID;
-		private System.Guid _bDBuildingPK;
 		private System.Int16 _tCID;
+		private System.Guid _bDBuildingPK;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid ACTimecodeIntervalMapPK
 		{
@@ -1894,16 +2022,28 @@ namespace W3000.Rules
 			set { this._iVID = value; }
 		}
 
+		public System.Int16 TCID
+		{
+			get { return this._tCID; }
+			set { this._tCID = value; }
+		}
+
 		public System.Guid BDBuildingPK
 		{
 			get { return this._bDBuildingPK; }
 			set { this._bDBuildingPK = value; }
 		}
 
-		public System.Int16 TCID
+		public System.String Address1
 		{
-			get { return this._tCID; }
-			set { this._tCID = value; }
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
 		}
 
 	}
@@ -1922,6 +2062,8 @@ namespace W3000.Rules
 		private System.String _createdBy;
 		private System.DateTime _modifiedOn;
 		private System.String _modifiedBy;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid ACAMFormatPK
 		{
@@ -1993,6 +2135,18 @@ namespace W3000.Rules
 		{
 			get { return this._modifiedBy; }
 			set { this._modifiedBy = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
 		}
 
 	}
@@ -2197,6 +2351,8 @@ namespace W3000.Rules
 		private System.Guid _bDBuildingPK;
 		private System.DateTime _date;
 		private System.String _holiday;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid BDTenantHolidayMapPK
 		{
@@ -2274,6 +2430,18 @@ namespace W3000.Rules
 		{
 			get { return this._holiday; }
 			set { this._holiday = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
 		}
 
 	}
@@ -2365,6 +2533,8 @@ namespace W3000.Rules
 		private System.String _modifiedBy;
 		private System.Guid _bDBuildingPK;
 		private System.Int32 _unitID;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid ACInputGroupPK
 		{
@@ -2424,6 +2594,18 @@ namespace W3000.Rules
 		{
 			get { return this._unitID; }
 			set { this._unitID = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
 		}
 
 	}
@@ -2599,8 +2781,11 @@ namespace W3000.Rules
 		private System.String _createdBy;
 		private System.DateTime _modifiedOn;
 		private System.String _modifiedBy;
+		private System.String _suite;
 		private System.String _tenant;
 		private System.Guid _bDBuildingPK;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid ACFunctionCardPK
 		{
@@ -2704,6 +2889,12 @@ namespace W3000.Rules
 			set { this._modifiedBy = value; }
 		}
 
+		public System.String Suite
+		{
+			get { return this._suite; }
+			set { this._suite = value; }
+		}
+
 		public System.String Tenant
 		{
 			get { return this._tenant; }
@@ -2714,6 +2905,107 @@ namespace W3000.Rules
 		{
 			get { return this._bDBuildingPK; }
 			set { this._bDBuildingPK = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
+		}
+
+	}
+	[Serializable]
+	public class UtilHolidayRuleData
+	{
+		private System.Guid _utilHolidayPK;
+		private System.Int32 _countryID;
+		private System.String _holiday;
+		private System.DateTime _date;
+		private System.Boolean _major;
+		private System.Boolean _federal;
+		private System.DateTime _createdOn;
+		private System.String _createdBy;
+		private System.DateTime _modifiedOn;
+		private System.String _modifiedBy;
+		private System.Boolean _default;
+		private System.Int32 _actionID;
+
+		public System.Guid UtilHolidayPK
+		{
+			get { return this._utilHolidayPK; }
+			set { this._utilHolidayPK = value; }
+		}
+
+		public System.Int32 CountryID
+		{
+			get { return this._countryID; }
+			set { this._countryID = value; }
+		}
+
+		public System.String Holiday
+		{
+			get { return this._holiday; }
+			set { this._holiday = value; }
+		}
+
+		public System.DateTime Date
+		{
+			get { return this._date; }
+			set { this._date = value; }
+		}
+
+		public System.Boolean Major
+		{
+			get { return this._major; }
+			set { this._major = value; }
+		}
+
+		public System.Boolean Federal
+		{
+			get { return this._federal; }
+			set { this._federal = value; }
+		}
+
+		public System.DateTime CreatedOn
+		{
+			get { return this._createdOn; }
+			set { this._createdOn = value; }
+		}
+
+		public System.String CreatedBy
+		{
+			get { return this._createdBy; }
+			set { this._createdBy = value; }
+		}
+
+		public System.DateTime ModifiedOn
+		{
+			get { return this._modifiedOn; }
+			set { this._modifiedOn = value; }
+		}
+
+		public System.String ModifiedBy
+		{
+			get { return this._modifiedBy; }
+			set { this._modifiedBy = value; }
+		}
+
+		public System.Boolean Default
+		{
+			get { return this._default; }
+			set { this._default = value; }
+		}
+
+		public System.Int32 ActionID
+		{
+			get { return this._actionID; }
+			set { this._actionID = value; }
 		}
 
 	}
@@ -2816,6 +3108,7 @@ namespace W3000.Rules
 		private System.String _createdBy;
 		private System.DateTime _modifiedOn;
 		private System.String _modifiedBy;
+		private System.Int32 _cardTypeID;
 		private System.Int32 _encoded;
 		private System.Int32 _embossed;
 		private System.Int32 _sitecode;
@@ -2864,6 +3157,12 @@ namespace W3000.Rules
 			set { this._modifiedBy = value; }
 		}
 
+		public System.Int32 CardTypeID
+		{
+			get { return this._cardTypeID; }
+			set { this._cardTypeID = value; }
+		}
+
 		public System.Int32 Encoded
 		{
 			get { return this._encoded; }
@@ -2892,95 +3191,6 @@ namespace W3000.Rules
 		{
 			get { return this._unitID; }
 			set { this._unitID = value; }
-		}
-
-	}
-	[Serializable]
-	public class UtilHolidayRuleData
-	{
-		private System.Guid _utilHolidayPK;
-		private System.Int32 _countryID;
-		private System.String _holiday;
-		private System.DateTime _date;
-		private System.Boolean _major;
-		private System.Boolean _federal;
-		private System.DateTime _createdOn;
-		private System.String _createdBy;
-		private System.DateTime _modifiedOn;
-		private System.String _modifiedBy;
-		private System.Boolean _default;
-		private System.Int32 _actionID;
-
-		public System.Guid UtilHolidayPK
-		{
-			get { return this._utilHolidayPK; }
-			set { this._utilHolidayPK = value; }
-		}
-
-		public System.Int32 CountryID
-		{
-			get { return this._countryID; }
-			set { this._countryID = value; }
-		}
-
-		public System.String Holiday
-		{
-			get { return this._holiday; }
-			set { this._holiday = value; }
-		}
-
-		public System.DateTime Date
-		{
-			get { return this._date; }
-			set { this._date = value; }
-		}
-
-		public System.Boolean Major
-		{
-			get { return this._major; }
-			set { this._major = value; }
-		}
-
-		public System.Boolean Federal
-		{
-			get { return this._federal; }
-			set { this._federal = value; }
-		}
-
-		public System.DateTime CreatedOn
-		{
-			get { return this._createdOn; }
-			set { this._createdOn = value; }
-		}
-
-		public System.String CreatedBy
-		{
-			get { return this._createdBy; }
-			set { this._createdBy = value; }
-		}
-
-		public System.DateTime ModifiedOn
-		{
-			get { return this._modifiedOn; }
-			set { this._modifiedOn = value; }
-		}
-
-		public System.String ModifiedBy
-		{
-			get { return this._modifiedBy; }
-			set { this._modifiedBy = value; }
-		}
-
-		public System.Boolean Default
-		{
-			get { return this._default; }
-			set { this._default = value; }
-		}
-
-		public System.Int32 ActionID
-		{
-			get { return this._actionID; }
-			set { this._actionID = value; }
 		}
 
 	}
@@ -3077,6 +3287,12 @@ namespace W3000.Rules
 		private System.String _createdBy;
 		private System.DateTime _modifiedOn;
 		private System.String _modifiedBy;
+		private System.String _suite;
+		private System.String _tenant;
+		private System.Guid _bDBuildingPK;
+		private System.String _usrGroupName;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid UsrAccountPK
 		{
@@ -3208,6 +3424,42 @@ namespace W3000.Rules
 		{
 			get { return this._modifiedBy; }
 			set { this._modifiedBy = value; }
+		}
+
+		public System.String Suite
+		{
+			get { return this._suite; }
+			set { this._suite = value; }
+		}
+
+		public System.String Tenant
+		{
+			get { return this._tenant; }
+			set { this._tenant = value; }
+		}
+
+		public System.Guid BDBuildingPK
+		{
+			get { return this._bDBuildingPK; }
+			set { this._bDBuildingPK = value; }
+		}
+
+		public System.String UsrGroupName
+		{
+			get { return this._usrGroupName; }
+			set { this._usrGroupName = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
 		}
 
 	}
@@ -3576,6 +3828,7 @@ namespace W3000.Rules
 		private System.Int32 _buildingID;
 		private System.String _lastName;
 		private System.String _firstName;
+		private System.Int32 _cardTypeID;
 		private System.Int32 _encoded;
 		private System.Int32 _embossed;
 		private System.Int32 _sitecode;
@@ -3658,6 +3911,12 @@ namespace W3000.Rules
 			set { this._firstName = value; }
 		}
 
+		public System.Int32 CardTypeID
+		{
+			get { return this._cardTypeID; }
+			set { this._cardTypeID = value; }
+		}
+
 		public System.Int32 Encoded
 		{
 			get { return this._encoded; }
@@ -3704,6 +3963,7 @@ namespace W3000.Rules
 		private System.String _createdBy;
 		private System.DateTime _modifiedOn;
 		private System.String _modifiedBy;
+		private System.String _suite;
 		private System.String _tenant;
 		private System.Guid _bDBuildingPK;
 		private System.String _address1;
@@ -3851,6 +4111,12 @@ namespace W3000.Rules
 		{
 			get { return this._modifiedBy; }
 			set { this._modifiedBy = value; }
+		}
+
+		public System.String Suite
+		{
+			get { return this._suite; }
+			set { this._suite = value; }
 		}
 
 		public System.String Tenant
@@ -4478,6 +4744,10 @@ namespace W3000.Rules
 		private System.Byte _groupID;
 		private System.Guid _aCPanelPK;
 		private System.Byte _inputID;
+		private System.Int32 _unitID;
+		private System.String _address1;
+		private System.Int32 _buildingID;
+		private System.Guid _bDBuildingPK;
 
 		public System.Guid ACInputGroupInputMapPK
 		{
@@ -4537,6 +4807,30 @@ namespace W3000.Rules
 		{
 			get { return this._inputID; }
 			set { this._inputID = value; }
+		}
+
+		public System.Int32 UnitID
+		{
+			get { return this._unitID; }
+			set { this._unitID = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
+		}
+
+		public System.Guid BDBuildingPK
+		{
+			get { return this._bDBuildingPK; }
+			set { this._bDBuildingPK = value; }
 		}
 
 	}
@@ -4620,6 +4914,9 @@ namespace W3000.Rules
 		private System.String _modifiedBy;
 		private System.String _tenant;
 		private System.Guid _bDBuildingPK;
+		private System.String _userID;
+		private System.String _address1;
+		private System.Int32 _buildingID;
 
 		public System.Guid UsrAccountTenantMapPK
 		{
@@ -4673,6 +4970,24 @@ namespace W3000.Rules
 		{
 			get { return this._bDBuildingPK; }
 			set { this._bDBuildingPK = value; }
+		}
+
+		public System.String UserID
+		{
+			get { return this._userID; }
+			set { this._userID = value; }
+		}
+
+		public System.String Address1
+		{
+			get { return this._address1; }
+			set { this._address1 = value; }
+		}
+
+		public System.Int32 BuildingID
+		{
+			get { return this._buildingID; }
+			set { this._buildingID = value; }
 		}
 
 	}
@@ -4877,6 +5192,18 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckEnd(data.End);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBegin(data.Begin);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckIVID(data.IVID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
@@ -4886,6 +5213,14 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckHoliday(data.Holiday);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -4933,6 +5268,39 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckEnd(System.String value)
+		{
+			string rule;
+			rule = this.BrokenLengthEqualRule(this.End, 4, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.End, 4, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBegin(System.String value)
+		{
+			string rule;
+			rule = this.BrokenLengthEqualRule(this.Begin, 4, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Begin, 4, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckIVID(System.Int16 value)
+		{
+			return string.Empty;
+		}
+
 		public virtual string CheckBDBuildingPK(System.Guid value)
 		{
 			string rule;
@@ -4962,6 +5330,25 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -4980,6 +5367,21 @@ namespace W3000.Rules
 			get { return "UtilHolidayPK"; }
 		}
 
+		protected virtual string End
+		{
+			get { return "End"; }
+		}
+
+		protected virtual string Begin
+		{
+			get { return "Begin"; }
+		}
+
+		protected virtual string IVID
+		{
+			get { return "IVID"; }
+		}
+
 		protected virtual string BDBuildingPK
 		{
 			get { return "BDBuildingPK"; }
@@ -4993,6 +5395,16 @@ namespace W3000.Rules
 		protected virtual string Holiday
 		{
 			get { return "Holiday"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -5054,6 +5466,18 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckUnitID(data.UnitID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -5194,6 +5618,30 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckUnitID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -5262,6 +5710,21 @@ namespace W3000.Rules
 			get { return "BDBuildingPK"; }
 		}
 
+		protected virtual string UnitID
+		{
+			get { return "UnitID"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
+		}
+
 		#endregion
 	}
 
@@ -5305,6 +5768,10 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckBuildingID(data.BuildingID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckUserID(data.UserID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -5391,6 +5858,20 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckUserID(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.UserID, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.UserID, 30, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -5437,6 +5918,11 @@ namespace W3000.Rules
 		protected virtual string BuildingID
 		{
 			get { return "BuildingID"; }
+		}
+
+		protected virtual string UserID
+		{
+			get { return "UserID"; }
 		}
 
 		#endregion
@@ -6689,6 +7175,14 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckSettingCategory(data.SettingCategory);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckSettingCategoryID(data.SettingCategoryID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -6743,6 +7237,25 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckSettingCategory(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.SettingCategory, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.SettingCategory, 128, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckSettingCategoryID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -6764,6 +7277,16 @@ namespace W3000.Rules
 		protected virtual string FieldValue
 		{
 			get { return "FieldValue"; }
+		}
+
+		protected virtual string SettingCategory
+		{
+			get { return "SettingCategory"; }
+		}
+
+		protected virtual string SettingCategoryID
+		{
+			get { return "SettingCategoryID"; }
 		}
 
 		#endregion
@@ -6797,6 +7320,22 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckGroupID(data.GroupID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckUnitID(data.UnitID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -6864,6 +7403,40 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckUnitID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
+		public virtual string CheckBDBuildingPK(System.Guid value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -6895,6 +7468,26 @@ namespace W3000.Rules
 		protected virtual string GroupID
 		{
 			get { return "GroupID"; }
+		}
+
+		protected virtual string UnitID
+		{
+			get { return "UnitID"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
+		}
+
+		protected virtual string BDBuildingPK
+		{
+			get { return "BDBuildingPK"; }
 		}
 
 		#endregion
@@ -6999,11 +7592,23 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckSuite(data.Suite);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 			rule = this.CheckTenant(data.Tenant);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
 			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -7206,6 +7811,20 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckSuite(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Suite, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Suite, 30, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
 		public virtual string CheckTenant(System.String value)
 		{
 			string rule;
@@ -7227,6 +7846,25 @@ namespace W3000.Rules
 			if(rule.Length > 0)
 				return rule;
 
+			return string.Empty;
+		}
+
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
 			return string.Empty;
 		}
 
@@ -7348,6 +7986,11 @@ namespace W3000.Rules
 			get { return "CustInfo8"; }
 		}
 
+		protected virtual string Suite
+		{
+			get { return "Suite"; }
+		}
+
 		protected virtual string Tenant
 		{
 			get { return "Tenant"; }
@@ -7356,6 +7999,16 @@ namespace W3000.Rules
 		protected virtual string BDBuildingPK
 		{
 			get { return "BDBuildingPK"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -8668,11 +9321,19 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckTCID(data.TCID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
-			rule = this.CheckTCID(data.TCID);
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -8753,6 +9414,11 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckTCID(System.Int16 value)
+		{
+			return string.Empty;
+		}
+
 		public virtual string CheckBDBuildingPK(System.Guid value)
 		{
 			string rule;
@@ -8763,7 +9429,21 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckTCID(System.Int16 value)
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
 		{
 			return string.Empty;
 		}
@@ -8801,14 +9481,24 @@ namespace W3000.Rules
 			get { return "IVID"; }
 		}
 
+		protected virtual string TCID
+		{
+			get { return "TCID"; }
+		}
+
 		protected virtual string BDBuildingPK
 		{
 			get { return "BDBuildingPK"; }
 		}
 
-		protected virtual string TCID
+		protected virtual string Address1
 		{
-			get { return "TCID"; }
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -8850,6 +9540,14 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckPreAlarmTC(data.PreAlarmTC);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -8931,6 +9629,25 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -8972,6 +9689,16 @@ namespace W3000.Rules
 		protected virtual string PreAlarmTC
 		{
 			get { return "PreAlarmTC"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -9383,6 +10110,14 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -9485,6 +10220,25 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -9531,6 +10285,16 @@ namespace W3000.Rules
 		protected virtual string Holiday
 		{
 			get { return "Holiday"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -9693,6 +10457,14 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -9761,6 +10533,25 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -9792,6 +10583,16 @@ namespace W3000.Rules
 		protected virtual string UnitID
 		{
 			get { return "UnitID"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -10159,11 +10960,23 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckSuite(data.Suite);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 			rule = this.CheckTenant(data.Tenant);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
 			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -10266,6 +11079,20 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckSuite(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Suite, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Suite, 30, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
 		public virtual string CheckTenant(System.String value)
 		{
 			string rule;
@@ -10287,6 +11114,25 @@ namespace W3000.Rules
 			if(rule.Length > 0)
 				return rule;
 
+			return string.Empty;
+		}
+
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
 			return string.Empty;
 		}
 
@@ -10358,6 +11204,11 @@ namespace W3000.Rules
 			get { return "ValidThru"; }
 		}
 
+		protected virtual string Suite
+		{
+			get { return "Suite"; }
+		}
+
 		protected virtual string Tenant
 		{
 			get { return "Tenant"; }
@@ -10366,6 +11217,165 @@ namespace W3000.Rules
 		protected virtual string BDBuildingPK
 		{
 			get { return "BDBuildingPK"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
+		}
+
+		#endregion
+	}
+
+	public class UtilHolidayDataRule : RuleBase
+	{
+		public string CheckRules(UtilHolidayRuleData data)
+		{
+			StringBuilder builder = new StringBuilder();
+
+			string rule;
+			rule = this.CheckUtilHolidayPK(data.UtilHolidayPK);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckCountryID(data.CountryID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckHoliday(data.Holiday);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckDate(data.Date);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckMajor(data.Major);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckFederal(data.Federal);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckDefault(data.Default);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckActionID(data.ActionID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+
+			rule = this.CheckComprehensiveRules(data);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			return builder.ToString();
+		}
+
+		protected virtual string CheckComprehensiveRules(UtilHolidayRuleData data)
+		{
+			return string.Empty;
+		}
+
+		#region Property Rules
+		public virtual string CheckUtilHolidayPK(System.Guid value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.UtilHolidayPK, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckCountryID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
+		public virtual string CheckHoliday(System.String value)
+		{
+			string rule;
+			rule = this.BrokenMaxLengthRule(this.Holiday, 30, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckDate(System.DateTime value)
+		{
+			return string.Empty;
+		}
+
+		public virtual string CheckMajor(System.Boolean value)
+		{
+			return string.Empty;
+		}
+
+		public virtual string CheckFederal(System.Boolean value)
+		{
+			return string.Empty;
+		}
+
+		public virtual string CheckDefault(System.Boolean value)
+		{
+			return string.Empty;
+		}
+
+		public virtual string CheckActionID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
+		#endregion
+
+		#region Property Names
+		protected virtual string UtilHolidayPK
+		{
+			get { return "UtilHolidayPK"; }
+		}
+
+		protected virtual string CountryID
+		{
+			get { return "CountryID"; }
+		}
+
+		protected virtual string Holiday
+		{
+			get { return "Holiday"; }
+		}
+
+		protected virtual string Date
+		{
+			get { return "Date"; }
+		}
+
+		protected virtual string Major
+		{
+			get { return "Major"; }
+		}
+
+		protected virtual string Federal
+		{
+			get { return "Federal"; }
+		}
+
+		protected virtual string Default
+		{
+			get { return "Default"; }
+		}
+
+		protected virtual string ActionID
+		{
+			get { return "ActionID"; }
 		}
 
 		#endregion
@@ -10562,6 +11572,10 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckCardTypeID(data.CardTypeID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 			rule = this.CheckEncoded(data.Encoded);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
@@ -10626,6 +11640,11 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckCardTypeID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		public virtual string CheckEncoded(System.Int32 value)
 		{
 			return string.Empty;
@@ -10674,6 +11693,11 @@ namespace W3000.Rules
 			get { return "ACFunctionCardPK"; }
 		}
 
+		protected virtual string CardTypeID
+		{
+			get { return "CardTypeID"; }
+		}
+
 		protected virtual string Encoded
 		{
 			get { return "Encoded"; }
@@ -10697,155 +11721,6 @@ namespace W3000.Rules
 		protected virtual string UnitID
 		{
 			get { return "UnitID"; }
-		}
-
-		#endregion
-	}
-
-	public class UtilHolidayDataRule : RuleBase
-	{
-		public string CheckRules(UtilHolidayRuleData data)
-		{
-			StringBuilder builder = new StringBuilder();
-
-			string rule;
-			rule = this.CheckUtilHolidayPK(data.UtilHolidayPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckCountryID(data.CountryID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckHoliday(data.Holiday);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckDate(data.Date);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckMajor(data.Major);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckFederal(data.Federal);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckDefault(data.Default);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckActionID(data.ActionID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-
-			rule = this.CheckComprehensiveRules(data);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			return builder.ToString();
-		}
-
-		protected virtual string CheckComprehensiveRules(UtilHolidayRuleData data)
-		{
-			return string.Empty;
-		}
-
-		#region Property Rules
-		public virtual string CheckUtilHolidayPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.UtilHolidayPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckCountryID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckHoliday(System.String value)
-		{
-			string rule;
-			rule = this.BrokenMaxLengthRule(this.Holiday, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckDate(System.DateTime value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckMajor(System.Boolean value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckFederal(System.Boolean value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckDefault(System.Boolean value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckActionID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		#endregion
-
-		#region Property Names
-		protected virtual string UtilHolidayPK
-		{
-			get { return "UtilHolidayPK"; }
-		}
-
-		protected virtual string CountryID
-		{
-			get { return "CountryID"; }
-		}
-
-		protected virtual string Holiday
-		{
-			get { return "Holiday"; }
-		}
-
-		protected virtual string Date
-		{
-			get { return "Date"; }
-		}
-
-		protected virtual string Major
-		{
-			get { return "Major"; }
-		}
-
-		protected virtual string Federal
-		{
-			get { return "Federal"; }
-		}
-
-		protected virtual string Default
-		{
-			get { return "Default"; }
-		}
-
-		protected virtual string ActionID
-		{
-			get { return "ActionID"; }
 		}
 
 		#endregion
@@ -11042,6 +11917,30 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckSuite(data.Suite);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckTenant(data.Tenant);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckUsrGroupName(data.UsrGroupName);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -11202,6 +12101,77 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckSuite(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Suite, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Suite, 30, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckTenant(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Tenant, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Tenant, 60, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBDBuildingPK(System.Guid value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckUsrGroupName(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.UsrGroupName, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.UsrGroupName, 50, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -11293,6 +12263,36 @@ namespace W3000.Rules
 		protected virtual string PopupExtension
 		{
 			get { return "PopupExtension"; }
+		}
+
+		protected virtual string Suite
+		{
+			get { return "Suite"; }
+		}
+
+		protected virtual string Tenant
+		{
+			get { return "Tenant"; }
+		}
+
+		protected virtual string BDBuildingPK
+		{
+			get { return "BDBuildingPK"; }
+		}
+
+		protected virtual string UsrGroupName
+		{
+			get { return "UsrGroupName"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -11975,6 +12975,10 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckCardTypeID(data.CardTypeID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 			rule = this.CheckEncoded(data.Encoded);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
@@ -12080,6 +13084,11 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckCardTypeID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		public virtual string CheckEncoded(System.Int32 value)
 		{
 			return string.Empty;
@@ -12141,6 +13150,11 @@ namespace W3000.Rules
 		protected virtual string FirstName
 		{
 			get { return "FirstName"; }
+		}
+
+		protected virtual string CardTypeID
+		{
+			get { return "CardTypeID"; }
 		}
 
 		protected virtual string Encoded
@@ -12245,6 +13259,10 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckBadgePrinted(data.BadgePrinted);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckSuite(data.Suite);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -12441,6 +13459,20 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckSuite(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Suite, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Suite, 30, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
 		public virtual string CheckTenant(System.String value)
 		{
 			string rule;
@@ -12585,6 +13617,11 @@ namespace W3000.Rules
 		protected virtual string BadgePrinted
 		{
 			get { return "BadgePrinted"; }
+		}
+
+		protected virtual string Suite
+		{
+			get { return "Suite"; }
 		}
 
 		protected virtual string Tenant
@@ -13800,6 +14837,22 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckUnitID(data.UnitID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -13864,6 +14917,40 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckUnitID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
+		public virtual string CheckBDBuildingPK(System.Guid value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -13895,6 +14982,26 @@ namespace W3000.Rules
 		protected virtual string InputID
 		{
 			get { return "InputID"; }
+		}
+
+		protected virtual string UnitID
+		{
+			get { return "UnitID"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
+		}
+
+		protected virtual string BDBuildingPK
+		{
+			get { return "BDBuildingPK"; }
 		}
 
 		#endregion
@@ -14043,6 +15150,18 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
+			rule = this.CheckUserID(data.UserID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckAddress1(data.Address1);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
+			rule = this.CheckBuildingID(data.BuildingID);
+			if (rule.Length > 0)
+				builder.AppendLine(rule);
+
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -14111,6 +15230,39 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
+		public virtual string CheckUserID(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.UserID, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.UserID, 30, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckAddress1(System.String value)
+		{
+			string rule;
+			rule = this.BrokenNotEmptyRule(this.Address1, value);
+			if(rule.Length > 0)
+				return rule;
+
+			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
+			if(rule.Length > 0)
+				return rule;
+
+			return string.Empty;
+		}
+
+		public virtual string CheckBuildingID(System.Int32 value)
+		{
+			return string.Empty;
+		}
+
 		#endregion
 
 		#region Property Names
@@ -14137,6 +15289,21 @@ namespace W3000.Rules
 		protected virtual string BDBuildingPK
 		{
 			get { return "BDBuildingPK"; }
+		}
+
+		protected virtual string UserID
+		{
+			get { return "UserID"; }
+		}
+
+		protected virtual string Address1
+		{
+			get { return "Address1"; }
+		}
+
+		protected virtual string BuildingID
+		{
+			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -14231,15 +15398,15 @@ namespace W3000.Rules
 	{
 	}
 
+	public partial class UtilHolidayRule : UtilHolidayDataRule
+	{
+	}
+
 	public partial class ACAccessLevelRule : ACAccessLevelDataRule
 	{
 	}
 
 	public partial class ACPanelFunctionCardMapRule : ACPanelFunctionCardMapDataRule
-	{
-	}
-
-	public partial class UtilHolidayRule : UtilHolidayDataRule
 	{
 	}
 

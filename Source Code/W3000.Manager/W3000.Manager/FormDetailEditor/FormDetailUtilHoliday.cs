@@ -12,10 +12,10 @@ namespace W3000.Manager.FormDetailEditor
 {
 	public partial class FormDetailUtilHoliday : FormDetailEditorBase
 	{
-		private GridACIntvalHolidayMapDecorator _decorateACIntvalHolidayMap = null;
-		private GridACPanelHolidayMapDecorator _decorateACPanelHolidayMap = null;
-		private GridBDBuildingHolidayMapDecorator _decorateBDBuildingHolidayMap = null;
 		private GridBDTenantHolidayMapDecorator _decorateBDTenantHolidayMap = null;
+		private GridBDBuildingHolidayMapDecorator _decorateBDBuildingHolidayMap = null;
+		private GridACPanelHolidayMapDecorator _decorateACPanelHolidayMap = null;
+		private GridACIntvalHolidayMapDecorator _decorateACIntvalHolidayMap = null;
 
 		public FormDetailUtilHoliday()
 		{
@@ -30,17 +30,17 @@ namespace W3000.Manager.FormDetailEditor
 
 		protected override void InitializeDecorator()
 		{
-			this._decorateACIntvalHolidayMap = new GridACIntvalHolidayMapDecorator(base.UserId, this.grdACIntvalHolidayMap);
-			this._decorateACIntvalHolidayMap.Initialize();
-
-			this._decorateACPanelHolidayMap = new GridACPanelHolidayMapDecorator(base.UserId, this.grdACPanelHolidayMap);
-			this._decorateACPanelHolidayMap.Initialize();
+			this._decorateBDTenantHolidayMap = new GridBDTenantHolidayMapDecorator(base.UserId, this.grdBDTenantHolidayMap);
+			this._decorateBDTenantHolidayMap.Initialize();
 
 			this._decorateBDBuildingHolidayMap = new GridBDBuildingHolidayMapDecorator(base.UserId, this.grdBDBuildingHolidayMap);
 			this._decorateBDBuildingHolidayMap.Initialize();
 
-			this._decorateBDTenantHolidayMap = new GridBDTenantHolidayMapDecorator(base.UserId, this.grdBDTenantHolidayMap);
-			this._decorateBDTenantHolidayMap.Initialize();
+			this._decorateACPanelHolidayMap = new GridACPanelHolidayMapDecorator(base.UserId, this.grdACPanelHolidayMap);
+			this._decorateACPanelHolidayMap.Initialize();
+
+			this._decorateACIntvalHolidayMap = new GridACIntvalHolidayMapDecorator(base.UserId, this.grdACIntvalHolidayMap);
+			this._decorateACIntvalHolidayMap.Initialize();
 
 		}
 
@@ -77,47 +77,25 @@ namespace W3000.Manager.FormDetailEditor
 			this.xtraTabControl1.SelectedTabPage.Focus();
 		}
 
-		private void tabACIntvalHolidayMap_Enter(object sender, System.EventArgs e)
+		private void tabBDTenantHolidayMap_Enter(object sender, System.EventArgs e)
 		{
-			if (this.tabACIntvalHolidayMap.Tag == null)
+			if (this.tabBDTenantHolidayMap.Tag == null)
 			{
 				if (this.UtilHoliday.IsNew)
 				{
-					this._decorateACIntvalHolidayMap.DataSource = null;
+					this._decorateBDTenantHolidayMap.DataSource = null;
 					return;
 				}
 
-				this.tabACIntvalHolidayMap.Tag = true;
+				this.tabBDTenantHolidayMap.Tag = true;
 
-				if (this.UtilHoliday.ACIntvalHolidayMapList == null || base.IsRefreshData)
+				if (this.UtilHoliday.BDTenantHolidayMapList == null || base.IsRefreshData)
 				{
-					 this.UtilHoliday.ACIntvalHolidayMapList = ACIntvalHolidayMap.GetByUtilHoliday(this.UtilHoliday.UtilHolidayPK);
+					 this.UtilHoliday.BDTenantHolidayMapList = BDTenantHolidayMap.GetByUtilHoliday(this.UtilHoliday.UtilHolidayPK);
 				}
 
-				this._decorateACIntvalHolidayMap.UtilHoliday = this.UtilHoliday;
-				this._decorateACIntvalHolidayMap.DataSource = this.UtilHoliday.ACIntvalHolidayMapList;
-			}
-		}
-
-		private void tabACPanelHolidayMap_Enter(object sender, System.EventArgs e)
-		{
-			if (this.tabACPanelHolidayMap.Tag == null)
-			{
-				if (this.UtilHoliday.IsNew)
-				{
-					this._decorateACPanelHolidayMap.DataSource = null;
-					return;
-				}
-
-				this.tabACPanelHolidayMap.Tag = true;
-
-				if (this.UtilHoliday.ACPanelHolidayMapList == null || base.IsRefreshData)
-				{
-					 this.UtilHoliday.ACPanelHolidayMapList = ACPanelHolidayMap.GetByUtilHoliday(this.UtilHoliday.UtilHolidayPK);
-				}
-
-				this._decorateACPanelHolidayMap.UtilHoliday = this.UtilHoliday;
-				this._decorateACPanelHolidayMap.DataSource = this.UtilHoliday.ACPanelHolidayMapList;
+				this._decorateBDTenantHolidayMap.UtilHoliday = this.UtilHoliday;
+				this._decorateBDTenantHolidayMap.DataSource = this.UtilHoliday.BDTenantHolidayMapList;
 			}
 		}
 
@@ -143,25 +121,47 @@ namespace W3000.Manager.FormDetailEditor
 			}
 		}
 
-		private void tabBDTenantHolidayMap_Enter(object sender, System.EventArgs e)
+		private void tabACPanelHolidayMap_Enter(object sender, System.EventArgs e)
 		{
-			if (this.tabBDTenantHolidayMap.Tag == null)
+			if (this.tabACPanelHolidayMap.Tag == null)
 			{
 				if (this.UtilHoliday.IsNew)
 				{
-					this._decorateBDTenantHolidayMap.DataSource = null;
+					this._decorateACPanelHolidayMap.DataSource = null;
 					return;
 				}
 
-				this.tabBDTenantHolidayMap.Tag = true;
+				this.tabACPanelHolidayMap.Tag = true;
 
-				if (this.UtilHoliday.BDTenantHolidayMapList == null || base.IsRefreshData)
+				if (this.UtilHoliday.ACPanelHolidayMapList == null || base.IsRefreshData)
 				{
-					 this.UtilHoliday.BDTenantHolidayMapList = BDTenantHolidayMap.GetByUtilHoliday(this.UtilHoliday.UtilHolidayPK);
+					 this.UtilHoliday.ACPanelHolidayMapList = ACPanelHolidayMap.GetByUtilHoliday(this.UtilHoliday.UtilHolidayPK);
 				}
 
-				this._decorateBDTenantHolidayMap.UtilHoliday = this.UtilHoliday;
-				this._decorateBDTenantHolidayMap.DataSource = this.UtilHoliday.BDTenantHolidayMapList;
+				this._decorateACPanelHolidayMap.UtilHoliday = this.UtilHoliday;
+				this._decorateACPanelHolidayMap.DataSource = this.UtilHoliday.ACPanelHolidayMapList;
+			}
+		}
+
+		private void tabACIntvalHolidayMap_Enter(object sender, System.EventArgs e)
+		{
+			if (this.tabACIntvalHolidayMap.Tag == null)
+			{
+				if (this.UtilHoliday.IsNew)
+				{
+					this._decorateACIntvalHolidayMap.DataSource = null;
+					return;
+				}
+
+				this.tabACIntvalHolidayMap.Tag = true;
+
+				if (this.UtilHoliday.ACIntvalHolidayMapList == null || base.IsRefreshData)
+				{
+					 this.UtilHoliday.ACIntvalHolidayMapList = ACIntvalHolidayMap.GetByUtilHoliday(this.UtilHoliday.UtilHolidayPK);
+				}
+
+				this._decorateACIntvalHolidayMap.UtilHoliday = this.UtilHoliday;
+				this._decorateACIntvalHolidayMap.DataSource = this.UtilHoliday.ACIntvalHolidayMapList;
 			}
 		}
 

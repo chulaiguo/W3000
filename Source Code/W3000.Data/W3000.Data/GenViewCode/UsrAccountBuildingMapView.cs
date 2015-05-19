@@ -18,6 +18,7 @@ namespace W3000.Data
 		//private System.Boolean _primary = false;
 		private System.String _address1 = string.Empty;
 		private System.Int32 _buildingID = 0;
+		private System.String _userID = string.Empty;
 
 		public System.Guid UsrAccountBuildingMapPK
 		{
@@ -97,6 +98,12 @@ namespace W3000.Data
 			set{ this._buildingID = value; }
 		}
 
+		public System.String UserID
+		{
+			get{ return this._userID; }
+			set{ this._userID = value; }
+		}
+
 		public UsrAccountBuildingMapView()
 		{
 		}
@@ -116,6 +123,7 @@ namespace W3000.Data
 			//this.Primary = data.Primary;
 			this.Address1 = data.Address1;
 			this.BuildingID = data.BuildingID;
+			this.UserID = data.UserID;
 		}
 
 
@@ -135,6 +143,7 @@ namespace W3000.Data
 			//entity.Primary = this.Primary;
 			entity.Address1 = this.Address1;
 			entity.BuildingID = this.BuildingID;
+			entity.UserID = this.UserID;
 
 			return entity;
 		}

@@ -43,14 +43,6 @@ namespace W3000.Manager.GridSelect
 			colDescription.OptionsColumn.AllowFocus = false;
 			view.Columns.Add(colDescription);
 
-			GridColumn colPanelZoneID = new GridColumn();
-			colPanelZoneID.Caption = "PanelZoneID";
-			colPanelZoneID.FieldName = ACInputViewSchema.PanelZoneID;
-			colPanelZoneID.VisibleIndex = view.Columns.Count;
-			colPanelZoneID.OptionsColumn.AllowEdit = false;
-			colPanelZoneID.OptionsColumn.AllowFocus = false;
-			view.Columns.Add(colPanelZoneID);
-
 			GridColumn colUnitID = new GridColumn();
 			colUnitID.Caption = "UnitID";
 			colUnitID.FieldName = ACInputViewSchema.UnitID;

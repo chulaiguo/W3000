@@ -27,14 +27,6 @@ namespace W3000.Manager.GridSelect
 
 		protected override void SetDisplayColumns(GridView view)
 		{
-			GridColumn colCountryID = new GridColumn();
-			colCountryID.Caption = "CountryID";
-			colCountryID.FieldName = UtilHolidayViewSchema.CountryID;
-			colCountryID.VisibleIndex = view.Columns.Count;
-			colCountryID.OptionsColumn.AllowEdit = false;
-			colCountryID.OptionsColumn.AllowFocus = false;
-			view.Columns.Add(colCountryID);
-
 			GridColumn colHoliday = new GridColumn();
 			colHoliday.Caption = "Holiday";
 			colHoliday.FieldName = UtilHolidayViewSchema.Holiday;

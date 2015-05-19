@@ -12,6 +12,7 @@ namespace W3000.Data
 		//private System.String _createdBy = string.Empty;
 		//private System.DateTime _modifiedOn = new DateTime(1900, 1, 1);
 		//private System.String _modifiedBy = string.Empty;
+		private System.Int32 _cardTypeID = 0;
 		private System.Int32 _encoded = 0;
 		private System.Int32 _embossed = 0;
 		private System.Int32 _sitecode = 0;
@@ -60,6 +61,12 @@ namespace W3000.Data
 //			set{ this._modifiedBy = value; }
 //		}
 
+		public System.Int32 CardTypeID
+		{
+			get{ return this._cardTypeID; }
+			set{ this._cardTypeID = value; }
+		}
+
 		public System.Int32 Encoded
 		{
 			get{ return this._encoded; }
@@ -103,6 +110,7 @@ namespace W3000.Data
 			//this.CreatedBy = data.CreatedBy;
 			//this.ModifiedOn = data.ModifiedOn;
 			//this.ModifiedBy = data.ModifiedBy;
+			this.CardTypeID = data.CardTypeID;
 			this.Encoded = data.Encoded;
 			this.Embossed = data.Embossed;
 			this.Sitecode = data.Sitecode;
@@ -121,6 +129,7 @@ namespace W3000.Data
 			//entity.CreatedBy = this.CreatedBy;
 			//entity.ModifiedOn = this.ModifiedOn;
 			//entity.ModifiedBy = this.ModifiedBy;
+			entity.CardTypeID = this.CardTypeID;
 			entity.Encoded = this.Encoded;
 			entity.Embossed = this.Embossed;
 			entity.Sitecode = this.Sitecode;

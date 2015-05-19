@@ -28,7 +28,6 @@ namespace W3000.Manager.FormDetailMap
 			this.txtNotes.BindingData(this.BDBuildingHolidayMap, BDBuildingHolidayMapSchema.Notes);
 			this.txtAddress1.BindingData(this.BDBuildingHolidayMap, BDBuildingHolidayMapSchema.Address1);
 			this.txtBuildingID.BindingData(this.BDBuildingHolidayMap, BDBuildingHolidayMapSchema.BuildingID);
-			this.txtCountryID.BindingData(this.BDBuildingHolidayMap, BDBuildingHolidayMapSchema.CountryID);
 			this.txtHoliday.BindingData(this.BDBuildingHolidayMap, BDBuildingHolidayMapSchema.Holiday);
 			this.dateDate.BindingData(this.BDBuildingHolidayMap, BDBuildingHolidayMapSchema.Date);
 		}

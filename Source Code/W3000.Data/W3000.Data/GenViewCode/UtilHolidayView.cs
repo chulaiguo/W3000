@@ -6,7 +6,7 @@ namespace W3000.Data
 	public partial class UtilHolidayView
 	{
 		private System.Guid _utilHolidayPK = Guid.Empty;
-		private System.Int32 _countryID = 0;
+		//private System.Int32 _countryID = 0;
 		private System.String _holiday = string.Empty;
 		private System.DateTime _date = new DateTime(1900, 1, 1);
 		//private System.Boolean _major = false;
@@ -24,11 +24,11 @@ namespace W3000.Data
 			set{ this._utilHolidayPK = value; }
 		}
 
-		public System.Int32 CountryID
-		{
-			get{ return this._countryID; }
-			set{ this._countryID = value; }
-		}
+//		public System.Int32 CountryID
+//		{
+//			get{ return this._countryID; }
+//			set{ this._countryID = value; }
+//		}
 
 		public System.String Holiday
 		{
@@ -97,7 +97,7 @@ namespace W3000.Data
 		public UtilHolidayView(UtilHolidayData data)
 		{
 			this.UtilHolidayPK = data.UtilHolidayPK;
-			this.CountryID = data.CountryID;
+			//this.CountryID = data.CountryID;
 			this.Holiday = data.Holiday;
 			this.Date = data.Date;
 			//this.Major = data.Major;
@@ -115,7 +115,7 @@ namespace W3000.Data
 		{
 			UtilHolidayData entity = new UtilHolidayData();
 			entity.UtilHolidayPK = this.UtilHolidayPK;
-			entity.CountryID = this.CountryID;
+			//entity.CountryID = this.CountryID;
 			entity.Holiday = this.Holiday;
 			entity.Date = this.Date;
 			//entity.Major = this.Major;

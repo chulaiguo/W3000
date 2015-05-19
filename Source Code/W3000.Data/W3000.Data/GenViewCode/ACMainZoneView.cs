@@ -40,7 +40,7 @@ namespace W3000.Data
 		//private System.String _modifiedBy = string.Empty;
 		//private System.Boolean _degrade = false;
 		//private System.String _readerPassMode = string.Empty;
-		private System.Byte _panelZoneID = 0;
+		//private System.Byte _panelZoneID = 0;
 		//private System.Int32 _lockTypeID = 0;
 		//private System.Boolean _locked = false;
 		//private System.Byte _inputGroup = 0;
@@ -262,11 +262,11 @@ namespace W3000.Data
 //			set{ this._readerPassMode = value; }
 //		}
 
-		public System.Byte PanelZoneID
-		{
-			get{ return this._panelZoneID; }
-			set{ this._panelZoneID = value; }
-		}
+//		public System.Byte PanelZoneID
+//		{
+//			get{ return this._panelZoneID; }
+//			set{ this._panelZoneID = value; }
+//		}
 
 //		public System.Int32 LockTypeID
 //		{
@@ -369,7 +369,7 @@ namespace W3000.Data
 			//this.ModifiedBy = data.ModifiedBy;
 			//this.Degrade = data.Degrade;
 			//this.ReaderPassMode = data.ReaderPassMode;
-			this.PanelZoneID = data.PanelZoneID;
+			//this.PanelZoneID = data.PanelZoneID;
 			//this.LockTypeID = data.LockTypeID;
 			//this.Locked = data.Locked;
 			//this.InputGroup = data.InputGroup;
@@ -421,7 +421,7 @@ namespace W3000.Data
 			//entity.ModifiedBy = this.ModifiedBy;
 			//entity.Degrade = this.Degrade;
 			//entity.ReaderPassMode = this.ReaderPassMode;
-			entity.PanelZoneID = this.PanelZoneID;
+			//entity.PanelZoneID = this.PanelZoneID;
 			//entity.LockTypeID = this.LockTypeID;
 			//entity.Locked = this.Locked;
 			//entity.InputGroup = this.InputGroup;

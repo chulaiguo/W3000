@@ -26,7 +26,6 @@ namespace W3000.Manager.FormDetailMap
 		{
 			this.txtUnitID.BindingData(this.ACInputGroupInputMap, ACInputGroupInputMapSchema.UnitID);
 			this.txtGroupID.BindingData(this.ACInputGroupInputMap, ACInputGroupInputMapSchema.GroupID);
-			this.txtPanelZoneID.BindingData(this.ACInputGroupInputMap, ACInputGroupInputMapSchema.PanelZoneID);
 		}
 
 	}

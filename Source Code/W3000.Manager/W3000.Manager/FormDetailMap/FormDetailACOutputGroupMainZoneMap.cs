@@ -25,7 +25,6 @@ namespace W3000.Manager.FormDetailMap
 		protected override void DataBinding()
 		{
 			this.txtUnitID.BindingData(this.ACOutputGroupMainZoneMap, ACOutputGroupMainZoneMapSchema.UnitID);
-			this.txtPanelZoneID.BindingData(this.ACOutputGroupMainZoneMap, ACOutputGroupMainZoneMapSchema.PanelZoneID);
 			this.txtGroupID.BindingData(this.ACOutputGroupMainZoneMap, ACOutputGroupMainZoneMapSchema.GroupID);
 		}
 

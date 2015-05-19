@@ -122,6 +122,16 @@ namespace W3000.Manager.GridDecorator
 			colFirstName.VisibleIndex = view.Columns.Count;
 			view.Columns.Add(colFirstName);
 
+			GridColumn colCardTypeID = new GridColumn();
+			colCardTypeID.Caption = "CardTypeID";
+			colCardTypeID.FieldName = ACCardHolderBuildingMapSchema.CardTypeID;
+			colCardTypeID.OptionsColumn.AllowEdit = false;
+			colCardTypeID.OptionsColumn.AllowFocus = false;
+			colCardTypeID.VisibleIndex = view.Columns.Count;
+			colCardTypeID.DisplayFormat.FormatType = FormatType.Numeric;
+			colCardTypeID.DisplayFormat.FormatString = "f0";
+			view.Columns.Add(colCardTypeID);
+
 			GridColumn colEncoded = new GridColumn();
 			colEncoded.Caption = "Encoded";
 			colEncoded.FieldName = ACCardHolderBuildingMapSchema.Encoded;
@@ -151,6 +161,14 @@ namespace W3000.Manager.GridDecorator
 			colSitecode.DisplayFormat.FormatType = FormatType.Numeric;
 			colSitecode.DisplayFormat.FormatString = "f0";
 			view.Columns.Add(colSitecode);
+
+			GridColumn colFullName = new GridColumn();
+			colFullName.Caption = "FullName";
+			colFullName.FieldName = ACCardHolderBuildingMapSchema.FullName;
+			colFullName.OptionsColumn.AllowEdit = false;
+			colFullName.OptionsColumn.AllowFocus = false;
+			colFullName.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colFullName);
 
 		}
 

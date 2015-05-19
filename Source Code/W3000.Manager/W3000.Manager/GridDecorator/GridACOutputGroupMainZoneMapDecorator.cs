@@ -92,6 +92,34 @@ namespace W3000.Manager.GridDecorator
 			colGroupID.DisplayFormat.FormatString = "f0";
 			view.Columns.Add(colGroupID);
 
+			GridColumn colUnitID = new GridColumn();
+			colUnitID.Caption = "UnitID";
+			colUnitID.FieldName = ACOutputGroupMainZoneMapSchema.UnitID;
+			colUnitID.OptionsColumn.AllowEdit = false;
+			colUnitID.OptionsColumn.AllowFocus = false;
+			colUnitID.VisibleIndex = view.Columns.Count;
+			colUnitID.DisplayFormat.FormatType = FormatType.Numeric;
+			colUnitID.DisplayFormat.FormatString = "f0";
+			view.Columns.Add(colUnitID);
+
+			GridColumn colAddress1 = new GridColumn();
+			colAddress1.Caption = "Address1";
+			colAddress1.FieldName = ACOutputGroupMainZoneMapSchema.Address1;
+			colAddress1.OptionsColumn.AllowEdit = false;
+			colAddress1.OptionsColumn.AllowFocus = false;
+			colAddress1.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colAddress1);
+
+			GridColumn colBuildingID = new GridColumn();
+			colBuildingID.Caption = "BuildingID";
+			colBuildingID.FieldName = ACOutputGroupMainZoneMapSchema.BuildingID;
+			colBuildingID.OptionsColumn.AllowEdit = false;
+			colBuildingID.OptionsColumn.AllowFocus = false;
+			colBuildingID.VisibleIndex = view.Columns.Count;
+			colBuildingID.DisplayFormat.FormatType = FormatType.Numeric;
+			colBuildingID.DisplayFormat.FormatString = "f0";
+			view.Columns.Add(colBuildingID);
+
 		}
 
 		protected override void NavigatorEditClick(GridView view, NavigatorButtonClickEventArgs e)

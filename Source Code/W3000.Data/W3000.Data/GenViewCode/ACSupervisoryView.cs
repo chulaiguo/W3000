@@ -17,7 +17,7 @@ namespace W3000.Data
 		//private System.String _createdBy = string.Empty;
 		//private System.DateTime _modifiedOn = new DateTime(1900, 1, 1);
 		//private System.String _modifiedBy = string.Empty;
-		private System.Byte _panelZoneID = 0;
+		//private System.Byte _panelZoneID = 0;
 		//private System.Boolean _locked = false;
 		private System.Guid _bDBuildingPK = Guid.Empty;
 		private System.Int32 _unitID = 0;
@@ -96,11 +96,11 @@ namespace W3000.Data
 //			set{ this._modifiedBy = value; }
 //		}
 
-		public System.Byte PanelZoneID
-		{
-			get{ return this._panelZoneID; }
-			set{ this._panelZoneID = value; }
-		}
+//		public System.Byte PanelZoneID
+//		{
+//			get{ return this._panelZoneID; }
+//			set{ this._panelZoneID = value; }
+//		}
 
 //		public System.Boolean Locked
 //		{
@@ -150,7 +150,7 @@ namespace W3000.Data
 			//this.CreatedBy = data.CreatedBy;
 			//this.ModifiedOn = data.ModifiedOn;
 			//this.ModifiedBy = data.ModifiedBy;
-			this.PanelZoneID = data.PanelZoneID;
+			//this.PanelZoneID = data.PanelZoneID;
 			//this.Locked = data.Locked;
 			this.BDBuildingPK = data.BDBuildingPK;
 			this.UnitID = data.UnitID;
@@ -174,7 +174,7 @@ namespace W3000.Data
 			//entity.CreatedBy = this.CreatedBy;
 			//entity.ModifiedOn = this.ModifiedOn;
 			//entity.ModifiedBy = this.ModifiedBy;
-			entity.PanelZoneID = this.PanelZoneID;
+			//entity.PanelZoneID = this.PanelZoneID;
 			//entity.Locked = this.Locked;
 			entity.BDBuildingPK = this.BDBuildingPK;
 			entity.UnitID = this.UnitID;

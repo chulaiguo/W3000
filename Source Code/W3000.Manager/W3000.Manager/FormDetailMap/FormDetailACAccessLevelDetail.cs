@@ -25,7 +25,6 @@ namespace W3000.Manager.FormDetailMap
 		protected override void DataBinding()
 		{
 			this.txtUnitID.BindingData(this.ACAccessLevelDetail, ACAccessLevelDetailSchema.UnitID);
-			this.txtPanelZoneID.BindingData(this.ACAccessLevelDetail, ACAccessLevelDetailSchema.PanelZoneID);
 			this.txtAddress1.BindingData(this.ACAccessLevelDetail, ACAccessLevelDetailSchema.Address1);
 			this.txtBuildingID.BindingData(this.ACAccessLevelDetail, ACAccessLevelDetailSchema.BuildingID);
 			this.txtTCID.BindingData(this.ACAccessLevelDetail, ACAccessLevelDetailSchema.TCID);

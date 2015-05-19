@@ -209,6 +209,14 @@ namespace W3000.Manager.GridDecorator
 			colBuildingID.DisplayFormat.FormatString = "f0";
 			view.Columns.Add(colBuildingID);
 
+			GridColumn colFullName = new GridColumn();
+			colFullName.Caption = "FullName";
+			colFullName.FieldName = BDVisitorSchema.FullName;
+			colFullName.OptionsColumn.AllowEdit = false;
+			colFullName.OptionsColumn.AllowFocus = false;
+			colFullName.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colFullName);
+
 		}
 
 		protected override void NavigatorEditClick(GridView view, NavigatorButtonClickEventArgs e)

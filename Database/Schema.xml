@@ -10,13 +10,19 @@
       <Column Name="CreatedBy" Alias="CreatedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACIntvalHolidayMap" TableAlias="ACIntvalHolidayMap" />
       <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACIntvalHolidayMap" TableAlias="ACIntvalHolidayMap" />
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACIntvalHolidayMap" TableAlias="ACIntvalHolidayMap" />
+      <Column Name="End" Alias="End" Type="char" Size="4" IsPK="False" IsNullable="True" IsJoined="True" TableName="ACInterval" TableAlias="ACInterval" />
+      <Column Name="Begin" Alias="Begin" Type="char" Size="4" IsPK="False" IsNullable="True" IsJoined="True" TableName="ACInterval" TableAlias="ACInterval" />
+      <Column Name="IVID" Alias="IVID" Type="smallint" Size="2" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACInterval" TableAlias="ACInterval" />
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACInterval" TableAlias="ACInterval" />
       <Column Name="Date" Alias="Date" Type="datetime" Size="8" IsPK="False" IsNullable="False" IsJoined="True" TableName="UtilHoliday" TableAlias="UtilHoliday" />
       <Column Name="Holiday" Alias="Holiday" Type="varchar" Size="30" IsPK="False" IsNullable="False" IsJoined="True" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="ACIntvalHolidayMap" KeyAlias="ACIntvalHolidayMap" RefTable="ACInterval" RefAlias="ACInterval" KeyField="ACIntervalPK" RefField="ACIntervalPK" />
       <Join KeyTable="ACIntvalHolidayMap" KeyAlias="ACIntvalHolidayMap" RefTable="UtilHoliday" RefAlias="UtilHoliday" KeyField="UtilHolidayPK" RefField="UtilHolidayPK" />
+      <Join KeyTable="ACInterval" KeyAlias="ACInterval" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="ACInterval" Alias="ACInterval" LocalColumn="ACIntervalPK" RemoteColumn="ACIntervalPK" />
@@ -51,11 +57,16 @@
       <Column Name="Summary" Alias="ALSummary" Type="varchar" Size="256" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACAccessLevel" TableAlias="ACAccessLevel" />
       <Column Name="AccessLevelID" Alias="AccessLevelID" Type="smallint" Size="2" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACAccessLevel" TableAlias="ACAccessLevel" />
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACAccessLevel" TableAlias="ACAccessLevel" />
+      <Column Name="UnitID" Alias="UnitID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="ACAccessLevelDetail" KeyAlias="ACAccessLevelDetail" RefTable="ACMainZone" RefAlias="ACMainZone" KeyField="ACMainZonePK" RefField="ACMainZonePK" />
       <Join KeyTable="ACAccessLevelDetail" KeyAlias="ACAccessLevelDetail" RefTable="ACTimecode" RefAlias="ACTimecode" KeyField="ACTimecodePK" RefField="ACTimecodePK" />
       <Join KeyTable="ACAccessLevelDetail" KeyAlias="ACAccessLevelDetail" RefTable="ACAccessLevel" RefAlias="ACAccessLevel" KeyField="ACAccessLevelPK" RefField="ACAccessLevelPK" />
+      <Join KeyTable="ACMainZone" KeyAlias="ACMainZone" RefTable="ACPanel" RefAlias="ACPanel" KeyField="ACPanelPK" RefField="ACPanelPK" />
+      <Join KeyTable="ACAccessLevel" KeyAlias="ACAccessLevel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="ACMainZone" Alias="ACMainZone" LocalColumn="ACMainZonePK" RemoteColumn="ACMainZonePK" />
@@ -88,6 +99,7 @@
       <Column Name="Primary" Alias="Primary" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="UsrAccountBuildingMap" TableAlias="UsrAccountBuildingMap" />
       <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
       <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="UserID" Alias="UserID" Type="varchar" Size="30" IsPK="False" IsNullable="False" IsJoined="True" TableName="UsrAccount" TableAlias="UsrAccount" />
     </Columns>
     <Joins>
       <Join KeyTable="UsrAccountBuildingMap" KeyAlias="UsrAccountBuildingMap" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
@@ -264,6 +276,8 @@
       <Column Name="CreatedBy" Alias="CreatedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilSettingDetail" TableAlias="UtilSettingDetail" />
       <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilSettingDetail" TableAlias="UtilSettingDetail" />
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilSettingDetail" TableAlias="UtilSettingDetail" />
+      <Column Name="SettingCategory" Alias="SettingCategory" Type="varchar" Size="128" IsPK="False" IsNullable="False" IsJoined="True" TableName="UtilSettingCategory" TableAlias="UtilSettingCategory" />
+      <Column Name="SettingCategoryID" Alias="SettingCategoryID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="UtilSettingCategory" TableAlias="UtilSettingCategory" />
     </Columns>
     <Joins>
       <Join KeyTable="UtilSettingDetail" KeyAlias="UtilSettingDetail" RefTable="UtilSettingCategory" RefAlias="UtilSettingCategory" KeyField="UtilSettingCategoryPK" RefField="UtilSettingCategoryPK" />
@@ -292,10 +306,16 @@
       <Column Name="MainZoneID" Alias="MainZoneID" Type="tinyint" Size="1" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACMainZone" TableAlias="ACMainZone" />
       <Column Name="ACPanelPK" Alias="ACPanelPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACMainZone" TableAlias="ACMainZone" />
       <Column Name="GroupID" Alias="GroupID" Type="tinyint" Size="1" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACOutputGroup" TableAlias="ACOutputGroup" />
+      <Column Name="UnitID" Alias="UnitID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="ACOutputGroupMainZoneMap" KeyAlias="ACOutputGroupMainZoneMap" RefTable="ACMainZone" RefAlias="ACMainZone" KeyField="ACMainZonePK" RefField="ACMainZonePK" />
       <Join KeyTable="ACOutputGroupMainZoneMap" KeyAlias="ACOutputGroupMainZoneMap" RefTable="ACOutputGroup" RefAlias="ACOutputGroup" KeyField="ACOutputGroupPK" RefField="ACOutputGroupPK" />
+      <Join KeyTable="ACMainZone" KeyAlias="ACMainZone" RefTable="ACPanel" RefAlias="ACPanel" KeyField="ACPanelPK" RefField="ACPanelPK" />
+      <Join KeyTable="ACPanel" KeyAlias="ACPanel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="ACMainZone" Alias="ACMainZone" LocalColumn="ACMainZonePK" RemoteColumn="ACMainZonePK" />
@@ -341,11 +361,15 @@
       <Column Name="CreatedBy" Alias="CreatedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACCardHolder" TableAlias="ACCardHolder" />
       <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACCardHolder" TableAlias="ACCardHolder" />
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACCardHolder" TableAlias="ACCardHolder" />
+      <Column Name="Suite" Alias="Suite" Type="varchar" Size="30" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
       <Column Name="Tenant" Alias="Tenant" Type="varchar" Size="60" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="ACCardHolder" KeyAlias="ACCardHolder" RefTable="BDTenant" RefAlias="BDTenant" KeyField="BDTenantPK" RefField="BDTenantPK" />
+      <Join KeyTable="BDTenant" KeyAlias="BDTenant" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="BDTenant" Alias="BDTenant" LocalColumn="BDTenantPK" RemoteColumn="BDTenantPK" />
@@ -402,7 +426,7 @@
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACMainZone" TableAlias="ACMainZone" />
       <Column Name="Degrade" Alias="Degrade" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACMainZone" TableAlias="ACMainZone" />
       <Column Name="ReaderPassMode" Alias="ReaderPassMode" Type="char" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACMainZone" TableAlias="ACMainZone" />
-      <Column Name="PanelZoneID" Alias="PanelZoneID" Type="tinyint" Size="1" IsPK="False" IsNullable="False" IsJoined="False" TableName="ACMainZone" TableAlias="ACMainZone" />
+      <Column Name="PanelZoneID" Alias="PanelZoneID" Type="tinyint" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACMainZone" TableAlias="ACMainZone" />
       <Column Name="LockTypeID" Alias="LockTypeID" Type="int" Size="4" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACMainZone" TableAlias="ACMainZone" />
       <Column Name="Locked" Alias="Locked" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACMainZone" TableAlias="ACMainZone" />
       <Column Name="InputGroup" Alias="InputGroup" Type="tinyint" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACMainZone" TableAlias="ACMainZone" />
@@ -551,12 +575,15 @@
       <Column Name="End" Alias="End" Type="char" Size="4" IsPK="False" IsNullable="True" IsJoined="True" TableName="ACInterval" TableAlias="ACInterval" />
       <Column Name="Begin" Alias="Begin" Type="char" Size="4" IsPK="False" IsNullable="True" IsJoined="True" TableName="ACInterval" TableAlias="ACInterval" />
       <Column Name="IVID" Alias="IVID" Type="smallint" Size="2" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACInterval" TableAlias="ACInterval" />
-      <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACInterval" TableAlias="ACInterval" />
       <Column Name="TCID" Alias="TCID" Type="smallint" Size="2" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACTimecode" TableAlias="ACTimecode" />
+      <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACTimecode" TableAlias="ACTimecode" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="ACTimecodeIntervalMap" KeyAlias="ACTimecodeIntervalMap" RefTable="ACInterval" RefAlias="ACInterval" KeyField="ACIntervalPK" RefField="ACIntervalPK" />
       <Join KeyTable="ACTimecodeIntervalMap" KeyAlias="ACTimecodeIntervalMap" RefTable="ACTimecode" RefAlias="ACTimecode" KeyField="ACTimecodePK" RefField="ACTimecodePK" />
+      <Join KeyTable="ACTimecode" KeyAlias="ACTimecode" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="ACInterval" Alias="ACInterval" LocalColumn="ACIntervalPK" RemoteColumn="ACIntervalPK" />
@@ -586,6 +613,8 @@
       <Column Name="CreatedBy" Alias="CreatedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACAMFormat" TableAlias="ACAMFormat" />
       <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACAMFormat" TableAlias="ACAMFormat" />
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACAMFormat" TableAlias="ACAMFormat" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="ACAMFormat" KeyAlias="ACAMFormat" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
@@ -683,10 +712,13 @@
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
       <Column Name="Date" Alias="Date" Type="datetime" Size="8" IsPK="False" IsNullable="False" IsJoined="True" TableName="UtilHoliday" TableAlias="UtilHoliday" />
       <Column Name="Holiday" Alias="Holiday" Type="varchar" Size="30" IsPK="False" IsNullable="False" IsJoined="True" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="BDTenantHolidayMap" KeyAlias="BDTenantHolidayMap" RefTable="BDTenant" RefAlias="BDTenant" KeyField="BDTenantPK" RefField="BDTenantPK" />
       <Join KeyTable="BDTenantHolidayMap" KeyAlias="BDTenantHolidayMap" RefTable="UtilHoliday" RefAlias="UtilHoliday" KeyField="UtilHolidayPK" RefField="UtilHolidayPK" />
+      <Join KeyTable="BDTenant" KeyAlias="BDTenant" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="BDTenant" Alias="BDTenant" LocalColumn="BDTenantPK" RemoteColumn="BDTenantPK" />
@@ -739,9 +771,12 @@
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACInputGroup" TableAlias="ACInputGroup" />
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
       <Column Name="UnitID" Alias="UnitID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="ACInputGroup" KeyAlias="ACInputGroup" RefTable="ACPanel" RefAlias="ACPanel" KeyField="ACPanelPK" RefField="ACPanelPK" />
+      <Join KeyTable="ACPanel" KeyAlias="ACPanel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="ACPanel" Alias="ACPanel" LocalColumn="ACPanelPK" RemoteColumn="ACPanelPK" />
@@ -774,7 +809,7 @@
       <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACInput" TableAlias="ACInput" />
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACInput" TableAlias="ACInput" />
       <Column Name="AlwaysToMAS" Alias="AlwaysToMAS" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACInput" TableAlias="ACInput" />
-      <Column Name="PanelZoneID" Alias="PanelZoneID" Type="tinyint" Size="1" IsPK="False" IsNullable="False" IsJoined="False" TableName="ACInput" TableAlias="ACInput" />
+      <Column Name="PanelZoneID" Alias="PanelZoneID" Type="tinyint" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACInput" TableAlias="ACInput" />
       <Column Name="Locked" Alias="Locked" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACInput" TableAlias="ACInput" />
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
       <Column Name="UnitID" Alias="UnitID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
@@ -818,11 +853,15 @@
       <Column Name="CreatedBy" Alias="CreatedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACFunctionCard" TableAlias="ACFunctionCard" />
       <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACFunctionCard" TableAlias="ACFunctionCard" />
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACFunctionCard" TableAlias="ACFunctionCard" />
+      <Column Name="Suite" Alias="Suite" Type="varchar" Size="30" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
       <Column Name="Tenant" Alias="Tenant" Type="varchar" Size="60" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="ACFunctionCard" KeyAlias="ACFunctionCard" RefTable="BDTenant" RefAlias="BDTenant" KeyField="BDTenantPK" RefField="BDTenantPK" />
+      <Join KeyTable="BDTenant" KeyAlias="BDTenant" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="BDTenant" Alias="BDTenant" LocalColumn="BDTenantPK" RemoteColumn="BDTenantPK" />
@@ -839,6 +878,38 @@
       <Index Name="Idx_ACFunctionCard_LastName" Keys="LastName" IsPrimaryKey="False" IsUniqueConstraint="False" />
       <Index Name="Idx_ACFunctionCard_CardType" Keys="CardTypeID" IsPrimaryKey="False" IsUniqueConstraint="False" />
       <Index Name="Idx_ACFunctionCard_ModifiedOn" Keys="ModifiedOn" IsPrimaryKey="False" IsUniqueConstraint="False" />
+    </Indexs>
+  </Table>
+  <Table Name="UtilHoliday" Alias="UtilHoliday" Database="W3000">
+    <Columns>
+      <Column Name="UtilHolidayPK" Alias="UtilHolidayPK" Type="uniqueidentifier" Size="16" IsPK="True" IsNullable="False" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="CountryID" Alias="CountryID" Type="int" Size="4" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="Holiday" Alias="Holiday" Type="varchar" Size="30" IsPK="False" IsNullable="False" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="Date" Alias="Date" Type="datetime" Size="8" IsPK="False" IsNullable="False" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="Major" Alias="Major" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="Federal" Alias="Federal" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="RowVersion" Alias="RowVersion" Type="timestamp" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="CreatedOn" Alias="CreatedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="CreatedBy" Alias="CreatedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="Default" Alias="Default" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+      <Column Name="ActionID" Alias="ActionID" Type="int" Size="4" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
+    </Columns>
+    <Joins />
+    <Parents />
+    <Children>
+      <Child Name="BDTenantHolidayMap" Alias="BDTenantHolidayMap" LocalColumn="UtilHolidayPK" RemoteColumn="UtilHolidayPK" CascadeDelete="True" />
+      <Child Name="BDBuildingHolidayMap" Alias="BDBuildingHolidayMap" LocalColumn="UtilHolidayPK" RemoteColumn="UtilHolidayPK" CascadeDelete="True" />
+      <Child Name="ACPanelHolidayMap" Alias="ACPanelHolidayMap" LocalColumn="UtilHolidayPK" RemoteColumn="UtilHolidayPK" CascadeDelete="True" />
+      <Child Name="ACIntvalHolidayMap" Alias="ACIntvalHolidayMap" LocalColumn="UtilHolidayPK" RemoteColumn="UtilHolidayPK" CascadeDelete="True" />
+    </Children>
+    <Indexs>
+      <Index Name="UtilHoliday_PK" Keys="UtilHolidayPK" IsPrimaryKey="True" IsUniqueConstraint="False" />
+      <Index Name="Idx_UtilHoliday_Holiday" Keys="CountryID,Holiday" IsPrimaryKey="False" IsUniqueConstraint="True" />
+      <Index Name="Idx_UtilHoliday_Date" Keys="Date,CountryID" IsPrimaryKey="False" IsUniqueConstraint="True" />
+      <Index Name="Idx_UtilHoliday_Country" Keys="CountryID" IsPrimaryKey="False" IsUniqueConstraint="False" />
+      <Index Name="Idx_UtilHoliday_ModifiedOn" Keys="ModifiedOn" IsPrimaryKey="False" IsUniqueConstraint="False" />
     </Indexs>
   </Table>
   <Table Name="ACAccessLevel" Alias="ACAccessLevel" Database="W3000">
@@ -883,6 +954,7 @@
       <Column Name="CreatedBy" Alias="CreatedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACPanelFunctionCardMap" TableAlias="ACPanelFunctionCardMap" />
       <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACPanelFunctionCardMap" TableAlias="ACPanelFunctionCardMap" />
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACPanelFunctionCardMap" TableAlias="ACPanelFunctionCardMap" />
+      <Column Name="CardTypeID" Alias="CardTypeID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACFunctionCard" TableAlias="ACFunctionCard" />
       <Column Name="Encoded" Alias="Encoded" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACFunctionCard" TableAlias="ACFunctionCard" />
       <Column Name="Embossed" Alias="Embossed" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACFunctionCard" TableAlias="ACFunctionCard" />
       <Column Name="Sitecode" Alias="Sitecode" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACFunctionCard" TableAlias="ACFunctionCard" />
@@ -904,38 +976,6 @@
       <Index Name="Idx_ACPanelFunctionCardMap_FunctionCard" Keys="ACFunctionCardPK" IsPrimaryKey="False" IsUniqueConstraint="False" />
       <Index Name="Idx_ACPanelFunctionCardMap_PanelKey" Keys="ACPanelPK,ACFunctionCardPK" IsPrimaryKey="False" IsUniqueConstraint="True" />
       <Index Name="Idx_ACPanelFunctionCardMap_ModifiedOn" Keys="ModifiedOn" IsPrimaryKey="False" IsUniqueConstraint="False" />
-    </Indexs>
-  </Table>
-  <Table Name="UtilHoliday" Alias="UtilHoliday" Database="W3000">
-    <Columns>
-      <Column Name="UtilHolidayPK" Alias="UtilHolidayPK" Type="uniqueidentifier" Size="16" IsPK="True" IsNullable="False" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="CountryID" Alias="CountryID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="Holiday" Alias="Holiday" Type="varchar" Size="30" IsPK="False" IsNullable="False" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="Date" Alias="Date" Type="datetime" Size="8" IsPK="False" IsNullable="False" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="Major" Alias="Major" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="Federal" Alias="Federal" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="RowVersion" Alias="RowVersion" Type="timestamp" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="CreatedOn" Alias="CreatedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="CreatedBy" Alias="CreatedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="Default" Alias="Default" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-      <Column Name="ActionID" Alias="ActionID" Type="int" Size="4" IsPK="False" IsNullable="True" IsJoined="False" TableName="UtilHoliday" TableAlias="UtilHoliday" />
-    </Columns>
-    <Joins />
-    <Parents />
-    <Children>
-      <Child Name="ACIntvalHolidayMap" Alias="ACIntvalHolidayMap" LocalColumn="UtilHolidayPK" RemoteColumn="UtilHolidayPK" CascadeDelete="True" />
-      <Child Name="ACPanelHolidayMap" Alias="ACPanelHolidayMap" LocalColumn="UtilHolidayPK" RemoteColumn="UtilHolidayPK" CascadeDelete="True" />
-      <Child Name="BDBuildingHolidayMap" Alias="BDBuildingHolidayMap" LocalColumn="UtilHolidayPK" RemoteColumn="UtilHolidayPK" CascadeDelete="True" />
-      <Child Name="BDTenantHolidayMap" Alias="BDTenantHolidayMap" LocalColumn="UtilHolidayPK" RemoteColumn="UtilHolidayPK" CascadeDelete="True" />
-    </Children>
-    <Indexs>
-      <Index Name="UtilHoliday_PK" Keys="UtilHolidayPK" IsPrimaryKey="True" IsUniqueConstraint="False" />
-      <Index Name="Idx_UtilHoliday_Holiday" Keys="CountryID,Holiday" IsPrimaryKey="False" IsUniqueConstraint="True" />
-      <Index Name="Idx_UtilHoliday_Date" Keys="Date,CountryID" IsPrimaryKey="False" IsUniqueConstraint="True" />
-      <Index Name="Idx_UtilHoliday_Country" Keys="CountryID" IsPrimaryKey="False" IsUniqueConstraint="False" />
-      <Index Name="Idx_UtilHoliday_ModifiedOn" Keys="ModifiedOn" IsPrimaryKey="False" IsUniqueConstraint="False" />
     </Indexs>
   </Table>
   <Table Name="LogDBDeleteActivity" Alias="LogDBDeleteActivity" Database="W3000">
@@ -985,10 +1025,17 @@
       <Column Name="CreatedBy" Alias="CreatedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="UsrAccount" TableAlias="UsrAccount" />
       <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="UsrAccount" TableAlias="UsrAccount" />
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="UsrAccount" TableAlias="UsrAccount" />
+      <Column Name="Suite" Alias="Suite" Type="varchar" Size="30" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
+      <Column Name="Tenant" Alias="Tenant" Type="varchar" Size="60" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
+      <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
+      <Column Name="UsrGroupName" Alias="UsrGroupName" Type="varchar" Size="50" IsPK="False" IsNullable="False" IsJoined="True" TableName="UsrGroup" TableAlias="UsrGroup" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="UsrAccount" KeyAlias="UsrAccount" RefTable="BDTenant" RefAlias="BDTenant" KeyField="BDTenantPK" RefField="BDTenantPK" />
       <Join KeyTable="UsrAccount" KeyAlias="UsrAccount" RefTable="UsrGroup" RefAlias="UsrGroup" KeyField="UsrGroupPK" RefField="UsrGroupPK" />
+      <Join KeyTable="BDTenant" KeyAlias="BDTenant" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="BDTenant" Alias="BDTenant" LocalColumn="BDTenantPK" RemoteColumn="BDTenantPK" />
@@ -1077,7 +1124,7 @@
       <Column Name="CreatedBy" Alias="CreatedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACSupervisory" TableAlias="ACSupervisory" />
       <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACSupervisory" TableAlias="ACSupervisory" />
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACSupervisory" TableAlias="ACSupervisory" />
-      <Column Name="PanelZoneID" Alias="PanelZoneID" Type="tinyint" Size="1" IsPK="False" IsNullable="False" IsJoined="False" TableName="ACSupervisory" TableAlias="ACSupervisory" />
+      <Column Name="PanelZoneID" Alias="PanelZoneID" Type="tinyint" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACSupervisory" TableAlias="ACSupervisory" />
       <Column Name="Locked" Alias="Locked" Type="bit" Size="1" IsPK="False" IsNullable="True" IsJoined="False" TableName="ACSupervisory" TableAlias="ACSupervisory" />
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
       <Column Name="UnitID" Alias="UnitID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
@@ -1138,6 +1185,7 @@
       <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
       <Column Name="LastName" Alias="LastName" Type="varchar" Size="50" IsPK="False" IsNullable="True" IsJoined="True" TableName="ACCardHolder" TableAlias="ACCardHolder" />
       <Column Name="FirstName" Alias="FirstName" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="True" TableName="ACCardHolder" TableAlias="ACCardHolder" />
+      <Column Name="CardTypeID" Alias="CardTypeID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACCardHolder" TableAlias="ACCardHolder" />
       <Column Name="Encoded" Alias="Encoded" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACCardHolder" TableAlias="ACCardHolder" />
       <Column Name="Embossed" Alias="Embossed" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACCardHolder" TableAlias="ACCardHolder" />
       <Column Name="Sitecode" Alias="Sitecode" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACCardHolder" TableAlias="ACCardHolder" />
@@ -1187,6 +1235,7 @@
       <Column Name="CreatedBy" Alias="CreatedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="BDVisitor" TableAlias="BDVisitor" />
       <Column Name="ModifiedOn" Alias="ModifiedOn" Type="datetime" Size="8" IsPK="False" IsNullable="True" IsJoined="False" TableName="BDVisitor" TableAlias="BDVisitor" />
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="BDVisitor" TableAlias="BDVisitor" />
+      <Column Name="Suite" Alias="Suite" Type="varchar" Size="30" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
       <Column Name="Tenant" Alias="Tenant" Type="varchar" Size="60" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
       <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
@@ -1385,10 +1434,16 @@
       <Column Name="GroupID" Alias="GroupID" Type="tinyint" Size="1" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACInputGroup" TableAlias="ACInputGroup" />
       <Column Name="ACPanelPK" Alias="ACPanelPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACInputGroup" TableAlias="ACInputGroup" />
       <Column Name="InputID" Alias="InputID" Type="tinyint" Size="1" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACInput" TableAlias="ACInput" />
+      <Column Name="UnitID" Alias="UnitID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="ACPanel" TableAlias="ACPanel" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="ACInputGroupInputMap" KeyAlias="ACInputGroupInputMap" RefTable="ACInputGroup" RefAlias="ACInputGroup" KeyField="ACInputGroupPK" RefField="ACInputGroupPK" />
       <Join KeyTable="ACInputGroupInputMap" KeyAlias="ACInputGroupInputMap" RefTable="ACInput" RefAlias="ACInput" KeyField="ACInputPK" RefField="ACInputPK" />
+      <Join KeyTable="ACInput" KeyAlias="ACInput" RefTable="ACPanel" RefAlias="ACPanel" KeyField="ACPanelPK" RefField="ACPanelPK" />
+      <Join KeyTable="ACPanel" KeyAlias="ACPanel" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="ACInputGroup" Alias="ACInputGroup" LocalColumn="ACInputGroupPK" RemoteColumn="ACInputGroupPK" />
@@ -1442,10 +1497,14 @@
       <Column Name="ModifiedBy" Alias="ModifiedBy" Type="varchar" Size="30" IsPK="False" IsNullable="True" IsJoined="False" TableName="UsrAccountTenantMap" TableAlias="UsrAccountTenantMap" />
       <Column Name="Tenant" Alias="Tenant" Type="varchar" Size="60" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
       <Column Name="BDBuildingPK" Alias="BDBuildingPK" Type="uniqueidentifier" Size="16" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDTenant" TableAlias="BDTenant" />
+      <Column Name="UserID" Alias="UserID" Type="varchar" Size="30" IsPK="False" IsNullable="False" IsJoined="True" TableName="UsrAccount" TableAlias="UsrAccount" />
+      <Column Name="Address1" Alias="Address1" Type="varchar" Size="55" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
+      <Column Name="BuildingID" Alias="BuildingID" Type="int" Size="4" IsPK="False" IsNullable="False" IsJoined="True" TableName="BDBuilding" TableAlias="BDBuilding" />
     </Columns>
     <Joins>
       <Join KeyTable="UsrAccountTenantMap" KeyAlias="UsrAccountTenantMap" RefTable="BDTenant" RefAlias="BDTenant" KeyField="BDTenantPK" RefField="BDTenantPK" />
       <Join KeyTable="UsrAccountTenantMap" KeyAlias="UsrAccountTenantMap" RefTable="UsrAccount" RefAlias="UsrAccount" KeyField="UsrAccountPK" RefField="UsrAccountPK" />
+      <Join KeyTable="BDTenant" KeyAlias="BDTenant" RefTable="BDBuilding" RefAlias="BDBuilding" KeyField="BDBuildingPK" RefField="BDBuildingPK" />
     </Joins>
     <Parents>
       <Parent Name="BDTenant" Alias="BDTenant" LocalColumn="BDTenantPK" RemoteColumn="BDTenantPK" />

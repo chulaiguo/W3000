@@ -118,6 +118,14 @@ namespace W3000.Manager.GridDecorator
 			colBuildingID.DisplayFormat.FormatString = "f0";
 			view.Columns.Add(colBuildingID);
 
+			GridColumn colUserID = new GridColumn();
+			colUserID.Caption = "UserID";
+			colUserID.FieldName = UsrAccountBuildingMapSchema.UserID;
+			colUserID.OptionsColumn.AllowEdit = false;
+			colUserID.OptionsColumn.AllowFocus = false;
+			colUserID.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colUserID);
+
 		}
 
 		protected override void NavigatorEditClick(GridView view, NavigatorButtonClickEventArgs e)

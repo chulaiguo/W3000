@@ -26,7 +26,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACIntvalHolidayMap].[ACIntvalHolidayMapPK] AS [ACIntvalHolidayMapPK],[ACIntvalHolidayMap].[ACIntervalPK] AS [ACIntervalPK],[ACIntvalHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[ACIntvalHolidayMap].[RowVersion] AS [RowVersion],[ACIntvalHolidayMap].[CreatedOn] AS [CreatedOn],[ACIntvalHolidayMap].[CreatedBy] AS [CreatedBy],[ACIntvalHolidayMap].[ModifiedOn] AS [ModifiedOn],[ACIntvalHolidayMap].[ModifiedBy] AS [ModifiedBy],[ACInterval].[BDBuildingPK] AS [BDBuildingPK],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday]";
+				return "[ACIntvalHolidayMap].[ACIntvalHolidayMapPK] AS [ACIntvalHolidayMapPK],[ACIntvalHolidayMap].[ACIntervalPK] AS [ACIntervalPK],[ACIntvalHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[ACIntvalHolidayMap].[RowVersion] AS [RowVersion],[ACIntvalHolidayMap].[CreatedOn] AS [CreatedOn],[ACIntvalHolidayMap].[CreatedBy] AS [CreatedBy],[ACIntvalHolidayMap].[ModifiedOn] AS [ModifiedOn],[ACIntvalHolidayMap].[ModifiedBy] AS [ModifiedBy],[ACInterval].[End] AS [End],[ACInterval].[Begin] AS [Begin],[ACInterval].[IVID] AS [IVID],[ACInterval].[BDBuildingPK] AS [BDBuildingPK],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [ACInterval] [ACInterval] ON [ACIntvalHolidayMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACIntvalHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK]";
+				return "LEFT JOIN [ACInterval] [ACInterval] ON [ACIntvalHolidayMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACIntvalHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACInterval].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACIntvalHolidayMap].[ACIntvalHolidayMapPK] AS [ACIntvalHolidayMapPK],[ACIntvalHolidayMap].[ACIntervalPK] AS [ACIntervalPK],[ACIntvalHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[ACIntvalHolidayMap].[RowVersion] AS [RowVersion],[ACIntvalHolidayMap].[CreatedOn] AS [CreatedOn],[ACIntvalHolidayMap].[CreatedBy] AS [CreatedBy],[ACIntvalHolidayMap].[ModifiedOn] AS [ModifiedOn],[ACIntvalHolidayMap].[ModifiedBy] AS [ModifiedBy],[ACInterval].[BDBuildingPK] AS [BDBuildingPK],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday] FROM [{0}] [ACIntvalHolidayMap] LEFT JOIN [ACInterval] [ACInterval] ON [ACIntvalHolidayMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACIntvalHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK]", this.TableName);
+				return string.Format("SELECT [ACIntvalHolidayMap].[ACIntvalHolidayMapPK] AS [ACIntvalHolidayMapPK],[ACIntvalHolidayMap].[ACIntervalPK] AS [ACIntervalPK],[ACIntvalHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[ACIntvalHolidayMap].[RowVersion] AS [RowVersion],[ACIntvalHolidayMap].[CreatedOn] AS [CreatedOn],[ACIntvalHolidayMap].[CreatedBy] AS [CreatedBy],[ACIntvalHolidayMap].[ModifiedOn] AS [ModifiedOn],[ACIntvalHolidayMap].[ModifiedBy] AS [ModifiedBy],[ACInterval].[End] AS [End],[ACInterval].[Begin] AS [Begin],[ACInterval].[IVID] AS [IVID],[ACInterval].[BDBuildingPK] AS [BDBuildingPK],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACIntvalHolidayMap] LEFT JOIN [ACInterval] [ACInterval] ON [ACIntvalHolidayMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACIntvalHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACInterval].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACIntvalHolidayMap] LEFT JOIN [ACInterval] [ACInterval] ON [ACIntvalHolidayMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACIntvalHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACIntvalHolidayMap] LEFT JOIN [ACInterval] [ACInterval] ON [ACIntvalHolidayMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [ACIntvalHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACInterval].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -151,9 +151,14 @@ namespace W3000.CRUD
 				CreatedBy = (String) reader["CreatedBy"],
 				ModifiedOn = (DateTime) reader["ModifiedOn"],
 				ModifiedBy = (String) reader["ModifiedBy"],
+				End = (String) reader["End"],
+				Begin = (String) reader["Begin"],
+				IVID = (Int16) reader["IVID"],
 				BDBuildingPK = (Guid) reader["BDBuildingPK"],
 				Date = (DateTime) reader["Date"],
-				Holiday = (String) reader["Holiday"]
+				Holiday = (String) reader["Holiday"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -387,7 +392,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACAccessLevelDetail].[ACAccessLevelDetailPK] AS [ACAccessLevelDetailPK],[ACAccessLevelDetail].[ACAccessLevelPK] AS [ACAccessLevelPK],[ACAccessLevelDetail].[ACMainZonePK] AS [ACMainZonePK],[ACAccessLevelDetail].[ACTimecodePK] AS [ACTimecodePK],[ACAccessLevelDetail].[FromACAccessLevelPK] AS [FromACAccessLevelPK],[ACAccessLevelDetail].[RowVersion] AS [RowVersion],[ACAccessLevelDetail].[CreatedOn] AS [CreatedOn],[ACAccessLevelDetail].[CreatedBy] AS [CreatedBy],[ACAccessLevelDetail].[ModifiedOn] AS [ModifiedOn],[ACAccessLevelDetail].[ModifiedBy] AS [ModifiedBy],[ACMainZone].[Description] AS [MainZoneDescription],[ACMainZone].[MainZoneID] AS [MainZoneID],[ACMainZone].[ACPanelPK] AS [ACPanelPK],[ACTimecode].[Summary] AS [TimecodeSummary],[ACTimecode].[TCID] AS [TCID],[ACAccessLevel].[Summary] AS [ALSummary],[ACAccessLevel].[AccessLevelID] AS [AccessLevelID],[ACAccessLevel].[BDBuildingPK] AS [BDBuildingPK]";
+				return "[ACAccessLevelDetail].[ACAccessLevelDetailPK] AS [ACAccessLevelDetailPK],[ACAccessLevelDetail].[ACAccessLevelPK] AS [ACAccessLevelPK],[ACAccessLevelDetail].[ACMainZonePK] AS [ACMainZonePK],[ACAccessLevelDetail].[ACTimecodePK] AS [ACTimecodePK],[ACAccessLevelDetail].[FromACAccessLevelPK] AS [FromACAccessLevelPK],[ACAccessLevelDetail].[RowVersion] AS [RowVersion],[ACAccessLevelDetail].[CreatedOn] AS [CreatedOn],[ACAccessLevelDetail].[CreatedBy] AS [CreatedBy],[ACAccessLevelDetail].[ModifiedOn] AS [ModifiedOn],[ACAccessLevelDetail].[ModifiedBy] AS [ModifiedBy],[ACMainZone].[Description] AS [MainZoneDescription],[ACMainZone].[MainZoneID] AS [MainZoneID],[ACMainZone].[ACPanelPK] AS [ACPanelPK],[ACTimecode].[Summary] AS [TimecodeSummary],[ACTimecode].[TCID] AS [TCID],[ACAccessLevel].[Summary] AS [ALSummary],[ACAccessLevel].[AccessLevelID] AS [AccessLevelID],[ACAccessLevel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -395,7 +400,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [ACMainZone] [ACMainZone] ON [ACAccessLevelDetail].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACAccessLevelDetail].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] LEFT JOIN [ACAccessLevel] [ACAccessLevel] ON [ACAccessLevelDetail].[ACAccessLevelPK] = [ACAccessLevel].[ACAccessLevelPK]";
+				return "LEFT JOIN [ACMainZone] [ACMainZone] ON [ACAccessLevelDetail].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACAccessLevelDetail].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] LEFT JOIN [ACAccessLevel] [ACAccessLevel] ON [ACAccessLevelDetail].[ACAccessLevelPK] = [ACAccessLevel].[ACAccessLevelPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACAccessLevel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -403,7 +408,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACAccessLevelDetail].[ACAccessLevelDetailPK] AS [ACAccessLevelDetailPK],[ACAccessLevelDetail].[ACAccessLevelPK] AS [ACAccessLevelPK],[ACAccessLevelDetail].[ACMainZonePK] AS [ACMainZonePK],[ACAccessLevelDetail].[ACTimecodePK] AS [ACTimecodePK],[ACAccessLevelDetail].[FromACAccessLevelPK] AS [FromACAccessLevelPK],[ACAccessLevelDetail].[RowVersion] AS [RowVersion],[ACAccessLevelDetail].[CreatedOn] AS [CreatedOn],[ACAccessLevelDetail].[CreatedBy] AS [CreatedBy],[ACAccessLevelDetail].[ModifiedOn] AS [ModifiedOn],[ACAccessLevelDetail].[ModifiedBy] AS [ModifiedBy],[ACMainZone].[Description] AS [MainZoneDescription],[ACMainZone].[MainZoneID] AS [MainZoneID],[ACMainZone].[ACPanelPK] AS [ACPanelPK],[ACTimecode].[Summary] AS [TimecodeSummary],[ACTimecode].[TCID] AS [TCID],[ACAccessLevel].[Summary] AS [ALSummary],[ACAccessLevel].[AccessLevelID] AS [AccessLevelID],[ACAccessLevel].[BDBuildingPK] AS [BDBuildingPK] FROM [{0}] [ACAccessLevelDetail] LEFT JOIN [ACMainZone] [ACMainZone] ON [ACAccessLevelDetail].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACAccessLevelDetail].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] LEFT JOIN [ACAccessLevel] [ACAccessLevel] ON [ACAccessLevelDetail].[ACAccessLevelPK] = [ACAccessLevel].[ACAccessLevelPK]", this.TableName);
+				return string.Format("SELECT [ACAccessLevelDetail].[ACAccessLevelDetailPK] AS [ACAccessLevelDetailPK],[ACAccessLevelDetail].[ACAccessLevelPK] AS [ACAccessLevelPK],[ACAccessLevelDetail].[ACMainZonePK] AS [ACMainZonePK],[ACAccessLevelDetail].[ACTimecodePK] AS [ACTimecodePK],[ACAccessLevelDetail].[FromACAccessLevelPK] AS [FromACAccessLevelPK],[ACAccessLevelDetail].[RowVersion] AS [RowVersion],[ACAccessLevelDetail].[CreatedOn] AS [CreatedOn],[ACAccessLevelDetail].[CreatedBy] AS [CreatedBy],[ACAccessLevelDetail].[ModifiedOn] AS [ModifiedOn],[ACAccessLevelDetail].[ModifiedBy] AS [ModifiedBy],[ACMainZone].[Description] AS [MainZoneDescription],[ACMainZone].[MainZoneID] AS [MainZoneID],[ACMainZone].[ACPanelPK] AS [ACPanelPK],[ACTimecode].[Summary] AS [TimecodeSummary],[ACTimecode].[TCID] AS [TCID],[ACAccessLevel].[Summary] AS [ALSummary],[ACAccessLevel].[AccessLevelID] AS [AccessLevelID],[ACAccessLevel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACAccessLevelDetail] LEFT JOIN [ACMainZone] [ACMainZone] ON [ACAccessLevelDetail].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACAccessLevelDetail].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] LEFT JOIN [ACAccessLevel] [ACAccessLevel] ON [ACAccessLevelDetail].[ACAccessLevelPK] = [ACAccessLevel].[ACAccessLevelPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACAccessLevel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -411,7 +416,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACAccessLevelDetail] LEFT JOIN [ACMainZone] [ACMainZone] ON [ACAccessLevelDetail].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACAccessLevelDetail].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] LEFT JOIN [ACAccessLevel] [ACAccessLevel] ON [ACAccessLevelDetail].[ACAccessLevelPK] = [ACAccessLevel].[ACAccessLevelPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACAccessLevelDetail] LEFT JOIN [ACMainZone] [ACMainZone] ON [ACAccessLevelDetail].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACAccessLevelDetail].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] LEFT JOIN [ACAccessLevel] [ACAccessLevel] ON [ACAccessLevelDetail].[ACAccessLevelPK] = [ACAccessLevel].[ACAccessLevelPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACAccessLevel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -557,7 +562,10 @@ namespace W3000.CRUD
 				TCID = (Int16) reader["TCID"],
 				ALSummary = (String) reader["ALSummary"],
 				AccessLevelID = (Int16) reader["AccessLevelID"],
-				BDBuildingPK = (Guid) reader["BDBuildingPK"]
+				BDBuildingPK = (Guid) reader["BDBuildingPK"],
+				UnitID = (Int32) reader["UnitID"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -842,7 +850,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[UsrAccountBuildingMap].[UsrAccountBuildingMapPK] AS [UsrAccountBuildingMapPK],[UsrAccountBuildingMap].[UsrAccountPK] AS [UsrAccountPK],[UsrAccountBuildingMap].[BDBuildingPK] AS [BDBuildingPK],[UsrAccountBuildingMap].[BuildingWide] AS [BuildingWide],[UsrAccountBuildingMap].[RowVersion] AS [RowVersion],[UsrAccountBuildingMap].[CreatedOn] AS [CreatedOn],[UsrAccountBuildingMap].[CreatedBy] AS [CreatedBy],[UsrAccountBuildingMap].[ModifiedOn] AS [ModifiedOn],[UsrAccountBuildingMap].[ModifiedBy] AS [ModifiedBy],[UsrAccountBuildingMap].[AccessTC] AS [AccessTC],[UsrAccountBuildingMap].[Permission] AS [Permission],[UsrAccountBuildingMap].[Primary] AS [Primary],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
+				return "[UsrAccountBuildingMap].[UsrAccountBuildingMapPK] AS [UsrAccountBuildingMapPK],[UsrAccountBuildingMap].[UsrAccountPK] AS [UsrAccountPK],[UsrAccountBuildingMap].[BDBuildingPK] AS [BDBuildingPK],[UsrAccountBuildingMap].[BuildingWide] AS [BuildingWide],[UsrAccountBuildingMap].[RowVersion] AS [RowVersion],[UsrAccountBuildingMap].[CreatedOn] AS [CreatedOn],[UsrAccountBuildingMap].[CreatedBy] AS [CreatedBy],[UsrAccountBuildingMap].[ModifiedOn] AS [ModifiedOn],[UsrAccountBuildingMap].[ModifiedBy] AS [ModifiedBy],[UsrAccountBuildingMap].[AccessTC] AS [AccessTC],[UsrAccountBuildingMap].[Permission] AS [Permission],[UsrAccountBuildingMap].[Primary] AS [Primary],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID],[UsrAccount].[UserID] AS [UserID]";
 			}
 		}
 
@@ -858,7 +866,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [UsrAccountBuildingMap].[UsrAccountBuildingMapPK] AS [UsrAccountBuildingMapPK],[UsrAccountBuildingMap].[UsrAccountPK] AS [UsrAccountPK],[UsrAccountBuildingMap].[BDBuildingPK] AS [BDBuildingPK],[UsrAccountBuildingMap].[BuildingWide] AS [BuildingWide],[UsrAccountBuildingMap].[RowVersion] AS [RowVersion],[UsrAccountBuildingMap].[CreatedOn] AS [CreatedOn],[UsrAccountBuildingMap].[CreatedBy] AS [CreatedBy],[UsrAccountBuildingMap].[ModifiedOn] AS [ModifiedOn],[UsrAccountBuildingMap].[ModifiedBy] AS [ModifiedBy],[UsrAccountBuildingMap].[AccessTC] AS [AccessTC],[UsrAccountBuildingMap].[Permission] AS [Permission],[UsrAccountBuildingMap].[Primary] AS [Primary],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [UsrAccountBuildingMap] LEFT JOIN [BDBuilding] [BDBuilding] ON [UsrAccountBuildingMap].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] LEFT JOIN [UsrAccount] [UsrAccount] ON [UsrAccountBuildingMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK]", this.TableName);
+				return string.Format("SELECT [UsrAccountBuildingMap].[UsrAccountBuildingMapPK] AS [UsrAccountBuildingMapPK],[UsrAccountBuildingMap].[UsrAccountPK] AS [UsrAccountPK],[UsrAccountBuildingMap].[BDBuildingPK] AS [BDBuildingPK],[UsrAccountBuildingMap].[BuildingWide] AS [BuildingWide],[UsrAccountBuildingMap].[RowVersion] AS [RowVersion],[UsrAccountBuildingMap].[CreatedOn] AS [CreatedOn],[UsrAccountBuildingMap].[CreatedBy] AS [CreatedBy],[UsrAccountBuildingMap].[ModifiedOn] AS [ModifiedOn],[UsrAccountBuildingMap].[ModifiedBy] AS [ModifiedBy],[UsrAccountBuildingMap].[AccessTC] AS [AccessTC],[UsrAccountBuildingMap].[Permission] AS [Permission],[UsrAccountBuildingMap].[Primary] AS [Primary],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID],[UsrAccount].[UserID] AS [UserID] FROM [{0}] [UsrAccountBuildingMap] LEFT JOIN [BDBuilding] [BDBuilding] ON [UsrAccountBuildingMap].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] LEFT JOIN [UsrAccount] [UsrAccount] ON [UsrAccountBuildingMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK]", this.TableName);
 			}
 		}
 
@@ -988,7 +996,8 @@ namespace W3000.CRUD
 				Permission = (Int32) reader["Permission"],
 				Primary = (Boolean) reader["Primary"],
 				Address1 = (String) reader["Address1"],
-				BuildingID = (Int32) reader["BuildingID"]
+				BuildingID = (Int32) reader["BuildingID"],
+				UserID = (String) reader["UserID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -2315,7 +2324,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[UtilSettingDetail].[UtilSettingDetailPK] AS [UtilSettingDetailPK],[UtilSettingDetail].[UtilSettingCategoryPK] AS [UtilSettingCategoryPK],[UtilSettingDetail].[FieldName] AS [FieldName],[UtilSettingDetail].[FieldValue] AS [FieldValue],[UtilSettingDetail].[Picture] AS [Picture],[UtilSettingDetail].[RowVersion] AS [RowVersion],[UtilSettingDetail].[CreatedOn] AS [CreatedOn],[UtilSettingDetail].[CreatedBy] AS [CreatedBy],[UtilSettingDetail].[ModifiedOn] AS [ModifiedOn],[UtilSettingDetail].[ModifiedBy] AS [ModifiedBy]";
+				return "[UtilSettingDetail].[UtilSettingDetailPK] AS [UtilSettingDetailPK],[UtilSettingDetail].[UtilSettingCategoryPK] AS [UtilSettingCategoryPK],[UtilSettingDetail].[FieldName] AS [FieldName],[UtilSettingDetail].[FieldValue] AS [FieldValue],[UtilSettingDetail].[Picture] AS [Picture],[UtilSettingDetail].[RowVersion] AS [RowVersion],[UtilSettingDetail].[CreatedOn] AS [CreatedOn],[UtilSettingDetail].[CreatedBy] AS [CreatedBy],[UtilSettingDetail].[ModifiedOn] AS [ModifiedOn],[UtilSettingDetail].[ModifiedBy] AS [ModifiedBy],[UtilSettingCategory].[SettingCategory] AS [SettingCategory],[UtilSettingCategory].[SettingCategoryID] AS [SettingCategoryID]";
 			}
 		}
 
@@ -2331,7 +2340,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [UtilSettingDetail].[UtilSettingDetailPK] AS [UtilSettingDetailPK],[UtilSettingDetail].[UtilSettingCategoryPK] AS [UtilSettingCategoryPK],[UtilSettingDetail].[FieldName] AS [FieldName],[UtilSettingDetail].[FieldValue] AS [FieldValue],[UtilSettingDetail].[Picture] AS [Picture],[UtilSettingDetail].[RowVersion] AS [RowVersion],[UtilSettingDetail].[CreatedOn] AS [CreatedOn],[UtilSettingDetail].[CreatedBy] AS [CreatedBy],[UtilSettingDetail].[ModifiedOn] AS [ModifiedOn],[UtilSettingDetail].[ModifiedBy] AS [ModifiedBy] FROM [{0}] [UtilSettingDetail] LEFT JOIN [UtilSettingCategory] [UtilSettingCategory] ON [UtilSettingDetail].[UtilSettingCategoryPK] = [UtilSettingCategory].[UtilSettingCategoryPK]", this.TableName);
+				return string.Format("SELECT [UtilSettingDetail].[UtilSettingDetailPK] AS [UtilSettingDetailPK],[UtilSettingDetail].[UtilSettingCategoryPK] AS [UtilSettingCategoryPK],[UtilSettingDetail].[FieldName] AS [FieldName],[UtilSettingDetail].[FieldValue] AS [FieldValue],[UtilSettingDetail].[Picture] AS [Picture],[UtilSettingDetail].[RowVersion] AS [RowVersion],[UtilSettingDetail].[CreatedOn] AS [CreatedOn],[UtilSettingDetail].[CreatedBy] AS [CreatedBy],[UtilSettingDetail].[ModifiedOn] AS [ModifiedOn],[UtilSettingDetail].[ModifiedBy] AS [ModifiedBy],[UtilSettingCategory].[SettingCategory] AS [SettingCategory],[UtilSettingCategory].[SettingCategoryID] AS [SettingCategoryID] FROM [{0}] [UtilSettingDetail] LEFT JOIN [UtilSettingCategory] [UtilSettingCategory] ON [UtilSettingDetail].[UtilSettingCategoryPK] = [UtilSettingCategory].[UtilSettingCategoryPK]", this.TableName);
 			}
 		}
 
@@ -2435,7 +2444,9 @@ namespace W3000.CRUD
 				CreatedOn = (DateTime) reader["CreatedOn"],
 				CreatedBy = (String) reader["CreatedBy"],
 				ModifiedOn = (DateTime) reader["ModifiedOn"],
-				ModifiedBy = (String) reader["ModifiedBy"]
+				ModifiedBy = (String) reader["ModifiedBy"],
+				SettingCategory = (String) reader["SettingCategory"],
+				SettingCategoryID = (Int32) reader["SettingCategoryID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -2618,7 +2629,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACOutputGroupMainZoneMap].[ACOutputGroupMainZoneMapPK] AS [ACOutputGroupMainZoneMapPK],[ACOutputGroupMainZoneMap].[ACOutputGroupPK] AS [ACOutputGroupPK],[ACOutputGroupMainZoneMap].[ACMainZonePK] AS [ACMainZonePK],[ACOutputGroupMainZoneMap].[RowVersion] AS [RowVersion],[ACOutputGroupMainZoneMap].[CreatedOn] AS [CreatedOn],[ACOutputGroupMainZoneMap].[CreatedBy] AS [CreatedBy],[ACOutputGroupMainZoneMap].[ModifiedOn] AS [ModifiedOn],[ACOutputGroupMainZoneMap].[ModifiedBy] AS [ModifiedBy],[ACMainZone].[MainZoneID] AS [MainZoneID],[ACMainZone].[ACPanelPK] AS [ACPanelPK],[ACOutputGroup].[GroupID] AS [GroupID]";
+				return "[ACOutputGroupMainZoneMap].[ACOutputGroupMainZoneMapPK] AS [ACOutputGroupMainZoneMapPK],[ACOutputGroupMainZoneMap].[ACOutputGroupPK] AS [ACOutputGroupPK],[ACOutputGroupMainZoneMap].[ACMainZonePK] AS [ACMainZonePK],[ACOutputGroupMainZoneMap].[RowVersion] AS [RowVersion],[ACOutputGroupMainZoneMap].[CreatedOn] AS [CreatedOn],[ACOutputGroupMainZoneMap].[CreatedBy] AS [CreatedBy],[ACOutputGroupMainZoneMap].[ModifiedOn] AS [ModifiedOn],[ACOutputGroupMainZoneMap].[ModifiedBy] AS [ModifiedBy],[ACMainZone].[MainZoneID] AS [MainZoneID],[ACMainZone].[ACPanelPK] AS [ACPanelPK],[ACOutputGroup].[GroupID] AS [GroupID],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID],[BDBuilding].[BDBuildingPK] AS [BDBuildingPK]";
 			}
 		}
 
@@ -2626,7 +2637,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [ACMainZone] [ACMainZone] ON [ACOutputGroupMainZoneMap].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACOutputGroup] [ACOutputGroup] ON [ACOutputGroupMainZoneMap].[ACOutputGroupPK] = [ACOutputGroup].[ACOutputGroupPK]";
+				return "LEFT JOIN [ACMainZone] [ACMainZone] ON [ACOutputGroupMainZoneMap].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACOutputGroup] [ACOutputGroup] ON [ACOutputGroupMainZoneMap].[ACOutputGroupPK] = [ACOutputGroup].[ACOutputGroupPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -2634,7 +2645,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACOutputGroupMainZoneMap].[ACOutputGroupMainZoneMapPK] AS [ACOutputGroupMainZoneMapPK],[ACOutputGroupMainZoneMap].[ACOutputGroupPK] AS [ACOutputGroupPK],[ACOutputGroupMainZoneMap].[ACMainZonePK] AS [ACMainZonePK],[ACOutputGroupMainZoneMap].[RowVersion] AS [RowVersion],[ACOutputGroupMainZoneMap].[CreatedOn] AS [CreatedOn],[ACOutputGroupMainZoneMap].[CreatedBy] AS [CreatedBy],[ACOutputGroupMainZoneMap].[ModifiedOn] AS [ModifiedOn],[ACOutputGroupMainZoneMap].[ModifiedBy] AS [ModifiedBy],[ACMainZone].[MainZoneID] AS [MainZoneID],[ACMainZone].[ACPanelPK] AS [ACPanelPK],[ACOutputGroup].[GroupID] AS [GroupID] FROM [{0}] [ACOutputGroupMainZoneMap] LEFT JOIN [ACMainZone] [ACMainZone] ON [ACOutputGroupMainZoneMap].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACOutputGroup] [ACOutputGroup] ON [ACOutputGroupMainZoneMap].[ACOutputGroupPK] = [ACOutputGroup].[ACOutputGroupPK]", this.TableName);
+				return string.Format("SELECT [ACOutputGroupMainZoneMap].[ACOutputGroupMainZoneMapPK] AS [ACOutputGroupMainZoneMapPK],[ACOutputGroupMainZoneMap].[ACOutputGroupPK] AS [ACOutputGroupPK],[ACOutputGroupMainZoneMap].[ACMainZonePK] AS [ACMainZonePK],[ACOutputGroupMainZoneMap].[RowVersion] AS [RowVersion],[ACOutputGroupMainZoneMap].[CreatedOn] AS [CreatedOn],[ACOutputGroupMainZoneMap].[CreatedBy] AS [CreatedBy],[ACOutputGroupMainZoneMap].[ModifiedOn] AS [ModifiedOn],[ACOutputGroupMainZoneMap].[ModifiedBy] AS [ModifiedBy],[ACMainZone].[MainZoneID] AS [MainZoneID],[ACMainZone].[ACPanelPK] AS [ACPanelPK],[ACOutputGroup].[GroupID] AS [GroupID],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID],[BDBuilding].[BDBuildingPK] AS [BDBuildingPK] FROM [{0}] [ACOutputGroupMainZoneMap] LEFT JOIN [ACMainZone] [ACMainZone] ON [ACOutputGroupMainZoneMap].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACOutputGroup] [ACOutputGroup] ON [ACOutputGroupMainZoneMap].[ACOutputGroupPK] = [ACOutputGroup].[ACOutputGroupPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -2642,7 +2653,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACOutputGroupMainZoneMap] LEFT JOIN [ACMainZone] [ACMainZone] ON [ACOutputGroupMainZoneMap].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACOutputGroup] [ACOutputGroup] ON [ACOutputGroupMainZoneMap].[ACOutputGroupPK] = [ACOutputGroup].[ACOutputGroupPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACOutputGroupMainZoneMap] LEFT JOIN [ACMainZone] [ACMainZone] ON [ACOutputGroupMainZoneMap].[ACMainZonePK] = [ACMainZone].[ACMainZonePK] LEFT JOIN [ACOutputGroup] [ACOutputGroup] ON [ACOutputGroupMainZoneMap].[ACOutputGroupPK] = [ACOutputGroup].[ACOutputGroupPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACMainZone].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -2745,7 +2756,11 @@ namespace W3000.CRUD
 				ModifiedBy = (String) reader["ModifiedBy"],
 				MainZoneID = (Byte) reader["MainZoneID"],
 				ACPanelPK = (Guid) reader["ACPanelPK"],
-				GroupID = (Byte) reader["GroupID"]
+				GroupID = (Byte) reader["GroupID"],
+				UnitID = (Int32) reader["UnitID"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"],
+				BDBuildingPK = (Guid) reader["BDBuildingPK"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -3000,7 +3015,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACCardHolder].[ACCardHolderPK] AS [ACCardHolderPK],[ACCardHolder].[Sitecode] AS [Sitecode],[ACCardHolder].[Embossed] AS [Embossed],[ACCardHolder].[Encoded] AS [Encoded],[ACCardHolder].[CardTypeID] AS [CardTypeID],[ACCardHolder].[FirstName] AS [FirstName],[ACCardHolder].[LastName] AS [LastName],[ACCardHolder].[Photo] AS [Photo],[ACCardHolder].[ValidFrom] AS [ValidFrom],[ACCardHolder].[ValidThru] AS [ValidThru],[ACCardHolder].[FIPS] AS [FIPS],[ACCardHolder].[Pin] AS [Pin],[ACCardHolder].[BDTenantPK] AS [BDTenantPK],[ACCardHolder].[Notes] AS [Notes],[ACCardHolder].[EventNotifyEmail] AS [EventNotifyEmail],[ACCardHolder].[FireWarden] AS [FireWarden],[ACCardHolder].[CustInfo1] AS [CustInfo1],[ACCardHolder].[CustInfo2] AS [CustInfo2],[ACCardHolder].[CustInfo3] AS [CustInfo3],[ACCardHolder].[CustInfo4] AS [CustInfo4],[ACCardHolder].[CustInfo5] AS [CustInfo5],[ACCardHolder].[CustInfo6] AS [CustInfo6],[ACCardHolder].[CustInfo7] AS [CustInfo7],[ACCardHolder].[CustInfo8] AS [CustInfo8],[ACCardHolder].[RowVersion] AS [RowVersion],[ACCardHolder].[CreatedOn] AS [CreatedOn],[ACCardHolder].[CreatedBy] AS [CreatedBy],[ACCardHolder].[ModifiedOn] AS [ModifiedOn],[ACCardHolder].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK]";
+				return "[ACCardHolder].[ACCardHolderPK] AS [ACCardHolderPK],[ACCardHolder].[Sitecode] AS [Sitecode],[ACCardHolder].[Embossed] AS [Embossed],[ACCardHolder].[Encoded] AS [Encoded],[ACCardHolder].[CardTypeID] AS [CardTypeID],[ACCardHolder].[FirstName] AS [FirstName],[ACCardHolder].[LastName] AS [LastName],[ACCardHolder].[Photo] AS [Photo],[ACCardHolder].[ValidFrom] AS [ValidFrom],[ACCardHolder].[ValidThru] AS [ValidThru],[ACCardHolder].[FIPS] AS [FIPS],[ACCardHolder].[Pin] AS [Pin],[ACCardHolder].[BDTenantPK] AS [BDTenantPK],[ACCardHolder].[Notes] AS [Notes],[ACCardHolder].[EventNotifyEmail] AS [EventNotifyEmail],[ACCardHolder].[FireWarden] AS [FireWarden],[ACCardHolder].[CustInfo1] AS [CustInfo1],[ACCardHolder].[CustInfo2] AS [CustInfo2],[ACCardHolder].[CustInfo3] AS [CustInfo3],[ACCardHolder].[CustInfo4] AS [CustInfo4],[ACCardHolder].[CustInfo5] AS [CustInfo5],[ACCardHolder].[CustInfo6] AS [CustInfo6],[ACCardHolder].[CustInfo7] AS [CustInfo7],[ACCardHolder].[CustInfo8] AS [CustInfo8],[ACCardHolder].[RowVersion] AS [RowVersion],[ACCardHolder].[CreatedOn] AS [CreatedOn],[ACCardHolder].[CreatedBy] AS [CreatedBy],[ACCardHolder].[ModifiedOn] AS [ModifiedOn],[ACCardHolder].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Suite] AS [Suite],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -3008,7 +3023,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [BDTenant] [BDTenant] ON [ACCardHolder].[BDTenantPK] = [BDTenant].[BDTenantPK]";
+				return "LEFT JOIN [BDTenant] [BDTenant] ON [ACCardHolder].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -3016,7 +3031,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACCardHolder].[ACCardHolderPK] AS [ACCardHolderPK],[ACCardHolder].[Sitecode] AS [Sitecode],[ACCardHolder].[Embossed] AS [Embossed],[ACCardHolder].[Encoded] AS [Encoded],[ACCardHolder].[CardTypeID] AS [CardTypeID],[ACCardHolder].[FirstName] AS [FirstName],[ACCardHolder].[LastName] AS [LastName],[ACCardHolder].[Photo] AS [Photo],[ACCardHolder].[ValidFrom] AS [ValidFrom],[ACCardHolder].[ValidThru] AS [ValidThru],[ACCardHolder].[FIPS] AS [FIPS],[ACCardHolder].[Pin] AS [Pin],[ACCardHolder].[BDTenantPK] AS [BDTenantPK],[ACCardHolder].[Notes] AS [Notes],[ACCardHolder].[EventNotifyEmail] AS [EventNotifyEmail],[ACCardHolder].[FireWarden] AS [FireWarden],[ACCardHolder].[CustInfo1] AS [CustInfo1],[ACCardHolder].[CustInfo2] AS [CustInfo2],[ACCardHolder].[CustInfo3] AS [CustInfo3],[ACCardHolder].[CustInfo4] AS [CustInfo4],[ACCardHolder].[CustInfo5] AS [CustInfo5],[ACCardHolder].[CustInfo6] AS [CustInfo6],[ACCardHolder].[CustInfo7] AS [CustInfo7],[ACCardHolder].[CustInfo8] AS [CustInfo8],[ACCardHolder].[RowVersion] AS [RowVersion],[ACCardHolder].[CreatedOn] AS [CreatedOn],[ACCardHolder].[CreatedBy] AS [CreatedBy],[ACCardHolder].[ModifiedOn] AS [ModifiedOn],[ACCardHolder].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK] FROM [{0}] [ACCardHolder] LEFT JOIN [BDTenant] [BDTenant] ON [ACCardHolder].[BDTenantPK] = [BDTenant].[BDTenantPK]", this.TableName);
+				return string.Format("SELECT [ACCardHolder].[ACCardHolderPK] AS [ACCardHolderPK],[ACCardHolder].[Sitecode] AS [Sitecode],[ACCardHolder].[Embossed] AS [Embossed],[ACCardHolder].[Encoded] AS [Encoded],[ACCardHolder].[CardTypeID] AS [CardTypeID],[ACCardHolder].[FirstName] AS [FirstName],[ACCardHolder].[LastName] AS [LastName],[ACCardHolder].[Photo] AS [Photo],[ACCardHolder].[ValidFrom] AS [ValidFrom],[ACCardHolder].[ValidThru] AS [ValidThru],[ACCardHolder].[FIPS] AS [FIPS],[ACCardHolder].[Pin] AS [Pin],[ACCardHolder].[BDTenantPK] AS [BDTenantPK],[ACCardHolder].[Notes] AS [Notes],[ACCardHolder].[EventNotifyEmail] AS [EventNotifyEmail],[ACCardHolder].[FireWarden] AS [FireWarden],[ACCardHolder].[CustInfo1] AS [CustInfo1],[ACCardHolder].[CustInfo2] AS [CustInfo2],[ACCardHolder].[CustInfo3] AS [CustInfo3],[ACCardHolder].[CustInfo4] AS [CustInfo4],[ACCardHolder].[CustInfo5] AS [CustInfo5],[ACCardHolder].[CustInfo6] AS [CustInfo6],[ACCardHolder].[CustInfo7] AS [CustInfo7],[ACCardHolder].[CustInfo8] AS [CustInfo8],[ACCardHolder].[RowVersion] AS [RowVersion],[ACCardHolder].[CreatedOn] AS [CreatedOn],[ACCardHolder].[CreatedBy] AS [CreatedBy],[ACCardHolder].[ModifiedOn] AS [ModifiedOn],[ACCardHolder].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Suite] AS [Suite],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACCardHolder] LEFT JOIN [BDTenant] [BDTenant] ON [ACCardHolder].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -3024,7 +3039,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACCardHolder] LEFT JOIN [BDTenant] [BDTenant] ON [ACCardHolder].[BDTenantPK] = [BDTenant].[BDTenantPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACCardHolder] LEFT JOIN [BDTenant] [BDTenant] ON [ACCardHolder].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -3216,8 +3231,11 @@ namespace W3000.CRUD
 				CreatedBy = (String) reader["CreatedBy"],
 				ModifiedOn = (DateTime) reader["ModifiedOn"],
 				ModifiedBy = (String) reader["ModifiedBy"],
+				Suite = (String) reader["Suite"],
 				Tenant = (String) reader["Tenant"],
-				BDBuildingPK = (Guid) reader["BDBuildingPK"]
+				BDBuildingPK = (Guid) reader["BDBuildingPK"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -4926,7 +4944,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACTimecodeIntervalMap].[ACTimecodeIntervalMapPK] AS [ACTimecodeIntervalMapPK],[ACTimecodeIntervalMap].[ACTimecodePK] AS [ACTimecodePK],[ACTimecodeIntervalMap].[ACIntervalPK] AS [ACIntervalPK],[ACTimecodeIntervalMap].[RowVersion] AS [RowVersion],[ACTimecodeIntervalMap].[CreatedOn] AS [CreatedOn],[ACTimecodeIntervalMap].[CreatedBy] AS [CreatedBy],[ACTimecodeIntervalMap].[ModifiedOn] AS [ModifiedOn],[ACTimecodeIntervalMap].[ModifiedBy] AS [ModifiedBy],[ACInterval].[End] AS [End],[ACInterval].[Begin] AS [Begin],[ACInterval].[IVID] AS [IVID],[ACInterval].[BDBuildingPK] AS [BDBuildingPK],[ACTimecode].[TCID] AS [TCID]";
+				return "[ACTimecodeIntervalMap].[ACTimecodeIntervalMapPK] AS [ACTimecodeIntervalMapPK],[ACTimecodeIntervalMap].[ACTimecodePK] AS [ACTimecodePK],[ACTimecodeIntervalMap].[ACIntervalPK] AS [ACIntervalPK],[ACTimecodeIntervalMap].[RowVersion] AS [RowVersion],[ACTimecodeIntervalMap].[CreatedOn] AS [CreatedOn],[ACTimecodeIntervalMap].[CreatedBy] AS [CreatedBy],[ACTimecodeIntervalMap].[ModifiedOn] AS [ModifiedOn],[ACTimecodeIntervalMap].[ModifiedBy] AS [ModifiedBy],[ACInterval].[End] AS [End],[ACInterval].[Begin] AS [Begin],[ACInterval].[IVID] AS [IVID],[ACTimecode].[TCID] AS [TCID],[ACTimecode].[BDBuildingPK] AS [BDBuildingPK],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -4934,7 +4952,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [ACInterval] [ACInterval] ON [ACTimecodeIntervalMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACTimecodeIntervalMap].[ACTimecodePK] = [ACTimecode].[ACTimecodePK]";
+				return "LEFT JOIN [ACInterval] [ACInterval] ON [ACTimecodeIntervalMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACTimecodeIntervalMap].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACTimecode].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -4942,7 +4960,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACTimecodeIntervalMap].[ACTimecodeIntervalMapPK] AS [ACTimecodeIntervalMapPK],[ACTimecodeIntervalMap].[ACTimecodePK] AS [ACTimecodePK],[ACTimecodeIntervalMap].[ACIntervalPK] AS [ACIntervalPK],[ACTimecodeIntervalMap].[RowVersion] AS [RowVersion],[ACTimecodeIntervalMap].[CreatedOn] AS [CreatedOn],[ACTimecodeIntervalMap].[CreatedBy] AS [CreatedBy],[ACTimecodeIntervalMap].[ModifiedOn] AS [ModifiedOn],[ACTimecodeIntervalMap].[ModifiedBy] AS [ModifiedBy],[ACInterval].[End] AS [End],[ACInterval].[Begin] AS [Begin],[ACInterval].[IVID] AS [IVID],[ACInterval].[BDBuildingPK] AS [BDBuildingPK],[ACTimecode].[TCID] AS [TCID] FROM [{0}] [ACTimecodeIntervalMap] LEFT JOIN [ACInterval] [ACInterval] ON [ACTimecodeIntervalMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACTimecodeIntervalMap].[ACTimecodePK] = [ACTimecode].[ACTimecodePK]", this.TableName);
+				return string.Format("SELECT [ACTimecodeIntervalMap].[ACTimecodeIntervalMapPK] AS [ACTimecodeIntervalMapPK],[ACTimecodeIntervalMap].[ACTimecodePK] AS [ACTimecodePK],[ACTimecodeIntervalMap].[ACIntervalPK] AS [ACIntervalPK],[ACTimecodeIntervalMap].[RowVersion] AS [RowVersion],[ACTimecodeIntervalMap].[CreatedOn] AS [CreatedOn],[ACTimecodeIntervalMap].[CreatedBy] AS [CreatedBy],[ACTimecodeIntervalMap].[ModifiedOn] AS [ModifiedOn],[ACTimecodeIntervalMap].[ModifiedBy] AS [ModifiedBy],[ACInterval].[End] AS [End],[ACInterval].[Begin] AS [Begin],[ACInterval].[IVID] AS [IVID],[ACTimecode].[TCID] AS [TCID],[ACTimecode].[BDBuildingPK] AS [BDBuildingPK],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACTimecodeIntervalMap] LEFT JOIN [ACInterval] [ACInterval] ON [ACTimecodeIntervalMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACTimecodeIntervalMap].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACTimecode].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -4950,7 +4968,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACTimecodeIntervalMap] LEFT JOIN [ACInterval] [ACInterval] ON [ACTimecodeIntervalMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACTimecodeIntervalMap].[ACTimecodePK] = [ACTimecode].[ACTimecodePK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACTimecodeIntervalMap] LEFT JOIN [ACInterval] [ACInterval] ON [ACTimecodeIntervalMap].[ACIntervalPK] = [ACInterval].[ACIntervalPK] LEFT JOIN [ACTimecode] [ACTimecode] ON [ACTimecodeIntervalMap].[ACTimecodePK] = [ACTimecode].[ACTimecodePK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACTimecode].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -5054,8 +5072,10 @@ namespace W3000.CRUD
 				End = (String) reader["End"],
 				Begin = (String) reader["Begin"],
 				IVID = (Int16) reader["IVID"],
+				TCID = (Int16) reader["TCID"],
 				BDBuildingPK = (Guid) reader["BDBuildingPK"],
-				TCID = (Int16) reader["TCID"]
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -5289,7 +5309,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACAMFormat].[ACAMFormatPK] AS [ACAMFormatPK],[ACAMFormat].[BDBuildingPK] AS [BDBuildingPK],[ACAMFormat].[AMFID] AS [AMFID],[ACAMFormat].[Summary] AS [Summary],[ACAMFormat].[Notes] AS [Notes],[ACAMFormat].[ReportTC] AS [ReportTC],[ACAMFormat].[AlarmTC] AS [AlarmTC],[ACAMFormat].[PreAlarmTC] AS [PreAlarmTC],[ACAMFormat].[RowVersion] AS [RowVersion],[ACAMFormat].[CreatedOn] AS [CreatedOn],[ACAMFormat].[CreatedBy] AS [CreatedBy],[ACAMFormat].[ModifiedOn] AS [ModifiedOn],[ACAMFormat].[ModifiedBy] AS [ModifiedBy]";
+				return "[ACAMFormat].[ACAMFormatPK] AS [ACAMFormatPK],[ACAMFormat].[BDBuildingPK] AS [BDBuildingPK],[ACAMFormat].[AMFID] AS [AMFID],[ACAMFormat].[Summary] AS [Summary],[ACAMFormat].[Notes] AS [Notes],[ACAMFormat].[ReportTC] AS [ReportTC],[ACAMFormat].[AlarmTC] AS [AlarmTC],[ACAMFormat].[PreAlarmTC] AS [PreAlarmTC],[ACAMFormat].[RowVersion] AS [RowVersion],[ACAMFormat].[CreatedOn] AS [CreatedOn],[ACAMFormat].[CreatedBy] AS [CreatedBy],[ACAMFormat].[ModifiedOn] AS [ModifiedOn],[ACAMFormat].[ModifiedBy] AS [ModifiedBy],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -5305,7 +5325,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACAMFormat].[ACAMFormatPK] AS [ACAMFormatPK],[ACAMFormat].[BDBuildingPK] AS [BDBuildingPK],[ACAMFormat].[AMFID] AS [AMFID],[ACAMFormat].[Summary] AS [Summary],[ACAMFormat].[Notes] AS [Notes],[ACAMFormat].[ReportTC] AS [ReportTC],[ACAMFormat].[AlarmTC] AS [AlarmTC],[ACAMFormat].[PreAlarmTC] AS [PreAlarmTC],[ACAMFormat].[RowVersion] AS [RowVersion],[ACAMFormat].[CreatedOn] AS [CreatedOn],[ACAMFormat].[CreatedBy] AS [CreatedBy],[ACAMFormat].[ModifiedOn] AS [ModifiedOn],[ACAMFormat].[ModifiedBy] AS [ModifiedBy] FROM [{0}] [ACAMFormat] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACAMFormat].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
+				return string.Format("SELECT [ACAMFormat].[ACAMFormatPK] AS [ACAMFormatPK],[ACAMFormat].[BDBuildingPK] AS [BDBuildingPK],[ACAMFormat].[AMFID] AS [AMFID],[ACAMFormat].[Summary] AS [Summary],[ACAMFormat].[Notes] AS [Notes],[ACAMFormat].[ReportTC] AS [ReportTC],[ACAMFormat].[AlarmTC] AS [AlarmTC],[ACAMFormat].[PreAlarmTC] AS [PreAlarmTC],[ACAMFormat].[RowVersion] AS [RowVersion],[ACAMFormat].[CreatedOn] AS [CreatedOn],[ACAMFormat].[CreatedBy] AS [CreatedBy],[ACAMFormat].[ModifiedOn] AS [ModifiedOn],[ACAMFormat].[ModifiedBy] AS [ModifiedBy],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACAMFormat] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACAMFormat].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -5424,7 +5444,9 @@ namespace W3000.CRUD
 				CreatedOn = (DateTime) reader["CreatedOn"],
 				CreatedBy = (String) reader["CreatedBy"],
 				ModifiedOn = (DateTime) reader["ModifiedOn"],
-				ModifiedBy = (String) reader["ModifiedBy"]
+				ModifiedBy = (String) reader["ModifiedBy"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -6281,7 +6303,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[BDTenantHolidayMap].[BDTenantHolidayMapPK] AS [BDTenantHolidayMapPK],[BDTenantHolidayMap].[BDTenantPK] AS [BDTenantPK],[BDTenantHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[BDTenantHolidayMap].[ActionID] AS [ActionID],[BDTenantHolidayMap].[Notes] AS [Notes],[BDTenantHolidayMap].[RowVersion] AS [RowVersion],[BDTenantHolidayMap].[CreatedOn] AS [CreatedOn],[BDTenantHolidayMap].[CreatedBy] AS [CreatedBy],[BDTenantHolidayMap].[ModifiedOn] AS [ModifiedOn],[BDTenantHolidayMap].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday]";
+				return "[BDTenantHolidayMap].[BDTenantHolidayMapPK] AS [BDTenantHolidayMapPK],[BDTenantHolidayMap].[BDTenantPK] AS [BDTenantPK],[BDTenantHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[BDTenantHolidayMap].[ActionID] AS [ActionID],[BDTenantHolidayMap].[Notes] AS [Notes],[BDTenantHolidayMap].[RowVersion] AS [RowVersion],[BDTenantHolidayMap].[CreatedOn] AS [CreatedOn],[BDTenantHolidayMap].[CreatedBy] AS [CreatedBy],[BDTenantHolidayMap].[ModifiedOn] AS [ModifiedOn],[BDTenantHolidayMap].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -6289,7 +6311,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [BDTenant] [BDTenant] ON [BDTenantHolidayMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [BDTenantHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK]";
+				return "LEFT JOIN [BDTenant] [BDTenant] ON [BDTenantHolidayMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [BDTenantHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -6297,7 +6319,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [BDTenantHolidayMap].[BDTenantHolidayMapPK] AS [BDTenantHolidayMapPK],[BDTenantHolidayMap].[BDTenantPK] AS [BDTenantPK],[BDTenantHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[BDTenantHolidayMap].[ActionID] AS [ActionID],[BDTenantHolidayMap].[Notes] AS [Notes],[BDTenantHolidayMap].[RowVersion] AS [RowVersion],[BDTenantHolidayMap].[CreatedOn] AS [CreatedOn],[BDTenantHolidayMap].[CreatedBy] AS [CreatedBy],[BDTenantHolidayMap].[ModifiedOn] AS [ModifiedOn],[BDTenantHolidayMap].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday] FROM [{0}] [BDTenantHolidayMap] LEFT JOIN [BDTenant] [BDTenant] ON [BDTenantHolidayMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [BDTenantHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK]", this.TableName);
+				return string.Format("SELECT [BDTenantHolidayMap].[BDTenantHolidayMapPK] AS [BDTenantHolidayMapPK],[BDTenantHolidayMap].[BDTenantPK] AS [BDTenantPK],[BDTenantHolidayMap].[UtilHolidayPK] AS [UtilHolidayPK],[BDTenantHolidayMap].[ActionID] AS [ActionID],[BDTenantHolidayMap].[Notes] AS [Notes],[BDTenantHolidayMap].[RowVersion] AS [RowVersion],[BDTenantHolidayMap].[CreatedOn] AS [CreatedOn],[BDTenantHolidayMap].[CreatedBy] AS [CreatedBy],[BDTenantHolidayMap].[ModifiedOn] AS [ModifiedOn],[BDTenantHolidayMap].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Holiday] AS [Holiday],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [BDTenantHolidayMap] LEFT JOIN [BDTenant] [BDTenant] ON [BDTenantHolidayMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [BDTenantHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -6305,7 +6327,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [BDTenantHolidayMap] LEFT JOIN [BDTenant] [BDTenant] ON [BDTenantHolidayMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [BDTenantHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [BDTenantHolidayMap] LEFT JOIN [BDTenant] [BDTenant] ON [BDTenantHolidayMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UtilHoliday] [UtilHoliday] ON [BDTenantHolidayMap].[UtilHolidayPK] = [UtilHoliday].[UtilHolidayPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -6419,7 +6441,9 @@ namespace W3000.CRUD
 				Tenant = (String) reader["Tenant"],
 				BDBuildingPK = (Guid) reader["BDBuildingPK"],
 				Date = (DateTime) reader["Date"],
-				Holiday = (String) reader["Holiday"]
+				Holiday = (String) reader["Holiday"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -6931,7 +6955,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACInputGroup].[ACInputGroupPK] AS [ACInputGroupPK],[ACInputGroup].[ACPanelPK] AS [ACPanelPK],[ACInputGroup].[GroupID] AS [GroupID],[ACInputGroup].[Summary] AS [Summary],[ACInputGroup].[RowVersion] AS [RowVersion],[ACInputGroup].[CreatedOn] AS [CreatedOn],[ACInputGroup].[CreatedBy] AS [CreatedBy],[ACInputGroup].[ModifiedOn] AS [ModifiedOn],[ACInputGroup].[ModifiedBy] AS [ModifiedBy],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID]";
+				return "[ACInputGroup].[ACInputGroupPK] AS [ACInputGroupPK],[ACInputGroup].[ACPanelPK] AS [ACPanelPK],[ACInputGroup].[GroupID] AS [GroupID],[ACInputGroup].[Summary] AS [Summary],[ACInputGroup].[RowVersion] AS [RowVersion],[ACInputGroup].[CreatedOn] AS [CreatedOn],[ACInputGroup].[CreatedBy] AS [CreatedBy],[ACInputGroup].[ModifiedOn] AS [ModifiedOn],[ACInputGroup].[ModifiedBy] AS [ModifiedBy],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -6939,7 +6963,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [ACPanel] [ACPanel] ON [ACInputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK]";
+				return "LEFT JOIN [ACPanel] [ACPanel] ON [ACInputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -6947,7 +6971,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACInputGroup].[ACInputGroupPK] AS [ACInputGroupPK],[ACInputGroup].[ACPanelPK] AS [ACPanelPK],[ACInputGroup].[GroupID] AS [GroupID],[ACInputGroup].[Summary] AS [Summary],[ACInputGroup].[RowVersion] AS [RowVersion],[ACInputGroup].[CreatedOn] AS [CreatedOn],[ACInputGroup].[CreatedBy] AS [CreatedBy],[ACInputGroup].[ModifiedOn] AS [ModifiedOn],[ACInputGroup].[ModifiedBy] AS [ModifiedBy],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID] FROM [{0}] [ACInputGroup] LEFT JOIN [ACPanel] [ACPanel] ON [ACInputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK]", this.TableName);
+				return string.Format("SELECT [ACInputGroup].[ACInputGroupPK] AS [ACInputGroupPK],[ACInputGroup].[ACPanelPK] AS [ACPanelPK],[ACInputGroup].[GroupID] AS [GroupID],[ACInputGroup].[Summary] AS [Summary],[ACInputGroup].[RowVersion] AS [RowVersion],[ACInputGroup].[CreatedOn] AS [CreatedOn],[ACInputGroup].[CreatedBy] AS [CreatedBy],[ACInputGroup].[ModifiedOn] AS [ModifiedOn],[ACInputGroup].[ModifiedBy] AS [ModifiedBy],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACInputGroup] LEFT JOIN [ACPanel] [ACPanel] ON [ACInputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -6955,7 +6979,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACInputGroup] LEFT JOIN [ACPanel] [ACPanel] ON [ACInputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACInputGroup] LEFT JOIN [ACPanel] [ACPanel] ON [ACInputGroup].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -7048,7 +7072,9 @@ namespace W3000.CRUD
 				ModifiedOn = (DateTime) reader["ModifiedOn"],
 				ModifiedBy = (String) reader["ModifiedBy"],
 				BDBuildingPK = (Guid) reader["BDBuildingPK"],
-				UnitID = (Int32) reader["UnitID"]
+				UnitID = (Int32) reader["UnitID"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -7620,7 +7646,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACFunctionCard].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[CardTypeID] AS [CardTypeID],[ACFunctionCard].[BDTenantPK] AS [BDTenantPK],[ACFunctionCard].[FunctionID] AS [FunctionID],[ACFunctionCard].[FirstName] AS [FirstName],[ACFunctionCard].[LastName] AS [LastName],[ACFunctionCard].[FIPS] AS [FIPS],[ACFunctionCard].[Pin] AS [Pin],[ACFunctionCard].[ValidFrom] AS [ValidFrom],[ACFunctionCard].[ValidThru] AS [ValidThru],[ACFunctionCard].[RowVersion] AS [RowVersion],[ACFunctionCard].[CreatedOn] AS [CreatedOn],[ACFunctionCard].[CreatedBy] AS [CreatedBy],[ACFunctionCard].[ModifiedOn] AS [ModifiedOn],[ACFunctionCard].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK]";
+				return "[ACFunctionCard].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[CardTypeID] AS [CardTypeID],[ACFunctionCard].[BDTenantPK] AS [BDTenantPK],[ACFunctionCard].[FunctionID] AS [FunctionID],[ACFunctionCard].[FirstName] AS [FirstName],[ACFunctionCard].[LastName] AS [LastName],[ACFunctionCard].[FIPS] AS [FIPS],[ACFunctionCard].[Pin] AS [Pin],[ACFunctionCard].[ValidFrom] AS [ValidFrom],[ACFunctionCard].[ValidThru] AS [ValidThru],[ACFunctionCard].[RowVersion] AS [RowVersion],[ACFunctionCard].[CreatedOn] AS [CreatedOn],[ACFunctionCard].[CreatedBy] AS [CreatedBy],[ACFunctionCard].[ModifiedOn] AS [ModifiedOn],[ACFunctionCard].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Suite] AS [Suite],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -7628,7 +7654,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [BDTenant] [BDTenant] ON [ACFunctionCard].[BDTenantPK] = [BDTenant].[BDTenantPK]";
+				return "LEFT JOIN [BDTenant] [BDTenant] ON [ACFunctionCard].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -7636,7 +7662,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACFunctionCard].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[CardTypeID] AS [CardTypeID],[ACFunctionCard].[BDTenantPK] AS [BDTenantPK],[ACFunctionCard].[FunctionID] AS [FunctionID],[ACFunctionCard].[FirstName] AS [FirstName],[ACFunctionCard].[LastName] AS [LastName],[ACFunctionCard].[FIPS] AS [FIPS],[ACFunctionCard].[Pin] AS [Pin],[ACFunctionCard].[ValidFrom] AS [ValidFrom],[ACFunctionCard].[ValidThru] AS [ValidThru],[ACFunctionCard].[RowVersion] AS [RowVersion],[ACFunctionCard].[CreatedOn] AS [CreatedOn],[ACFunctionCard].[CreatedBy] AS [CreatedBy],[ACFunctionCard].[ModifiedOn] AS [ModifiedOn],[ACFunctionCard].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK] FROM [{0}] [ACFunctionCard] LEFT JOIN [BDTenant] [BDTenant] ON [ACFunctionCard].[BDTenantPK] = [BDTenant].[BDTenantPK]", this.TableName);
+				return string.Format("SELECT [ACFunctionCard].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[CardTypeID] AS [CardTypeID],[ACFunctionCard].[BDTenantPK] AS [BDTenantPK],[ACFunctionCard].[FunctionID] AS [FunctionID],[ACFunctionCard].[FirstName] AS [FirstName],[ACFunctionCard].[LastName] AS [LastName],[ACFunctionCard].[FIPS] AS [FIPS],[ACFunctionCard].[Pin] AS [Pin],[ACFunctionCard].[ValidFrom] AS [ValidFrom],[ACFunctionCard].[ValidThru] AS [ValidThru],[ACFunctionCard].[RowVersion] AS [RowVersion],[ACFunctionCard].[CreatedOn] AS [CreatedOn],[ACFunctionCard].[CreatedBy] AS [CreatedBy],[ACFunctionCard].[ModifiedOn] AS [ModifiedOn],[ACFunctionCard].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Suite] AS [Suite],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [ACFunctionCard] LEFT JOIN [BDTenant] [BDTenant] ON [ACFunctionCard].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -7644,7 +7670,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACFunctionCard] LEFT JOIN [BDTenant] [BDTenant] ON [ACFunctionCard].[BDTenantPK] = [BDTenant].[BDTenantPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACFunctionCard] LEFT JOIN [BDTenant] [BDTenant] ON [ACFunctionCard].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -7781,8 +7807,11 @@ namespace W3000.CRUD
 				CreatedBy = (String) reader["CreatedBy"],
 				ModifiedOn = (DateTime) reader["ModifiedOn"],
 				ModifiedBy = (String) reader["ModifiedBy"],
+				Suite = (String) reader["Suite"],
 				Tenant = (String) reader["Tenant"],
-				BDBuildingPK = (Guid) reader["BDBuildingPK"]
+				BDBuildingPK = (Guid) reader["BDBuildingPK"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -7964,6 +7993,280 @@ namespace W3000.CRUD
 			paras[0] = new SqlParameter("@BDBuildingPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = bDBuildingPK;
 			return base.ExecuteNonQuery(sql, paras);
+		}
+
+
+	}
+	public class UtilHolidayCRUD : DataAccessBase
+	{
+		private string _tableName = "UtilHoliday";
+
+		public UtilHolidayCRUD(string connectionString) : base(connectionString)
+		{
+		}
+
+		public virtual string TableName
+		{
+			get { return this._tableName; }
+			set { this._tableName = value; }
+		}
+
+		public string SQLColumns
+		{
+			get
+			{
+				return "[UtilHoliday].[UtilHolidayPK] AS [UtilHolidayPK],[UtilHoliday].[CountryID] AS [CountryID],[UtilHoliday].[Holiday] AS [Holiday],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Major] AS [Major],[UtilHoliday].[Federal] AS [Federal],[UtilHoliday].[RowVersion] AS [RowVersion],[UtilHoliday].[CreatedOn] AS [CreatedOn],[UtilHoliday].[CreatedBy] AS [CreatedBy],[UtilHoliday].[ModifiedOn] AS [ModifiedOn],[UtilHoliday].[ModifiedBy] AS [ModifiedBy],[UtilHoliday].[Default] AS [Default],[UtilHoliday].[ActionID] AS [ActionID]";
+			}
+		}
+
+		public string SQLLeftJoins
+		{
+			get
+			{
+				return "";
+			}
+		}
+
+		protected override string SQLSelect
+		{
+			get
+			{
+				return string.Format("SELECT [UtilHoliday].[UtilHolidayPK] AS [UtilHolidayPK],[UtilHoliday].[CountryID] AS [CountryID],[UtilHoliday].[Holiday] AS [Holiday],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Major] AS [Major],[UtilHoliday].[Federal] AS [Federal],[UtilHoliday].[RowVersion] AS [RowVersion],[UtilHoliday].[CreatedOn] AS [CreatedOn],[UtilHoliday].[CreatedBy] AS [CreatedBy],[UtilHoliday].[ModifiedOn] AS [ModifiedOn],[UtilHoliday].[ModifiedBy] AS [ModifiedBy],[UtilHoliday].[Default] AS [Default],[UtilHoliday].[ActionID] AS [ActionID] FROM [{0}] [UtilHoliday] ", this.TableName);
+			}
+		}
+
+		protected override string SQLCount
+		{
+			get
+			{
+				return string.Format("SELECT COUNT(*) FROM [{0}] [UtilHoliday] ", this.TableName);
+			}
+		}
+
+		public int Insert(UtilHolidayData entity)
+		{
+			string sql = string.Format("INSERT INTO [{0}] ([UtilHolidayPK],[CountryID],[Holiday],[Date],[Major],[Federal],[CreatedOn],[CreatedBy],[ModifiedOn],[ModifiedBy],[Default],[ActionID]) VALUES(@UtilHolidayPK,@CountryID,@Holiday,@Date,@Major,@Federal,@CreatedOn,@CreatedBy,@ModifiedOn,@ModifiedBy,@Default,@ActionID)", this.TableName);
+			SqlParameter[] paras = new SqlParameter[12];
+			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
+			if (entity.UtilHolidayPK == Guid.Empty)
+			{
+				paras[0].Value = DBNull.Value;
+			}
+			else
+			{
+				paras[0].Value = entity.UtilHolidayPK;
+			}
+			paras[1] = new SqlParameter("@CountryID", SqlDbType.Int);
+			paras[1].Value = entity.CountryID;
+			paras[2] = new SqlParameter("@Holiday", SqlDbType.VarChar, 30);
+			paras[2].Value = entity.Holiday;
+			paras[3] = new SqlParameter("@Date", SqlDbType.DateTime);
+			paras[3].Value = entity.Date;
+			paras[4] = new SqlParameter("@Major", SqlDbType.Bit);
+			paras[4].Value = entity.Major;
+			paras[5] = new SqlParameter("@Federal", SqlDbType.Bit);
+			paras[5].Value = entity.Federal;
+			paras[6] = new SqlParameter("@CreatedOn", SqlDbType.DateTime);
+			paras[6].Value = entity.CreatedOn;
+			paras[7] = new SqlParameter("@CreatedBy", SqlDbType.VarChar, 30);
+			paras[7].Value = entity.CreatedBy;
+			paras[8] = new SqlParameter("@ModifiedOn", SqlDbType.DateTime);
+			paras[8].Value = entity.ModifiedOn;
+			paras[9] = new SqlParameter("@ModifiedBy", SqlDbType.VarChar, 30);
+			paras[9].Value = entity.ModifiedBy;
+			paras[10] = new SqlParameter("@Default", SqlDbType.Bit);
+			paras[10].Value = entity.Default;
+			paras[11] = new SqlParameter("@ActionID", SqlDbType.Int);
+			paras[11].Value = entity.ActionID;
+			return base.ExecuteNonQuery(sql, paras);
+		}
+
+		public int Update(UtilHolidayData entity)
+		{
+			string sql = string.Format("UPDATE [{0}] SET [CountryID] = @CountryID,[Holiday] = @Holiday,[Date] = @Date,[Major] = @Major,[Federal] = @Federal,[CreatedOn] = @CreatedOn,[CreatedBy] = @CreatedBy,[ModifiedOn] = @ModifiedOn,[ModifiedBy] = @ModifiedBy,[Default] = @Default,[ActionID] = @ActionID  WHERE [UtilHolidayPK] = @UtilHolidayPK AND [RowVersion] = @RowVersion", this.TableName);
+			SqlParameter[] paras = new SqlParameter[13];
+			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
+			if (entity.UtilHolidayPK == Guid.Empty)
+			{
+				paras[0].Value = DBNull.Value;
+			}
+			else
+			{
+				paras[0].Value = entity.UtilHolidayPK;
+			}
+			paras[1] = new SqlParameter("@CountryID", SqlDbType.Int);
+			paras[1].Value = entity.CountryID;
+			paras[2] = new SqlParameter("@Holiday", SqlDbType.VarChar, 30);
+			paras[2].Value = entity.Holiday;
+			paras[3] = new SqlParameter("@Date", SqlDbType.DateTime);
+			paras[3].Value = entity.Date;
+			paras[4] = new SqlParameter("@Major", SqlDbType.Bit);
+			paras[4].Value = entity.Major;
+			paras[5] = new SqlParameter("@Federal", SqlDbType.Bit);
+			paras[5].Value = entity.Federal;
+			paras[6] = new SqlParameter("@RowVersion", SqlDbType.Timestamp);
+			paras[6].Value = entity.RowVersion;
+			paras[7] = new SqlParameter("@CreatedOn", SqlDbType.DateTime);
+			paras[7].Value = entity.CreatedOn;
+			paras[8] = new SqlParameter("@CreatedBy", SqlDbType.VarChar, 30);
+			paras[8].Value = entity.CreatedBy;
+			paras[9] = new SqlParameter("@ModifiedOn", SqlDbType.DateTime);
+			paras[9].Value = entity.ModifiedOn;
+			paras[10] = new SqlParameter("@ModifiedBy", SqlDbType.VarChar, 30);
+			paras[10].Value = entity.ModifiedBy;
+			paras[11] = new SqlParameter("@Default", SqlDbType.Bit);
+			paras[11].Value = entity.Default;
+			paras[12] = new SqlParameter("@ActionID", SqlDbType.Int);
+			paras[12].Value = entity.ActionID;
+			return base.ExecuteNonQuery(sql, paras);
+		}
+
+		private UtilHolidayData CreateDataByReader(SafeDataReader reader)
+		{
+			UtilHolidayData data = new UtilHolidayData {
+				UtilHolidayPK = (Guid) reader["UtilHolidayPK"],
+				CountryID = (Int32) reader["CountryID"],
+				Holiday = (String) reader["Holiday"],
+				Date = (DateTime) reader["Date"],
+				Major = (Boolean) reader["Major"],
+				Federal = (Boolean) reader["Federal"],
+				RowVersion = (Byte[]) reader["RowVersion"],
+				CreatedOn = (DateTime) reader["CreatedOn"],
+				CreatedBy = (String) reader["CreatedBy"],
+				ModifiedOn = (DateTime) reader["ModifiedOn"],
+				ModifiedBy = (String) reader["ModifiedBy"],
+				Default = (Boolean) reader["Default"],
+				ActionID = (Int32) reader["ActionID"]
+			};
+			data.AcceptChanges();
+			return data;
+		}
+
+		private UtilHolidayData FetchEntity(string where, SqlParameter[] paras)
+		{
+			UtilHolidayData data = null;
+			using (SafeDataReader reader = base.ExecuteDataReader(where, paras))
+			{
+				if (reader.Read())
+				{
+					data = this.CreateDataByReader(reader);
+				}
+				reader.Close();
+			}
+			return data;
+		}
+
+		private UtilHolidayData FetchEntityEx(string sql, SqlParameter[] paras)
+		{
+			UtilHolidayData data = null;
+			using (SafeDataReader reader = base.ExecuteDataReaderEx(sql, paras))
+			{
+				if (reader.Read())
+				{
+					data = this.CreateDataByReader(reader);
+				}
+				reader.Close();
+			}
+			return data;
+		}
+
+		private UtilHolidayDataCollection FetchCollection(string where, SqlParameter[] paras)
+		{
+			UtilHolidayDataCollection list = new UtilHolidayDataCollection();
+			using (SafeDataReader reader = base.ExecuteDataReader(where, paras))
+			{
+				while(reader.Read())
+				{
+					UtilHolidayData data = this.CreateDataByReader(reader);
+					list.Add(data);
+				}
+				reader.Close();
+			}
+			return list;
+		}
+
+		private UtilHolidayDataCollection FetchCollectionEx(string sql, SqlParameter[] paras)
+		{
+			UtilHolidayDataCollection list = new UtilHolidayDataCollection();
+			using (SafeDataReader reader = base.ExecuteDataReaderEx(sql, paras))
+			{
+				while(reader.Read())
+				{
+					UtilHolidayData data = this.CreateDataByReader(reader);
+					list.Add(data);
+				}
+				reader.Close();
+			}
+			return list;
+		}
+
+		public UtilHolidayData GetEntityBy(string sqlWhere, SqlParameter[] paras)
+		{
+			return this.FetchEntity(sqlWhere, paras);
+		}
+
+		public UtilHolidayData GetEntityExBy(string sql, SqlParameter[] paras)
+		{
+			return this.FetchEntityEx(sql, paras);
+		}
+
+		public UtilHolidayDataCollection GetCollectionBy(string sqlWhere, SqlParameter[] paras)
+		{
+			return this.FetchCollection(sqlWhere, paras);
+		}
+
+		public UtilHolidayDataCollection GetCollectionExBy(string sql, SqlParameter[] paras)
+		{
+			return this.FetchCollectionEx(sql, paras);
+		}
+
+		public byte[] GetRowVersion( System.Guid UtilHolidayPK)
+		{
+			string sql = string.Format("SELECT [RowVersion] AS [RowVersion] FROM [{0}] WHERE  [UtilHolidayPK] = @UtilHolidayPK ", this.TableName);
+			SqlParameter[] paras = new SqlParameter[1];
+			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier, 16);
+			paras[0].Value = UtilHolidayPK;
+			return (byte[]) base.ExecuteScalar(sql, paras);
+		}
+
+		public UtilHolidayData GetByPK( System.Guid UtilHolidayPK)
+		{
+			string sql = " WHERE  [UtilHoliday].[UtilHolidayPK] = @UtilHolidayPK ";
+			SqlParameter[] paras = new SqlParameter[1];
+			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
+			paras[0].Value = UtilHolidayPK;
+			return this.FetchEntity(sql, paras);
+		}
+
+		public UtilHolidayDataCollection GetAll()
+		{
+			return this.FetchCollection("", null);
+		}
+
+		public DataTable GetLogByPK( System.Guid UtilHolidayPK)
+		{
+			string sql = string.Format("SELECT  [UtilHoliday].[UtilHolidayPK] AS [UtilHolidayPK], [UtilHoliday].[ModifiedOn] AS [ModifiedOn] FROM [{0}] WHERE  [UtilHoliday].[UtilHolidayPK] = @UtilHolidayPK ", this.TableName);
+			SqlParameter[] paras = new SqlParameter[1];
+			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
+			paras[0].Value = UtilHolidayPK;
+			return this.ExecuteDataTable(sql, paras);
+		}
+
+		public int DeleteByPK( System.Guid UtilHolidayPK, byte[] RowVersion)
+		{
+			string sql = string.Format("DELETE FROM [{0}] WHERE  [UtilHolidayPK] = @UtilHolidayPK AND [RowVersion] = @RowVersion", this.TableName);
+			SqlParameter[] paras = new SqlParameter[2];
+			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
+			paras[0].Value = UtilHolidayPK;
+			paras[1] = new SqlParameter("@RowVersion", SqlDbType.Timestamp, 8);
+			paras[1].Value = RowVersion;
+			return base.ExecuteNonQuery(sql, paras);
+		}
+
+		public int DeleteAll()
+		{
+			string sql = string.Format("DELETE FROM [{0}]", this.TableName);
+			return base.ExecuteNonQuery(sql, null);
 		}
 
 
@@ -8296,7 +8599,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK],[ACPanelFunctionCardMap].[ACPanelPK] AS [ACPanelPK],[ACPanelFunctionCardMap].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACPanelFunctionCardMap].[RowVersion] AS [RowVersion],[ACPanelFunctionCardMap].[CreatedOn] AS [CreatedOn],[ACPanelFunctionCardMap].[CreatedBy] AS [CreatedBy],[ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn],[ACPanelFunctionCardMap].[ModifiedBy] AS [ModifiedBy],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID]";
+				return "[ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK],[ACPanelFunctionCardMap].[ACPanelPK] AS [ACPanelPK],[ACPanelFunctionCardMap].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACPanelFunctionCardMap].[RowVersion] AS [RowVersion],[ACPanelFunctionCardMap].[CreatedOn] AS [CreatedOn],[ACPanelFunctionCardMap].[CreatedBy] AS [CreatedBy],[ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn],[ACPanelFunctionCardMap].[ModifiedBy] AS [ModifiedBy],[ACFunctionCard].[CardTypeID] AS [CardTypeID],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID]";
 			}
 		}
 
@@ -8312,7 +8615,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK],[ACPanelFunctionCardMap].[ACPanelPK] AS [ACPanelPK],[ACPanelFunctionCardMap].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACPanelFunctionCardMap].[RowVersion] AS [RowVersion],[ACPanelFunctionCardMap].[CreatedOn] AS [CreatedOn],[ACPanelFunctionCardMap].[CreatedBy] AS [CreatedBy],[ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn],[ACPanelFunctionCardMap].[ModifiedBy] AS [ModifiedBy],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID] FROM [{0}] [ACPanelFunctionCardMap] LEFT JOIN [ACFunctionCard] [ACFunctionCard] ON [ACPanelFunctionCardMap].[ACFunctionCardPK] = [ACFunctionCard].[ACFunctionCardPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelFunctionCardMap].[ACPanelPK] = [ACPanel].[ACPanelPK]", this.TableName);
+				return string.Format("SELECT [ACPanelFunctionCardMap].[ACPanelFunctionCardMapPK] AS [ACPanelFunctionCardMapPK],[ACPanelFunctionCardMap].[ACPanelPK] AS [ACPanelPK],[ACPanelFunctionCardMap].[ACFunctionCardPK] AS [ACFunctionCardPK],[ACPanelFunctionCardMap].[RowVersion] AS [RowVersion],[ACPanelFunctionCardMap].[CreatedOn] AS [CreatedOn],[ACPanelFunctionCardMap].[CreatedBy] AS [CreatedBy],[ACPanelFunctionCardMap].[ModifiedOn] AS [ModifiedOn],[ACPanelFunctionCardMap].[ModifiedBy] AS [ModifiedBy],[ACFunctionCard].[CardTypeID] AS [CardTypeID],[ACFunctionCard].[Encoded] AS [Encoded],[ACFunctionCard].[Embossed] AS [Embossed],[ACFunctionCard].[Sitecode] AS [Sitecode],[ACPanel].[BDBuildingPK] AS [BDBuildingPK],[ACPanel].[UnitID] AS [UnitID] FROM [{0}] [ACPanelFunctionCardMap] LEFT JOIN [ACFunctionCard] [ACFunctionCard] ON [ACPanelFunctionCardMap].[ACFunctionCardPK] = [ACFunctionCard].[ACFunctionCardPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACPanelFunctionCardMap].[ACPanelPK] = [ACPanel].[ACPanelPK]", this.TableName);
 			}
 		}
 
@@ -8421,6 +8724,7 @@ namespace W3000.CRUD
 				CreatedBy = (String) reader["CreatedBy"],
 				ModifiedOn = (DateTime) reader["ModifiedOn"],
 				ModifiedBy = (String) reader["ModifiedBy"],
+				CardTypeID = (Int32) reader["CardTypeID"],
 				Encoded = (Int32) reader["Encoded"],
 				Embossed = (Int32) reader["Embossed"],
 				Sitecode = (Int32) reader["Sitecode"],
@@ -8658,280 +8962,6 @@ namespace W3000.CRUD
 			paras[0] = new SqlParameter("@ACPanelPK", SqlDbType.UniqueIdentifier);
 			paras[0].Value = aCPanelPK;
 			return base.ExecuteNonQuery(sql, paras);
-		}
-
-
-	}
-	public class UtilHolidayCRUD : DataAccessBase
-	{
-		private string _tableName = "UtilHoliday";
-
-		public UtilHolidayCRUD(string connectionString) : base(connectionString)
-		{
-		}
-
-		public virtual string TableName
-		{
-			get { return this._tableName; }
-			set { this._tableName = value; }
-		}
-
-		public string SQLColumns
-		{
-			get
-			{
-				return "[UtilHoliday].[UtilHolidayPK] AS [UtilHolidayPK],[UtilHoliday].[CountryID] AS [CountryID],[UtilHoliday].[Holiday] AS [Holiday],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Major] AS [Major],[UtilHoliday].[Federal] AS [Federal],[UtilHoliday].[RowVersion] AS [RowVersion],[UtilHoliday].[CreatedOn] AS [CreatedOn],[UtilHoliday].[CreatedBy] AS [CreatedBy],[UtilHoliday].[ModifiedOn] AS [ModifiedOn],[UtilHoliday].[ModifiedBy] AS [ModifiedBy],[UtilHoliday].[Default] AS [Default],[UtilHoliday].[ActionID] AS [ActionID]";
-			}
-		}
-
-		public string SQLLeftJoins
-		{
-			get
-			{
-				return "";
-			}
-		}
-
-		protected override string SQLSelect
-		{
-			get
-			{
-				return string.Format("SELECT [UtilHoliday].[UtilHolidayPK] AS [UtilHolidayPK],[UtilHoliday].[CountryID] AS [CountryID],[UtilHoliday].[Holiday] AS [Holiday],[UtilHoliday].[Date] AS [Date],[UtilHoliday].[Major] AS [Major],[UtilHoliday].[Federal] AS [Federal],[UtilHoliday].[RowVersion] AS [RowVersion],[UtilHoliday].[CreatedOn] AS [CreatedOn],[UtilHoliday].[CreatedBy] AS [CreatedBy],[UtilHoliday].[ModifiedOn] AS [ModifiedOn],[UtilHoliday].[ModifiedBy] AS [ModifiedBy],[UtilHoliday].[Default] AS [Default],[UtilHoliday].[ActionID] AS [ActionID] FROM [{0}] [UtilHoliday] ", this.TableName);
-			}
-		}
-
-		protected override string SQLCount
-		{
-			get
-			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [UtilHoliday] ", this.TableName);
-			}
-		}
-
-		public int Insert(UtilHolidayData entity)
-		{
-			string sql = string.Format("INSERT INTO [{0}] ([UtilHolidayPK],[CountryID],[Holiday],[Date],[Major],[Federal],[CreatedOn],[CreatedBy],[ModifiedOn],[ModifiedBy],[Default],[ActionID]) VALUES(@UtilHolidayPK,@CountryID,@Holiday,@Date,@Major,@Federal,@CreatedOn,@CreatedBy,@ModifiedOn,@ModifiedBy,@Default,@ActionID)", this.TableName);
-			SqlParameter[] paras = new SqlParameter[12];
-			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
-			if (entity.UtilHolidayPK == Guid.Empty)
-			{
-				paras[0].Value = DBNull.Value;
-			}
-			else
-			{
-				paras[0].Value = entity.UtilHolidayPK;
-			}
-			paras[1] = new SqlParameter("@CountryID", SqlDbType.Int);
-			paras[1].Value = entity.CountryID;
-			paras[2] = new SqlParameter("@Holiday", SqlDbType.VarChar, 30);
-			paras[2].Value = entity.Holiday;
-			paras[3] = new SqlParameter("@Date", SqlDbType.DateTime);
-			paras[3].Value = entity.Date;
-			paras[4] = new SqlParameter("@Major", SqlDbType.Bit);
-			paras[4].Value = entity.Major;
-			paras[5] = new SqlParameter("@Federal", SqlDbType.Bit);
-			paras[5].Value = entity.Federal;
-			paras[6] = new SqlParameter("@CreatedOn", SqlDbType.DateTime);
-			paras[6].Value = entity.CreatedOn;
-			paras[7] = new SqlParameter("@CreatedBy", SqlDbType.VarChar, 30);
-			paras[7].Value = entity.CreatedBy;
-			paras[8] = new SqlParameter("@ModifiedOn", SqlDbType.DateTime);
-			paras[8].Value = entity.ModifiedOn;
-			paras[9] = new SqlParameter("@ModifiedBy", SqlDbType.VarChar, 30);
-			paras[9].Value = entity.ModifiedBy;
-			paras[10] = new SqlParameter("@Default", SqlDbType.Bit);
-			paras[10].Value = entity.Default;
-			paras[11] = new SqlParameter("@ActionID", SqlDbType.Int);
-			paras[11].Value = entity.ActionID;
-			return base.ExecuteNonQuery(sql, paras);
-		}
-
-		public int Update(UtilHolidayData entity)
-		{
-			string sql = string.Format("UPDATE [{0}] SET [CountryID] = @CountryID,[Holiday] = @Holiday,[Date] = @Date,[Major] = @Major,[Federal] = @Federal,[CreatedOn] = @CreatedOn,[CreatedBy] = @CreatedBy,[ModifiedOn] = @ModifiedOn,[ModifiedBy] = @ModifiedBy,[Default] = @Default,[ActionID] = @ActionID  WHERE [UtilHolidayPK] = @UtilHolidayPK AND [RowVersion] = @RowVersion", this.TableName);
-			SqlParameter[] paras = new SqlParameter[13];
-			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
-			if (entity.UtilHolidayPK == Guid.Empty)
-			{
-				paras[0].Value = DBNull.Value;
-			}
-			else
-			{
-				paras[0].Value = entity.UtilHolidayPK;
-			}
-			paras[1] = new SqlParameter("@CountryID", SqlDbType.Int);
-			paras[1].Value = entity.CountryID;
-			paras[2] = new SqlParameter("@Holiday", SqlDbType.VarChar, 30);
-			paras[2].Value = entity.Holiday;
-			paras[3] = new SqlParameter("@Date", SqlDbType.DateTime);
-			paras[3].Value = entity.Date;
-			paras[4] = new SqlParameter("@Major", SqlDbType.Bit);
-			paras[4].Value = entity.Major;
-			paras[5] = new SqlParameter("@Federal", SqlDbType.Bit);
-			paras[5].Value = entity.Federal;
-			paras[6] = new SqlParameter("@RowVersion", SqlDbType.Timestamp);
-			paras[6].Value = entity.RowVersion;
-			paras[7] = new SqlParameter("@CreatedOn", SqlDbType.DateTime);
-			paras[7].Value = entity.CreatedOn;
-			paras[8] = new SqlParameter("@CreatedBy", SqlDbType.VarChar, 30);
-			paras[8].Value = entity.CreatedBy;
-			paras[9] = new SqlParameter("@ModifiedOn", SqlDbType.DateTime);
-			paras[9].Value = entity.ModifiedOn;
-			paras[10] = new SqlParameter("@ModifiedBy", SqlDbType.VarChar, 30);
-			paras[10].Value = entity.ModifiedBy;
-			paras[11] = new SqlParameter("@Default", SqlDbType.Bit);
-			paras[11].Value = entity.Default;
-			paras[12] = new SqlParameter("@ActionID", SqlDbType.Int);
-			paras[12].Value = entity.ActionID;
-			return base.ExecuteNonQuery(sql, paras);
-		}
-
-		private UtilHolidayData CreateDataByReader(SafeDataReader reader)
-		{
-			UtilHolidayData data = new UtilHolidayData {
-				UtilHolidayPK = (Guid) reader["UtilHolidayPK"],
-				CountryID = (Int32) reader["CountryID"],
-				Holiday = (String) reader["Holiday"],
-				Date = (DateTime) reader["Date"],
-				Major = (Boolean) reader["Major"],
-				Federal = (Boolean) reader["Federal"],
-				RowVersion = (Byte[]) reader["RowVersion"],
-				CreatedOn = (DateTime) reader["CreatedOn"],
-				CreatedBy = (String) reader["CreatedBy"],
-				ModifiedOn = (DateTime) reader["ModifiedOn"],
-				ModifiedBy = (String) reader["ModifiedBy"],
-				Default = (Boolean) reader["Default"],
-				ActionID = (Int32) reader["ActionID"]
-			};
-			data.AcceptChanges();
-			return data;
-		}
-
-		private UtilHolidayData FetchEntity(string where, SqlParameter[] paras)
-		{
-			UtilHolidayData data = null;
-			using (SafeDataReader reader = base.ExecuteDataReader(where, paras))
-			{
-				if (reader.Read())
-				{
-					data = this.CreateDataByReader(reader);
-				}
-				reader.Close();
-			}
-			return data;
-		}
-
-		private UtilHolidayData FetchEntityEx(string sql, SqlParameter[] paras)
-		{
-			UtilHolidayData data = null;
-			using (SafeDataReader reader = base.ExecuteDataReaderEx(sql, paras))
-			{
-				if (reader.Read())
-				{
-					data = this.CreateDataByReader(reader);
-				}
-				reader.Close();
-			}
-			return data;
-		}
-
-		private UtilHolidayDataCollection FetchCollection(string where, SqlParameter[] paras)
-		{
-			UtilHolidayDataCollection list = new UtilHolidayDataCollection();
-			using (SafeDataReader reader = base.ExecuteDataReader(where, paras))
-			{
-				while(reader.Read())
-				{
-					UtilHolidayData data = this.CreateDataByReader(reader);
-					list.Add(data);
-				}
-				reader.Close();
-			}
-			return list;
-		}
-
-		private UtilHolidayDataCollection FetchCollectionEx(string sql, SqlParameter[] paras)
-		{
-			UtilHolidayDataCollection list = new UtilHolidayDataCollection();
-			using (SafeDataReader reader = base.ExecuteDataReaderEx(sql, paras))
-			{
-				while(reader.Read())
-				{
-					UtilHolidayData data = this.CreateDataByReader(reader);
-					list.Add(data);
-				}
-				reader.Close();
-			}
-			return list;
-		}
-
-		public UtilHolidayData GetEntityBy(string sqlWhere, SqlParameter[] paras)
-		{
-			return this.FetchEntity(sqlWhere, paras);
-		}
-
-		public UtilHolidayData GetEntityExBy(string sql, SqlParameter[] paras)
-		{
-			return this.FetchEntityEx(sql, paras);
-		}
-
-		public UtilHolidayDataCollection GetCollectionBy(string sqlWhere, SqlParameter[] paras)
-		{
-			return this.FetchCollection(sqlWhere, paras);
-		}
-
-		public UtilHolidayDataCollection GetCollectionExBy(string sql, SqlParameter[] paras)
-		{
-			return this.FetchCollectionEx(sql, paras);
-		}
-
-		public byte[] GetRowVersion( System.Guid UtilHolidayPK)
-		{
-			string sql = string.Format("SELECT [RowVersion] AS [RowVersion] FROM [{0}] WHERE  [UtilHolidayPK] = @UtilHolidayPK ", this.TableName);
-			SqlParameter[] paras = new SqlParameter[1];
-			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier, 16);
-			paras[0].Value = UtilHolidayPK;
-			return (byte[]) base.ExecuteScalar(sql, paras);
-		}
-
-		public UtilHolidayData GetByPK( System.Guid UtilHolidayPK)
-		{
-			string sql = " WHERE  [UtilHoliday].[UtilHolidayPK] = @UtilHolidayPK ";
-			SqlParameter[] paras = new SqlParameter[1];
-			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
-			paras[0].Value = UtilHolidayPK;
-			return this.FetchEntity(sql, paras);
-		}
-
-		public UtilHolidayDataCollection GetAll()
-		{
-			return this.FetchCollection("", null);
-		}
-
-		public DataTable GetLogByPK( System.Guid UtilHolidayPK)
-		{
-			string sql = string.Format("SELECT  [UtilHoliday].[UtilHolidayPK] AS [UtilHolidayPK], [UtilHoliday].[ModifiedOn] AS [ModifiedOn] FROM [{0}] WHERE  [UtilHoliday].[UtilHolidayPK] = @UtilHolidayPK ", this.TableName);
-			SqlParameter[] paras = new SqlParameter[1];
-			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
-			paras[0].Value = UtilHolidayPK;
-			return this.ExecuteDataTable(sql, paras);
-		}
-
-		public int DeleteByPK( System.Guid UtilHolidayPK, byte[] RowVersion)
-		{
-			string sql = string.Format("DELETE FROM [{0}] WHERE  [UtilHolidayPK] = @UtilHolidayPK AND [RowVersion] = @RowVersion", this.TableName);
-			SqlParameter[] paras = new SqlParameter[2];
-			paras[0] = new SqlParameter("@UtilHolidayPK", SqlDbType.UniqueIdentifier);
-			paras[0].Value = UtilHolidayPK;
-			paras[1] = new SqlParameter("@RowVersion", SqlDbType.Timestamp, 8);
-			paras[1].Value = RowVersion;
-			return base.ExecuteNonQuery(sql, paras);
-		}
-
-		public int DeleteAll()
-		{
-			string sql = string.Format("DELETE FROM [{0}]", this.TableName);
-			return base.ExecuteNonQuery(sql, null);
 		}
 
 
@@ -9227,7 +9257,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[UsrAccount].[UsrAccountPK] AS [UsrAccountPK],[UsrAccount].[UserID] AS [UserID],[UsrAccount].[IsAdmin] AS [IsAdmin],[UsrAccount].[IsCentral] AS [IsCentral],[UsrAccount].[FirstName] AS [FirstName],[UsrAccount].[LastName] AS [LastName],[UsrAccount].[Password] AS [Password],[UsrAccount].[PwdExpireDate] AS [PwdExpireDate],[UsrAccount].[UsrGroupPK] AS [UsrGroupPK],[UsrAccount].[BDTenantPK] AS [BDTenantPK],[UsrAccount].[CellPhone] AS [CellPhone],[UsrAccount].[HomePhone] AS [HomePhone],[UsrAccount].[OfficePhone] AS [OfficePhone],[UsrAccount].[Email] AS [Email],[UsrAccount].[LastLogin] AS [LastLogin],[UsrAccount].[TotalUsage] AS [TotalUsage],[UsrAccount].[StartScreen] AS [StartScreen],[UsrAccount].[PopupExtension] AS [PopupExtension],[UsrAccount].[RowVersion] AS [RowVersion],[UsrAccount].[CreatedOn] AS [CreatedOn],[UsrAccount].[CreatedBy] AS [CreatedBy],[UsrAccount].[ModifiedOn] AS [ModifiedOn],[UsrAccount].[ModifiedBy] AS [ModifiedBy]";
+				return "[UsrAccount].[UsrAccountPK] AS [UsrAccountPK],[UsrAccount].[UserID] AS [UserID],[UsrAccount].[IsAdmin] AS [IsAdmin],[UsrAccount].[IsCentral] AS [IsCentral],[UsrAccount].[FirstName] AS [FirstName],[UsrAccount].[LastName] AS [LastName],[UsrAccount].[Password] AS [Password],[UsrAccount].[PwdExpireDate] AS [PwdExpireDate],[UsrAccount].[UsrGroupPK] AS [UsrGroupPK],[UsrAccount].[BDTenantPK] AS [BDTenantPK],[UsrAccount].[CellPhone] AS [CellPhone],[UsrAccount].[HomePhone] AS [HomePhone],[UsrAccount].[OfficePhone] AS [OfficePhone],[UsrAccount].[Email] AS [Email],[UsrAccount].[LastLogin] AS [LastLogin],[UsrAccount].[TotalUsage] AS [TotalUsage],[UsrAccount].[StartScreen] AS [StartScreen],[UsrAccount].[PopupExtension] AS [PopupExtension],[UsrAccount].[RowVersion] AS [RowVersion],[UsrAccount].[CreatedOn] AS [CreatedOn],[UsrAccount].[CreatedBy] AS [CreatedBy],[UsrAccount].[ModifiedOn] AS [ModifiedOn],[UsrAccount].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Suite] AS [Suite],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[UsrGroup].[UsrGroupName] AS [UsrGroupName],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -9235,7 +9265,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrGroup] [UsrGroup] ON [UsrAccount].[UsrGroupPK] = [UsrGroup].[UsrGroupPK]";
+				return "LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrGroup] [UsrGroup] ON [UsrAccount].[UsrGroupPK] = [UsrGroup].[UsrGroupPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -9243,7 +9273,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [UsrAccount].[UsrAccountPK] AS [UsrAccountPK],[UsrAccount].[UserID] AS [UserID],[UsrAccount].[IsAdmin] AS [IsAdmin],[UsrAccount].[IsCentral] AS [IsCentral],[UsrAccount].[FirstName] AS [FirstName],[UsrAccount].[LastName] AS [LastName],[UsrAccount].[Password] AS [Password],[UsrAccount].[PwdExpireDate] AS [PwdExpireDate],[UsrAccount].[UsrGroupPK] AS [UsrGroupPK],[UsrAccount].[BDTenantPK] AS [BDTenantPK],[UsrAccount].[CellPhone] AS [CellPhone],[UsrAccount].[HomePhone] AS [HomePhone],[UsrAccount].[OfficePhone] AS [OfficePhone],[UsrAccount].[Email] AS [Email],[UsrAccount].[LastLogin] AS [LastLogin],[UsrAccount].[TotalUsage] AS [TotalUsage],[UsrAccount].[StartScreen] AS [StartScreen],[UsrAccount].[PopupExtension] AS [PopupExtension],[UsrAccount].[RowVersion] AS [RowVersion],[UsrAccount].[CreatedOn] AS [CreatedOn],[UsrAccount].[CreatedBy] AS [CreatedBy],[UsrAccount].[ModifiedOn] AS [ModifiedOn],[UsrAccount].[ModifiedBy] AS [ModifiedBy] FROM [{0}] [UsrAccount] LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrGroup] [UsrGroup] ON [UsrAccount].[UsrGroupPK] = [UsrGroup].[UsrGroupPK]", this.TableName);
+				return string.Format("SELECT [UsrAccount].[UsrAccountPK] AS [UsrAccountPK],[UsrAccount].[UserID] AS [UserID],[UsrAccount].[IsAdmin] AS [IsAdmin],[UsrAccount].[IsCentral] AS [IsCentral],[UsrAccount].[FirstName] AS [FirstName],[UsrAccount].[LastName] AS [LastName],[UsrAccount].[Password] AS [Password],[UsrAccount].[PwdExpireDate] AS [PwdExpireDate],[UsrAccount].[UsrGroupPK] AS [UsrGroupPK],[UsrAccount].[BDTenantPK] AS [BDTenantPK],[UsrAccount].[CellPhone] AS [CellPhone],[UsrAccount].[HomePhone] AS [HomePhone],[UsrAccount].[OfficePhone] AS [OfficePhone],[UsrAccount].[Email] AS [Email],[UsrAccount].[LastLogin] AS [LastLogin],[UsrAccount].[TotalUsage] AS [TotalUsage],[UsrAccount].[StartScreen] AS [StartScreen],[UsrAccount].[PopupExtension] AS [PopupExtension],[UsrAccount].[RowVersion] AS [RowVersion],[UsrAccount].[CreatedOn] AS [CreatedOn],[UsrAccount].[CreatedBy] AS [CreatedBy],[UsrAccount].[ModifiedOn] AS [ModifiedOn],[UsrAccount].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Suite] AS [Suite],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[UsrGroup].[UsrGroupName] AS [UsrGroupName],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [UsrAccount] LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrGroup] [UsrGroup] ON [UsrAccount].[UsrGroupPK] = [UsrGroup].[UsrGroupPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -9251,7 +9281,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [UsrAccount] LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrGroup] [UsrGroup] ON [UsrAccount].[UsrGroupPK] = [UsrGroup].[UsrGroupPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [UsrAccount] LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccount].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrGroup] [UsrGroup] ON [UsrAccount].[UsrGroupPK] = [UsrGroup].[UsrGroupPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -9426,7 +9456,13 @@ namespace W3000.CRUD
 				CreatedOn = (DateTime) reader["CreatedOn"],
 				CreatedBy = (String) reader["CreatedBy"],
 				ModifiedOn = (DateTime) reader["ModifiedOn"],
-				ModifiedBy = (String) reader["ModifiedBy"]
+				ModifiedBy = (String) reader["ModifiedBy"],
+				Suite = (String) reader["Suite"],
+				Tenant = (String) reader["Tenant"],
+				BDBuildingPK = (Guid) reader["BDBuildingPK"],
+				UsrGroupName = (String) reader["UsrGroupName"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -10824,7 +10860,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACCardHolderBuildingMap].[ACCardHolderBuildingMapPK] AS [ACCardHolderBuildingMapPK],[ACCardHolderBuildingMap].[ACCardHolderPK] AS [ACCardHolderPK],[ACCardHolderBuildingMap].[BDBuildingPK] AS [BDBuildingPK],[ACCardHolderBuildingMap].[AL1st] AS [AL1st],[ACCardHolderBuildingMap].[AL2nd] AS [AL2nd],[ACCardHolderBuildingMap].[RowVersion] AS [RowVersion],[ACCardHolderBuildingMap].[CreatedOn] AS [CreatedOn],[ACCardHolderBuildingMap].[CreatedBy] AS [CreatedBy],[ACCardHolderBuildingMap].[ModifiedOn] AS [ModifiedOn],[ACCardHolderBuildingMap].[ModifiedBy] AS [ModifiedBy],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID],[ACCardHolder].[LastName] AS [LastName],[ACCardHolder].[FirstName] AS [FirstName],[ACCardHolder].[Encoded] AS [Encoded],[ACCardHolder].[Embossed] AS [Embossed],[ACCardHolder].[Sitecode] AS [Sitecode]";
+				return "[ACCardHolderBuildingMap].[ACCardHolderBuildingMapPK] AS [ACCardHolderBuildingMapPK],[ACCardHolderBuildingMap].[ACCardHolderPK] AS [ACCardHolderPK],[ACCardHolderBuildingMap].[BDBuildingPK] AS [BDBuildingPK],[ACCardHolderBuildingMap].[AL1st] AS [AL1st],[ACCardHolderBuildingMap].[AL2nd] AS [AL2nd],[ACCardHolderBuildingMap].[RowVersion] AS [RowVersion],[ACCardHolderBuildingMap].[CreatedOn] AS [CreatedOn],[ACCardHolderBuildingMap].[CreatedBy] AS [CreatedBy],[ACCardHolderBuildingMap].[ModifiedOn] AS [ModifiedOn],[ACCardHolderBuildingMap].[ModifiedBy] AS [ModifiedBy],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID],[ACCardHolder].[LastName] AS [LastName],[ACCardHolder].[FirstName] AS [FirstName],[ACCardHolder].[CardTypeID] AS [CardTypeID],[ACCardHolder].[Encoded] AS [Encoded],[ACCardHolder].[Embossed] AS [Embossed],[ACCardHolder].[Sitecode] AS [Sitecode]";
 			}
 		}
 
@@ -10840,7 +10876,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACCardHolderBuildingMap].[ACCardHolderBuildingMapPK] AS [ACCardHolderBuildingMapPK],[ACCardHolderBuildingMap].[ACCardHolderPK] AS [ACCardHolderPK],[ACCardHolderBuildingMap].[BDBuildingPK] AS [BDBuildingPK],[ACCardHolderBuildingMap].[AL1st] AS [AL1st],[ACCardHolderBuildingMap].[AL2nd] AS [AL2nd],[ACCardHolderBuildingMap].[RowVersion] AS [RowVersion],[ACCardHolderBuildingMap].[CreatedOn] AS [CreatedOn],[ACCardHolderBuildingMap].[CreatedBy] AS [CreatedBy],[ACCardHolderBuildingMap].[ModifiedOn] AS [ModifiedOn],[ACCardHolderBuildingMap].[ModifiedBy] AS [ModifiedBy],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID],[ACCardHolder].[LastName] AS [LastName],[ACCardHolder].[FirstName] AS [FirstName],[ACCardHolder].[Encoded] AS [Encoded],[ACCardHolder].[Embossed] AS [Embossed],[ACCardHolder].[Sitecode] AS [Sitecode] FROM [{0}] [ACCardHolderBuildingMap] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACCardHolderBuildingMap].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] LEFT JOIN [ACCardHolder] [ACCardHolder] ON [ACCardHolderBuildingMap].[ACCardHolderPK] = [ACCardHolder].[ACCardHolderPK]", this.TableName);
+				return string.Format("SELECT [ACCardHolderBuildingMap].[ACCardHolderBuildingMapPK] AS [ACCardHolderBuildingMapPK],[ACCardHolderBuildingMap].[ACCardHolderPK] AS [ACCardHolderPK],[ACCardHolderBuildingMap].[BDBuildingPK] AS [BDBuildingPK],[ACCardHolderBuildingMap].[AL1st] AS [AL1st],[ACCardHolderBuildingMap].[AL2nd] AS [AL2nd],[ACCardHolderBuildingMap].[RowVersion] AS [RowVersion],[ACCardHolderBuildingMap].[CreatedOn] AS [CreatedOn],[ACCardHolderBuildingMap].[CreatedBy] AS [CreatedBy],[ACCardHolderBuildingMap].[ModifiedOn] AS [ModifiedOn],[ACCardHolderBuildingMap].[ModifiedBy] AS [ModifiedBy],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID],[ACCardHolder].[LastName] AS [LastName],[ACCardHolder].[FirstName] AS [FirstName],[ACCardHolder].[CardTypeID] AS [CardTypeID],[ACCardHolder].[Encoded] AS [Encoded],[ACCardHolder].[Embossed] AS [Embossed],[ACCardHolder].[Sitecode] AS [Sitecode] FROM [{0}] [ACCardHolderBuildingMap] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACCardHolderBuildingMap].[BDBuildingPK] = [BDBuilding].[BDBuildingPK] LEFT JOIN [ACCardHolder] [ACCardHolder] ON [ACCardHolderBuildingMap].[ACCardHolderPK] = [ACCardHolder].[ACCardHolderPK]", this.TableName);
 			}
 		}
 
@@ -10963,6 +10999,7 @@ namespace W3000.CRUD
 				BuildingID = (Int32) reader["BuildingID"],
 				LastName = (String) reader["LastName"],
 				FirstName = (String) reader["FirstName"],
+				CardTypeID = (Int32) reader["CardTypeID"],
 				Encoded = (Int32) reader["Encoded"],
 				Embossed = (Int32) reader["Embossed"],
 				Sitecode = (Int32) reader["Sitecode"]
@@ -11199,7 +11236,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[BDVisitor].[BDVisitorPK] AS [BDVisitorPK],[BDVisitor].[BDTenantPK] AS [BDTenantPK],[BDVisitor].[FirstName] AS [FirstName],[BDVisitor].[LastName] AS [LastName],[BDVisitor].[AuthorizedBy] AS [AuthorizedBy],[BDVisitor].[AuthorizedArea] AS [AuthorizedArea],[BDVisitor].[AuthorEmail] AS [AuthorEmail],[BDVisitor].[EmailNotify] AS [EmailNotify],[BDVisitor].[ValidFrom] AS [ValidFrom],[BDVisitor].[ValidThru] AS [ValidThru],[BDVisitor].[Password] AS [Password],[BDVisitor].[Special] AS [Special],[BDVisitor].[Photo] AS [Photo],[BDVisitor].[Begin] AS [Begin],[BDVisitor].[End] AS [End],[BDVisitor].[SiteCode] AS [SiteCode],[BDVisitor].[Encoded] AS [Encoded],[BDVisitor].[Scheduled] AS [Scheduled],[BDVisitor].[ArrivedTime] AS [ArrivedTime],[BDVisitor].[TurnstileAccess] AS [TurnstileAccess],[BDVisitor].[BadgePrinted] AS [BadgePrinted],[BDVisitor].[RowVersion] AS [RowVersion],[BDVisitor].[CreatedOn] AS [CreatedOn],[BDVisitor].[CreatedBy] AS [CreatedBy],[BDVisitor].[ModifiedOn] AS [ModifiedOn],[BDVisitor].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
+				return "[BDVisitor].[BDVisitorPK] AS [BDVisitorPK],[BDVisitor].[BDTenantPK] AS [BDTenantPK],[BDVisitor].[FirstName] AS [FirstName],[BDVisitor].[LastName] AS [LastName],[BDVisitor].[AuthorizedBy] AS [AuthorizedBy],[BDVisitor].[AuthorizedArea] AS [AuthorizedArea],[BDVisitor].[AuthorEmail] AS [AuthorEmail],[BDVisitor].[EmailNotify] AS [EmailNotify],[BDVisitor].[ValidFrom] AS [ValidFrom],[BDVisitor].[ValidThru] AS [ValidThru],[BDVisitor].[Password] AS [Password],[BDVisitor].[Special] AS [Special],[BDVisitor].[Photo] AS [Photo],[BDVisitor].[Begin] AS [Begin],[BDVisitor].[End] AS [End],[BDVisitor].[SiteCode] AS [SiteCode],[BDVisitor].[Encoded] AS [Encoded],[BDVisitor].[Scheduled] AS [Scheduled],[BDVisitor].[ArrivedTime] AS [ArrivedTime],[BDVisitor].[TurnstileAccess] AS [TurnstileAccess],[BDVisitor].[BadgePrinted] AS [BadgePrinted],[BDVisitor].[RowVersion] AS [RowVersion],[BDVisitor].[CreatedOn] AS [CreatedOn],[BDVisitor].[CreatedBy] AS [CreatedBy],[BDVisitor].[ModifiedOn] AS [ModifiedOn],[BDVisitor].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Suite] AS [Suite],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -11215,7 +11252,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [BDVisitor].[BDVisitorPK] AS [BDVisitorPK],[BDVisitor].[BDTenantPK] AS [BDTenantPK],[BDVisitor].[FirstName] AS [FirstName],[BDVisitor].[LastName] AS [LastName],[BDVisitor].[AuthorizedBy] AS [AuthorizedBy],[BDVisitor].[AuthorizedArea] AS [AuthorizedArea],[BDVisitor].[AuthorEmail] AS [AuthorEmail],[BDVisitor].[EmailNotify] AS [EmailNotify],[BDVisitor].[ValidFrom] AS [ValidFrom],[BDVisitor].[ValidThru] AS [ValidThru],[BDVisitor].[Password] AS [Password],[BDVisitor].[Special] AS [Special],[BDVisitor].[Photo] AS [Photo],[BDVisitor].[Begin] AS [Begin],[BDVisitor].[End] AS [End],[BDVisitor].[SiteCode] AS [SiteCode],[BDVisitor].[Encoded] AS [Encoded],[BDVisitor].[Scheduled] AS [Scheduled],[BDVisitor].[ArrivedTime] AS [ArrivedTime],[BDVisitor].[TurnstileAccess] AS [TurnstileAccess],[BDVisitor].[BadgePrinted] AS [BadgePrinted],[BDVisitor].[RowVersion] AS [RowVersion],[BDVisitor].[CreatedOn] AS [CreatedOn],[BDVisitor].[CreatedBy] AS [CreatedBy],[BDVisitor].[ModifiedOn] AS [ModifiedOn],[BDVisitor].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [BDVisitor] LEFT JOIN [BDTenant] [BDTenant] ON [BDVisitor].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
+				return string.Format("SELECT [BDVisitor].[BDVisitorPK] AS [BDVisitorPK],[BDVisitor].[BDTenantPK] AS [BDTenantPK],[BDVisitor].[FirstName] AS [FirstName],[BDVisitor].[LastName] AS [LastName],[BDVisitor].[AuthorizedBy] AS [AuthorizedBy],[BDVisitor].[AuthorizedArea] AS [AuthorizedArea],[BDVisitor].[AuthorEmail] AS [AuthorEmail],[BDVisitor].[EmailNotify] AS [EmailNotify],[BDVisitor].[ValidFrom] AS [ValidFrom],[BDVisitor].[ValidThru] AS [ValidThru],[BDVisitor].[Password] AS [Password],[BDVisitor].[Special] AS [Special],[BDVisitor].[Photo] AS [Photo],[BDVisitor].[Begin] AS [Begin],[BDVisitor].[End] AS [End],[BDVisitor].[SiteCode] AS [SiteCode],[BDVisitor].[Encoded] AS [Encoded],[BDVisitor].[Scheduled] AS [Scheduled],[BDVisitor].[ArrivedTime] AS [ArrivedTime],[BDVisitor].[TurnstileAccess] AS [TurnstileAccess],[BDVisitor].[BadgePrinted] AS [BadgePrinted],[BDVisitor].[RowVersion] AS [RowVersion],[BDVisitor].[CreatedOn] AS [CreatedOn],[BDVisitor].[CreatedBy] AS [CreatedBy],[BDVisitor].[ModifiedOn] AS [ModifiedOn],[BDVisitor].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Suite] AS [Suite],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [BDVisitor] LEFT JOIN [BDTenant] [BDTenant] ON [BDVisitor].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -11400,6 +11437,7 @@ namespace W3000.CRUD
 				CreatedBy = (String) reader["CreatedBy"],
 				ModifiedOn = (DateTime) reader["ModifiedOn"],
 				ModifiedBy = (String) reader["ModifiedBy"],
+				Suite = (String) reader["Suite"],
 				Tenant = (String) reader["Tenant"],
 				BDBuildingPK = (Guid) reader["BDBuildingPK"],
 				Address1 = (String) reader["Address1"],
@@ -13101,7 +13139,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[ACInputGroupInputMap].[ACInputGroupInputMapPK] AS [ACInputGroupInputMapPK],[ACInputGroupInputMap].[ACInputGroupPK] AS [ACInputGroupPK],[ACInputGroupInputMap].[ACInputPK] AS [ACInputPK],[ACInputGroupInputMap].[RowVersion] AS [RowVersion],[ACInputGroupInputMap].[CreatedOn] AS [CreatedOn],[ACInputGroupInputMap].[CreatedBy] AS [CreatedBy],[ACInputGroupInputMap].[ModifiedOn] AS [ModifiedOn],[ACInputGroupInputMap].[ModifiedBy] AS [ModifiedBy],[ACInputGroup].[GroupID] AS [GroupID],[ACInputGroup].[ACPanelPK] AS [ACPanelPK],[ACInput].[InputID] AS [InputID]";
+				return "[ACInputGroupInputMap].[ACInputGroupInputMapPK] AS [ACInputGroupInputMapPK],[ACInputGroupInputMap].[ACInputGroupPK] AS [ACInputGroupPK],[ACInputGroupInputMap].[ACInputPK] AS [ACInputPK],[ACInputGroupInputMap].[RowVersion] AS [RowVersion],[ACInputGroupInputMap].[CreatedOn] AS [CreatedOn],[ACInputGroupInputMap].[CreatedBy] AS [CreatedBy],[ACInputGroupInputMap].[ModifiedOn] AS [ModifiedOn],[ACInputGroupInputMap].[ModifiedBy] AS [ModifiedBy],[ACInputGroup].[GroupID] AS [GroupID],[ACInputGroup].[ACPanelPK] AS [ACPanelPK],[ACInput].[InputID] AS [InputID],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID],[BDBuilding].[BDBuildingPK] AS [BDBuildingPK]";
 			}
 		}
 
@@ -13109,7 +13147,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [ACInputGroup] [ACInputGroup] ON [ACInputGroupInputMap].[ACInputGroupPK] = [ACInputGroup].[ACInputGroupPK] LEFT JOIN [ACInput] [ACInput] ON [ACInputGroupInputMap].[ACInputPK] = [ACInput].[ACInputPK]";
+				return "LEFT JOIN [ACInputGroup] [ACInputGroup] ON [ACInputGroupInputMap].[ACInputGroupPK] = [ACInputGroup].[ACInputGroupPK] LEFT JOIN [ACInput] [ACInput] ON [ACInputGroupInputMap].[ACInputPK] = [ACInput].[ACInputPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -13117,7 +13155,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [ACInputGroupInputMap].[ACInputGroupInputMapPK] AS [ACInputGroupInputMapPK],[ACInputGroupInputMap].[ACInputGroupPK] AS [ACInputGroupPK],[ACInputGroupInputMap].[ACInputPK] AS [ACInputPK],[ACInputGroupInputMap].[RowVersion] AS [RowVersion],[ACInputGroupInputMap].[CreatedOn] AS [CreatedOn],[ACInputGroupInputMap].[CreatedBy] AS [CreatedBy],[ACInputGroupInputMap].[ModifiedOn] AS [ModifiedOn],[ACInputGroupInputMap].[ModifiedBy] AS [ModifiedBy],[ACInputGroup].[GroupID] AS [GroupID],[ACInputGroup].[ACPanelPK] AS [ACPanelPK],[ACInput].[InputID] AS [InputID] FROM [{0}] [ACInputGroupInputMap] LEFT JOIN [ACInputGroup] [ACInputGroup] ON [ACInputGroupInputMap].[ACInputGroupPK] = [ACInputGroup].[ACInputGroupPK] LEFT JOIN [ACInput] [ACInput] ON [ACInputGroupInputMap].[ACInputPK] = [ACInput].[ACInputPK]", this.TableName);
+				return string.Format("SELECT [ACInputGroupInputMap].[ACInputGroupInputMapPK] AS [ACInputGroupInputMapPK],[ACInputGroupInputMap].[ACInputGroupPK] AS [ACInputGroupPK],[ACInputGroupInputMap].[ACInputPK] AS [ACInputPK],[ACInputGroupInputMap].[RowVersion] AS [RowVersion],[ACInputGroupInputMap].[CreatedOn] AS [CreatedOn],[ACInputGroupInputMap].[CreatedBy] AS [CreatedBy],[ACInputGroupInputMap].[ModifiedOn] AS [ModifiedOn],[ACInputGroupInputMap].[ModifiedBy] AS [ModifiedBy],[ACInputGroup].[GroupID] AS [GroupID],[ACInputGroup].[ACPanelPK] AS [ACPanelPK],[ACInput].[InputID] AS [InputID],[ACPanel].[UnitID] AS [UnitID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID],[BDBuilding].[BDBuildingPK] AS [BDBuildingPK] FROM [{0}] [ACInputGroupInputMap] LEFT JOIN [ACInputGroup] [ACInputGroup] ON [ACInputGroupInputMap].[ACInputGroupPK] = [ACInputGroup].[ACInputGroupPK] LEFT JOIN [ACInput] [ACInput] ON [ACInputGroupInputMap].[ACInputPK] = [ACInput].[ACInputPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -13125,7 +13163,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [ACInputGroupInputMap] LEFT JOIN [ACInputGroup] [ACInputGroup] ON [ACInputGroupInputMap].[ACInputGroupPK] = [ACInputGroup].[ACInputGroupPK] LEFT JOIN [ACInput] [ACInput] ON [ACInputGroupInputMap].[ACInputPK] = [ACInput].[ACInputPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [ACInputGroupInputMap] LEFT JOIN [ACInputGroup] [ACInputGroup] ON [ACInputGroupInputMap].[ACInputGroupPK] = [ACInputGroup].[ACInputGroupPK] LEFT JOIN [ACInput] [ACInput] ON [ACInputGroupInputMap].[ACInputPK] = [ACInput].[ACInputPK] LEFT JOIN [ACPanel] [ACPanel] ON [ACInput].[ACPanelPK] = [ACPanel].[ACPanelPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [ACPanel].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -13228,7 +13266,11 @@ namespace W3000.CRUD
 				ModifiedBy = (String) reader["ModifiedBy"],
 				GroupID = (Byte) reader["GroupID"],
 				ACPanelPK = (Guid) reader["ACPanelPK"],
-				InputID = (Byte) reader["InputID"]
+				InputID = (Byte) reader["InputID"],
+				UnitID = (Int32) reader["UnitID"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"],
+				BDBuildingPK = (Guid) reader["BDBuildingPK"]
 			};
 			data.AcceptChanges();
 			return data;
@@ -13845,7 +13887,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "[UsrAccountTenantMap].[UsrAccountTenantMapPK] AS [UsrAccountTenantMapPK],[UsrAccountTenantMap].[UsrAccountPK] AS [UsrAccountPK],[UsrAccountTenantMap].[BDTenantPK] AS [BDTenantPK],[UsrAccountTenantMap].[RowVersion] AS [RowVersion],[UsrAccountTenantMap].[CreatedOn] AS [CreatedOn],[UsrAccountTenantMap].[CreatedBy] AS [CreatedBy],[UsrAccountTenantMap].[ModifiedOn] AS [ModifiedOn],[UsrAccountTenantMap].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK]";
+				return "[UsrAccountTenantMap].[UsrAccountTenantMapPK] AS [UsrAccountTenantMapPK],[UsrAccountTenantMap].[UsrAccountPK] AS [UsrAccountPK],[UsrAccountTenantMap].[BDTenantPK] AS [BDTenantPK],[UsrAccountTenantMap].[RowVersion] AS [RowVersion],[UsrAccountTenantMap].[CreatedOn] AS [CreatedOn],[UsrAccountTenantMap].[CreatedBy] AS [CreatedBy],[UsrAccountTenantMap].[ModifiedOn] AS [ModifiedOn],[UsrAccountTenantMap].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[UsrAccount].[UserID] AS [UserID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID]";
 			}
 		}
 
@@ -13853,7 +13895,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return "LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccountTenantMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrAccount] [UsrAccount] ON [UsrAccountTenantMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK]";
+				return "LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccountTenantMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrAccount] [UsrAccount] ON [UsrAccountTenantMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]";
 			}
 		}
 
@@ -13861,7 +13903,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT [UsrAccountTenantMap].[UsrAccountTenantMapPK] AS [UsrAccountTenantMapPK],[UsrAccountTenantMap].[UsrAccountPK] AS [UsrAccountPK],[UsrAccountTenantMap].[BDTenantPK] AS [BDTenantPK],[UsrAccountTenantMap].[RowVersion] AS [RowVersion],[UsrAccountTenantMap].[CreatedOn] AS [CreatedOn],[UsrAccountTenantMap].[CreatedBy] AS [CreatedBy],[UsrAccountTenantMap].[ModifiedOn] AS [ModifiedOn],[UsrAccountTenantMap].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK] FROM [{0}] [UsrAccountTenantMap] LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccountTenantMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrAccount] [UsrAccount] ON [UsrAccountTenantMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK]", this.TableName);
+				return string.Format("SELECT [UsrAccountTenantMap].[UsrAccountTenantMapPK] AS [UsrAccountTenantMapPK],[UsrAccountTenantMap].[UsrAccountPK] AS [UsrAccountPK],[UsrAccountTenantMap].[BDTenantPK] AS [BDTenantPK],[UsrAccountTenantMap].[RowVersion] AS [RowVersion],[UsrAccountTenantMap].[CreatedOn] AS [CreatedOn],[UsrAccountTenantMap].[CreatedBy] AS [CreatedBy],[UsrAccountTenantMap].[ModifiedOn] AS [ModifiedOn],[UsrAccountTenantMap].[ModifiedBy] AS [ModifiedBy],[BDTenant].[Tenant] AS [Tenant],[BDTenant].[BDBuildingPK] AS [BDBuildingPK],[UsrAccount].[UserID] AS [UserID],[BDBuilding].[Address1] AS [Address1],[BDBuilding].[BuildingID] AS [BuildingID] FROM [{0}] [UsrAccountTenantMap] LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccountTenantMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrAccount] [UsrAccount] ON [UsrAccountTenantMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -13869,7 +13911,7 @@ namespace W3000.CRUD
 		{
 			get
 			{
-				return string.Format("SELECT COUNT(*) FROM [{0}] [UsrAccountTenantMap] LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccountTenantMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrAccount] [UsrAccount] ON [UsrAccountTenantMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK]", this.TableName);
+				return string.Format("SELECT COUNT(*) FROM [{0}] [UsrAccountTenantMap] LEFT JOIN [BDTenant] [BDTenant] ON [UsrAccountTenantMap].[BDTenantPK] = [BDTenant].[BDTenantPK] LEFT JOIN [UsrAccount] [UsrAccount] ON [UsrAccountTenantMap].[UsrAccountPK] = [UsrAccount].[UsrAccountPK] LEFT JOIN [BDBuilding] [BDBuilding] ON [BDTenant].[BDBuildingPK] = [BDBuilding].[BDBuildingPK]", this.TableName);
 			}
 		}
 
@@ -13971,7 +14013,10 @@ namespace W3000.CRUD
 				ModifiedOn = (DateTime) reader["ModifiedOn"],
 				ModifiedBy = (String) reader["ModifiedBy"],
 				Tenant = (String) reader["Tenant"],
-				BDBuildingPK = (Guid) reader["BDBuildingPK"]
+				BDBuildingPK = (Guid) reader["BDBuildingPK"],
+				UserID = (String) reader["UserID"],
+				Address1 = (String) reader["Address1"],
+				BuildingID = (Int32) reader["BuildingID"]
 			};
 			data.AcceptChanges();
 			return data;

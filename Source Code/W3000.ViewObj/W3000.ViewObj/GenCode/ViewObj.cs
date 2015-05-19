@@ -29,6 +29,9 @@ namespace W3000.ViewObj
 				ACInterval parent = new ACInterval();
 				parent.ACIntervalPK = this.ACIntervalPK;
 				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Begin = this.Begin;
+				parent.End = this.End;
+				parent.IVID = this.IVID;
 				return parent;
 			}
 			set
@@ -38,6 +41,9 @@ namespace W3000.ViewObj
 
 				this.ACIntervalPK = value.ACIntervalPK;
 				this.BDBuildingPK = value.BDBuildingPK;
+				this.Begin = value.Begin;
+				this.End = value.End;
+				this.IVID = value.IVID;
 			}
 		}
 
@@ -222,6 +228,7 @@ namespace W3000.ViewObj
 			{
 				UsrAccount parent = new UsrAccount();
 				parent.UsrAccountPK = this.UsrAccountPK;
+				parent.UserID = this.UserID;
 				return parent;
 			}
 			set
@@ -230,6 +237,7 @@ namespace W3000.ViewObj
 					return;
 
 				this.UsrAccountPK = value.UsrAccountPK;
+				this.UserID = value.UserID;
 			}
 		}
 
@@ -672,6 +680,8 @@ namespace W3000.ViewObj
 			{
 				UtilSettingCategory parent = new UtilSettingCategory();
 				parent.UtilSettingCategoryPK = this.UtilSettingCategoryPK;
+				parent.SettingCategory = this.SettingCategory;
+				parent.SettingCategoryID = this.SettingCategoryID;
 				return parent;
 			}
 			set
@@ -680,6 +690,8 @@ namespace W3000.ViewObj
 					return;
 
 				this.UtilSettingCategoryPK = value.UtilSettingCategoryPK;
+				this.SettingCategory = value.SettingCategory;
+				this.SettingCategoryID = value.SettingCategoryID;
 			}
 		}
 
@@ -796,6 +808,7 @@ namespace W3000.ViewObj
 				BDTenant parent = new BDTenant();
 				parent.BDTenantPK = this.BDTenantPK;
 				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
 				return parent;
 			}
@@ -806,6 +819,7 @@ namespace W3000.ViewObj
 
 				this.BDTenantPK = value.BDTenantPK;
 				this.BDBuildingPK = value.BDBuildingPK;
+				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
 			}
 		}
@@ -1230,7 +1244,6 @@ namespace W3000.ViewObj
 			{
 				ACInterval parent = new ACInterval();
 				parent.ACIntervalPK = this.ACIntervalPK;
-				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.Begin = this.Begin;
 				parent.End = this.End;
 				parent.IVID = this.IVID;
@@ -1242,7 +1255,6 @@ namespace W3000.ViewObj
 					return;
 
 				this.ACIntervalPK = value.ACIntervalPK;
-				this.BDBuildingPK = value.BDBuildingPK;
 				this.Begin = value.Begin;
 				this.End = value.End;
 				this.IVID = value.IVID;
@@ -1255,6 +1267,7 @@ namespace W3000.ViewObj
 			{
 				ACTimecode parent = new ACTimecode();
 				parent.ACTimecodePK = this.ACTimecodePK;
+				parent.BDBuildingPK = this.BDBuildingPK;
 				parent.TCID = this.TCID;
 				return parent;
 			}
@@ -1264,6 +1277,7 @@ namespace W3000.ViewObj
 					return;
 
 				this.ACTimecodePK = value.ACTimecodePK;
+				this.BDBuildingPK = value.BDBuildingPK;
 				this.TCID = value.TCID;
 			}
 		}
@@ -1307,6 +1321,8 @@ namespace W3000.ViewObj
 			{
 				BDBuilding parent = new BDBuilding();
 				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Address1 = this.Address1;
+				parent.BuildingID = this.BuildingID;
 				return parent;
 			}
 			set
@@ -1315,6 +1331,8 @@ namespace W3000.ViewObj
 					return;
 
 				this.BDBuildingPK = value.BDBuildingPK;
+				this.Address1 = value.Address1;
+				this.BuildingID = value.BuildingID;
 			}
 		}
 
@@ -1775,6 +1793,7 @@ namespace W3000.ViewObj
 				BDTenant parent = new BDTenant();
 				parent.BDTenantPK = this.BDTenantPK;
 				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
 				return parent;
 			}
@@ -1785,6 +1804,7 @@ namespace W3000.ViewObj
 
 				this.BDTenantPK = value.BDTenantPK;
 				this.BDBuildingPK = value.BDBuildingPK;
+				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
 			}
 		}
@@ -1824,6 +1844,111 @@ namespace W3000.ViewObj
 			ACFunctionCardData item = new ACFunctionCardData(this);
 			item.GetChanges();
 			return ACFunctionCardWrapper.Save(item, token);
+		}
+
+		public virtual Cheke.BusinessEntity.Result Save()
+		{
+			return this.Save(Cheke.Identity.Token);
+		}
+
+	}
+	[Serializable]
+	public partial class UtilHoliday :  UtilHolidayData, Cheke.BusinessEntity.IPersist
+	{
+		#region Constructors
+		public UtilHoliday()
+		{
+		}
+
+		public UtilHoliday(UtilHolidayData data)
+			:base(data)
+		{
+		}
+		#endregion
+
+		public new virtual BDTenantHolidayMapCollection BDTenantHolidayMapList
+		{
+			get
+			{
+				return ((BDTenantHolidayMapCollection)(base.BDTenantHolidayMapList));
+			}
+			set
+			{
+				base.BDTenantHolidayMapList = value;
+			}
+		}
+
+		public new virtual BDBuildingHolidayMapCollection BDBuildingHolidayMapList
+		{
+			get
+			{
+				return ((BDBuildingHolidayMapCollection)(base.BDBuildingHolidayMapList));
+			}
+			set
+			{
+				base.BDBuildingHolidayMapList = value;
+			}
+		}
+
+		public new virtual ACPanelHolidayMapCollection ACPanelHolidayMapList
+		{
+			get
+			{
+				return ((ACPanelHolidayMapCollection)(base.ACPanelHolidayMapList));
+			}
+			set
+			{
+				base.ACPanelHolidayMapList = value;
+			}
+		}
+
+		public new virtual ACIntvalHolidayMapCollection ACIntvalHolidayMapList
+		{
+			get
+			{
+				return ((ACIntvalHolidayMapCollection)(base.ACIntvalHolidayMapList));
+			}
+			set
+			{
+				base.ACIntvalHolidayMapList = value;
+			}
+		}
+
+
+		protected override void CloneChildren(BusinessBase entity)
+		{
+			UtilHolidayData data = entity as UtilHolidayData;
+			if (data == null)
+				return;
+
+			if (data.BDTenantHolidayMapList != null)
+			{
+				this.BDTenantHolidayMapList = new BDTenantHolidayMapCollection(data.BDTenantHolidayMapList);
+			}
+			if (data.BDBuildingHolidayMapList != null)
+			{
+				this.BDBuildingHolidayMapList = new BDBuildingHolidayMapCollection(data.BDBuildingHolidayMapList);
+			}
+			if (data.ACPanelHolidayMapList != null)
+			{
+				this.ACPanelHolidayMapList = new ACPanelHolidayMapCollection(data.ACPanelHolidayMapList);
+			}
+			if (data.ACIntvalHolidayMapList != null)
+			{
+				this.ACIntvalHolidayMapList = new ACIntvalHolidayMapCollection(data.ACIntvalHolidayMapList);
+			}
+		}
+
+		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
+		{
+			if (!this.IsDirty)
+			{
+				return new Result(true);
+			}
+
+			UtilHolidayData item = new UtilHolidayData(this);
+			item.GetChanges();
+			return UtilHolidayWrapper.Save(item, token);
 		}
 
 		public virtual Cheke.BusinessEntity.Result Save()
@@ -1930,6 +2055,7 @@ namespace W3000.ViewObj
 			{
 				ACFunctionCard parent = new ACFunctionCard();
 				parent.ACFunctionCardPK = this.ACFunctionCardPK;
+				parent.CardTypeID = this.CardTypeID;
 				parent.Embossed = this.Embossed;
 				parent.Encoded = this.Encoded;
 				parent.Sitecode = this.Sitecode;
@@ -1941,6 +2067,7 @@ namespace W3000.ViewObj
 					return;
 
 				this.ACFunctionCardPK = value.ACFunctionCardPK;
+				this.CardTypeID = value.CardTypeID;
 				this.Embossed = value.Embossed;
 				this.Encoded = value.Encoded;
 				this.Sitecode = value.Sitecode;
@@ -1979,111 +2106,6 @@ namespace W3000.ViewObj
 			ACPanelFunctionCardMapData item = new ACPanelFunctionCardMapData(this);
 			item.GetChanges();
 			return ACPanelFunctionCardMapWrapper.Save(item, token);
-		}
-
-		public virtual Cheke.BusinessEntity.Result Save()
-		{
-			return this.Save(Cheke.Identity.Token);
-		}
-
-	}
-	[Serializable]
-	public partial class UtilHoliday :  UtilHolidayData, Cheke.BusinessEntity.IPersist
-	{
-		#region Constructors
-		public UtilHoliday()
-		{
-		}
-
-		public UtilHoliday(UtilHolidayData data)
-			:base(data)
-		{
-		}
-		#endregion
-
-		public new virtual ACIntvalHolidayMapCollection ACIntvalHolidayMapList
-		{
-			get
-			{
-				return ((ACIntvalHolidayMapCollection)(base.ACIntvalHolidayMapList));
-			}
-			set
-			{
-				base.ACIntvalHolidayMapList = value;
-			}
-		}
-
-		public new virtual ACPanelHolidayMapCollection ACPanelHolidayMapList
-		{
-			get
-			{
-				return ((ACPanelHolidayMapCollection)(base.ACPanelHolidayMapList));
-			}
-			set
-			{
-				base.ACPanelHolidayMapList = value;
-			}
-		}
-
-		public new virtual BDBuildingHolidayMapCollection BDBuildingHolidayMapList
-		{
-			get
-			{
-				return ((BDBuildingHolidayMapCollection)(base.BDBuildingHolidayMapList));
-			}
-			set
-			{
-				base.BDBuildingHolidayMapList = value;
-			}
-		}
-
-		public new virtual BDTenantHolidayMapCollection BDTenantHolidayMapList
-		{
-			get
-			{
-				return ((BDTenantHolidayMapCollection)(base.BDTenantHolidayMapList));
-			}
-			set
-			{
-				base.BDTenantHolidayMapList = value;
-			}
-		}
-
-
-		protected override void CloneChildren(BusinessBase entity)
-		{
-			UtilHolidayData data = entity as UtilHolidayData;
-			if (data == null)
-				return;
-
-			if (data.ACIntvalHolidayMapList != null)
-			{
-				this.ACIntvalHolidayMapList = new ACIntvalHolidayMapCollection(data.ACIntvalHolidayMapList);
-			}
-			if (data.ACPanelHolidayMapList != null)
-			{
-				this.ACPanelHolidayMapList = new ACPanelHolidayMapCollection(data.ACPanelHolidayMapList);
-			}
-			if (data.BDBuildingHolidayMapList != null)
-			{
-				this.BDBuildingHolidayMapList = new BDBuildingHolidayMapCollection(data.BDBuildingHolidayMapList);
-			}
-			if (data.BDTenantHolidayMapList != null)
-			{
-				this.BDTenantHolidayMapList = new BDTenantHolidayMapCollection(data.BDTenantHolidayMapList);
-			}
-		}
-
-		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
-		{
-			if (!this.IsDirty)
-			{
-				return new Result(true);
-			}
-
-			UtilHolidayData item = new UtilHolidayData(this);
-			item.GetChanges();
-			return UtilHolidayWrapper.Save(item, token);
 		}
 
 		public virtual Cheke.BusinessEntity.Result Save()
@@ -2145,6 +2167,9 @@ namespace W3000.ViewObj
 			{
 				BDTenant parent = new BDTenant();
 				parent.BDTenantPK = this.BDTenantPK;
+				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Suite = this.Suite;
+				parent.Tenant = this.Tenant;
 				return parent;
 			}
 			set
@@ -2153,6 +2178,9 @@ namespace W3000.ViewObj
 					return;
 
 				this.BDTenantPK = value.BDTenantPK;
+				this.BDBuildingPK = value.BDBuildingPK;
+				this.Suite = value.Suite;
+				this.Tenant = value.Tenant;
 			}
 		}
 
@@ -2162,6 +2190,7 @@ namespace W3000.ViewObj
 			{
 				UsrGroup parent = new UsrGroup();
 				parent.UsrGroupPK = this.UsrGroupPK;
+				parent.UsrGroupName = this.UsrGroupName;
 				return parent;
 			}
 			set
@@ -2170,6 +2199,7 @@ namespace W3000.ViewObj
 					return;
 
 				this.UsrGroupPK = value.UsrGroupPK;
+				this.UsrGroupName = value.UsrGroupName;
 			}
 		}
 
@@ -2514,6 +2544,7 @@ namespace W3000.ViewObj
 			{
 				ACCardHolder parent = new ACCardHolder();
 				parent.ACCardHolderPK = this.ACCardHolderPK;
+				parent.CardTypeID = this.CardTypeID;
 				parent.Embossed = this.Embossed;
 				parent.Encoded = this.Encoded;
 				parent.FirstName = this.FirstName;
@@ -2527,6 +2558,7 @@ namespace W3000.ViewObj
 					return;
 
 				this.ACCardHolderPK = value.ACCardHolderPK;
+				this.CardTypeID = value.CardTypeID;
 				this.Embossed = value.Embossed;
 				this.Encoded = value.Encoded;
 				this.FirstName = value.FirstName;
@@ -2575,6 +2607,7 @@ namespace W3000.ViewObj
 				BDTenant parent = new BDTenant();
 				parent.BDTenantPK = this.BDTenantPK;
 				parent.BDBuildingPK = this.BDBuildingPK;
+				parent.Suite = this.Suite;
 				parent.Tenant = this.Tenant;
 				return parent;
 			}
@@ -2585,6 +2618,7 @@ namespace W3000.ViewObj
 
 				this.BDTenantPK = value.BDTenantPK;
 				this.BDBuildingPK = value.BDBuildingPK;
+				this.Suite = value.Suite;
 				this.Tenant = value.Tenant;
 			}
 		}
@@ -3104,6 +3138,7 @@ namespace W3000.ViewObj
 			{
 				UsrAccount parent = new UsrAccount();
 				parent.UsrAccountPK = this.UsrAccountPK;
+				parent.UserID = this.UserID;
 				return parent;
 			}
 			set
@@ -3112,6 +3147,7 @@ namespace W3000.ViewObj
 					return;
 
 				this.UsrAccountPK = value.UsrAccountPK;
+				this.UserID = value.UserID;
 			}
 		}
 
@@ -5445,6 +5481,111 @@ namespace W3000.ViewObj
 
 	}
 	[Serializable]
+	public class UtilHolidayCollection : UtilHolidayDataCollection, Cheke.BusinessEntity.IPersist
+	{
+		#region Constructors
+		public UtilHolidayCollection()
+		{
+			base._itemType = typeof(UtilHoliday);
+		}
+
+		public UtilHolidayCollection(UtilHolidayDataCollection list)
+		{
+			base._itemType = typeof(UtilHoliday);
+			foreach(UtilHolidayData item in list)
+			{
+				this.Add(new UtilHoliday(item));
+			}
+
+			System.Collections.ArrayList deletedList = list.GetDeletedList();
+			foreach(UtilHolidayData item in deletedList)
+			{
+				UtilHoliday entity = new UtilHoliday(item);
+				this.Add(entity);
+				this.Remove(entity);
+			}
+		}
+
+		#endregion
+
+		public void Add(UtilHoliday obj)
+		{
+			base.List.Add(obj);
+		}
+
+		public void AddRange(UtilHolidayCollection list)
+		{
+			foreach(UtilHoliday item in list)
+			{
+				this.Add(item);
+			}
+		}
+
+		public void Remove(UtilHoliday obj)
+		{
+			base.List.Remove(obj);
+		}
+
+		public void Insert(int index, UtilHoliday obj)
+		{
+			 base.List.Insert(index, obj);
+		}
+
+		public bool Contains(UtilHoliday item)
+		{
+			foreach (UtilHoliday data in base.List)
+			{
+				if (data.Equals(item))
+				{
+					 return true;
+				}
+			}
+			return false;
+		}
+
+		public bool ContainsDeleted(UtilHoliday item)
+		{
+			foreach (UtilHoliday data in  this._deletedList)
+			{
+				if (data.Equals(item))
+				{
+					 return true;
+				}
+			}
+			return false;
+		}
+
+		public new UtilHoliday this[int index]
+		{
+			get
+			{
+				return (UtilHoliday) base.List[index];
+			}
+			set
+			{
+				base.List[index] = value;
+			}
+		}
+
+		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
+		{
+			if (!this.IsDirty)
+			{
+				return new Result(true);
+			}
+
+			UtilHolidayDataCollection list = new UtilHolidayDataCollection(this);
+			list.GetChanges();
+			return UtilHolidayWrapper.Save(list, token);
+		}
+
+		public virtual Cheke.BusinessEntity.Result Save()
+		{
+			return this.Save(Cheke.Identity.Token);
+		}
+
+	}
+	[Serializable]
 	public class ACAccessLevelCollection : ACAccessLevelDataCollection, Cheke.BusinessEntity.IPersist
 	{
 		#region Constructors
@@ -5646,111 +5787,6 @@ namespace W3000.ViewObj
 			ACPanelFunctionCardMapDataCollection list = new ACPanelFunctionCardMapDataCollection(this);
 			list.GetChanges();
 			return ACPanelFunctionCardMapWrapper.Save(list, token);
-		}
-
-		public virtual Cheke.BusinessEntity.Result Save()
-		{
-			return this.Save(Cheke.Identity.Token);
-		}
-
-	}
-	[Serializable]
-	public class UtilHolidayCollection : UtilHolidayDataCollection, Cheke.BusinessEntity.IPersist
-	{
-		#region Constructors
-		public UtilHolidayCollection()
-		{
-			base._itemType = typeof(UtilHoliday);
-		}
-
-		public UtilHolidayCollection(UtilHolidayDataCollection list)
-		{
-			base._itemType = typeof(UtilHoliday);
-			foreach(UtilHolidayData item in list)
-			{
-				this.Add(new UtilHoliday(item));
-			}
-
-			System.Collections.ArrayList deletedList = list.GetDeletedList();
-			foreach(UtilHolidayData item in deletedList)
-			{
-				UtilHoliday entity = new UtilHoliday(item);
-				this.Add(entity);
-				this.Remove(entity);
-			}
-		}
-
-		#endregion
-
-		public void Add(UtilHoliday obj)
-		{
-			base.List.Add(obj);
-		}
-
-		public void AddRange(UtilHolidayCollection list)
-		{
-			foreach(UtilHoliday item in list)
-			{
-				this.Add(item);
-			}
-		}
-
-		public void Remove(UtilHoliday obj)
-		{
-			base.List.Remove(obj);
-		}
-
-		public void Insert(int index, UtilHoliday obj)
-		{
-			 base.List.Insert(index, obj);
-		}
-
-		public bool Contains(UtilHoliday item)
-		{
-			foreach (UtilHoliday data in base.List)
-			{
-				if (data.Equals(item))
-				{
-					 return true;
-				}
-			}
-			return false;
-		}
-
-		public bool ContainsDeleted(UtilHoliday item)
-		{
-			foreach (UtilHoliday data in  this._deletedList)
-			{
-				if (data.Equals(item))
-				{
-					 return true;
-				}
-			}
-			return false;
-		}
-
-		public new UtilHoliday this[int index]
-		{
-			get
-			{
-				return (UtilHoliday) base.List[index];
-			}
-			set
-			{
-				base.List[index] = value;
-			}
-		}
-
-		public virtual Cheke.BusinessEntity.Result Save(SecurityToken token)
-		{
-			if (!this.IsDirty)
-			{
-				return new Result(true);
-			}
-
-			UtilHolidayDataCollection list = new UtilHolidayDataCollection(this);
-			list.GetChanges();
-			return UtilHolidayWrapper.Save(list, token);
 		}
 
 		public virtual Cheke.BusinessEntity.Result Save()

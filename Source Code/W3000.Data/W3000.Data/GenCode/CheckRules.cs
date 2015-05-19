@@ -16,9 +16,14 @@ namespace W3000.Data
 			data.CreatedBy = this._createdBy;
 			data.ModifiedOn = this._modifiedOn;
 			data.ModifiedBy = this._modifiedBy;
+			data.End = this._end;
+			data.Begin = this._begin;
+			data.IVID = this._iVID;
 			data.BDBuildingPK = this._bDBuildingPK;
 			data.Date = this._date;
 			data.Holiday = this._holiday;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			ACIntvalHolidayMapRule rule = new ACIntvalHolidayMapRule();
 			string error = rule.CheckRules(data);
@@ -51,6 +56,9 @@ namespace W3000.Data
 			data.ALSummary = this._aLSummary;
 			data.AccessLevelID = this._accessLevelID;
 			data.BDBuildingPK = this._bDBuildingPK;
+			data.UnitID = this._unitID;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			ACAccessLevelDetailRule rule = new ACAccessLevelDetailRule();
 			string error = rule.CheckRules(data);
@@ -79,6 +87,7 @@ namespace W3000.Data
 			data.Primary = this._primary;
 			data.Address1 = this._address1;
 			data.BuildingID = this._buildingID;
+			data.UserID = this._userID;
 
 			UsrAccountBuildingMapRule rule = new UsrAccountBuildingMapRule();
 			string error = rule.CheckRules(data);
@@ -223,6 +232,8 @@ namespace W3000.Data
 			data.CreatedBy = this._createdBy;
 			data.ModifiedOn = this._modifiedOn;
 			data.ModifiedBy = this._modifiedBy;
+			data.SettingCategory = this._settingCategory;
+			data.SettingCategoryID = this._settingCategoryID;
 
 			UtilSettingDetailRule rule = new UtilSettingDetailRule();
 			string error = rule.CheckRules(data);
@@ -248,6 +259,10 @@ namespace W3000.Data
 			data.MainZoneID = this._mainZoneID;
 			data.ACPanelPK = this._aCPanelPK;
 			data.GroupID = this._groupID;
+			data.UnitID = this._unitID;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
+			data.BDBuildingPK = this._bDBuildingPK;
 
 			ACOutputGroupMainZoneMapRule rule = new ACOutputGroupMainZoneMapRule();
 			string error = rule.CheckRules(data);
@@ -290,8 +305,11 @@ namespace W3000.Data
 			data.CreatedBy = this._createdBy;
 			data.ModifiedOn = this._modifiedOn;
 			data.ModifiedBy = this._modifiedBy;
+			data.Suite = this._suite;
 			data.Tenant = this._tenant;
 			data.BDBuildingPK = this._bDBuildingPK;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			ACCardHolderRule rule = new ACCardHolderRule();
 			string error = rule.CheckRules(data);
@@ -464,8 +482,10 @@ namespace W3000.Data
 			data.End = this._end;
 			data.Begin = this._begin;
 			data.IVID = this._iVID;
-			data.BDBuildingPK = this._bDBuildingPK;
 			data.TCID = this._tCID;
+			data.BDBuildingPK = this._bDBuildingPK;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			ACTimecodeIntervalMapRule rule = new ACTimecodeIntervalMapRule();
 			string error = rule.CheckRules(data);
@@ -493,6 +513,8 @@ namespace W3000.Data
 			data.CreatedBy = this._createdBy;
 			data.ModifiedOn = this._modifiedOn;
 			data.ModifiedBy = this._modifiedBy;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			ACAMFormatRule rule = new ACAMFormatRule();
 			string error = rule.CheckRules(data);
@@ -576,6 +598,8 @@ namespace W3000.Data
 			data.BDBuildingPK = this._bDBuildingPK;
 			data.Date = this._date;
 			data.Holiday = this._holiday;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			BDTenantHolidayMapRule rule = new BDTenantHolidayMapRule();
 			string error = rule.CheckRules(data);
@@ -626,6 +650,8 @@ namespace W3000.Data
 			data.ModifiedBy = this._modifiedBy;
 			data.BDBuildingPK = this._bDBuildingPK;
 			data.UnitID = this._unitID;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			ACInputGroupRule rule = new ACInputGroupRule();
 			string error = rule.CheckRules(data);
@@ -694,10 +720,40 @@ namespace W3000.Data
 			data.CreatedBy = this._createdBy;
 			data.ModifiedOn = this._modifiedOn;
 			data.ModifiedBy = this._modifiedBy;
+			data.Suite = this._suite;
 			data.Tenant = this._tenant;
 			data.BDBuildingPK = this._bDBuildingPK;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			ACFunctionCardRule rule = new ACFunctionCardRule();
+			string error = rule.CheckRules(data);
+			if(error.Length > 0)
+			{
+				base.BrokenRules.Add(new Rule("BrokenRules", error));
+			}
+		}
+	}
+
+	public partial class UtilHolidayData
+	{
+		protected override void CheckRules()
+		{
+			UtilHolidayRuleData data = new UtilHolidayRuleData();
+			data.UtilHolidayPK = this._utilHolidayPK;
+			data.CountryID = this._countryID;
+			data.Holiday = this._holiday;
+			data.Date = this._date;
+			data.Major = this._major;
+			data.Federal = this._federal;
+			data.CreatedOn = this._createdOn;
+			data.CreatedBy = this._createdBy;
+			data.ModifiedOn = this._modifiedOn;
+			data.ModifiedBy = this._modifiedBy;
+			data.Default = this._default;
+			data.ActionID = this._actionID;
+
+			UtilHolidayRule rule = new UtilHolidayRule();
 			string error = rule.CheckRules(data);
 			if(error.Length > 0)
 			{
@@ -745,6 +801,7 @@ namespace W3000.Data
 			data.CreatedBy = this._createdBy;
 			data.ModifiedOn = this._modifiedOn;
 			data.ModifiedBy = this._modifiedBy;
+			data.CardTypeID = this._cardTypeID;
 			data.Encoded = this._encoded;
 			data.Embossed = this._embossed;
 			data.Sitecode = this._sitecode;
@@ -752,33 +809,6 @@ namespace W3000.Data
 			data.UnitID = this._unitID;
 
 			ACPanelFunctionCardMapRule rule = new ACPanelFunctionCardMapRule();
-			string error = rule.CheckRules(data);
-			if(error.Length > 0)
-			{
-				base.BrokenRules.Add(new Rule("BrokenRules", error));
-			}
-		}
-	}
-
-	public partial class UtilHolidayData
-	{
-		protected override void CheckRules()
-		{
-			UtilHolidayRuleData data = new UtilHolidayRuleData();
-			data.UtilHolidayPK = this._utilHolidayPK;
-			data.CountryID = this._countryID;
-			data.Holiday = this._holiday;
-			data.Date = this._date;
-			data.Major = this._major;
-			data.Federal = this._federal;
-			data.CreatedOn = this._createdOn;
-			data.CreatedBy = this._createdBy;
-			data.ModifiedOn = this._modifiedOn;
-			data.ModifiedBy = this._modifiedBy;
-			data.Default = this._default;
-			data.ActionID = this._actionID;
-
-			UtilHolidayRule rule = new UtilHolidayRule();
 			string error = rule.CheckRules(data);
 			if(error.Length > 0)
 			{
@@ -838,6 +868,12 @@ namespace W3000.Data
 			data.CreatedBy = this._createdBy;
 			data.ModifiedOn = this._modifiedOn;
 			data.ModifiedBy = this._modifiedBy;
+			data.Suite = this._suite;
+			data.Tenant = this._tenant;
+			data.BDBuildingPK = this._bDBuildingPK;
+			data.UsrGroupName = this._usrGroupName;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			UsrAccountRule rule = new UsrAccountRule();
 			string error = rule.CheckRules(data);
@@ -973,6 +1009,7 @@ namespace W3000.Data
 			data.BuildingID = this._buildingID;
 			data.LastName = this._lastName;
 			data.FirstName = this._firstName;
+			data.CardTypeID = this._cardTypeID;
 			data.Encoded = this._encoded;
 			data.Embossed = this._embossed;
 			data.Sitecode = this._sitecode;
@@ -1015,6 +1052,7 @@ namespace W3000.Data
 			data.CreatedBy = this._createdBy;
 			data.ModifiedOn = this._modifiedOn;
 			data.ModifiedBy = this._modifiedBy;
+			data.Suite = this._suite;
 			data.Tenant = this._tenant;
 			data.BDBuildingPK = this._bDBuildingPK;
 			data.Address1 = this._address1;
@@ -1185,6 +1223,10 @@ namespace W3000.Data
 			data.GroupID = this._groupID;
 			data.ACPanelPK = this._aCPanelPK;
 			data.InputID = this._inputID;
+			data.UnitID = this._unitID;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
+			data.BDBuildingPK = this._bDBuildingPK;
 
 			ACInputGroupInputMapRule rule = new ACInputGroupInputMapRule();
 			string error = rule.CheckRules(data);
@@ -1233,6 +1275,9 @@ namespace W3000.Data
 			data.ModifiedBy = this._modifiedBy;
 			data.Tenant = this._tenant;
 			data.BDBuildingPK = this._bDBuildingPK;
+			data.UserID = this._userID;
+			data.Address1 = this._address1;
+			data.BuildingID = this._buildingID;
 
 			UsrAccountTenantMapRule rule = new UsrAccountTenantMapRule();
 			string error = rule.CheckRules(data);

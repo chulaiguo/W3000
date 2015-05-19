@@ -72,6 +72,32 @@ namespace W3000.Manager.GridDecorator
 			colModifiedBy.OptionsColumn.ShowInCustomizationForm = false;
 			view.Columns.Add(colModifiedBy);
 
+			GridColumn colEnd = new GridColumn();
+			colEnd.Caption = "End";
+			colEnd.FieldName = ACIntvalHolidayMapSchema.End;
+			colEnd.OptionsColumn.AllowEdit = false;
+			colEnd.OptionsColumn.AllowFocus = false;
+			colEnd.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colEnd);
+
+			GridColumn colBegin = new GridColumn();
+			colBegin.Caption = "Begin";
+			colBegin.FieldName = ACIntvalHolidayMapSchema.Begin;
+			colBegin.OptionsColumn.AllowEdit = false;
+			colBegin.OptionsColumn.AllowFocus = false;
+			colBegin.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colBegin);
+
+			GridColumn colIVID = new GridColumn();
+			colIVID.Caption = "IVID";
+			colIVID.FieldName = ACIntvalHolidayMapSchema.IVID;
+			colIVID.OptionsColumn.AllowEdit = false;
+			colIVID.OptionsColumn.AllowFocus = false;
+			colIVID.VisibleIndex = view.Columns.Count;
+			colIVID.DisplayFormat.FormatType = FormatType.Numeric;
+			colIVID.DisplayFormat.FormatString = "f0";
+			view.Columns.Add(colIVID);
+
 			GridColumn colDate = new GridColumn();
 			colDate.Caption = "Date";
 			colDate.FieldName = ACIntvalHolidayMapSchema.Date;
@@ -89,6 +115,24 @@ namespace W3000.Manager.GridDecorator
 			colHoliday.OptionsColumn.AllowFocus = false;
 			colHoliday.VisibleIndex = view.Columns.Count;
 			view.Columns.Add(colHoliday);
+
+			GridColumn colAddress1 = new GridColumn();
+			colAddress1.Caption = "Address1";
+			colAddress1.FieldName = ACIntvalHolidayMapSchema.Address1;
+			colAddress1.OptionsColumn.AllowEdit = false;
+			colAddress1.OptionsColumn.AllowFocus = false;
+			colAddress1.VisibleIndex = view.Columns.Count;
+			view.Columns.Add(colAddress1);
+
+			GridColumn colBuildingID = new GridColumn();
+			colBuildingID.Caption = "BuildingID";
+			colBuildingID.FieldName = ACIntvalHolidayMapSchema.BuildingID;
+			colBuildingID.OptionsColumn.AllowEdit = false;
+			colBuildingID.OptionsColumn.AllowFocus = false;
+			colBuildingID.VisibleIndex = view.Columns.Count;
+			colBuildingID.DisplayFormat.FormatType = FormatType.Numeric;
+			colBuildingID.DisplayFormat.FormatString = "f0";
+			view.Columns.Add(colBuildingID);
 
 		}
 

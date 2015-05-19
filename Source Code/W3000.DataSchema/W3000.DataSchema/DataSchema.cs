@@ -27,9 +27,14 @@ namespace W3000.Schema
 		public const string ACIntvalHolidayMapPK = "ACIntvalHolidayMapPK";
 		public const string ACIntervalPK = "ACIntervalPK";
 		public const string UtilHolidayPK = "UtilHolidayPK";
+		public const string End = "End";
+		public const string Begin = "Begin";
+		public const string IVID = "IVID";
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string Date = "Date";
 		public const string Holiday = "Holiday";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string ACInterval = "ACInterval";
 		public const string UtilHoliday = "UtilHoliday";
 		public const string TableName = "ACIntvalHolidayMap";
@@ -55,6 +60,9 @@ namespace W3000.Schema
 		public const string ALSummary = "ALSummary";
 		public const string AccessLevelID = "AccessLevelID";
 		public const string BDBuildingPK = "BDBuildingPK";
+		public const string UnitID = "UnitID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string ACMainZone = "ACMainZone";
 		public const string ACTimecode = "ACTimecode";
 		public const string ACAccessLevel = "ACAccessLevel";
@@ -77,6 +85,7 @@ namespace W3000.Schema
 		public const string Primary = "Primary";
 		public const string Address1 = "Address1";
 		public const string BuildingID = "BuildingID";
+		public const string UserID = "UserID";
 		public const string BDBuilding = "BDBuilding";
 		public const string UsrAccount = "UsrAccount";
 		public const string TableName = "UsrAccountBuildingMap";
@@ -205,6 +214,8 @@ namespace W3000.Schema
 		public const string FieldName = "FieldName";
 		public const string FieldValue = "FieldValue";
 		public const string Picture = "Picture";
+		public const string SettingCategory = "SettingCategory";
+		public const string SettingCategoryID = "SettingCategoryID";
 		public const string UtilSettingCategory = "UtilSettingCategory";
 		public const string TableName = "UtilSettingDetail";
 		public const string TableAlias = "UtilSettingDetail";
@@ -222,6 +233,10 @@ namespace W3000.Schema
 		public const string MainZoneID = "MainZoneID";
 		public const string ACPanelPK = "ACPanelPK";
 		public const string GroupID = "GroupID";
+		public const string UnitID = "UnitID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
+		public const string BDBuildingPK = "BDBuildingPK";
 		public const string ACMainZone = "ACMainZone";
 		public const string ACOutputGroup = "ACOutputGroup";
 		public const string TableName = "ACOutputGroupMainZoneMap";
@@ -258,10 +273,14 @@ namespace W3000.Schema
 		public const string CustInfo6 = "CustInfo6";
 		public const string CustInfo7 = "CustInfo7";
 		public const string CustInfo8 = "CustInfo8";
+		public const string Suite = "Suite";
 		public const string Tenant = "Tenant";
 		public const string BDBuildingPK = "BDBuildingPK";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string ACCardHolderBuildingMapList = "ACCardHolderBuildingMapList";
 		public const string BDTenant = "BDTenant";
+		public const string FullName = "FullName";
 		public const string TableName = "ACCardHolder";
 		public const string TableAlias = "ACCardHolder";
 		public const string CreatedOn = "CreatedOn";
@@ -400,8 +419,10 @@ namespace W3000.Schema
 		public const string End = "End";
 		public const string Begin = "Begin";
 		public const string IVID = "IVID";
-		public const string BDBuildingPK = "BDBuildingPK";
 		public const string TCID = "TCID";
+		public const string BDBuildingPK = "BDBuildingPK";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string ACInterval = "ACInterval";
 		public const string ACTimecode = "ACTimecode";
 		public const string TableName = "ACTimecodeIntervalMap";
@@ -422,6 +443,8 @@ namespace W3000.Schema
 		public const string ReportTC = "ReportTC";
 		public const string AlarmTC = "AlarmTC";
 		public const string PreAlarmTC = "PreAlarmTC";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string BDBuilding = "BDBuilding";
 		public const string TableName = "ACAMFormat";
 		public const string TableAlias = "ACAMFormat";
@@ -483,6 +506,8 @@ namespace W3000.Schema
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string Date = "Date";
 		public const string Holiday = "Holiday";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string BDTenant = "BDTenant";
 		public const string UtilHoliday = "UtilHoliday";
 		public const string TableName = "BDTenantHolidayMap";
@@ -517,6 +542,8 @@ namespace W3000.Schema
 		public const string Summary = "Summary";
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string UnitID = "UnitID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string ACInputGroupInputMapList = "ACInputGroupInputMapList";
 		public const string ACPanel = "ACPanel";
 		public const string TableName = "ACInputGroup";
@@ -571,12 +598,38 @@ namespace W3000.Schema
 		public const string Pin = "Pin";
 		public const string ValidFrom = "ValidFrom";
 		public const string ValidThru = "ValidThru";
+		public const string Suite = "Suite";
 		public const string Tenant = "Tenant";
 		public const string BDBuildingPK = "BDBuildingPK";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string ACPanelFunctionCardMapList = "ACPanelFunctionCardMapList";
 		public const string BDTenant = "BDTenant";
+		public const string FullName = "FullName";
 		public const string TableName = "ACFunctionCard";
 		public const string TableAlias = "ACFunctionCard";
+		public const string CreatedOn = "CreatedOn";
+		public const string CreatedBy = "CreatedBy";
+		public const string ModifiedOn = "ModifiedOn";
+		public const string ModifiedBy = "ModifiedBy";
+	}
+
+	public partial class UtilHolidaySchema
+	{
+		public const string UtilHolidayPK = "UtilHolidayPK";
+		public const string CountryID = "CountryID";
+		public const string Holiday = "Holiday";
+		public const string Date = "Date";
+		public const string Major = "Major";
+		public const string Federal = "Federal";
+		public const string Default = "Default";
+		public const string ActionID = "ActionID";
+		public const string BDTenantHolidayMapList = "BDTenantHolidayMapList";
+		public const string BDBuildingHolidayMapList = "BDBuildingHolidayMapList";
+		public const string ACPanelHolidayMapList = "ACPanelHolidayMapList";
+		public const string ACIntvalHolidayMapList = "ACIntvalHolidayMapList";
+		public const string TableName = "UtilHoliday";
+		public const string TableAlias = "UtilHoliday";
 		public const string CreatedOn = "CreatedOn";
 		public const string CreatedBy = "CreatedBy";
 		public const string ModifiedOn = "ModifiedOn";
@@ -608,6 +661,7 @@ namespace W3000.Schema
 		public const string ACPanelFunctionCardMapPK = "ACPanelFunctionCardMapPK";
 		public const string ACPanelPK = "ACPanelPK";
 		public const string ACFunctionCardPK = "ACFunctionCardPK";
+		public const string CardTypeID = "CardTypeID";
 		public const string Encoded = "Encoded";
 		public const string Embossed = "Embossed";
 		public const string Sitecode = "Sitecode";
@@ -617,28 +671,6 @@ namespace W3000.Schema
 		public const string ACPanel = "ACPanel";
 		public const string TableName = "ACPanelFunctionCardMap";
 		public const string TableAlias = "ACPanelFunctionCardMap";
-		public const string CreatedOn = "CreatedOn";
-		public const string CreatedBy = "CreatedBy";
-		public const string ModifiedOn = "ModifiedOn";
-		public const string ModifiedBy = "ModifiedBy";
-	}
-
-	public partial class UtilHolidaySchema
-	{
-		public const string UtilHolidayPK = "UtilHolidayPK";
-		public const string CountryID = "CountryID";
-		public const string Holiday = "Holiday";
-		public const string Date = "Date";
-		public const string Major = "Major";
-		public const string Federal = "Federal";
-		public const string Default = "Default";
-		public const string ActionID = "ActionID";
-		public const string ACIntvalHolidayMapList = "ACIntvalHolidayMapList";
-		public const string ACPanelHolidayMapList = "ACPanelHolidayMapList";
-		public const string BDBuildingHolidayMapList = "BDBuildingHolidayMapList";
-		public const string BDTenantHolidayMapList = "BDTenantHolidayMapList";
-		public const string TableName = "UtilHoliday";
-		public const string TableAlias = "UtilHoliday";
 		public const string CreatedOn = "CreatedOn";
 		public const string CreatedBy = "CreatedBy";
 		public const string ModifiedOn = "ModifiedOn";
@@ -680,12 +712,19 @@ namespace W3000.Schema
 		public const string TotalUsage = "TotalUsage";
 		public const string StartScreen = "StartScreen";
 		public const string PopupExtension = "PopupExtension";
+		public const string Suite = "Suite";
+		public const string Tenant = "Tenant";
+		public const string BDBuildingPK = "BDBuildingPK";
+		public const string UsrGroupName = "UsrGroupName";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string UsrAccountBuildingMapList = "UsrAccountBuildingMapList";
 		public const string UsrAccountBRRuleList = "UsrAccountBRRuleList";
 		public const string UsrAccountDBRuleList = "UsrAccountDBRuleList";
 		public const string UsrAccountTenantMapList = "UsrAccountTenantMapList";
 		public const string BDTenant = "BDTenant";
 		public const string UsrGroup = "UsrGroup";
+		public const string FullName = "FullName";
 		public const string TableName = "UsrAccount";
 		public const string TableAlias = "UsrAccount";
 		public const string CreatedOn = "CreatedOn";
@@ -722,6 +761,7 @@ namespace W3000.Schema
 		public const string Photo = "Photo";
 		public const string FIPS = "FIPS";
 		public const string Pin = "Pin";
+		public const string FullName = "FullName";
 		public const string TableName = "ACMasterCard";
 		public const string TableAlias = "ACMasterCard";
 		public const string CreatedOn = "CreatedOn";
@@ -782,11 +822,13 @@ namespace W3000.Schema
 		public const string BuildingID = "BuildingID";
 		public const string LastName = "LastName";
 		public const string FirstName = "FirstName";
+		public const string CardTypeID = "CardTypeID";
 		public const string Encoded = "Encoded";
 		public const string Embossed = "Embossed";
 		public const string Sitecode = "Sitecode";
 		public const string BDBuilding = "BDBuilding";
 		public const string ACCardHolder = "ACCardHolder";
+		public const string FullName = "FullName";
 		public const string TableName = "ACCardHolderBuildingMap";
 		public const string TableAlias = "ACCardHolderBuildingMap";
 		public const string CreatedOn = "CreatedOn";
@@ -818,11 +860,13 @@ namespace W3000.Schema
 		public const string ArrivedTime = "ArrivedTime";
 		public const string TurnstileAccess = "TurnstileAccess";
 		public const string BadgePrinted = "BadgePrinted";
+		public const string Suite = "Suite";
 		public const string Tenant = "Tenant";
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string Address1 = "Address1";
 		public const string BuildingID = "BuildingID";
 		public const string BDTenant = "BDTenant";
+		public const string FullName = "FullName";
 		public const string TableName = "BDVisitor";
 		public const string TableAlias = "BDVisitor";
 		public const string CreatedOn = "CreatedOn";
@@ -955,6 +999,10 @@ namespace W3000.Schema
 		public const string GroupID = "GroupID";
 		public const string ACPanelPK = "ACPanelPK";
 		public const string InputID = "InputID";
+		public const string UnitID = "UnitID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
+		public const string BDBuildingPK = "BDBuildingPK";
 		public const string ACInputGroup = "ACInputGroup";
 		public const string ACInput = "ACInput";
 		public const string TableName = "ACInputGroupInputMap";
@@ -988,6 +1036,9 @@ namespace W3000.Schema
 		public const string BDTenantPK = "BDTenantPK";
 		public const string Tenant = "Tenant";
 		public const string BDBuildingPK = "BDBuildingPK";
+		public const string UserID = "UserID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 		public const string BDTenant = "BDTenant";
 		public const string UsrAccount = "UsrAccount";
 		public const string TableName = "UsrAccountTenantMap";
@@ -1009,6 +1060,9 @@ namespace W3000.Schema
 		public const string TCID = "TCID";
 		public const string AccessLevelID = "AccessLevelID";
 		public const string BDBuildingPK = "BDBuildingPK";
+		public const string UnitID = "UnitID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 	}
 
 	public partial class ACAccessLevelViewSchema
@@ -1027,6 +1081,8 @@ namespace W3000.Schema
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string AMFID = "AMFID";
 		public const string Summary = "Summary";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 	}
 
 	public partial class ACCardHolderBuildingMapViewSchema
@@ -1036,6 +1092,7 @@ namespace W3000.Schema
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string Address1 = "Address1";
 		public const string BuildingID = "BuildingID";
+		public const string CardTypeID = "CardTypeID";
 		public const string Encoded = "Encoded";
 		public const string Embossed = "Embossed";
 		public const string Sitecode = "Sitecode";
@@ -1049,8 +1106,11 @@ namespace W3000.Schema
 		public const string Encoded = "Encoded";
 		public const string CardTypeID = "CardTypeID";
 		public const string BDTenantPK = "BDTenantPK";
+		public const string Suite = "Suite";
 		public const string Tenant = "Tenant";
 		public const string BDBuildingPK = "BDBuildingPK";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 	}
 
 	public partial class ACFunctionCardViewSchema
@@ -1061,8 +1121,11 @@ namespace W3000.Schema
 		public const string Encoded = "Encoded";
 		public const string CardTypeID = "CardTypeID";
 		public const string BDTenantPK = "BDTenantPK";
+		public const string Suite = "Suite";
 		public const string Tenant = "Tenant";
 		public const string BDBuildingPK = "BDBuildingPK";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 	}
 
 	public partial class ACInputGroupInputMapViewSchema
@@ -1073,6 +1136,10 @@ namespace W3000.Schema
 		public const string GroupID = "GroupID";
 		public const string ACPanelPK = "ACPanelPK";
 		public const string InputID = "InputID";
+		public const string UnitID = "UnitID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
+		public const string BDBuildingPK = "BDBuildingPK";
 	}
 
 	public partial class ACInputGroupViewSchema
@@ -1083,6 +1150,8 @@ namespace W3000.Schema
 		public const string Summary = "Summary";
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string UnitID = "UnitID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 	}
 
 	public partial class ACInputViewSchema
@@ -1091,7 +1160,6 @@ namespace W3000.Schema
 		public const string ACPanelPK = "ACPanelPK";
 		public const string InputID = "InputID";
 		public const string Description = "Description";
-		public const string PanelZoneID = "PanelZoneID";
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string UnitID = "UnitID";
 		public const string Address1 = "Address1";
@@ -1112,9 +1180,12 @@ namespace W3000.Schema
 		public const string ACIntvalHolidayMapPK = "ACIntvalHolidayMapPK";
 		public const string ACIntervalPK = "ACIntervalPK";
 		public const string UtilHolidayPK = "UtilHolidayPK";
+		public const string IVID = "IVID";
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string Date = "Date";
 		public const string Holiday = "Holiday";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 	}
 
 	public partial class ACMainZoneViewSchema
@@ -1124,7 +1195,6 @@ namespace W3000.Schema
 		public const string MainZoneID = "MainZoneID";
 		public const string MainZoneTypeID = "MainZoneTypeID";
 		public const string Description = "Description";
-		public const string PanelZoneID = "PanelZoneID";
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string UnitID = "UnitID";
 		public const string Address1 = "Address1";
@@ -1148,6 +1218,10 @@ namespace W3000.Schema
 		public const string MainZoneID = "MainZoneID";
 		public const string ACPanelPK = "ACPanelPK";
 		public const string GroupID = "GroupID";
+		public const string UnitID = "UnitID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
+		public const string BDBuildingPK = "BDBuildingPK";
 	}
 
 	public partial class ACOutputGroupViewSchema
@@ -1167,6 +1241,7 @@ namespace W3000.Schema
 		public const string ACPanelFunctionCardMapPK = "ACPanelFunctionCardMapPK";
 		public const string ACPanelPK = "ACPanelPK";
 		public const string ACFunctionCardPK = "ACFunctionCardPK";
+		public const string CardTypeID = "CardTypeID";
 		public const string Encoded = "Encoded";
 		public const string Embossed = "Embossed";
 		public const string Sitecode = "Sitecode";
@@ -1201,7 +1276,6 @@ namespace W3000.Schema
 		public const string ACPanelPK = "ACPanelPK";
 		public const string SupervisoryID = "SupervisoryID";
 		public const string Description = "Description";
-		public const string PanelZoneID = "PanelZoneID";
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string UnitID = "UnitID";
 		public const string Address1 = "Address1";
@@ -1214,8 +1288,10 @@ namespace W3000.Schema
 		public const string ACTimecodePK = "ACTimecodePK";
 		public const string ACIntervalPK = "ACIntervalPK";
 		public const string IVID = "IVID";
-		public const string BDBuildingPK = "BDBuildingPK";
 		public const string TCID = "TCID";
+		public const string BDBuildingPK = "BDBuildingPK";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 	}
 
 	public partial class ACTimecodeViewSchema
@@ -1259,6 +1335,8 @@ namespace W3000.Schema
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string Date = "Date";
 		public const string Holiday = "Holiday";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 	}
 
 	public partial class BDTenantViewSchema
@@ -1275,6 +1353,7 @@ namespace W3000.Schema
 	{
 		public const string BDVisitorPK = "BDVisitorPK";
 		public const string BDTenantPK = "BDTenantPK";
+		public const string Suite = "Suite";
 		public const string Tenant = "Tenant";
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string Address1 = "Address1";
@@ -1295,6 +1374,13 @@ namespace W3000.Schema
 		public const string DBTableName = "DBTableName";
 	}
 
+	public partial class LogRowsCountViewSchema
+	{
+		public const string LogRowsCountPK = "LogRowsCountPK";
+		public const string SessionID = "SessionID";
+		public const string SessionDateTime = "SessionDateTime";
+	}
+
 	public partial class UsrAccountBRRuleViewSchema
 	{
 		public const string UsrAccountBRRulePK = "UsrAccountBRRulePK";
@@ -1310,6 +1396,7 @@ namespace W3000.Schema
 		public const string BDBuildingPK = "BDBuildingPK";
 		public const string Address1 = "Address1";
 		public const string BuildingID = "BuildingID";
+		public const string UserID = "UserID";
 	}
 
 	public partial class UsrAccountDBRuleViewSchema
@@ -1327,12 +1414,21 @@ namespace W3000.Schema
 		public const string BDTenantPK = "BDTenantPK";
 		public const string Tenant = "Tenant";
 		public const string BDBuildingPK = "BDBuildingPK";
+		public const string UserID = "UserID";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 	}
 
 	public partial class UsrAccountViewSchema
 	{
 		public const string UsrAccountPK = "UsrAccountPK";
 		public const string UserID = "UserID";
+		public const string Suite = "Suite";
+		public const string Tenant = "Tenant";
+		public const string BDBuildingPK = "BDBuildingPK";
+		public const string UsrGroupName = "UsrGroupName";
+		public const string Address1 = "Address1";
+		public const string BuildingID = "BuildingID";
 	}
 
 	public partial class UsrGroupBRRuleViewSchema
@@ -1360,7 +1456,6 @@ namespace W3000.Schema
 	public partial class UtilHolidayViewSchema
 	{
 		public const string UtilHolidayPK = "UtilHolidayPK";
-		public const string CountryID = "CountryID";
 		public const string Holiday = "Holiday";
 		public const string Date = "Date";
 	}
@@ -1378,6 +1473,8 @@ namespace W3000.Schema
 		public const string UtilSettingDetailPK = "UtilSettingDetailPK";
 		public const string UtilSettingCategoryPK = "UtilSettingCategoryPK";
 		public const string FieldName = "FieldName";
+		public const string SettingCategory = "SettingCategory";
+		public const string SettingCategoryID = "SettingCategoryID";
 	}
 
 }

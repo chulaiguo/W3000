@@ -133,29 +133,29 @@ namespace W3000.Manager.GridDecorator
 			colAccessLevelID.DisplayFormat.FormatString = "f0";
 			view.Columns.Add(colAccessLevelID);
 
-			GridColumn colMainZoneDescription = new GridColumn();
-			colMainZoneDescription.Caption = "MainZoneDescription";
-			colMainZoneDescription.FieldName = ACAccessLevelDetailSchema.MainZoneDescription;
-			colMainZoneDescription.OptionsColumn.AllowEdit = false;
-			colMainZoneDescription.OptionsColumn.AllowFocus = false;
-			colMainZoneDescription.VisibleIndex = view.Columns.Count;
-			view.Columns.Add(colMainZoneDescription);
+            //GridColumn colMainZoneDescription = new GridColumn();
+            //colMainZoneDescription.Caption = "MainZoneDescription";
+            //colMainZoneDescription.FieldName = ACAccessLevelDetailSchema.MainZoneDescription;
+            //colMainZoneDescription.OptionsColumn.AllowEdit = false;
+            //colMainZoneDescription.OptionsColumn.AllowFocus = false;
+            //colMainZoneDescription.VisibleIndex = view.Columns.Count;
+            //view.Columns.Add(colMainZoneDescription);
 
-			GridColumn colTimecodeSummary = new GridColumn();
-			colTimecodeSummary.Caption = "TimecodeSummary";
-			colTimecodeSummary.FieldName = ACAccessLevelDetailSchema.TimecodeSummary;
-			colTimecodeSummary.OptionsColumn.AllowEdit = false;
-			colTimecodeSummary.OptionsColumn.AllowFocus = false;
-			colTimecodeSummary.VisibleIndex = view.Columns.Count;
-			view.Columns.Add(colTimecodeSummary);
+            //GridColumn colTimecodeSummary = new GridColumn();
+            //colTimecodeSummary.Caption = "TimecodeSummary";
+            //colTimecodeSummary.FieldName = ACAccessLevelDetailSchema.TimecodeSummary;
+            //colTimecodeSummary.OptionsColumn.AllowEdit = false;
+            //colTimecodeSummary.OptionsColumn.AllowFocus = false;
+            //colTimecodeSummary.VisibleIndex = view.Columns.Count;
+            //view.Columns.Add(colTimecodeSummary);
 
-			GridColumn colALSummary = new GridColumn();
-			colALSummary.Caption = "ALSummary";
-			colALSummary.FieldName = ACAccessLevelDetailSchema.ALSummary;
-			colALSummary.OptionsColumn.AllowEdit = false;
-			colALSummary.OptionsColumn.AllowFocus = false;
-			colALSummary.VisibleIndex = view.Columns.Count;
-			view.Columns.Add(colALSummary);
+            //GridColumn colALSummary = new GridColumn();
+            //colALSummary.Caption = "ALSummary";
+            //colALSummary.FieldName = ACAccessLevelDetailSchema.ALSummary;
+            //colALSummary.OptionsColumn.AllowEdit = false;
+            //colALSummary.OptionsColumn.AllowFocus = false;
+            //colALSummary.VisibleIndex = view.Columns.Count;
+            //view.Columns.Add(colALSummary);
 
 		}
 

@@ -13,6 +13,8 @@ namespace W3000.Data
 		//private System.String _createdBy = string.Empty;
 		//private System.DateTime _modifiedOn = new DateTime(1900, 1, 1);
 		//private System.String _modifiedBy = string.Empty;
+		private System.String _settingCategory = string.Empty;
+		private System.Int32 _settingCategoryID = 0;
 
 		public System.Guid UtilSettingDetailPK
 		{
@@ -62,6 +64,18 @@ namespace W3000.Data
 //			set{ this._modifiedBy = value; }
 //		}
 
+		public System.String SettingCategory
+		{
+			get{ return this._settingCategory; }
+			set{ this._settingCategory = value; }
+		}
+
+		public System.Int32 SettingCategoryID
+		{
+			get{ return this._settingCategoryID; }
+			set{ this._settingCategoryID = value; }
+		}
+
 		public UtilSettingDetailView()
 		{
 		}
@@ -76,6 +90,8 @@ namespace W3000.Data
 			//this.CreatedBy = data.CreatedBy;
 			//this.ModifiedOn = data.ModifiedOn;
 			//this.ModifiedBy = data.ModifiedBy;
+			this.SettingCategory = data.SettingCategory;
+			this.SettingCategoryID = data.SettingCategoryID;
 		}
 
 
@@ -90,6 +106,8 @@ namespace W3000.Data
 			//entity.CreatedBy = this.CreatedBy;
 			//entity.ModifiedOn = this.ModifiedOn;
 			//entity.ModifiedBy = this.ModifiedBy;
+			entity.SettingCategory = this.SettingCategory;
+			entity.SettingCategoryID = this.SettingCategoryID;
 
 			return entity;
 		}

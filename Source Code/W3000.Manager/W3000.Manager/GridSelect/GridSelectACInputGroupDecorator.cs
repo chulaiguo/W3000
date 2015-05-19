@@ -51,6 +51,22 @@ namespace W3000.Manager.GridSelect
 			colUnitID.OptionsColumn.AllowFocus = false;
 			view.Columns.Add(colUnitID);
 
+			GridColumn colAddress1 = new GridColumn();
+			colAddress1.Caption = "Address1";
+			colAddress1.FieldName = ACInputGroupViewSchema.Address1;
+			colAddress1.VisibleIndex = view.Columns.Count;
+			colAddress1.OptionsColumn.AllowEdit = false;
+			colAddress1.OptionsColumn.AllowFocus = false;
+			view.Columns.Add(colAddress1);
+
+			GridColumn colBuildingID = new GridColumn();
+			colBuildingID.Caption = "BuildingID";
+			colBuildingID.FieldName = ACInputGroupViewSchema.BuildingID;
+			colBuildingID.VisibleIndex = view.Columns.Count;
+			colBuildingID.OptionsColumn.AllowEdit = false;
+			colBuildingID.OptionsColumn.AllowFocus = false;
+			view.Columns.Add(colBuildingID);
+
 		}
 
 		protected override void NavigatorEditClick(GridView view, NavigatorButtonClickEventArgs e)
