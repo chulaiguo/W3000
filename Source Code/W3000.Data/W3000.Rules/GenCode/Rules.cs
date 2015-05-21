@@ -5220,38 +5220,6 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
-			rule = this.CheckEnd(data.End);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBegin(data.Begin);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckIVID(data.IVID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckDate(data.Date);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckHoliday(data.Holiday);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -5296,87 +5264,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckEnd(System.String value)
-		{
-			string rule;
-			rule = this.BrokenLengthEqualRule(this.End, 4, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.End, 4, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBegin(System.String value)
-		{
-			string rule;
-			rule = this.BrokenLengthEqualRule(this.Begin, 4, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Begin, 4, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckIVID(System.Int16 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckDate(System.DateTime value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckHoliday(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Holiday, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Holiday, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -5393,46 +5280,6 @@ namespace W3000.Rules
 		protected virtual string UtilHolidayPK
 		{
 			get { return "UtilHolidayPK"; }
-		}
-
-		protected virtual string End
-		{
-			get { return "End"; }
-		}
-
-		protected virtual string Begin
-		{
-			get { return "Begin"; }
-		}
-
-		protected virtual string IVID
-		{
-			get { return "IVID"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string Date
-		{
-			get { return "Date"; }
-		}
-
-		protected virtual string Holiday
-		{
-			get { return "Holiday"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -5462,50 +5309,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckFromACAccessLevelPK(data.FromACAccessLevelPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckMainZoneDescription(data.MainZoneDescription);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckMainZoneID(data.MainZoneID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckACPanelPK(data.ACPanelPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckTimecodeSummary(data.TimecodeSummary);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckTCID(data.TCID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckALSummary(data.ALSummary);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAccessLevelID(data.AccessLevelID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUnitID(data.UnitID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -5569,107 +5372,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckMainZoneDescription(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.MainZoneDescription, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.MainZoneDescription, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckMainZoneID(System.Byte value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckACPanelPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.ACPanelPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckTimecodeSummary(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.TimecodeSummary, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.TimecodeSummary, 256, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckTCID(System.Int16 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckALSummary(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.ALSummary, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.ALSummary, 256, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckAccessLevelID(System.Int16 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckUnitID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -5696,61 +5398,6 @@ namespace W3000.Rules
 		protected virtual string FromACAccessLevelPK
 		{
 			get { return "FromACAccessLevelPK"; }
-		}
-
-		protected virtual string MainZoneDescription
-		{
-			get { return "MainZoneDescription"; }
-		}
-
-		protected virtual string MainZoneID
-		{
-			get { return "MainZoneID"; }
-		}
-
-		protected virtual string ACPanelPK
-		{
-			get { return "ACPanelPK"; }
-		}
-
-		protected virtual string TimecodeSummary
-		{
-			get { return "TimecodeSummary"; }
-		}
-
-		protected virtual string TCID
-		{
-			get { return "TCID"; }
-		}
-
-		protected virtual string ALSummary
-		{
-			get { return "ALSummary"; }
-		}
-
-		protected virtual string AccessLevelID
-		{
-			get { return "AccessLevelID"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string UnitID
-		{
-			get { return "UnitID"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -5788,18 +5435,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckPrimary(data.Primary);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUserID(data.UserID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -5867,39 +5502,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckUserID(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.UserID, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.UserID, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -5936,21 +5538,6 @@ namespace W3000.Rules
 		protected virtual string Primary
 		{
 			get { return "Primary"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
-		protected virtual string UserID
-		{
-			get { return "UserID"; }
 		}
 
 		#endregion
@@ -6618,14 +6205,6 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -6888,25 +6467,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -7048,16 +6608,6 @@ namespace W3000.Rules
 		protected virtual string Email
 		{
 			get { return "Email"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -7203,14 +6753,6 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
-			rule = this.CheckSettingCategory(data.SettingCategory);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckSettingCategoryID(data.SettingCategoryID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -7265,25 +6807,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckSettingCategory(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.SettingCategory, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.SettingCategory, 128, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckSettingCategoryID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -7307,16 +6830,6 @@ namespace W3000.Rules
 			get { return "FieldValue"; }
 		}
 
-		protected virtual string SettingCategory
-		{
-			get { return "SettingCategory"; }
-		}
-
-		protected virtual string SettingCategoryID
-		{
-			get { return "SettingCategoryID"; }
-		}
-
 		#endregion
 	}
 
@@ -7336,34 +6849,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckACMainZonePK(data.ACMainZonePK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckMainZoneID(data.MainZoneID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckACPanelPK(data.ACPanelPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckGroupID(data.GroupID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUnitID(data.UnitID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -7411,60 +6896,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckMainZoneID(System.Byte value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckACPanelPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.ACPanelPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckGroupID(System.Byte value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckUnitID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -7481,41 +6912,6 @@ namespace W3000.Rules
 		protected virtual string ACMainZonePK
 		{
 			get { return "ACMainZonePK"; }
-		}
-
-		protected virtual string MainZoneID
-		{
-			get { return "MainZoneID"; }
-		}
-
-		protected virtual string ACPanelPK
-		{
-			get { return "ACPanelPK"; }
-		}
-
-		protected virtual string GroupID
-		{
-			get { return "GroupID"; }
-		}
-
-		protected virtual string UnitID
-		{
-			get { return "UnitID"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
 		}
 
 		#endregion
@@ -7617,26 +7013,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckCustInfo8(data.CustInfo8);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckSuite(data.Suite);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckTenant(data.Tenant);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -7839,63 +7215,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckSuite(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Suite, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Suite, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckTenant(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Tenant, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Tenant, 60, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -8012,31 +7331,6 @@ namespace W3000.Rules
 		protected virtual string CustInfo8
 		{
 			get { return "CustInfo8"; }
-		}
-
-		protected virtual string Suite
-		{
-			get { return "Suite"; }
-		}
-
-		protected virtual string Tenant
-		{
-			get { return "Tenant"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -8198,22 +7492,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckUnlockTempEnd(data.UnlockTempEnd);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUnitID(data.UnitID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -8482,40 +7760,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckUnitID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -8709,26 +7953,6 @@ namespace W3000.Rules
 			get { return "UnlockTempEnd"; }
 		}
 
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string UnitID
-		{
-			get { return "UnitID"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
 		#endregion
 	}
 
@@ -8788,14 +8012,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckHol(data.Hol);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -8906,25 +8122,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -8993,16 +8190,6 @@ namespace W3000.Rules
 			get { return "Hol"; }
 		}
 
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
 		#endregion
 	}
 
@@ -9022,30 +8209,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckUtilHolidayPK(data.UtilHolidayPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckDate(data.Date);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckHoliday(data.Holiday);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUnitID(data.UnitID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -9093,59 +8256,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckDate(System.DateTime value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckHoliday(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Holiday, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Holiday, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckUnitID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -9162,36 +8272,6 @@ namespace W3000.Rules
 		protected virtual string UtilHolidayPK
 		{
 			get { return "UtilHolidayPK"; }
-		}
-
-		protected virtual string Date
-		{
-			get { return "Date"; }
-		}
-
-		protected virtual string Holiday
-		{
-			get { return "Holiday"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string UnitID
-		{
-			get { return "UnitID"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -9221,14 +8301,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckNotes(data.Notes);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -9295,25 +8367,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -9342,16 +8395,6 @@ namespace W3000.Rules
 			get { return "Notes"; }
 		}
 
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
 		#endregion
 	}
 
@@ -9371,34 +8414,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckACIntervalPK(data.ACIntervalPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckEnd(data.End);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBegin(data.Begin);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckIVID(data.IVID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckTCID(data.TCID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -9446,73 +8461,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckEnd(System.String value)
-		{
-			string rule;
-			rule = this.BrokenLengthEqualRule(this.End, 4, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.End, 4, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBegin(System.String value)
-		{
-			string rule;
-			rule = this.BrokenLengthEqualRule(this.Begin, 4, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Begin, 4, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckIVID(System.Int16 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckTCID(System.Int16 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -9529,41 +8477,6 @@ namespace W3000.Rules
 		protected virtual string ACIntervalPK
 		{
 			get { return "ACIntervalPK"; }
-		}
-
-		protected virtual string End
-		{
-			get { return "End"; }
-		}
-
-		protected virtual string Begin
-		{
-			get { return "Begin"; }
-		}
-
-		protected virtual string IVID
-		{
-			get { return "IVID"; }
-		}
-
-		protected virtual string TCID
-		{
-			get { return "TCID"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -9605,14 +8518,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckPreAlarmTC(data.PreAlarmTC);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -9694,25 +8599,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -9756,16 +8642,6 @@ namespace W3000.Rules
 			get { return "PreAlarmTC"; }
 		}
 
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
 		#endregion
 	}
 
@@ -9793,22 +8669,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckNotes(data.Notes);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckDate(data.Date);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckHoliday(data.Holiday);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -9871,44 +8731,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckDate(System.DateTime value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckHoliday(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Holiday, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Holiday, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -9937,26 +8759,6 @@ namespace W3000.Rules
 			get { return "Notes"; }
 		}
 
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
-		protected virtual string Date
-		{
-			get { return "Date"; }
-		}
-
-		protected virtual string Holiday
-		{
-			get { return "Holiday"; }
-		}
-
 		#endregion
 	}
 
@@ -9980,22 +8782,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckSummary(data.Summary);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUnitID(data.UnitID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -10052,40 +8838,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckUnitID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -10107,26 +8859,6 @@ namespace W3000.Rules
 		protected virtual string Summary
 		{
 			get { return "Summary"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string UnitID
-		{
-			get { return "UnitID"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -10156,30 +8888,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckNotes(data.Notes);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckTenant(data.Tenant);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckDate(data.Date);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckHoliday(data.Holiday);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -10242,68 +8950,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckTenant(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Tenant, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Tenant, 60, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckDate(System.DateTime value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckHoliday(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Holiday, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Holiday, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -10330,36 +8976,6 @@ namespace W3000.Rules
 		protected virtual string Notes
 		{
 			get { return "Notes"; }
-		}
-
-		protected virtual string Tenant
-		{
-			get { return "Tenant"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string Date
-		{
-			get { return "Date"; }
-		}
-
-		protected virtual string Holiday
-		{
-			get { return "Holiday"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -10514,22 +9130,6 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUnitID(data.UnitID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -10583,40 +9183,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckUnitID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -10638,26 +9204,6 @@ namespace W3000.Rules
 		protected virtual string Summary
 		{
 			get { return "Summary"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string UnitID
-		{
-			get { return "UnitID"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -10719,22 +9265,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckLocked(data.Locked);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUnitID(data.UnitID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -10841,40 +9371,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckUnitID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -10943,26 +9439,6 @@ namespace W3000.Rules
 			get { return "Locked"; }
 		}
 
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string UnitID
-		{
-			get { return "UnitID"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
 		#endregion
 	}
 
@@ -11022,26 +9498,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckValidThru(data.ValidThru);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckSuite(data.Suite);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckTenant(data.Tenant);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -11144,63 +9600,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckSuite(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Suite, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Suite, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckTenant(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Tenant, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Tenant, 60, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -11267,31 +9666,6 @@ namespace W3000.Rules
 		protected virtual string ValidThru
 		{
 			get { return "ValidThru"; }
-		}
-
-		protected virtual string Suite
-		{
-			get { return "Suite"; }
-		}
-
-		protected virtual string Tenant
-		{
-			get { return "Tenant"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -11477,14 +9851,6 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -11553,25 +9919,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -11605,16 +9952,6 @@ namespace W3000.Rules
 			get { return "Notes"; }
 		}
 
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
 		#endregion
 	}
 
@@ -11634,38 +9971,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckACFunctionCardPK(data.ACFunctionCardPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckCardTypeID(data.CardTypeID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckEncoded(data.Encoded);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckEmbossed(data.Embossed);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckSitecode(data.Sitecode);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUnitID(data.UnitID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -11713,60 +10018,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckCardTypeID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckEncoded(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckEmbossed(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckSitecode(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckUnitID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -11783,46 +10034,6 @@ namespace W3000.Rules
 		protected virtual string ACFunctionCardPK
 		{
 			get { return "ACFunctionCardPK"; }
-		}
-
-		protected virtual string CardTypeID
-		{
-			get { return "CardTypeID"; }
-		}
-
-		protected virtual string Encoded
-		{
-			get { return "Encoded"; }
-		}
-
-		protected virtual string Embossed
-		{
-			get { return "Embossed"; }
-		}
-
-		protected virtual string Sitecode
-		{
-			get { return "Sitecode"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string UnitID
-		{
-			get { return "UnitID"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -12019,30 +10230,6 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
-			rule = this.CheckSuite(data.Suite);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckTenant(data.Tenant);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUsrGroupName(data.UsrGroupName);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -12203,77 +10390,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckSuite(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Suite, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Suite, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckTenant(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Tenant, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Tenant, 60, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckUsrGroupName(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.UsrGroupName, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.UsrGroupName, 50, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -12365,36 +10481,6 @@ namespace W3000.Rules
 		protected virtual string PopupExtension
 		{
 			get { return "PopupExtension"; }
-		}
-
-		protected virtual string Suite
-		{
-			get { return "Suite"; }
-		}
-
-		protected virtual string Tenant
-		{
-			get { return "Tenant"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string UsrGroupName
-		{
-			get { return "UsrGroupName"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -12732,22 +10818,6 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUnitID(data.UnitID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -12836,40 +10906,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckUnitID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -12921,26 +10957,6 @@ namespace W3000.Rules
 		protected virtual string Locked
 		{
 			get { return "Locked"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string UnitID
-		{
-			get { return "UnitID"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
@@ -13061,38 +11077,6 @@ namespace W3000.Rules
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckLastName(data.LastName);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckFirstName(data.FirstName);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckCardTypeID(data.CardTypeID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckEncoded(data.Encoded);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckEmbossed(data.Embossed);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckSitecode(data.Sitecode);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
 
 			rule = this.CheckComprehensiveRules(data);
 			if (rule.Length > 0)
@@ -13147,65 +11131,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckLastName(System.String value)
-		{
-			string rule;
-			rule = this.BrokenMaxLengthRule(this.LastName, 50, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckFirstName(System.String value)
-		{
-			string rule;
-			rule = this.BrokenMaxLengthRule(this.FirstName, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckCardTypeID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckEncoded(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckEmbossed(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckSitecode(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -13232,46 +11157,6 @@ namespace W3000.Rules
 		protected virtual string AL2nd
 		{
 			get { return "AL2nd"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
-		protected virtual string LastName
-		{
-			get { return "LastName"; }
-		}
-
-		protected virtual string FirstName
-		{
-			get { return "FirstName"; }
-		}
-
-		protected virtual string CardTypeID
-		{
-			get { return "CardTypeID"; }
-		}
-
-		protected virtual string Encoded
-		{
-			get { return "Encoded"; }
-		}
-
-		protected virtual string Embossed
-		{
-			get { return "Embossed"; }
-		}
-
-		protected virtual string Sitecode
-		{
-			get { return "Sitecode"; }
 		}
 
 		#endregion
@@ -13361,26 +11246,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckBadgePrinted(data.BadgePrinted);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckSuite(data.Suite);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckTenant(data.Tenant);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -13561,63 +11426,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckSuite(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Suite, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Suite, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckTenant(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Tenant, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Tenant, 60, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -13721,31 +11529,6 @@ namespace W3000.Rules
 			get { return "BadgePrinted"; }
 		}
 
-		protected virtual string Suite
-		{
-			get { return "Suite"; }
-		}
-
-		protected virtual string Tenant
-		{
-			get { return "Tenant"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
 		#endregion
 	}
 
@@ -13781,10 +11564,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckDeletable(data.Deletable);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUsrGroupName(data.UsrGroupName);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -13847,20 +11626,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckUsrGroupName(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.UsrGroupName, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.UsrGroupName, 50, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -13897,11 +11662,6 @@ namespace W3000.Rules
 		protected virtual string Deletable
 		{
 			get { return "Deletable"; }
-		}
-
-		protected virtual string UsrGroupName
-		{
-			get { return "UsrGroupName"; }
 		}
 
 		#endregion
@@ -14079,14 +11839,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckInDebug(data.InDebug);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -14389,25 +12141,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -14621,16 +12354,6 @@ namespace W3000.Rules
 			get { return "InDebug"; }
 		}
 
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
 		#endregion
 	}
 
@@ -14666,10 +12389,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckDeletable(data.Deletable);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUserID(data.UserID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -14732,20 +12451,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckUserID(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.UserID, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.UserID, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -14784,11 +12489,6 @@ namespace W3000.Rules
 			get { return "Deletable"; }
 		}
 
-		protected virtual string UserID
-		{
-			get { return "UserID"; }
-		}
-
 		#endregion
 	}
 
@@ -14812,10 +12512,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckDenied(data.Denied);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUsrGroupName(data.UsrGroupName);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -14863,20 +12559,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckUsrGroupName(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.UsrGroupName, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.UsrGroupName, 50, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -14900,11 +12582,6 @@ namespace W3000.Rules
 			get { return "Denied"; }
 		}
 
-		protected virtual string UsrGroupName
-		{
-			get { return "UsrGroupName"; }
-		}
-
 		#endregion
 	}
 
@@ -14924,34 +12601,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckACInputPK(data.ACInputPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckGroupID(data.GroupID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckACPanelPK(data.ACPanelPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckInputID(data.InputID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUnitID(data.UnitID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -14999,60 +12648,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckGroupID(System.Byte value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckACPanelPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.ACPanelPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckInputID(System.Byte value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckUnitID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -15069,41 +12664,6 @@ namespace W3000.Rules
 		protected virtual string ACInputPK
 		{
 			get { return "ACInputPK"; }
-		}
-
-		protected virtual string GroupID
-		{
-			get { return "GroupID"; }
-		}
-
-		protected virtual string ACPanelPK
-		{
-			get { return "ACPanelPK"; }
-		}
-
-		protected virtual string InputID
-		{
-			get { return "InputID"; }
-		}
-
-		protected virtual string UnitID
-		{
-			get { return "UnitID"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
 		}
 
 		#endregion
@@ -15129,10 +12689,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckDenied(data.Denied);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUserID(data.UserID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -15180,20 +12736,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckUserID(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.UserID, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.UserID, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -15217,11 +12759,6 @@ namespace W3000.Rules
 			get { return "Denied"; }
 		}
 
-		protected virtual string UserID
-		{
-			get { return "UserID"; }
-		}
-
 		#endregion
 	}
 
@@ -15241,26 +12778,6 @@ namespace W3000.Rules
 				builder.AppendLine(rule);
 
 			rule = this.CheckBDTenantPK(data.BDTenantPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckTenant(data.Tenant);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBDBuildingPK(data.BDBuildingPK);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckUserID(data.UserID);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckAddress1(data.Address1);
-			if (rule.Length > 0)
-				builder.AppendLine(rule);
-
-			rule = this.CheckBuildingID(data.BuildingID);
 			if (rule.Length > 0)
 				builder.AppendLine(rule);
 
@@ -15308,63 +12825,6 @@ namespace W3000.Rules
 			return string.Empty;
 		}
 
-		public virtual string CheckTenant(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Tenant, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Tenant, 60, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBDBuildingPK(System.Guid value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.BDBuildingPK, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckUserID(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.UserID, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.UserID, 30, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckAddress1(System.String value)
-		{
-			string rule;
-			rule = this.BrokenNotEmptyRule(this.Address1, value);
-			if(rule.Length > 0)
-				return rule;
-
-			rule = this.BrokenMaxLengthRule(this.Address1, 55, value);
-			if(rule.Length > 0)
-				return rule;
-
-			return string.Empty;
-		}
-
-		public virtual string CheckBuildingID(System.Int32 value)
-		{
-			return string.Empty;
-		}
-
 		#endregion
 
 		#region Property Names
@@ -15381,31 +12841,6 @@ namespace W3000.Rules
 		protected virtual string BDTenantPK
 		{
 			get { return "BDTenantPK"; }
-		}
-
-		protected virtual string Tenant
-		{
-			get { return "Tenant"; }
-		}
-
-		protected virtual string BDBuildingPK
-		{
-			get { return "BDBuildingPK"; }
-		}
-
-		protected virtual string UserID
-		{
-			get { return "UserID"; }
-		}
-
-		protected virtual string Address1
-		{
-			get { return "Address1"; }
-		}
-
-		protected virtual string BuildingID
-		{
-			get { return "BuildingID"; }
 		}
 
 		#endregion
